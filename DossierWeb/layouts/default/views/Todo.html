@@ -1,0 +1,448 @@
+
+<link rel="stylesheet" href="/layouts/paxtel/css/jquery.mCustomScrollbar.css?050920131" type="text/css">
+<script src="/layouts/paxtel/js/jquery.mCustomScrollbar.min.js" type="text/javascript" charset="utf-8"></script>	
+<style>
+
+.WFLPTACH{
+height:300px;
+overflow: auto;
+}
+
+.WFLPCNN{
+height:150px;
+overflow: auto;
+}
+
+.spans{
+float: left;
+margin-left: 8px;
+}
+
+.start{
+color:#5bb75b;
+}
+
+.btn-in,.btn-out{
+width: 154px;
+margin-left: 3px;
+margin-right: 5px;
+}
+
+.btn-out{
+margin-top:10px;
+}
+
+.Checkin_Block{
+margin-left: 31px;
+width: 72%;
+}
+.FullTime{
+width: 154px;
+margin-left: 3px;
+margin-right: 5px;
+
+}
+.btn-Timer{
+ font-weight:bold;
+}
+
+.btn-Timer ,.btn-start,.btn-pause,.btn-stop,.btn-add{
+margin-left: 8px;
+margin-bottom: 10px;
+}
+.btn-add{
+background: url('image/btn_add_user.png');
+height: 30px;
+}
+.btn-Detail{
+margin-left: -69px;
+margin-top: 84px;
+height:23px;
+}
+WF_Actions_span2{
+float: left;
+margin-left: 12px;
+margin-right: 5px;
+}
+#form_logaccess{
+margin:0 0 10px;
+}
+
+.ACBK ,.WFP_Form {
+margin-left: 0px;
+}
+.Tach_Content{
+margin-left: 39px;
+}
+.Btnhide{
+display:none;
+}
+.ButtonMargin{
+margin-left:3px;
+margin-top:2px;
+}
+
+</style>
+ <script>
+    var start;
+	var separ=":";
+	var btn_Active='';
+	var LastTime;
+    var centi=0;
+	var secon=0;
+	var minu=0;
+	var heure=0;
+	var compte ;
+	var timer_element;
+	var timer_element_act=new Array();
+	var Start_timers=new Array();
+	var btns_Active=new Array();
+	var First_Time=new Array();
+	
+	
+	function timer_autostart(){
+	
+		var btn;
+	
+	 $(".StartTask").each(function(){ 
+		
+		btn=$(this).next();
+		 if(btn.hasClass('hide')|btn.hasClass('Btnhide'))
+		{
+		btn.removeClass('Btnhide');
+		btn.removeClass('hide');
+		}
+		$(this).addClass('Btnhide');
+	 
+	 });
+	 
+	/*if(start_btn.length>0)
+	{
+		btn_Active=start_btn;
+	   var btn=start_btn.next();
+	 if(btn.hasClass('hide')|btn.hasClass('Btnhide'))
+	 {
+		btn.removeClass('Btnhide');
+		btn.removeClass('hide');
+	 }
+		start_btn.addClass('Btnhide');
+		start=new Date();
+		clearTimeout(compte);	
+		timer_element=start_btn.parents('div:first').find('button:first');
+		LastTime=timer_element.text();
+		var pieces = timer_element.text().split(':');
+		heure = parseInt(pieces[0], 10);
+		minu = parseInt(pieces[1], 10);
+		secon = parseInt(pieces[2], 10);
+		centi=0;
+
+	chrono();
+	}*/
+ }
+  function GetTaskActive(){
+ 
+			timer_autostart();
+			btns_Active.length=0;
+			timer_element_act.length=0;
+			First_Time.length=0;
+			Start_timers.length=0;
+    
+	// Ajouter a la pile les Tache Actives
+	$(".btn-start.Btnhide").each(function(){ 
+			btns_Active.push($(this));
+			timer_element_act.push(($(this)).parents('div:first').find('button:first'));
+			timeDecoup=($(this)).parents('div:first').find('button:first').text();	
+			First_Time.push(timeDecoup);
+			Start_timers.push(new Date());
+			
+          });   
+    chrono();
+   }
+ $(function(){
+   
+  
+			GetTaskActive();// Run all taskt Started on The server;
+   
+   
+   function pauseTask(obj){
+   
+					var index=-1;
+					for(i=0;i<btns_Active.length,index==-1;i++)
+					{
+					if( btns_Active[i].attr('id')==obj.attr('id'))
+							index=i;
+					}
+					btns_Active.splice(index,1);
+					timer_element_act.splice(index,1);
+					Start_timers.splice(index,1);
+					First_Time.splice(index,1);
+					
+					var btn=obj.parent().find('.btn-pause');
+				
+					btn.parents('div:first').find('button:first').removeClass('start');
+					btn.parents('div:first').find('button:first').text(btn.parents('div:first').find('button:first').text().replace(" ",":"));
+				
+					obj.removeClass('Btnhide');
+					obj.removeClass('hide');
+				
+					btn.addClass('Btnhide');
+            
+   
+   }
+   
+   function PushTask(obj){
+			btn_Active=obj;
+			btn_Active.parents('div:first').find('button:first').addClass('start');
+			btns_Active.push(obj);
+			Start_timers.push(new Date());
+			timer_element_act.push(obj.parents('div:first').find('button:first'));
+			First_Time.push(obj.parents('div:first').find('button:first').text());
+   }
+   
+   function switch_Activation(obj){
+   
+		$('.btn-start.Btnhide').each(function(){
+
+				if($(this).attr('id').split('_')[2]==obj.attr('id').split('_')[2])
+				{ 
+					pauseTask($(this));
+				}
+				
+				
+		});
+		
+			PushTask(obj);
+			
+			
+	}
+	function applyTasksScroll(){
+	$(".WFLPTACH").mCustomScrollbar("destroy");
+	$(".WFLPTACH").mCustomScrollbar({mouseWheel : true});
+	$(".WFLPCNN").mCustomScrollbar("destroy");
+	$(".WFLPCNN").mCustomScrollbar({mouseWheel : true});
+	
+	}
+	applyTasksScroll();
+	 $('.btn-start').live('click',function(){
+	 
+			switch_Activation($(this));
+	
+			var btn=$(this).next();
+	 
+			if(btn.hasClass('hide')|btn.hasClass('Btnhide'))
+			{
+			btn.removeClass('Btnhide');
+			btn.removeClass('hide');
+			}
+			$(this).addClass('Btnhide');
+			clearTimeout(compte);	
+			timer_element=$(this).parents('div:first').find('button:first');
+			
+	
+	chrono();
+	
+	});
+	
+	 $('.btn-stop').live('click',function(){
+		});
+	
+	 $('.btn-pause').live('click',function(){
+		
+			pauseTask($(this).parent().find('.btn-start'));
+	
+	});
+
+	 $('.wflp_refresh').live('click',function(e){
+        e.preventDefault();
+		var action='';
+        if($(this).hasClass('refresh_Taches')){
+		action='Tache_refresh';
+		}
+		else{action='refresh_Fulltime';}
+     
+
+       
+        var url = '/WFLP?action='+action;
+       
+       // $('.overlay-loading').show();       
+        // send ajax
+        $.ajax({
+            type: "GET",
+            url: url, 
+            dataType: "text",
+            error:function(msg){
+                console.log(msg);
+                console.log('error');
+            },
+            success:function(data){
+			
+				 if(action=='refresh_Fulltime'){
+					$('.FullTime').text('Temps du jour : ' +data);
+				}
+				else{
+				obj = eval(data);
+				traitement_objects(obj);
+				applyTasksScroll(); 
+				}
+		
+						
+            }
+        });
+       
+    });	
+	 $('#btn-out').live('click',function(e){
+			
+			// quand je clique sur je part cette fonction arrete la tache active de l'utilisateur
+		$('.btn-start.Btnhide').each(function(){
+
+				if($(this).attr('id').split('_')[2]==$('#Token').val().split(':')[2].split('*')[0])
+				{ 
+					pauseTask($(this));
+				}
+				
+				
+		});
+	 
+	 });
+	
+});	
+
+function updateTime(){
+
+     var dateStop=new Date();
+	 for(i=0;i<timer_element_act.length;i++)
+	 { 
+	 start= Start_timers[i];
+		var hr,min,sec;
+			clearTimeout(compte);
+	 var hr= dateStop.getHours()-start.getHours();
+	 
+	 if (dateStop.getMinutes()<start.getMinutes())
+		{
+			hr--;
+			min=(dateStop.getMinutes()-start.getMinutes())+60;
+		}
+	 else
+		{
+			min=(dateStop.getMinutes()-start.getMinutes());
+		}
+	 if(dateStop.getSeconds()<start.getSeconds())
+		{
+	      min--;
+		  sec=(dateStop.getSeconds()-start.getSeconds())+60;
+		}
+	 else
+		{
+			sec=(dateStop.getSeconds()-start.getSeconds());
+		}
+	 //Start_timers[i]=new Date();
+	//setTime(hr,min,sec,timer_element_act[i]);
+	setTime(hr,min,sec,i);
+	}
+}
+function setTime(hr,min,sec,index){
+		var Strminu=0
+		var Strheure=0	
+		var Strsecon=0		
+		var timeDecoup=First_Time[index].split(":");
+		
+		hr=hr+parseInt(timeDecoup[0]);
+		min=min+parseInt(timeDecoup[1]);
+		//sec=//parseInt(timeDecoup[2]);
+		if(sec>59)
+		{
+			sec=sec-60;
+			min++;
+		}
+		if(min>59)
+		{
+		  min=min-60;
+		  hr++;
+		}
+		
+		
+		if (min   < 10) {Strminu   = "0"+min;}else {Strminu   = min;}
+		if (hr < 10) {Strheure = "0"+hr;}else {Strheure = hr;}
+		if (sec < 10) {Strsecon = "0"+sec;}else  {Strsecon =sec;}
+		//if (centi < 10) {Strcenti = "0"+centi;}
+		
+		var TimeString;
+		//TimeString=Strheure+':'+Strminu+':'+Strsecon;
+		
+		separ=timer_element_act[index].text().charAt(2)==":" ? " " : ":";
+		/*if(timer_element_act[index].text().charAt(2)==":")
+			{separ=" ";}
+		else
+			{separ=":";}*/
+			
+		TimeString=Strheure+separ+Strminu;
+		timer_element_act[index].text(TimeString);
+   
+}
+ function chrono(){
+		
+		updateTime();
+		compte=setTimeout('chrono()',2000);
+	}
+</script>
+<div class=" span5 pull-left" >
+	<!--<div class=" Nav_Block  span5 pull-left" style="margin-bottom:10px">
+		<a target="_blank" href="/DOSP?action=liste&tous=non" class=" btn Dos_Mini">
+			      
+		</a>
+		<a target="_blank" href="/TACH?action=liste&tous=non" class=" btn Tach_Mini">
+			        	
+		</a>
+		<a target="_blank" href="/PLAN_STRUCT" class="btn Plan_Mini">
+			       
+		</a> 	
+		<a target="_blank" href="/HACT?action=liste&tous=non" class="btn Hiso_Mini">
+			  	
+		</a>
+	</div>-->
+	
+	<div class=" Checkin_Block well  pull-left">
+	<div class="pull-left">
+	  <image src="/image/img_wflp.jpg"/>
+	</div>
+	     <div class="pull-right" style="width:182px;margin-top: 12px;">
+		 <form  action="" id="form_logaccess" method="POST" class="">
+		
+			 <fieldset>
+				<div class="controls">
+					<button id="btn-in" type="button" class="btn-in btn-success methode[wflp_access_log({in});click;refresh_object]">J'arrive</button>
+				
+					<button id="btn-out" type="button" class="btn-out btn-danger methode[wflp_access_log({out});click;refresh_object]">Je parts</button>
+				</div>
+													
+			</fieldset>
+				 
+		 </form>
+		 <div class="controls">
+			<button class=" FullTime  btn-success  pull-left">Temps du jour : <!--4Dhtmlvar WFLP_FULLTIME --></button><a href="#" style="margin-left:6px" class="wflp_refresh refresh_Fulltime pull-right "><i class="icon-refresh">&nbsp;</i></a>
+		</div>
+		</div>
+	</div>
+	<div class="Dashbord_Block span4 pull-left">
+		<div class="WFLPCNN row-fluid" style="margin-bottom:10px">
+			<!--4Dhtmlvar CONX_HTML_VIEW -->
+		</div>
+		<!--4Dhtmlvar ACT_TACH_HTML_VIEW --> 
+		
+		
+	</div>
+</div>
+
+<div class="WFLPTACH mCustomScrollbar _mCS_2" style="margin-bottom:10px">
+		<a href="#" style="margin-left:6px" class="wflp_refresh refresh_Taches pull-right "><i class="icon-refresh">&nbsp;</i></a>
+			<!--4Dhtmlvar TACH_HTML_VIEW -->
+		</div>
+		<div class="WFLPTACH mCustomScrollbar _mCS_2" style="margin-bottom:10px;margin-top:20px">
+			<!--4Dhtmlvar SYNTH_MENSUEL -->
+		</div>
+
+<!--4Dhtmlvar HTML_MODALS --> 
+
+<!--
+<div class="modal modal_externe hide" data-temp="212433503" data-actionm="WFLP" data-uidm="2013051610265100001paxSERZD" data-action="ShowModal" data-methode="" data-prefex="WFLP" id="modal_WFLP_212433503"><div class="modal-header"><button type="button" class="close hide" data-dismiss="modal">x</button><h4 style="float:left;">Deversement Taches</h4><div class="btns"><a href="#" class="btn-annuler-modal"><span class="link">Annuler</span></a></div><div class="btns"><a href="" class="btn-valider-modal"><span class="link">Valider</span></a></div></div><div class="modal-body"><div class="span8"><div class="progress progress-striped active"><div class="bar" style="width: 100%;"></div></div></div>   </div><div class="modal-footer"></div></div>
+-->

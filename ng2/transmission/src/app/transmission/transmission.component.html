@@ -1,0 +1,340 @@
+<p-toast [life]="7000"/>
+<div class="grid">
+    <div class="col-12" *ngIf="startLoadingData">
+        <p-card class="w-full" styleClass="shadow-3" header="Liste des transmissions">
+            <div class="flex mb-4">
+                <p-button label="Nouvelle transmission" icon="pi pi-plus"
+                          [raised]="true"
+                          (click)="dialogVisible = true;createForm('create')"/>
+            </div>
+
+            <p-table #transmissionTable
+                     [value]="transmissionResult.data" [tableStyle]="{'min-width': '50rem'}"
+                     [paginator]="true"
+                     [lazy]="true"
+                     (onLazyLoad)="loadTransmissions($event)"
+                     [loading]="tableLoading"
+                     [rows]="10"
+                     selectionMode="single"
+                     dataKey="id"
+                     [(selection)]="selectedTransmission"
+                     [totalRecords]="transmissionResult.totalRecords"
+                     (onRowSelect)="onRowSelect($event)"
+                     (onRowUnselect)="onRowUnselect($event)"
+                     styleClass="p-datatable-gridlines"
+                     class="transmission-table">
+                <ng-template pTemplate="caption">
+
+
+                    <div class="flex">
+                        <p-iconField iconPosition="left" class="ml-auto">
+                            <p-inputIcon>
+                                <i class="pi pi-search"></i>
+                            </p-inputIcon>
+                            <input
+                                    pInputText
+                                    type="text"
+                                    (input)="filterTable($event)"
+                                    placeholder="Recherche..."/>
+                        </p-iconField>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header" let-columns>
+                    <tr class="header">
+                        <th>Date</th>
+                        <th>Heure</th>
+                        <th>Expéditeur</th>
+                        <th>Service</th>
+                        <th>Usager</th>
+                        <th>Priorité</th>
+                        <th>Message</th>
+                        <th>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p-columnFilter field="date" matchMode="equals" [showMenu]="false">
+                                <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                    <p-calendar
+                                            [iconDisplay]="'input'"
+                                            appendTo="body"
+                                            [showIcon]="true"
+                                            [ngModel]="value"
+                                            dateFormat="dd/mm/yy"
+                                            (onSelect)="filter($event)"
+                                            inputId="icondisplay"/>
+                                </ng-template>
+                            </p-columnFilter>
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th>
+                            <p-columnFilter field="service" matchMode="equals" [showMenu]="false">
+                                <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                    <p-dropdown
+                                            [ngModel]="value"
+                                            [options]="groupeFilters"
+                                            appendTo="body"
+                                            (onChange)="filter($event.value)"
+                                            optionLabel="label"
+                                            optionValue="value"
+                                            filter="true"
+                                            [showClear]="true">
+                                    </p-dropdown>
+                                </ng-template>
+                            </p-columnFilter>
+
+                        </th>
+                        <th></th>
+                        <th>
+                            <p-columnFilter field="priorite" matchMode="equals" [showMenu]="false">
+                                <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                    <p-dropdown
+                                            [ngModel]="value"
+                                            [options]="prioritiesFilters"
+                                            appendTo="body"
+                                            (onChange)="filter($event.value)"
+                                            placeholder="-"
+                                            [showClear]="true"
+                                            optionLabel="label"
+                                            optionValue="value">
+                                    </p-dropdown>
+                                </ng-template>
+                            </p-columnFilter>
+                        </th>
+                        <th></th>
+                        <th>
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-transmission let-columns="columns" let-i="rowIndex">
+                    <tr [ngClass]="{'urgent-row': transmission.priorite === 1}" [pSelectableRow]="transmission">
+                        <td>{{ transmission.date | date:'dd/MM/yy' }}</td>
+                        <td>{{ transmission.date | date:'HH:mm' }}</td>
+                        <td>{{ transmission.intervenantLogin }}</td>
+                        <td>{{ transmission.service }}</td>
+                        <td>{{ transmission.usagerCle }}</td>
+                        <td>
+                            <span *ngIf="transmission.priorite === 0">Non urgent</span>
+                            <span *ngIf="transmission.priorite === 1">Urgent</span>
+                        </td>
+                        <td class="message-as-paragraph">{{ transmission.message }}</td>
+                        <td class="text-center" [style.width]="'10%'">
+                            <p-button icon="pi pi-file-edit" severity="secondary" pTooltip="Modifier la transmission"
+                                      tooltipPosition="left" class="edit-button mr-1"
+                                      [disabled]="transmission.intervenantId !== userConnected.id"
+                                      (onClick)="dialogVisible = true;createForm('update', transmission)"/>
+                            <p-button icon="pi pi-times" severity="secondary" pTooltip="Supprimer la transmission"
+                                      (onClick)="removeTransmission(transmission)"
+                                      tooltipPosition="left" class="remove-button"
+                                      [disabled]="transmission.intervenantId !== userConnected.id"/>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                </ng-template>
+            </p-table>
+        </p-card>
+    </div>
+</div>
+
+
+<!--Suppression Modal-->
+<p-confirmDialog #cd>
+    <ng-template pTemplate="headless" let-message>
+        <div class="flex flex-column align-items-center p-5 surface-overlay border-round">
+            <div class="border-circle bg-red-500 inline-flex justify-content-center align-items-center h-6rem w-6rem">
+                <i class="pi pi-times text-5xl text-white"></i>
+            </div>
+            <span class="font-bold text-2xl block mb-2 mt-4">
+                {{ message.header }}
+            </span>
+            <p class="mb-0">{{ message.message }}</p>
+            <div class="flex align-items-center gap-2 mt-4">
+                <button
+                        pButton
+                        label="Non"
+                        (click)="cd.reject()"
+                        class="p-button-outlined w-8rem p-button-primary">
+                </button>
+                <button
+                        pButton
+                        label="Oui"
+                        (click)="cd.accept()"
+                        class="w-8rem p-button-danger">
+                </button>
+            </div>
+        </div>
+    </ng-template>
+</p-confirmDialog>
+
+
+<!-- Ajout/modif transmission-->
+<p-dialog
+        header="Header"
+        [(visible)]="dialogVisible"
+        [modal]="true"
+        (onHide)="dialogVisible = false"
+        [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+        [style]="{ width: '50vw' }"
+        [draggable]="false"
+        [resizable]="false">
+    <ng-template pTemplate="header">
+        <div class="flex align-items-center justify-content-center gap-2">
+      <span class="p-dialog-title flex align-items-center">
+        Nouvelle transmission
+      </span>
+        </div>
+    </ng-template>
+    <div class="grid" [formGroup]="form" *ngIf="form">
+        <div class="col-12">
+            <table class="w-full transmission-form-table">
+                <thead class="vendorListHeading">
+                <tr>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>Expediteur</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-center">{{ form.value.date | date:"dd/MM/yyyy" }}</td>
+                    <td class="text-center">{{ form.value.date | date:"HH:mm" }}</td>
+                    <td class="text-center">{{ form.value.intervenant }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-12">
+            <div class="formgrid grid">
+                <div class="col-12 md:col-4 lg:col-4 xl:col-4">
+                    <div class="field col-12">
+                        <label for="formService">Service</label>
+                        <p-dropdown
+                                appendTo="body"
+                                styleClass="w-full"
+                                id="formService"
+                                formControlName="groupe"
+                                filter="true"
+                                placeholder="Selectionnez un groupe"
+                                [options]="groupes"
+                                [showClear]="true">
+                            <ng-template pTemplate="selectedItem" let-service>
+                                <div class="flex align-items-center gap-2">
+                                    <div>{{ service }}</div>
+                                </div>
+                            </ng-template>
+                            <ng-template let-service pTemplate="item">
+                                <div class="flex align-items-center gap-2">
+                                    <div>{{ service }}</div>
+                                </div>
+                            </ng-template>
+                        </p-dropdown>
+                    </div>
+                </div>
+                <div class="col-12 md:col-4 lg:col-4 xl:col-4">
+                    <div class="field col-12">
+                        <label for="formPriority">Priorité</label>
+                        <p-dropdown
+                                appendTo="body"
+                                styleClass="w-full"
+                                id="formPriority"
+                                formControlName="priorite"
+                                [options]="priorities"
+                                placeholder="Selectionnez une priorité"
+                                [showClear]="true"
+                                optionLabel="label"
+                                optionValue="value">
+                        </p-dropdown>
+                    </div>
+                </div>
+                <div class="col-12 md:col-4 lg:col-4 xl:col-4">
+                    <div class="field col-12">
+                        <label for="formUsager">Usager</label>
+                        <p-autoComplete
+                                id="formUsager"
+                                formControlName="usager"
+                                styleClass="w-full"
+                                class="w-full"
+                                optionLabel="value"
+                                [suggestions]="usagers"
+                                (completeMethod)="onSearchUsagers($event)"
+                                delay="500"
+                        />
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="field col-12">
+                        <!--              <pre>{{mentionConfig|json}}</pre>-->
+                        <label for="formMessage">Message</label>
+                        <textarea class="w-full"
+                                  formControlName="message"
+                                  [mention]="mentions"
+                                  [mentionConfig]="mentionConfig"
+
+                                  (searchTerm)="onMentionSearch($event)"
+                                  rows="20"
+                                  pInputTextarea
+                                  id="formMessage">
+            </textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <ng-template pTemplate="footer">
+        <div class="flex justify-content-end gap-2">
+            <p-button label="Annuler" severity="secondary" (onClick)="dialogVisible = false" icon="pi pi-times"
+                      [raised]="true"/>
+            <p-button label="Enregistrer" severity="success" icon="pi pi-save" [raised]="true" (onClick)="saveForm()"
+                      [loading]="saveLoading"/>
+        </div>
+    </ng-template>
+</p-dialog>
+
+<p-dialog [(visible)]="tranmissionViewDialog"
+          [modal]="true"
+          (onHide)="tranmissionViewDialog = false"
+          [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+          [style]="{ width: '40vw' }"
+          [draggable]="false"
+          [resizable]="false">
+    <ng-template pTemplate="header">
+        <div class="flex align-items-center justify-content-center gap-2">
+      <span class="p-dialog-title flex align-items-center">
+          Transmission
+      </span>
+        </div>
+    </ng-template>
+    <div class="grid mt-5" *ngIf="selectedTransmission">
+        <div class="col-12">
+            <span class="font-bold mr-2">Date:</span>
+            <span> {{ selectedTransmission.date | date:"dd/MM/yyyy HH:mm" }}</span>
+        </div>
+        <div class="col-12">
+            <span class="font-bold mr-2">Expéditeur:</span>
+            <span>{{ selectedTransmission.intervenantLogin }}</span>
+        </div>
+        <div class="col-12">
+            <span class="font-bold mr-2">Service:</span>
+            <span>{{ selectedTransmission.service }}</span>
+        </div>
+        <div class="col-12">
+            <span class="font-bold mr-2">Service:</span>
+            <span *ngIf="selectedTransmission?.priorite === 1">Urgent</span>
+            <span *ngIf="selectedTransmission?.priorite === 0">Non urgent</span>
+        </div>
+        <div class="col-12">
+            <span class="font-bold mr-2">Usager:</span>
+            <span>{{ selectedTransmission.usagerCle }}</span>
+        </div>
+        <div class="col-12">
+            <span class="font-bold mr-2">Message:</span>
+        </div>
+        <div class="col-12">
+            <span class="message-as-paragraph">{{ selectedTransmission.message }}</span>
+        </div>
+    </div>
+</p-dialog>

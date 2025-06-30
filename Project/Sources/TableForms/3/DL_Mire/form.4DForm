@@ -1,0 +1,159 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onOutsideCall"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle191": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 250,
+					"height": 354,
+					"stroke": "#FFFFFF"
+				},
+				"Texte39": {
+					"type": "text",
+					"top": 276,
+					"left": 0,
+					"width": 245,
+					"height": 15,
+					"stroke": "#007CFF",
+					"textAlign": "center",
+					"text": " version"
+				},
+				"Texte38": {
+					"type": "text",
+					"top": 244,
+					"left": 0,
+					"width": 245,
+					"height": 30,
+					"stroke": "#007CFF",
+					"textAlign": "center",
+					"text": "© conception et réalisation\rF. Phanchi"
+				},
+				"About_version": {
+					"type": "input",
+					"top": 295,
+					"left": 0,
+					"width": 245,
+					"height": 16,
+					"dataSource": "<>T_VersionDB__C",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"logo_paxtel": {
+					"type": "input",
+					"top": 0,
+					"left": 17,
+					"width": 208,
+					"height": 87,
+					"dataSourceTypeHint": "picture",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"pictureFormat": "proportionalCenter",
+					"dragging": "none"
+				},
+				"logo": {
+					"type": "input",
+					"top": 100,
+					"left": 0,
+					"width": 245,
+					"height": 127,
+					"dataSourceTypeHint": "picture",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"pictureFormat": "proportionalCenter",
+					"dragging": "none"
+				},
+				"Image13": {
+					"type": "picture",
+					"top": 320,
+					"left": 102,
+					"width": 26,
+					"height": 21,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image13.png"
+				},
+				"Variable": {
+					"type": "input",
+					"top": 225,
+					"left": 0,
+					"width": 245,
+					"height": 16,
+					"dataSource": "<>vt_APropos",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Image15": {
+					"type": "picture",
+					"top": 320,
+					"left": 134,
+					"width": 21,
+					"height": 21,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image15.png"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {
+				"objects": [
+					"About_version",
+					"logo_paxtel",
+					"logo"
+				]
+			}
+		}
+	}
+}

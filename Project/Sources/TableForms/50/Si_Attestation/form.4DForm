@@ -1,0 +1,437 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 795,
+	"markerBreak": 795,
+	"markerFooter": 795,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 319,
+					"left": 9,
+					"width": 260,
+					"height": 67,
+					"fill": "transparent"
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 319,
+					"left": 289,
+					"width": 260,
+					"height": 67,
+					"fill": "transparent"
+				},
+				"Texte68": {
+					"type": "text",
+					"top": 93,
+					"left": 9,
+					"width": 531,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Demande type :  <va_SIAO_AT_Demande>"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 73,
+					"left": 9,
+					"width": 537,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_12g",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "Attestation de dépôt d'un dossier SIAO"
+				},
+				"Rectangle8": {
+					"type": "rectangle",
+					"top": 3,
+					"left": 9,
+					"width": 540,
+					"height": 64,
+					"fill": "transparent"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 110,
+					"left": 9,
+					"width": 531,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"text": "Demandeur : <va_SIAO_AT_Demandeur>"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 130,
+					"left": 9,
+					"width": 531,
+					"height": 42,
+					"stroke": "#000000",
+					"class": "TNR_09",
+					"text": "<vt_SIAO_AT_DemandeurSuite>"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 165,
+					"left": 9,
+					"width": 531,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Dossier SIAO : <vt_SIAO_AT_Dossier>"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 216,
+					"left": 9,
+					"width": 531,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Statut de la demande :  <va_SIAO_AT_Statut>"
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 182,
+					"left": 9,
+					"width": 531,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Logement ou hébergement souhaité :  <va_SIAO_AT_Souhait>  -  Logement actuel :  <va_SIAO_AT_Actuel>"
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 199,
+					"left": 9,
+					"width": 531,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Proposition SIAO :  <va_SIAO_AT_Proposition>  -  Proposition du professionnel :  <va_SIAO_AT_Professionnel>"
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 322,
+					"left": 12,
+					"width": 254,
+					"height": 70,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Nom et signature du référent :\r<vt_SIAO_AT_Referent>"
+				},
+				"Texte10": {
+					"type": "text",
+					"top": 322,
+					"left": 292,
+					"width": 254,
+					"height": 70,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Nom et signature du demandeur :\r<vt_SIAO_AT_DemSignature>"
+				},
+				"Texte11": {
+					"type": "text",
+					"top": 301,
+					"left": 289,
+					"width": 248,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Fait à <va_SIAO_AT_Ville> le "
+				},
+				"Texte12": {
+					"type": "text",
+					"top": 7,
+					"left": 12,
+					"width": 534,
+					"height": 17,
+					"stroke": "#000000",
+					"class": "TNR_14g",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "<va_SIAO_AT_Site>"
+				},
+				"Texte13": {
+					"type": "text",
+					"top": 28,
+					"left": 12,
+					"width": 534,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "<va_SIAO_AT_SiteAdresse> - <va_SIAO_AT_SiteCP>  <va_SIAO_AT_SiteVille>"
+				},
+				"Texte14": {
+					"type": "text",
+					"top": 48,
+					"left": 12,
+					"width": 534,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "center",
+					"text": "<va_SIAO_AT_SiteTel><va_SIAO_AT_SiteFax><va_SIAO_AT_SiteMail>"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 233,
+					"left": 9,
+					"width": 540,
+					"height": 64,
+					"fill": "transparent"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 235,
+					"left": 12,
+					"width": 534,
+					"height": 60,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Notes : <vt_SIAO_AT_Notes>"
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 727,
+					"left": 9,
+					"width": 260,
+					"height": 67,
+					"fill": "transparent"
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 727,
+					"left": 289,
+					"width": 260,
+					"height": 67,
+					"fill": "transparent"
+				},
+				"Texte15": {
+					"type": "text",
+					"top": 503,
+					"left": 9,
+					"width": 531,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Demande type :  <va_SIAO_AT_Demande>"
+				},
+				"Texte16": {
+					"type": "text",
+					"top": 483,
+					"left": 9,
+					"width": 537,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_12g",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "Attestation de dépôt d'un dossier SIAO"
+				},
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 413,
+					"left": 9,
+					"width": 540,
+					"height": 64,
+					"fill": "transparent"
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 520,
+					"left": 9,
+					"width": 531,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"text": "Demandeur : <va_SIAO_AT_Demandeur>"
+				},
+				"Texte18": {
+					"type": "text",
+					"top": 540,
+					"left": 9,
+					"width": 531,
+					"height": 42,
+					"stroke": "#000000",
+					"class": "TNR_09",
+					"text": "<vt_SIAO_AT_DemandeurSuite>"
+				},
+				"Texte19": {
+					"type": "text",
+					"top": 575,
+					"left": 9,
+					"width": 531,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Dossier SIAO : <vt_SIAO_AT_Dossier>"
+				},
+				"Texte20": {
+					"type": "text",
+					"top": 626,
+					"left": 9,
+					"width": 531,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Statut de la demande :  <va_SIAO_AT_Statut>"
+				},
+				"Texte23": {
+					"type": "text",
+					"top": 730,
+					"left": 12,
+					"width": 254,
+					"height": 70,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Nom et signature du référent :\r<vt_SIAO_AT_Referent>"
+				},
+				"Texte24": {
+					"type": "text",
+					"top": 730,
+					"left": 292,
+					"width": 254,
+					"height": 70,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Nom et signature du demandeur :\r<vt_SIAO_AT_DemSignature>"
+				},
+				"Texte25": {
+					"type": "text",
+					"top": 710,
+					"left": 289,
+					"width": 248,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Fait à <va_SIAO_AT_Ville> le "
+				},
+				"Texte26": {
+					"type": "text",
+					"top": 417,
+					"left": 12,
+					"width": 534,
+					"height": 17,
+					"stroke": "#000000",
+					"class": "TNR_14g",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "<va_SIAO_AT_Site>"
+				},
+				"Texte27": {
+					"type": "text",
+					"top": 438,
+					"left": 12,
+					"width": 534,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "<va_SIAO_AT_SiteAdresse> - <va_SIAO_AT_SiteCP>  <va_SIAO_AT_SiteVille>"
+				},
+				"Texte28": {
+					"type": "text",
+					"top": 458,
+					"left": 12,
+					"width": 534,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "center",
+					"text": "<va_SIAO_AT_SiteTel><va_SIAO_AT_SiteFax><va_SIAO_AT_SiteMail>"
+				},
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 643,
+					"left": 9,
+					"width": 540,
+					"height": 64,
+					"fill": "transparent"
+				},
+				"Texte29": {
+					"type": "text",
+					"top": 645,
+					"left": 12,
+					"width": 534,
+					"height": 60,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Notes : <vt_SIAO_AT_Notes>"
+				},
+				"Texte21": {
+					"type": "text",
+					"top": 592,
+					"left": 9,
+					"width": 531,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Logement ou hébergement souhaité :  <va_SIAO_AT_Souhait>  -  Logement actuel :  <va_SIAO_AT_Actuel>"
+				},
+				"Texte22": {
+					"type": "text",
+					"top": 609,
+					"left": 9,
+					"width": 531,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Proposition SIAO :  <va_SIAO_AT_Proposition>  -  Proposition du professionnel :  <va_SIAO_AT_Professionnel>"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

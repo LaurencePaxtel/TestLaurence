@@ -1,0 +1,1 @@
+QR REPORT:C197([HeBerge:4]; Char:C90(1))

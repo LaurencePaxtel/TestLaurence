@@ -1,0 +1,731 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onClick",
+		"onDataChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 1,
+					"width": 487,
+					"height": 369
+				}
+			}
+		},
+		{
+			"objects": {
+				"Rectangle17": {
+					"type": "rectangle",
+					"top": 90,
+					"left": 5,
+					"width": 468,
+					"height": 24,
+					"fill": "transparent",
+					"stroke": "#1E90FF"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 91,
+					"left": 356,
+					"width": 81,
+					"height": 22,
+					"fill": "#0D72B9",
+					"stroke": "transparent"
+				},
+				"Lum_3": {
+					"type": "rectangle",
+					"top": 213,
+					"left": 252,
+					"width": 91,
+					"height": 28,
+					"fill": "#F15A24",
+					"stroke": "#C0C0C0"
+				},
+				"HébergementN_Var1": {
+					"type": "input",
+					"top": 220,
+					"left": 259,
+					"width": 78,
+					"height": 14,
+					"dataSource": "<>va_M_HbNuit",
+					"stroke": "#FFFFFF",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"HébergementN_Bt": {
+					"type": "button",
+					"top": 215,
+					"left": 254,
+					"width": 87,
+					"height": 24,
+					"dataSource": "b_FSH_Ndif",
+					"display": false,
+					"method": "ObjectMethods/HébergementN_Bt.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable7": {
+					"type": "button",
+					"top": 333,
+					"left": 346,
+					"width": 127,
+					"height": 22,
+					"dataSource": "b_Annsel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"defaultButton": true,
+					"method": "ObjectMethods/Variable7.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 51,
+					"left": 179,
+					"width": 112,
+					"height": 22,
+					"stroke": "transparent"
+				},
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 51,
+					"left": 356,
+					"width": 81,
+					"height": 22,
+					"stroke": "#FFFFFF"
+				},
+				"Rectangle16": {
+					"type": "rectangle",
+					"top": 2,
+					"left": 3,
+					"width": 483,
+					"height": 27,
+					"fill": "transparent",
+					"stroke": "#999999"
+				},
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 55,
+					"left": 104,
+					"width": 73,
+					"height": 22,
+					"fill": "#0D72B9",
+					"stroke": "transparent"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 58,
+					"left": 108,
+					"width": 68,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date"
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 55,
+					"left": 292,
+					"width": 63,
+					"height": 22,
+					"fill": "#0D72B9",
+					"stroke": "transparent"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 58,
+					"left": 295,
+					"width": 58,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Heure"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 11,
+					"left": 168,
+					"width": 54,
+					"height": 22,
+					"stroke": "#1E90FF",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"text": ":30004,2"
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 11,
+					"left": 331,
+					"width": 37,
+					"height": 22,
+					"stroke": "#1E90FF",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"text": ":30004,3"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 11,
+					"left": 51,
+					"width": 130,
+					"height": 15,
+					"dataSource": "<>va_User",
+					"stroke": "#1E90FF",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 11,
+					"left": 209,
+					"width": 110,
+					"height": 15,
+					"dataSource": "<>va_ProfUser",
+					"stroke": "#1E90FF",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 11,
+					"left": 360,
+					"width": 106,
+					"height": 15,
+					"dataSource": "<>DDJ",
+					"dataSourceTypeHint": "date",
+					"stroke": "#1E90FF",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dateFormat": "systemMedium",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Main_User": {
+					"type": "text",
+					"top": 11,
+					"left": 7,
+					"width": 61,
+					"height": 22,
+					"stroke": "#1E90FF",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"text": ":30004,1"
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 55,
+					"left": 5,
+					"width": 99,
+					"height": 22,
+					"fill": "#0D72B9",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 58,
+					"left": 8,
+					"width": 94,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Serveur"
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 58,
+					"left": 184,
+					"width": 99,
+					"height": 16,
+					"dataSource": "<>vd_SD_Serveur",
+					"dataSourceTypeHint": "date",
+					"stroke": "#0D72B9",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dateFormat": "short",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 55,
+					"left": 361,
+					"width": 72,
+					"height": 16,
+					"dataSource": "<>vh_SD_Serveur",
+					"dataSourceTypeHint": "time",
+					"stroke": "#0D72B9",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"timeFormat": "hh_mm",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Rectangle9": {
+					"type": "rectangle",
+					"top": 91,
+					"left": 179,
+					"width": 112,
+					"height": 22,
+					"stroke": "transparent"
+				},
+				"heureDiff_3": {
+					"type": "rectangle",
+					"top": 91,
+					"left": 356,
+					"width": 81,
+					"height": 22,
+					"stroke": "transparent"
+				},
+				"Rectangle11": {
+					"type": "rectangle",
+					"top": 91,
+					"left": 104,
+					"width": 73,
+					"height": 22,
+					"fill": "#0D72B9",
+					"stroke": "transparent"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 95,
+					"left": 108,
+					"width": 68,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date"
+				},
+				"Rectangle12": {
+					"type": "rectangle",
+					"top": 91,
+					"left": 292,
+					"width": 65,
+					"height": 22,
+					"fill": "#0D72B9",
+					"stroke": "transparent"
+				},
+				"heureDiff_1": {
+					"type": "text",
+					"top": 94,
+					"left": 295,
+					"width": 58,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Heure"
+				},
+				"Rectangle13": {
+					"type": "rectangle",
+					"top": 91,
+					"left": 5,
+					"width": 98,
+					"height": 22,
+					"fill": "#0D72B9",
+					"stroke": "transparent"
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 94,
+					"left": 8,
+					"width": 94,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Poste"
+				},
+				"Variable6": {
+					"type": "input",
+					"top": 94,
+					"left": 184,
+					"width": 99,
+					"height": 16,
+					"dataSource": "<>vd_SD_Jour",
+					"dataSourceTypeHint": "date",
+					"stroke": "#FF6347",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dateFormat": "short",
+					"entryFilter": "!0&9##/##/####",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"heureDiff_2": {
+					"type": "input",
+					"top": 95,
+					"left": 361,
+					"width": 72,
+					"height": 16,
+					"dataSource": "<>vh_SD_Jour",
+					"dataSourceTypeHint": "time",
+					"stroke": "#FF6347",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"timeFormat": "hh_mm",
+					"entryFilter": "!0&9##:##",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Rectangle14": {
+					"type": "rectangle",
+					"top": 55,
+					"left": 438,
+					"width": 36,
+					"height": 22,
+					"fill": "#0D72B9",
+					"stroke": "transparent"
+				},
+				"Rectangle15": {
+					"type": "rectangle",
+					"top": 91,
+					"left": 436,
+					"width": 38,
+					"height": 22,
+					"fill": "#0D72B9",
+					"stroke": "transparent"
+				},
+				"Dispo_Bt": {
+					"type": "button",
+					"top": 158,
+					"left": 151,
+					"width": 192,
+					"height": 28,
+					"dataSource": "b_CE_Ddif",
+					"display": false,
+					"method": "ObjectMethods/Dispo_Bt.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Dispo_Texte1": {
+					"type": "text",
+					"top": 160,
+					"left": 151,
+					"width": 184,
+					"height": 22,
+					"stroke": "#0D72B9",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 18,
+					"text": "Disponibilités"
+				},
+				"HébergementJ_Texte1": {
+					"type": "text",
+					"top": 221,
+					"left": 156,
+					"width": 78,
+					"height": 22,
+					"stroke": "#1E90FF",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"text": "Jour"
+				},
+				"HébergementJ_Bt": {
+					"type": "button",
+					"top": 215,
+					"left": 151,
+					"width": 87,
+					"height": 24,
+					"dataSource": "b_FSH_Jdif",
+					"display": false,
+					"method": "ObjectMethods/HébergementJ_Bt.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Hébergement_Texte1": {
+					"type": "text",
+					"top": 221,
+					"left": 56,
+					"width": 84,
+					"height": 22,
+					"stroke": "#1E90FF",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"text": "Hébergement"
+				},
+				"MaraudeJ_Texte1": {
+					"type": "text",
+					"top": 277,
+					"left": 156,
+					"width": 78,
+					"height": 22,
+					"stroke": "#1E90FF",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"text": "Jour"
+				},
+				"MaraudeN_Texte1": {
+					"type": "text",
+					"top": 277,
+					"left": 259,
+					"width": 78,
+					"height": 22,
+					"stroke": "#1E90FF",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"text": "Nuit"
+				},
+				"MaraudeJ_Bt": {
+					"type": "button",
+					"top": 271,
+					"left": 151,
+					"width": 87,
+					"height": 24,
+					"dataSource": "b_MarJ",
+					"display": false,
+					"method": "ObjectMethods/MaraudeJ_Bt.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"MaraudeN_Bt": {
+					"type": "button",
+					"top": 271,
+					"left": 254,
+					"width": 87,
+					"height": 24,
+					"dataSource": "b_MarN",
+					"display": false,
+					"method": "ObjectMethods/MaraudeN_Bt.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Maraude_Texte1": {
+					"type": "text",
+					"top": 277,
+					"left": 56,
+					"width": 84,
+					"height": 22,
+					"stroke": "#1E90FF",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"text": "Maraude"
+				},
+				"Zone de groupe1": {
+					"type": "groupBox",
+					"top": 149,
+					"left": 349,
+					"width": 124,
+					"height": 44,
+					"stroke": "#FF6600",
+					"class": "TNR_12g",
+					"text": ":30004,60"
+				},
+				"Variable9": {
+					"type": "input",
+					"top": 168,
+					"left": 360,
+					"width": 107,
+					"height": 15,
+					"dataSource": "<>Va_CentreCtrl",
+					"stroke": "#0D72B9",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"fill": "#FFFFFF",
+					"borderStyle": "solid",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Rectangle8": {
+					"type": "rectangle",
+					"top": 55,
+					"left": 5,
+					"width": 468,
+					"height": 22,
+					"fill": "transparent",
+					"stroke": "#0D72B9"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

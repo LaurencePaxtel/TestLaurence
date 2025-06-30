@@ -1,0 +1,324 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 342,
+					"height": 271,
+					"fill": "transparent"
+				},
+				"Rectangle93": {
+					"type": "rectangle",
+					"top": 7,
+					"left": 7,
+					"width": 338,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte646": {
+					"type": "text",
+					"top": 10,
+					"left": 10,
+					"width": 333,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Identité"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 29,
+					"left": 7,
+					"width": 339
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 329,
+					"left": 6,
+					"width": 339
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 50,
+					"left": 12,
+					"width": 66,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Nom :"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 78,
+					"left": 12,
+					"width": 66,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Prénom :"
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 133,
+					"left": 12,
+					"width": 66,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Age :"
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 106,
+					"left": 12,
+					"width": 66,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Né(e) le :"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 51,
+					"left": 85,
+					"width": 247,
+					"height": 15,
+					"dataSource": "va_IDT_Nom",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable1.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 79,
+					"left": 85,
+					"width": 247,
+					"height": 15,
+					"dataSource": "va_IDT_Pré",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable2.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 134,
+					"left": 85,
+					"width": 64,
+					"height": 15,
+					"dataSource": "ve_IDT_Age",
+					"dataSourceTypeHint": "number",
+					"stroke": "#0000FF",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "##0 An(s)",
+					"entryFilter": "&9",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable9": {
+					"type": "input",
+					"top": 107,
+					"left": 85,
+					"width": 64,
+					"height": 15,
+					"dataSource": "vd_IDT_NéLe",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"entryFilter": "!0&9##/##/####",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable9.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 279,
+					"left": 5,
+					"width": 342,
+					"height": 46,
+					"fill": "transparent"
+				},
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 281,
+					"left": 7,
+					"width": 338,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte11": {
+					"type": "text",
+					"top": 284,
+					"left": 10,
+					"width": 333,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Clé"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 303,
+					"left": 7,
+					"width": 337
+				},
+				"Variable8": {
+					"type": "input",
+					"top": 306,
+					"left": 8,
+					"width": 335,
+					"height": 15,
+					"dataSource": "va_IDT_Clé",
+					"stroke": "#0000FF",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"AnnulerET_Bt": {
+					"type": "button",
+					"top": 335,
+					"left": 239,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_AnnET",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Annuler",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					]
+				},
+				"ValiderET_Bt": {
+					"type": "button",
+					"top": 335,
+					"left": 121,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_ValET",
+					"shortcutKey": "[Enter]",
+					"text": "Valider",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/ValiderET_Bt.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	]
+}

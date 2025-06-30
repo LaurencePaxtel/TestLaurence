@@ -1,0 +1,196 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 342,
+					"height": 221,
+					"fill": "transparent"
+				},
+				"Rectangle93": {
+					"type": "rectangle",
+					"top": 7,
+					"left": 7,
+					"width": 338,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte646": {
+					"type": "text",
+					"top": 10,
+					"left": 10,
+					"width": 333,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Choix d'export"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 29,
+					"left": 7,
+					"width": 337
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 190,
+					"left": 16,
+					"width": 319
+				},
+				"Variable38": {
+					"type": "radio",
+					"top": 49,
+					"left": 26,
+					"width": 230,
+					"height": 15,
+					"dataSource": "E1",
+					"text": "Jour",
+					"class": "TNR_12",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Variable39": {
+					"type": "radio",
+					"top": 76,
+					"left": 26,
+					"width": 230,
+					"height": 15,
+					"dataSource": "e2",
+					"text": "Nuit",
+					"class": "TNR_12",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Variable42": {
+					"type": "radio",
+					"top": 103,
+					"left": 26,
+					"width": 230,
+					"height": 15,
+					"dataSource": "e3",
+					"text": "Jour et nuit",
+					"class": "TNR_12",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Variable43": {
+					"type": "radio",
+					"top": 130,
+					"left": 26,
+					"width": 230,
+					"height": 15,
+					"dataSource": "e4",
+					"text": "Total seul",
+					"class": "TNR_12",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Variable44": {
+					"type": "radio",
+					"top": 156,
+					"left": 26,
+					"width": 230,
+					"height": 15,
+					"dataSource": "e5",
+					"text": "Jour et nuit et total",
+					"class": "TNR_12",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 197,
+					"left": 230,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_AnnET",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Fermer",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	]
+}

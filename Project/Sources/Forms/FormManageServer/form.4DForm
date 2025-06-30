@@ -1,0 +1,154 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 0,
+	"bottomMargin": 20,
+	"events": [
+		"onLoad",
+		"onClick"
+	],
+	"windowTitle": "Formulaire administration 4D Serveur",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 595,
+					"height": 54,
+					"fill": "#444444",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 17,
+					"left": 12,
+					"width": 400,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"fontFamily": "Arial",
+					"fontSize": 18,
+					"text": "Paramétrage 4D Serveur"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Variable": {
+					"type": "input",
+					"top": 70,
+					"left": 145,
+					"width": 200,
+					"height": 16,
+					"dataSource": "Form:C1466.portNumber4D",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"dataSourceTypeHint": "number",
+					"textAlign": "right"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 70,
+					"left": 10,
+					"width": 115,
+					"height": 16,
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Numéro du port 4D"
+				},
+				"Ligne": {
+					"type": "line",
+					"top": 86,
+					"left": 145,
+					"width": 200,
+					"stroke": "#CCCCCC"
+				},
+				"Image1": {
+					"type": "picture",
+					"top": 118,
+					"left": 512,
+					"width": 60,
+					"height": 60,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image1.png"
+				},
+				"Bouton invisible": {
+					"type": "button",
+					"top": 118,
+					"left": 512,
+					"width": 60,
+					"height": 60,
+					"sizingX": "move",
+					"display": false,
+					"method": "ObjectMethods/Bouton invisible.4dm",
+					"events": [
+						"onClick",
+						"onMouseMove"
+					]
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 98,
+					"left": 145,
+					"width": 200,
+					"height": 16,
+					"dataSource": "Form:C1466.portNumberWeb",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"dataSourceTypeHint": "number",
+					"textAlign": "right"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 98,
+					"left": 10,
+					"width": 115,
+					"height": 16,
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Numéro du port web"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 114,
+					"left": 145,
+					"width": 200,
+					"stroke": "#CCCCCC"
+				}
+			}
+		}
+	],
+	"geometryStamp": 23,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	},
+	"method": "method.4dm"
+}

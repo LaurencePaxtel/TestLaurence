@@ -1,0 +1,709 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 793,
+	"markerBreak": 793,
+	"markerFooter": 793,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Variable2": {
+					"type": "input",
+					"top": 606,
+					"left": 13,
+					"width": 538,
+					"height": 150,
+					"dataSource": "vt_Ss_PRn_Note2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Rectangle8": {
+					"type": "rectangle",
+					"top": 3,
+					"left": 9,
+					"width": 540,
+					"height": 64,
+					"fill": "transparent"
+				},
+				"Texte12": {
+					"type": "text",
+					"top": 7,
+					"left": 12,
+					"width": 534,
+					"height": 17,
+					"stroke": "#000000",
+					"class": "TNR_14g",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "<va_SIAO_AT_Site>"
+				},
+				"Texte13": {
+					"type": "text",
+					"top": 28,
+					"left": 12,
+					"width": 534,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "<va_SIAO_AT_SiteAdresse> - <va_SIAO_AT_SiteCP>  <va_SIAO_AT_SiteVille>"
+				},
+				"Texte14": {
+					"type": "text",
+					"top": 48,
+					"left": 12,
+					"width": 534,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "center",
+					"text": "<va_SIAO_AT_SiteTel><va_SIAO_AT_SiteFax><va_SIAO_AT_SiteMail>"
+				},
+				"Champ4": {
+					"type": "input",
+					"top": 76,
+					"left": 76,
+					"width": 130,
+					"height": 15,
+					"dataSource": "[SIAO:50]Si_Demande_Numero:3",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 76,
+					"left": 245,
+					"width": 95,
+					"height": 15,
+					"dataSource": "[SIAO:50]Si_Demande_Date:2",
+					"dataSourceTypeHint": "date",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"entryFilter": "!0&9##/##/####",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Texte37": {
+					"type": "text",
+					"top": 76,
+					"left": 8,
+					"width": 58,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Fiche n°"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 76,
+					"left": 212,
+					"width": 58,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Date :"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 92,
+					"left": 8,
+					"width": 58,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"text": "Demandeur"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 76,
+					"left": 62,
+					"width": 12,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "center",
+					"text": " :"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 92,
+					"left": 62,
+					"width": 12,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "center",
+					"text": " :"
+				},
+				"Texte47": {
+					"type": "text",
+					"top": 118,
+					"left": 7,
+					"width": 384,
+					"height": 17,
+					"stroke": "#000000",
+					"class": "TNR_14g",
+					"fontWeight": "bold",
+					"text": "Préconisation du professionnel"
+				},
+				"Texte41": {
+					"type": "text",
+					"top": 340,
+					"left": 30,
+					"width": 189,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Type d'accompagnement préconisé"
+				},
+				"Texte24": {
+					"type": "text",
+					"top": 150,
+					"left": 30,
+					"width": 189,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Besoin d'accompagnement"
+				},
+				"Variable12": {
+					"type": "input",
+					"top": 168,
+					"left": 31,
+					"width": 193,
+					"height": 16,
+					"dataSource": "va_Ss_PRa_Intitule1",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable15": {
+					"type": "input",
+					"top": 193,
+					"left": 31,
+					"width": 193,
+					"height": 16,
+					"dataSource": "va_Ss_PRa_Intitule2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable50": {
+					"type": "input",
+					"top": 218,
+					"left": 31,
+					"width": 193,
+					"height": 16,
+					"dataSource": "va_Ss_PRa_Intitule3",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable53": {
+					"type": "input",
+					"top": 243,
+					"left": 31,
+					"width": 193,
+					"height": 16,
+					"dataSource": "va_Ss_PRa_Intitule4",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable57": {
+					"type": "input",
+					"top": 288,
+					"left": 31,
+					"width": 193,
+					"height": 16,
+					"dataSource": "va_Ss_PRb_Intitule1",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Variable58": {
+					"type": "input",
+					"top": 313,
+					"left": 31,
+					"width": 193,
+					"height": 16,
+					"dataSource": "va_Ss_PRb_Intitule2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Variable51": {
+					"type": "input",
+					"top": 358,
+					"left": 31,
+					"width": 193,
+					"height": 16,
+					"dataSource": "va_Ss_PRc_Intitule1",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable52": {
+					"type": "input",
+					"top": 383,
+					"left": 31,
+					"width": 193,
+					"height": 16,
+					"dataSource": "va_Ss_PRc_Intitule2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable54": {
+					"type": "input",
+					"top": 408,
+					"left": 31,
+					"width": 193,
+					"height": 16,
+					"dataSource": "va_Ss_PRc_Intitule3",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable84": {
+					"type": "input",
+					"top": 168,
+					"left": 231,
+					"width": 263,
+					"height": 16,
+					"dataSource": "va_Ss_PRa_Intitule1_2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable56": {
+					"type": "input",
+					"top": 408,
+					"left": 231,
+					"width": 263,
+					"height": 16,
+					"dataSource": "va_Ss_PRc_Intitule3_2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Texte42": {
+					"type": "text",
+					"top": 270,
+					"left": 30,
+					"width": 189,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Logement adapté"
+				},
+				"Variable85": {
+					"type": "input",
+					"top": 193,
+					"left": 231,
+					"width": 263,
+					"height": 16,
+					"dataSource": "va_Ss_PRa_Intitule2_2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable86": {
+					"type": "input",
+					"top": 218,
+					"left": 231,
+					"width": 263,
+					"height": 16,
+					"dataSource": "va_Ss_PRa_Intitule3_2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable87": {
+					"type": "input",
+					"top": 243,
+					"left": 231,
+					"width": 263,
+					"height": 16,
+					"dataSource": "va_Ss_PRa_Intitule4_2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable88": {
+					"type": "input",
+					"top": 288,
+					"left": 231,
+					"width": 263,
+					"height": 16,
+					"dataSource": "va_Ss_PRb_Intitule1_2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Variable89": {
+					"type": "input",
+					"top": 313,
+					"left": 231,
+					"width": 263,
+					"height": 16,
+					"dataSource": "va_Ss_PRb_Intitule2_2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Variable90": {
+					"type": "input",
+					"top": 358,
+					"left": 231,
+					"width": 263,
+					"height": 16,
+					"dataSource": "va_Ss_PRc_Intitule1_2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable91": {
+					"type": "input",
+					"top": 383,
+					"left": 231,
+					"width": 263,
+					"height": 16,
+					"dataSource": "va_Ss_PRc_Intitule2_2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 588,
+					"left": 9,
+					"width": 206,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"text": "Argumentaires (parcours-besoins)"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 461,
+					"left": 13,
+					"width": 538,
+					"height": 120,
+					"dataSource": "vt_Ss_PRn_Note1",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 443,
+					"left": 9,
+					"width": 206,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"text": "Autres intervenants"
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 779,
+					"left": 222,
+					"width": 112,
+					"height": 14,
+					"dataSource": "va_Page",
+					"stroke": "#000000",
+					"class": "Stat_Titre1",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 92,
+					"left": 76,
+					"width": 466,
+					"height": 17,
+					"dataSource": "[SIAO:50]Si_Demandeur:20",
+					"stroke": "#000000",
+					"class": "TNR_14g",
+					"fontWeight": "bold",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"entryFilter": "!0&9##/##/####",
+					"dragging": "none",
+					"dropping": "none"
+				}
+			},
+			"entryOrder": [
+				"Variable2",
+				"Variable57",
+				"Variable58",
+				"Variable88",
+				"Variable89",
+				"Variable1",
+				"Variable4"
+			]
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

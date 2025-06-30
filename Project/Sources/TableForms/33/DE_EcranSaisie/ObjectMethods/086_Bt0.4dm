@@ -1,0 +1,1 @@
+Tab_PopRub3(->[DossierSante:33]DE_FicheNuméro:3; <>ta_RdsNomNew{<>vlSTR_DE-<>vlSTR}{94}; ->[DossierSante:33]DE_Antécédan1_1:86; ->[DossierSante:33]DE_Antécédan1_2:87; ->[DossierSante:33]DE_Antécédan2_1:88; ->[DossierSante:33]DE_Antécédan2_2:89; ->[DossierSante:33]DE_Antécédan3_1:90; ->[DossierSante:33]DE_Antécédan3_2:91)

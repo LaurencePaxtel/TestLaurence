@@ -1,0 +1,197 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 20,
+	"markerBreak": 20,
+	"markerFooter": 20,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 1205,
+					"height": 24,
+					"stroke": "#FFFFFF"
+				},
+				"Champ24": {
+					"type": "input",
+					"top": 1,
+					"left": 428,
+					"width": 108,
+					"height": 15,
+					"dataSource": "[HeberGement:5]HG_Date:4",
+					"dataSourceTypeHint": "date",
+					"stroke": "#0D72B9",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 2,
+					"left": 3,
+					"width": 422,
+					"height": 16,
+					"dataSource": "va_NomClé",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ41": {
+					"type": "input",
+					"top": 1,
+					"left": 541,
+					"width": 408,
+					"height": 15,
+					"dataSource": "[HeberGement:5]HG_CentreNom:62",
+					"stroke": "#0D72B9",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne40": {
+					"type": "line",
+					"top": 0,
+					"left": 426,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne45": {
+					"type": "line",
+					"top": 0,
+					"left": 950,
+					"height": 21,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne33": {
+					"type": "line",
+					"top": 19,
+					"left": 0,
+					"width": 1204,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 0,
+					"left": 539,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 1,
+					"left": 952,
+					"width": 209,
+					"height": 16,
+					"dataSource": "[HeberGement:5]HG_Permanencier:9",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne8": {
+					"type": "line",
+					"top": 0,
+					"left": 1162,
+					"height": 21,
+					"stroke": "#AAAAAA"
+				},
+				"nr": {
+					"type": "input",
+					"top": 2,
+					"left": 1165,
+					"width": 40,
+					"height": 15,
+					"dataSource": "vl_NombreNR",
+					"dataSourceTypeHint": "number",
+					"stroke": "#EE0000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "###,##0.00",
+					"dragging": "none",
+					"dropping": "none"
+				}
+			}
+		}
+	]
+}

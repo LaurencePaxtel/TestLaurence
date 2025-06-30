@@ -1,0 +1,151 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 539,
+					"height": 391,
+					"stroke": "#DDDDDD"
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 44,
+					"left": 53,
+					"width": 408,
+					"height": 199,
+					"fill": "automatic",
+					"stroke": "#FFFFFF"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 43,
+					"left": 52,
+					"width": 408,
+					"height": 199,
+					"fill": "transparent",
+					"stroke": "#444444"
+				},
+				"Image2": {
+					"type": "picture",
+					"top": 10,
+					"left": 10,
+					"width": 32,
+					"height": 32,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image2.png"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 54,
+					"left": 63,
+					"width": 384,
+					"height": 176,
+					"dataSource": "vt_CNIL",
+					"stroke": "#EE0000",
+					"class": "TNR_14",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable18": {
+					"type": "button",
+					"top": 251,
+					"left": 225,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_OKCNIL",
+					"action": "accept",
+					"shortcutKey": "[Enter]",
+					"text": "Accepter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 251,
+					"left": 353,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_AnnCNIL",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Annuler",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 15,
+					"left": 54,
+					"width": 384,
+					"height": 14,
+					"dataSource": "vt_CNILtitre",
+					"class": "TNR_12g",
+					"fontWeight": "bold",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				}
+			}
+		}
+	]
+}

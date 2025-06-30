@@ -1,0 +1,1 @@
+Form:C1466.applicationMobileProchainExport:="Le "+outilsTimeStampRead("date"; Num:C11([SOciete:18]SO_SynchroApplicationMobile:138.lastTimeStampExport))+" à "+outilsTimeStampRead("heure"; Num:C11([SOciete:18]SO_SynchroApplicationMobile:138.lastTimeStampExport))

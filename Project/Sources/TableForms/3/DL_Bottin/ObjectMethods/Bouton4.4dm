@@ -1,0 +1,1 @@
+P_Bottin(1; <>Va_AdUtil; ->vl_Adresse_Fiches; ->vl_Situation_Items; ->vt_Adresse_Chemin; False:C215)

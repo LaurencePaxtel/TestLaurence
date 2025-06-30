@@ -1,0 +1,488 @@
+{
+	"destination": "detailScreen",
+	"memorizeGeometry": true,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onDrop",
+		"onPluginArea",
+		"onDataChange",
+		"onUnload",
+		"onAfterKeystroke"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Zone de groupe1": {
+					"type": "groupBox",
+					"top": 507,
+					"left": 18,
+					"width": 584,
+					"height": 56,
+					"text": "Export du planning"
+				},
+				"Zone de groupe": {
+					"type": "groupBox",
+					"top": 13,
+					"left": 18,
+					"width": 232,
+					"height": 64,
+					"sizingY": "move",
+					"text": "Droits"
+				},
+				"lb_usagers": {
+					"type": "listbox",
+					"top": 135,
+					"left": 20,
+					"width": 398,
+					"height": 342,
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"sortable": false,
+					"movableRows": false,
+					"dragging": "custom",
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"rowControlSource": "rL_LB_LigneControle",
+					"showHeaders": false,
+					"scrollbarHorizontal": "automatic",
+					"scrollbarVertical": "automatic",
+					"fill": "#DA70D6",
+					"alternateFill": "#DDA0DD",
+					"method": "ObjectMethods/lb_usagers.4dm",
+					"events": [
+						"onDoubleClick",
+						"onHeaderClick"
+					],
+					"columns": [
+						{
+							"name": "cle",
+							"dataSourceTypeHint": "number",
+							"width": 213,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#DA70D6",
+							"alternateFill": "#DDA0DD",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "button_cle",
+								"text": "Clé",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "#DA70D6",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "nom",
+							"width": 104,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#DA70D6",
+							"alternateFill": "#DDA0DD",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "button_usager",
+								"text": "Nom",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied2",
+								"stroke": "automatic",
+								"fill": "#DA70D6",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "pk",
+							"dataSourceTypeHint": "number",
+							"width": 97,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"visibility": "hidden",
+							"stroke": "automatic",
+							"fill": "#DA70D6",
+							"alternateFill": "#DDA0DD",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "button_pk",
+								"text": "Clé primaire",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied3",
+								"stroke": "automatic",
+								"fill": "#DA70D6",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				},
+				"pop_permanencier": {
+					"type": "dropdown",
+					"top": 20,
+					"left": 263,
+					"width": 153,
+					"height": 25,
+					"focusable": false,
+					"method": "ObjectMethods/pop_permanencier.4dm",
+					"events": [
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"button_quitter": {
+					"type": "button",
+					"top": 538,
+					"left": 1342,
+					"width": 69,
+					"height": 25,
+					"sizingX": "move",
+					"sizingY": "move",
+					"action": "accept",
+					"text": "Quitter",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Rectangle rond": {
+					"type": "rectangle",
+					"top": 105,
+					"left": 16,
+					"width": 263,
+					"height": 22,
+					"stroke": "#696969",
+					"borderRadius": 10
+				},
+				"input": {
+					"type": "input",
+					"top": 108,
+					"left": 29,
+					"width": 238,
+					"height": 16,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"multiline": "no",
+					"placeholder": "Filtre sur le nom de l'usager",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/input.4dm",
+					"events": [
+						"onLoad",
+						"onAfterKeystroke"
+					]
+				},
+				"current_user": {
+					"type": "input",
+					"top": 32,
+					"left": 53,
+					"width": 190,
+					"height": 16,
+					"dataSource": "Utilisateur courant:C182",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"count_usager": {
+					"type": "input",
+					"top": 111,
+					"left": 295,
+					"width": 121,
+					"height": 16,
+					"stroke": "#C0C0C0",
+					"textAlign": "right",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dragging": "custom",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"hmCal": {
+					"type": "plugin",
+					"top": 20,
+					"left": 429,
+					"width": 760,
+					"height": 459,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"pluginAreaKind": "_hmCal",
+					"dropping": "automatic",
+					"borderStyle": "none",
+					"method": "ObjectMethods/hmCal.4dm",
+					"events": [
+						"onDrop",
+						"onPluginArea"
+					]
+				},
+				"list_vues": {
+					"type": "dropdown",
+					"top": 487,
+					"left": 936,
+					"width": 203,
+					"height": 25,
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSourceTypeHint": "integer",
+					"method": "ObjectMethods/list_vues.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange",
+						"onUnload"
+					]
+				},
+				"button_month_forward": {
+					"type": "pictureButton",
+					"top": 490,
+					"left": 1310,
+					"width": 19,
+					"height": 19,
+					"sizingX": "move",
+					"rowCount": 4,
+					"picture": "/RESOURCES/img/buttons/FF.png",
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"method": "ObjectMethods/button_month_forward.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"button_month_backward": {
+					"type": "pictureButton",
+					"top": 490,
+					"left": 1288,
+					"width": 19,
+					"height": 19,
+					"sizingX": "move",
+					"rowCount": 4,
+					"picture": "/RESOURCES/img/Buttons/REW.png",
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"method": "ObjectMethods/button_month_backward.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton image6": {
+					"type": "pictureButton",
+					"top": 31,
+					"left": 24,
+					"width": 19,
+					"height": 19,
+					"rowCount": 4,
+					"picture": "/RESOURCES/img/buttons/User.png",
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"hmCalmini": {
+					"type": "plugin",
+					"top": 20,
+					"left": 1203,
+					"width": 208,
+					"height": 459,
+					"sizingX": "move",
+					"pluginAreaKind": "_hmCalMini",
+					"borderStyle": "none",
+					"method": "ObjectMethods/hmCalmini.4dm",
+					"events": [
+						"onPluginArea"
+					]
+				},
+				"button_pasteboard": {
+					"type": "pictureButton",
+					"top": 490,
+					"left": 1170,
+					"width": 19,
+					"height": 19,
+					"sizingX": "move",
+					"sizingY": "move",
+					"rowCount": 4,
+					"picture": "/RESOURCES/img/Buttons/Bookmark.png",
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"method": "ObjectMethods/button_pasteboard.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"pop_permanencier_pk": {
+					"type": "dropdown",
+					"top": 5,
+					"left": 263,
+					"width": 139,
+					"height": 9,
+					"dataSourceTypeHint": "arrayNumber",
+					"focusable": false,
+					"display": false,
+					"events": [
+						"onDataChange"
+					]
+				},
+				"bcoche_modification": {
+					"type": "checkbox",
+					"top": 53,
+					"left": 88,
+					"width": 92,
+					"height": 22,
+					"sizingY": "move",
+					"text": "Modifications",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"bcoche_ajout": {
+					"type": "checkbox",
+					"top": 53,
+					"left": 23,
+					"width": 64,
+					"height": 22,
+					"sizingY": "move",
+					"text": "Ajouts",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"button_raz": {
+					"type": "pictureButton",
+					"top": 480,
+					"left": 18,
+					"width": 19,
+					"height": 19,
+					"sizingY": "move",
+					"rowCount": 4,
+					"picture": "/RESOURCES/img/Buttons/Sync.png",
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"method": "ObjectMethods/button_raz.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"bcoche_elargi": {
+					"type": "checkbox",
+					"top": 53,
+					"left": 195,
+					"width": 59,
+					"height": 22,
+					"sizingY": "move",
+					"text": "Elargis",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"button_export": {
+					"type": "button",
+					"top": 530,
+					"left": 510,
+					"width": 80,
+					"height": 20,
+					"text": "Exporter",
+					"focusable": false,
+					"method": "ObjectMethods/button_export.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"pop_filtre_export": {
+					"type": "dropdown",
+					"top": 528,
+					"left": 187,
+					"width": 314,
+					"height": 24,
+					"dataSourceTypeHint": "integer",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Date_start_export": {
+					"type": "input",
+					"top": 532,
+					"left": 31,
+					"width": 68,
+					"height": 16,
+					"dataSourceTypeHint": "date",
+					"textAlign": "center",
+					"contextMenu": "none",
+					"entryFilter": "!0&9##/##/##",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Date_end_export": {
+					"type": "input",
+					"top": 532,
+					"left": 109,
+					"width": 68,
+					"height": 16,
+					"dataSourceTypeHint": "date",
+					"textAlign": "center",
+					"contextMenu": "none",
+					"entryFilter": "!0&9##/##/##",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		}
+	]
+}

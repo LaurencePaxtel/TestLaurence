@@ -1,0 +1,161 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerBody": 20,
+	"markerBreak": 20,
+	"markerFooter": 20,
+	"events": [
+		"onClick",
+		"onDisplayDetail"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 473,
+					"height": 21,
+					"stroke": "#FFFFFF"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 0,
+					"left": 416,
+					"width": 53,
+					"height": 16,
+					"dataSource": "vl_NbHGib",
+					"dataSourceTypeHint": "number",
+					"stroke": "#0000FF",
+					"textAlign": "right",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "### ### ##0;;",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDisplayDetail"
+					]
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 0,
+					"left": -1,
+					"width": 326,
+					"height": 16,
+					"dataSource": "[HeBerge:4]HB_Clé:2",
+					"stroke": "#000000",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 0,
+					"left": 328,
+					"width": 25,
+					"height": 16,
+					"dataSource": "ve_NbSP",
+					"stroke": "#EE0000",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"textFormat": "X;;",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail"
+					]
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 1,
+					"left": 357,
+					"width": 53,
+					"height": 16,
+					"dataSource": "vl_NbHGi",
+					"dataSourceTypeHint": "number",
+					"stroke": "#663300",
+					"textAlign": "right",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "### ### ##0;;",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDisplayDetail"
+					]
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 18,
+					"left": 0,
+					"width": 473,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 0,
+					"left": 414,
+					"height": 22,
+					"stroke": "#DDDDDD"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 0,
+					"left": 326,
+					"height": 22,
+					"stroke": "#DDDDDD"
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 0,
+					"left": 354,
+					"height": 22,
+					"stroke": "#DDDDDD"
+				}
+			}
+		}
+	]
+}

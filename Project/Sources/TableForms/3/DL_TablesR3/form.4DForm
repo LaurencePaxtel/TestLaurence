@@ -1,0 +1,328 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 502,
+					"height": 95,
+					"fill": "transparent"
+				},
+				"Bouton 3D1": {
+					"type": "button",
+					"top": 109,
+					"left": 399,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_AnnPT2",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					]
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 104,
+					"left": 6,
+					"width": 500
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 29,
+					"left": 7,
+					"width": 498
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 7,
+					"left": 7,
+					"width": 498,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 10,
+					"left": 10,
+					"width": 491,
+					"height": 16,
+					"dataSource": "va_Titre",
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 502,
+					"height": 95,
+					"fill": "transparent"
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 104,
+					"left": 6,
+					"width": 500
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 35,
+					"left": 12,
+					"width": 488,
+					"height": 20,
+					"fill": "#DDDDDD",
+					"strokeDashArray": "1 1"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 35,
+					"left": 257,
+					"height": 19,
+					"strokeDashArray": "1 1"
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 54,
+					"left": 12,
+					"width": 488,
+					"height": 20,
+					"fill": "#DDDDDD",
+					"strokeDashArray": "1 1"
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 54,
+					"left": 257,
+					"height": 19,
+					"strokeDashArray": "1 1"
+				},
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 73,
+					"left": 12,
+					"width": 488,
+					"height": 20,
+					"fill": "#DDDDDD",
+					"strokeDashArray": "1 1"
+				},
+				"Ligne8": {
+					"type": "line",
+					"top": 73,
+					"left": 257,
+					"height": 19,
+					"strokeDashArray": "1 1"
+				},
+				"Variable8": {
+					"type": "input",
+					"top": 37,
+					"left": 14,
+					"width": 237,
+					"height": 16,
+					"dataSource": "va_Lib_1_1",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#DDDDDD",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Variable9": {
+					"type": "input",
+					"top": 37,
+					"left": 264,
+					"width": 234,
+					"height": 16,
+					"dataSource": "va_Lib_1_2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#DDDDDD",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Variable10": {
+					"type": "input",
+					"top": 56,
+					"left": 14,
+					"width": 237,
+					"height": 16,
+					"dataSource": "va_Lib_2_1",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#DDDDDD",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Variable11": {
+					"type": "input",
+					"top": 56,
+					"left": 264,
+					"width": 234,
+					"height": 16,
+					"dataSource": "va_Lib_2_2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#DDDDDD",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Variable12": {
+					"type": "input",
+					"top": 75,
+					"left": 14,
+					"width": 237,
+					"height": 16,
+					"dataSource": "va_Lib_3_1",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#DDDDDD",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Variable13": {
+					"type": "input",
+					"top": 75,
+					"left": 264,
+					"width": 234,
+					"height": 16,
+					"dataSource": "va_Lib_3_2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#DDDDDD",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"geometryStamp": 2,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

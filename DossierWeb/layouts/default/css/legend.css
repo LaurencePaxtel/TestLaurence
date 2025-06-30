@@ -1,0 +1,40 @@
+
+			/*	body {
+					margin: 3% 12%; /* just decorative margins
+					}  */
+					
+				fieldset {
+					position: relative; /* so we can position inside it */
+					padding: 20px; /* just for taste */
+					margin-bottom: 2.0em; /* for some breathing room */
+					}
+					
+				legend {
+					font-weight: bold; /* so it can be identified easier */
+					}
+					
+				/*label {
+					font-size: 80%;
+					}*/
+					
+				fieldset.a {
+					padding-top: 40px; /* make space for our enclosed legend */
+					}
+					
+				.a legend {
+					float: left; /* get the element out of the way of the fieldset's border */
+					}
+					
+				.a legend span {
+					position: absolute; /* position it in the fieldset */
+					top: 10px;
+					left: 20px;
+					}   
+					
+				@-moz-document url-prefix() {
+						.a legend span {
+						top: -30px !important;
+						left: 0 !important;
+						}
+
+

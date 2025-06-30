@@ -1,0 +1,215 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Variable1": {
+					"type": "button",
+					"top": 430,
+					"left": 327,
+					"width": 127,
+					"height": 22,
+					"dataSource": "b_ValHB",
+					"shortcutKey": "[Enter]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable1.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton2": {
+					"type": "button",
+					"top": 430,
+					"left": 187,
+					"width": 127,
+					"height": 22,
+					"dataSource": "b_P11",
+					"text": "Imprimer",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton2.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton1": {
+					"type": "button",
+					"top": 430,
+					"left": 5,
+					"width": 168,
+					"height": 22,
+					"dataSource": "b_P10",
+					"text": "Date - Heure - Utilisateur",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton1.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 466,
+					"height": 417,
+					"fill": "transparent",
+					"stroke": "#696969"
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 6,
+					"left": 7,
+					"width": 60,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 9,
+					"left": 10,
+					"width": 55,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "MEMO",
+					"fontFamily": "Arial"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 6,
+					"left": 68,
+					"width": 402,
+					"height": 24,
+					"fill": "#4BAABA",
+					"stroke": "#FFDFFF"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 9,
+					"left": 69,
+					"width": 116,
+					"height": 16,
+					"dataSource": "[MemO:30]MO_Date:2",
+					"dataSourceTypeHint": "date",
+					"stroke": "#FFFFFF",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 30,
+					"left": 7,
+					"width": 446,
+					"height": 390,
+					"dataSource": "[MemO:30]MO_Note:5",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"scrollbarVertical": "visible",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				}
+			}
+		},
+		null
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 51
+}

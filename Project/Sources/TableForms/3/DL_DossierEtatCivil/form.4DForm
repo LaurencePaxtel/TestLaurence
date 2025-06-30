@@ -1,0 +1,929 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Bouton1": {
+					"type": "button",
+					"top": 649,
+					"left": 78,
+					"width": 50,
+					"height": 21,
+					"dataSource": "b_fHaut",
+					"shortcutKey": "[up arrow]",
+					"text": "Haut",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton1.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton37": {
+					"type": "button",
+					"top": 680,
+					"left": 77,
+					"width": 50,
+					"height": 21,
+					"dataSource": "b_fBas",
+					"shortcutKey": "[down arrow]",
+					"text": "Bas",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton37.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton38": {
+					"type": "button",
+					"top": 662,
+					"left": 133,
+					"width": 50,
+					"height": 21,
+					"dataSource": "b_fDroit",
+					"shortcutKey": "[right arrow]",
+					"text": "Droit",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton38.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton39": {
+					"type": "button",
+					"top": 664,
+					"left": 24,
+					"width": 50,
+					"height": 21,
+					"dataSource": "b_fGauche",
+					"shortcutKey": "[left arrow]",
+					"text": "Gauche",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton39.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton2": {
+					"type": "button",
+					"top": 616,
+					"left": 14,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fa",
+					"shortcutKey": "a",
+					"text": "a",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton3": {
+					"type": "button",
+					"top": 616,
+					"left": 35,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fb",
+					"shortcutKey": "b",
+					"text": "b",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton3.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton4": {
+					"type": "button",
+					"top": 616,
+					"left": 56,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fc",
+					"shortcutKey": "c",
+					"text": "c",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton4.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton5": {
+					"type": "button",
+					"top": 616,
+					"left": 77,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fd",
+					"shortcutKey": "d",
+					"text": "d",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton5.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton6": {
+					"type": "button",
+					"top": 616,
+					"left": 98,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fe",
+					"shortcutKey": "e",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton6.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton7": {
+					"type": "button",
+					"top": 616,
+					"left": 119,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_ff",
+					"shortcutKey": "f",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton7.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton8": {
+					"type": "button",
+					"top": 616,
+					"left": 140,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fg",
+					"shortcutKey": "g",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton8.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton9": {
+					"type": "button",
+					"top": 616,
+					"left": 161,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fh",
+					"shortcutKey": "h",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton9.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton10": {
+					"type": "button",
+					"top": 616,
+					"left": 182,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fi",
+					"shortcutKey": "i",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton10.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton11": {
+					"type": "button",
+					"top": 616,
+					"left": 224,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fk",
+					"shortcutKey": "k",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton11.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton12": {
+					"type": "button",
+					"top": 616,
+					"left": 245,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fl",
+					"shortcutKey": "l",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton12.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton13": {
+					"type": "button",
+					"top": 616,
+					"left": 266,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fm",
+					"shortcutKey": "m",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton13.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton14": {
+					"type": "button",
+					"top": 616,
+					"left": 287,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fn",
+					"shortcutKey": "n",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton14.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton15": {
+					"type": "button",
+					"top": 616,
+					"left": 308,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fo",
+					"shortcutKey": "o",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton15.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton16": {
+					"type": "button",
+					"top": 616,
+					"left": 329,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fp",
+					"shortcutKey": "p",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton16.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton17": {
+					"type": "button",
+					"top": 616,
+					"left": 350,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fq",
+					"shortcutKey": "q",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton17.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton18": {
+					"type": "button",
+					"top": 616,
+					"left": 371,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fr",
+					"shortcutKey": "r",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton18.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton19": {
+					"type": "button",
+					"top": 616,
+					"left": 392,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fs",
+					"shortcutKey": "s",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton19.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton20": {
+					"type": "button",
+					"top": 616,
+					"left": 413,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_ft",
+					"shortcutKey": "t",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton20.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton21": {
+					"type": "button",
+					"top": 616,
+					"left": 434,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fu",
+					"shortcutKey": "u",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton21.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton22": {
+					"type": "button",
+					"top": 616,
+					"left": 455,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fv",
+					"shortcutKey": "v",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton22.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton23": {
+					"type": "button",
+					"top": 616,
+					"left": 476,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fw",
+					"shortcutKey": "w",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton23.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton25": {
+					"type": "button",
+					"top": 616,
+					"left": 497,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fx",
+					"shortcutKey": "x",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton25.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton26": {
+					"type": "button",
+					"top": 616,
+					"left": 518,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fy",
+					"shortcutKey": "y",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton26.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton27": {
+					"type": "button",
+					"top": 616,
+					"left": 539,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fz",
+					"shortcutKey": "z",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton27.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton24": {
+					"type": "button",
+					"top": 616,
+					"left": 203,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_fj",
+					"shortcutKey": "j",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton24.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton28": {
+					"type": "button",
+					"top": 719,
+					"left": 11,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_f1",
+					"shortcutKey": "1",
+					"text": "1",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton28.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton29": {
+					"type": "button",
+					"top": 719,
+					"left": 32,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_f2",
+					"shortcutKey": "2",
+					"text": "2",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton29.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton30": {
+					"type": "button",
+					"top": 719,
+					"left": 53,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_f3",
+					"shortcutKey": "3",
+					"text": "3",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton30.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton31": {
+					"type": "button",
+					"top": 719,
+					"left": 74,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_f4",
+					"shortcutKey": "4",
+					"text": "4",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton31.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton32": {
+					"type": "button",
+					"top": 719,
+					"left": 95,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_f5",
+					"shortcutKey": "5",
+					"text": "5",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton32.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton33": {
+					"type": "button",
+					"top": 719,
+					"left": 116,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_f6",
+					"shortcutKey": "6",
+					"text": "6",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton33.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton34": {
+					"type": "button",
+					"top": 719,
+					"left": 137,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_f7",
+					"shortcutKey": "7",
+					"text": "7",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton34.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton35": {
+					"type": "button",
+					"top": 719,
+					"left": 158,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_f8",
+					"shortcutKey": "8",
+					"text": "8",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton35.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton36": {
+					"type": "button",
+					"top": 719,
+					"left": 179,
+					"width": 20,
+					"height": 21,
+					"dataSource": "b_f9",
+					"shortcutKey": "9",
+					"text": "9",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton36.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton 3D2": {
+					"type": "button",
+					"top": 581,
+					"left": 12,
+					"width": 177,
+					"height": 22,
+					"dataSource": "b_ValTab1",
+					"action": "accept",
+					"shortcutKey": "[Return]",
+					"text": "Sélectionner touche retour",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 347,
+					"height": 370,
+					"fill": "transparent"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 29,
+					"left": 7,
+					"width": 343
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 7,
+					"left": 7,
+					"width": 343,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Bouton 3D1": {
+					"type": "button",
+					"top": 386,
+					"left": 244,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_Ann",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton 3D3": {
+					"type": "button",
+					"top": 386,
+					"left": 5,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_ValTab1",
+					"action": "accept",
+					"shortcutKey": "[Enter]",
+					"text": "Sélectionner",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					]
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 380,
+					"left": 6,
+					"width": 345
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 10,
+					"left": 10,
+					"width": 338,
+					"height": 16,
+					"dataSource": "va_IDT_Titr",
+					"stroke": "automatic",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"LB": {
+					"type": "listbox",
+					"top": 31,
+					"left": 7,
+					"width": 342,
+					"height": 341,
+					"resizingMode": "legacy",
+					"sortable": false,
+					"movableRows": false,
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "automatic",
+					"fill": "#EEEEEE",
+					"alternateFill": "automatic",
+					"method": "ObjectMethods/LB.4dm",
+					"events": [
+						"onClick",
+						"onDoubleClick"
+					],
+					"columns": [
+						{
+							"name": "Colonne1",
+							"dataSource": "t_TabNiv1",
+							"width": 342,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête3",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied3",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

@@ -1,0 +1,138 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onTimer",
+		"onAfterKeystroke",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "594pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Nom_Modele": {
+					"type": "input",
+					"top": 22,
+					"left": 150,
+					"width": 300,
+					"height": 14,
+					"dataSource": "Nom_Modele",
+					"class": "Champs",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Nom_Modele.4dm",
+					"events": [
+						"onDataChange",
+						"onAfterKeystroke"
+					]
+				},
+				"Bouton": {
+					"type": "button",
+					"top": 73,
+					"left": 360,
+					"width": 91,
+					"height": 30,
+					"dataSource": "enr_rech",
+					"action": "accept",
+					"shortcutKey": "[Enter]",
+					"text": "Enregistrer",
+					"class": "Par_défaut",
+					"defaultButton": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton1": {
+					"type": "button",
+					"top": 73,
+					"left": 249,
+					"width": 91,
+					"height": 30,
+					"dataSource": "Bouton",
+					"action": "cancel",
+					"text": "Annuler",
+					"class": "Par_défaut",
+					"events": [
+						"onClick"
+					]
+				},
+				"B1": {
+					"type": "radio",
+					"top": 47,
+					"left": 50,
+					"width": 176,
+					"height": 16,
+					"dataSource": "B1",
+					"text": "Modèle personnel",
+					"class": "Par_défaut",
+					"radioGroup": "Group2",
+					"events": [
+						"onClick"
+					]
+				},
+				"B2": {
+					"type": "radio",
+					"top": 47,
+					"left": 246,
+					"width": 183,
+					"height": 16,
+					"dataSource": "B2",
+					"text": "Format partagé",
+					"class": "Par_défaut",
+					"radioGroup": "Group2",
+					"events": [
+						"onClick"
+					]
+				},
+				"Nom du modèle": {
+					"type": "input",
+					"top": 23,
+					"left": 10,
+					"width": 137,
+					"height": 14,
+					"dataSource": "Nom du modèle",
+					"class": "En_tete_champ",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

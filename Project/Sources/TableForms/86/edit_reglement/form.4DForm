@@ -1,0 +1,230 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"width": 695,
+	"height": 192,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onCloseBox"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "Lettre US (215,9 x 279,4 mm)",
+		"paperWidth": "611pt",
+		"paperHeight": "791pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 1,
+					"width": 694,
+					"height": 192,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"stroke": "transparent"
+				}
+			}
+		},
+		{
+			"objects": {
+				"txt_fac_date": {
+					"type": "input",
+					"top": 49,
+					"left": 136,
+					"width": 551,
+					"height": 14,
+					"dataSource": "[Reglements:93]REG_Libelle:28",
+					"stroke": "#000000",
+					"class": "Champs",
+					"borderStyle": "solid",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"txt_fac_date3": {
+					"type": "input",
+					"top": 141,
+					"left": 134,
+					"width": 150,
+					"height": 14,
+					"dataSource": "[Reglements:93]REG_Montant:5",
+					"dataSourceTypeHint": "number",
+					"stroke": "#000000",
+					"class": "Champs",
+					"borderStyle": "solid",
+					"contextMenu": "none",
+					"numberFormat": {
+						"$ref": "/SOURCES/filters.json#/Montants"
+					},
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onLosingFocus",
+						"onDataChange",
+						"onAfterKeystroke",
+						"onAfterEdit"
+					]
+				},
+				"btn_valider": {
+					"type": "button",
+					"top": 11,
+					"left": 575,
+					"width": 112,
+					"height": 25,
+					"sizingX": "move",
+					"dataSource": "btn_valider",
+					"action": "accept",
+					"text": "Valider",
+					"focusable": false,
+					"method": "ObjectMethods/btn_valider.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_annuler": {
+					"type": "button",
+					"top": 11,
+					"left": 450,
+					"width": 112,
+					"height": 25,
+					"sizingX": "move",
+					"dataSource": "btn_annuler",
+					"action": "cancel",
+					"text": "Annuler",
+					"focusable": false,
+					"method": "ObjectMethods/btn_annuler.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 49,
+					"left": 31,
+					"width": 94,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "Libellé"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 110,
+					"left": 19,
+					"width": 106,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "Mode du règlement"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 141,
+					"left": 50,
+					"width": 75,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "Montant"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 79,
+					"left": 50,
+					"width": 75,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "Date"
+				},
+				"txt_titre_fenetre_ligne": {
+					"type": "input",
+					"top": 16,
+					"left": 11,
+					"width": 427,
+					"height": 20,
+					"dataSource": "txt_titre_fenetre_ligne",
+					"class": "titre_fenetre",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Variable": {
+					"type": "input",
+					"top": 79,
+					"left": 134,
+					"width": 150,
+					"height": 16,
+					"dataSource": "[Reglements:93]REG_Date_Piece:4",
+					"dataSourceTypeHint": "date",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"<>ta_GL_ModesReglements": {
+					"type": "dropdown",
+					"left": 134,
+					"top": 106,
+					"width": 150,
+					"height": 21,
+					"events": [
+						"onLoad",
+						"onDataChange"
+					],
+					"dataSource": "<>ta_GL_ModesReglements",
+					"class": "Champs",
+					"method": "ObjectMethods/%3C%3Eta_GL_ModesReglements.4dm"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {
+				"objects": [
+					"Rectangle"
+				]
+			}
+		}
+	},
+	"geometryStamp": 16,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

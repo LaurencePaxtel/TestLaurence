@@ -1,0 +1,93 @@
+{
+    "passerelle" : [
+        {
+            "tableComposant" : "Personne",
+            "tableHote" : "HeBerge",
+            "champ" : [
+                {
+                    "lib" : "adresse",
+                    "personAccess" : "ds.Adresses.query(\"AD_ID_Origine = :1 AND AD_ID_Table_Origine\";This.ID;4)[0].AD_Adresse1",
+                    "directAccess" : "ds.Adresses.query(\"AD_Adresse1 = :1\";This.childFieldValue)",
+                    "type" : "text"
+                },
+                {
+                    "lib" : "adresseComplement",
+                    "personAccess" : "ds.Adresses.query(\"AD_ID_Origine = :1 AND AD_ID_Table_Origine\";This.ID;4)[0].AD_Adresse2",
+                    "directAccess" : "ds.Adresses.query(\"AD_Adresse2 = :1\";This.childFieldValue)",
+                    "type" : "text"
+                },
+                {
+                    "lib" : "codePostal",
+                    "personAccess" : "ds.Adresses.query(\"AD_ID_Origine = :1 AND AD_ID_Table_Origine\";This.ID;4)[0].AD_Code_postal",
+                    "directAccess" : "ds.Adresses.query(\"AD_Code_postal = :1\";This.childFieldValue)",
+                    "type" : "text"
+                },
+                {
+                    "lib" : "dateCreation",
+                    "personAccess" : "HB_FicheCrééele",
+                    "type" : "date"
+                },
+                {
+                    "lib" : "dateNaissance",
+                    "personAccess" : "HB_DateNéLe",
+                    "type" : "date"
+                },
+                {
+                    "lib" : "nom",
+                    "personAccess" : "HB_Nom",
+                    "type" : "text"
+                },
+                {
+                    "lib" : "prenom",
+                    "personAccess" : "HB_Prénom",
+                    "type" : "text"
+                },
+                {
+                    "lib" : "sexe",
+                    "personAccess" : "",
+                    "type" : "text"
+                },
+                {
+                    "lib" : "UID",
+                    "personAccess" : "ID",
+                    "type" : "int"
+                },
+                {
+                    "lib" : "ville",
+                    "personAccess" : "ds.Adresses.query(\"AD_ID_Origine = :1 AND AD_ID_Table_Origine\";This.ID;4)[0].AD_Ville",
+                    "directAccess" : "ds.Adresses.query(\"AD_Ville = :1\";This.childFieldValue)",
+                    "type" : "text"
+                },
+                {
+                    "lib" : "eMail",
+                    "personAccess" : "HB_Email",
+                    "type" : "text"
+                },
+                {
+                    "lib" : "telFixe",
+                    "personAccess" : "HB_Telephone",
+                    "type" : "text"
+                },
+                {
+                    "lib" : "telMobile",
+                    "personAccess" : "",
+                    "type" : "text"
+                }
+            ],
+            "libelleSexe" : [
+                {
+                    "lib" : "homme",
+                    "value" : ""
+                },
+                {
+                    "lib" : "femme",
+                    "value" : ""
+                },
+                {
+                    "lib" : "femme",
+                    "value" : ""
+                }
+            ]
+        }         
+    ]
+}

@@ -1,0 +1,367 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 17,
+	"markerBody": 37,
+	"markerBreak": 37,
+	"markerFooter": 37,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 16,
+					"left": 0,
+					"width": 485,
+					"height": 23,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 15,
+					"left": 0,
+					"width": 485
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 36,
+					"left": 0,
+					"width": 485,
+					"stroke": "#AAAAAA"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 1,
+					"left": 1,
+					"width": 67,
+					"height": 12,
+					"stroke": "#663300",
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 9,
+					"text": ":◊vlSTR_DE,107"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 1,
+					"left": 208,
+					"width": 104,
+					"height": 12,
+					"stroke": "#663300",
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 9,
+					"text": ":◊vlSTR_DE,109"
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 0,
+					"left": 129,
+					"height": 15,
+					"stroke": "#DDDDDD"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 18,
+					"left": 1,
+					"width": 67,
+					"height": 11,
+					"dataSource": "[DossierSante_DE_Examens:71]Date:1",
+					"dataSourceTypeHint": "date",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"textAlign": "center",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"entryFilter": "!0&9##/##/####",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 18,
+					"left": 71,
+					"width": 104,
+					"height": 11,
+					"dataSource": "[DossierSante_DE_Examens:71]Médecin:2",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"method": "ObjectMethods/Champ3.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 18,
+					"left": 209,
+					"width": 103,
+					"height": 11,
+					"dataSource": "[DossierSante_DE_Examens:71]Libellé:3",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"method": "ObjectMethods/Champ2.4dm",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 1,
+					"left": 70,
+					"width": 107,
+					"height": 12,
+					"stroke": "#663300",
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 9,
+					"text": ":◊vlSTR_DE,108"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 0,
+					"left": 177,
+					"height": 36
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 0,
+					"left": 69,
+					"height": 36
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 1,
+					"left": 315,
+					"width": 68,
+					"height": 12,
+					"stroke": "#663300",
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 9,
+					"text": "Date RDV"
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 0,
+					"left": 314,
+					"height": 36
+				},
+				"Champ5": {
+					"type": "input",
+					"top": 18,
+					"left": 316,
+					"width": 67,
+					"height": 11,
+					"dataSource": "[DossierSante_DE_Examens:71]RDVDate:4",
+					"dataSourceTypeHint": "date",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"textAlign": "center",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"entryFilter": "!0&9##/##/####",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 1,
+					"left": 386,
+					"width": 28,
+					"height": 12,
+					"stroke": "#663300",
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 9,
+					"text": "OK"
+				},
+				"Champ6": {
+					"type": "checkbox",
+					"top": 18,
+					"left": 391,
+					"width": 17,
+					"height": 12,
+					"dataSource": "[DossierSante_DE_Examens:71]RDVFait:5",
+					"text": " ",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 0,
+					"left": 385,
+					"height": 36
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 1,
+					"left": 416,
+					"width": 68,
+					"height": 12,
+					"stroke": "#663300",
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 9,
+					"text": "Vu"
+				},
+				"Ligne8": {
+					"type": "line",
+					"top": 0,
+					"left": 415,
+					"height": 36
+				},
+				"Ligne9": {
+					"type": "line",
+					"top": 0,
+					"left": 207,
+					"height": 36
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 1,
+					"left": 181,
+					"width": 23,
+					"height": 12,
+					"stroke": "#663300",
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 9,
+					"text": ":◊vlSTR_DE,114"
+				},
+				"Champ7": {
+					"type": "input",
+					"top": 18,
+					"left": 179,
+					"width": 27,
+					"height": 11,
+					"dataSource": "[DossierSante_DE_Examens:71]Lieu:7",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ8": {
+					"type": "input",
+					"top": 18,
+					"left": 417,
+					"width": 67,
+					"height": 11,
+					"dataSource": "[DossierSante_DE_Examens:71]RésultatsVus:6",
+					"dataSourceTypeHint": "date",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"textAlign": "center",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"entryFilter": "!0&9##/##/####",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

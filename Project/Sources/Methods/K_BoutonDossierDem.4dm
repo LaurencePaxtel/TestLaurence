@@ -1,0 +1,12 @@
+//%attributes = {}
+C_BOOLEAN:C305($1)
+
+If ($1)
+	//ACTIVER BOUTON(b_DemNew)
+	OBJECT SET ENABLED:C1123(b_DemMod; True:C214)
+	OBJECT SET ENABLED:C1123(b_DemNote; True:C214)
+Else 
+	//INACTIVER BOUTON(b_DemNew)
+	OBJECT SET ENABLED:C1123(b_DemMod; False:C215)
+	OBJECT SET ENABLED:C1123(b_DemNote; False:C215)
+End if 

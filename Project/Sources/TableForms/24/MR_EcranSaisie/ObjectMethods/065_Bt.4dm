@@ -1,0 +1,1 @@
+Tab_PopRub3(->[Maraude:24]MR_FicheNuméro:3; <>ta_RdsNomNew{<>vlSTR_MR-<>vlSTR}{60}; ->[Maraude:24]MR_Ressour1_1:65; ->[Maraude:24]MR_Ressour1_2:66; ->[Maraude:24]MR_Ressour2_1:67; ->[Maraude:24]MR_Ressour2_2:68; ->[Maraude:24]MR_Ressour3_1:69; ->[Maraude:24]MR_Ressour3_2:70)

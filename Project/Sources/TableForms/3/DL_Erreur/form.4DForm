@@ -1,0 +1,92 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 539,
+					"height": 391,
+					"fill": "#DDDDDD",
+					"stroke": "#DDDDDD"
+				},
+				"Image5": {
+					"type": "picture",
+					"top": 18,
+					"left": 51,
+					"width": 342,
+					"height": 202,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image5.pict"
+				},
+				"Image2": {
+					"type": "picture",
+					"top": 10,
+					"left": 10,
+					"width": 32,
+					"height": 32,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image2.pict"
+				},
+				"Bouton1": {
+					"type": "button",
+					"top": 228,
+					"left": 312,
+					"width": 80,
+					"height": 22,
+					"dataSource": "bt_OK",
+					"action": "cancel",
+					"text": "OK",
+					"fontFamily": "Arial",
+					"fontSize": 9,
+					"fontWeight": "bold",
+					"defaultButton": true,
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				}
+			}
+		},
+		null
+	]
+}

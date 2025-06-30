@@ -1,0 +1,291 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 5,
+	"bottomMargin": 5,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onTimer",
+		"onAfterKeystroke",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "594pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"lb_navigateur": {
+					"type": "listbox",
+					"top": 32,
+					"left": 2,
+					"width": 758,
+					"height": 218,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"dataSource": "lb_navigateur",
+					"scrollbarHorizontal": "hidden",
+					"alternateFill": "#A5CFFE",
+					"method": "ObjectMethods/lb_navigateur.4dm",
+					"events": [
+						"onClick",
+						"onDoubleClick",
+						"onDataChange",
+						"onSelectionChange",
+						"onHeaderClick"
+					],
+					"columns": [
+						{
+							"name": "col_file",
+							"dataSource": "col_file",
+							"width": 224,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#A5CFFE",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header1",
+								"text": "Fichier",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Footer1",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "col_type",
+							"dataSource": "col_type",
+							"width": 140,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#A5CFFE",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"method": "ObjectMethods/col_type.4dm",
+							"header": {
+								"name": "Header2",
+								"text": "Type",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Footer2",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne1",
+							"dataSource": "col_extension",
+							"width": 81,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#A5CFFE",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête1",
+								"text": "Extension",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "col_size",
+							"dataSource": "col_size",
+							"dataSourceTypeHint": "date",
+							"width": 150,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#A5CFFE",
+							"textAlign": "center",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header3",
+								"text": "Date de modification",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Footer3",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "col_path",
+							"dataSource": "col_path",
+							"width": 99,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"visibility": "visible",
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#A5CFFE",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header4",
+								"text": "Chemin",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Footer4",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"enterable": false,
+							"resizable": true
+						}
+					]
+				},
+				"button_add": {
+					"type": "button",
+					"top": 255,
+					"left": 1,
+					"width": 26,
+					"height": 26,
+					"visibility": "hidden",
+					"sizingY": "move",
+					"text": "+",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"button_add1": {
+					"type": "button",
+					"top": 255,
+					"left": 30,
+					"width": 26,
+					"height": 26,
+					"visibility": "hidden",
+					"sizingY": "move",
+					"text": "-",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"button_parcourir": {
+					"type": "button",
+					"top": 255,
+					"left": 662,
+					"width": 98,
+					"height": 26,
+					"sizingX": "move",
+					"sizingY": "move",
+					"text": "Parcourir…",
+					"focusable": false,
+					"method": "ObjectMethods/button_parcourir.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Custom_titre": {
+					"type": "text",
+					"top": 9,
+					"left": 5,
+					"width": 482,
+					"height": 15,
+					"text": "message personnalisé"
+				},
+				"compte_files": {
+					"type": "text",
+					"top": 9,
+					"left": 626,
+					"width": 132,
+					"height": 15,
+					"sizingX": "move",
+					"textAlign": "right",
+					"text": "nombre de documents"
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	},
+	"geometryStamp": 5
+}

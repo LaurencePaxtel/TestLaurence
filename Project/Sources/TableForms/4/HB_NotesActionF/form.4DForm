@@ -1,0 +1,235 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Ligne1": {
+					"type": "line",
+					"top": 485,
+					"left": 6,
+					"width": 463
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 465,
+					"height": 387,
+					"fill": "transparent",
+					"stroke": "#4BAABA",
+					"strokeWidth": 2
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 29,
+					"left": 7,
+					"width": 461,
+					"stroke": "#4BAABA",
+					"strokeWidth": 2
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 7,
+					"left": 7,
+					"width": 60,
+					"height": 22,
+					"fill": "#4BAABA",
+					"stroke": "transparent"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 10,
+					"left": 10,
+					"width": 55,
+					"height": 16,
+					"stroke": "#FFFFFF",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Note"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 7,
+					"left": 67,
+					"width": 401,
+					"height": 22,
+					"stroke": "#EEEEEE"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 10,
+					"left": 69,
+					"width": 396,
+					"height": 16,
+					"dataSource": "[HeBerge:4]HB_Clé:2",
+					"stroke": "#4BAABA",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fontWeight": "bold",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable6": {
+					"type": "input",
+					"top": 402,
+					"left": 8,
+					"width": 458,
+					"height": 72,
+					"dataSource": "<>vt_CNIL_ChampLibre",
+					"stroke": "#EE0000",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Variable1": {
+					"type": "button",
+					"top": 490,
+					"left": 327,
+					"width": 127,
+					"height": 22,
+					"dataSource": "b_ValHB",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Sans titre"
+					},
+					"shortcutKey": "[Enter]",
+					"text": "Quitter",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton2": {
+					"type": "button",
+					"top": 490,
+					"left": 5,
+					"width": 168,
+					"height": 22,
+					"dataSource": "b_P10",
+					"text": "Date - Heure - Utilisateur",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 32,
+					"left": 7,
+					"width": 445,
+					"height": 357,
+					"dataSource": "[HeBerge:4]HB_ActionsF:49",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"scrollbarVertical": "visible",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"ActionPrt_2": {
+					"type": "button",
+					"top": 490,
+					"left": 222,
+					"width": 97,
+					"height": 22,
+					"dataSource": "b_PrtActF",
+					"text": "Imprimer",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"method": "ObjectMethods/ActionPrt_2.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	],
+	"geometryStamp": 1,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

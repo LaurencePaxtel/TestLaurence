@@ -1,0 +1,244 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"width": 600,
+	"height": 480,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 1,
+					"width": 600,
+					"height": 479,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"stroke": "transparent"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Champ1": {
+					"type": "input",
+					"top": 135,
+					"left": 158,
+					"width": 150,
+					"height": 16,
+					"dataSource": "[Prise_en_Charge:118]PE_Date_du:5",
+					"dataSourceTypeHint": "date",
+					"borderStyle": "double",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 172,
+					"left": 158,
+					"width": 150,
+					"height": 16,
+					"dataSource": "[Prise_en_Charge:118]PE_Date_au:6",
+					"dataSourceTypeHint": "date",
+					"borderStyle": "double",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"Btn_Annuler": {
+					"type": "button",
+					"top": 443,
+					"left": 359,
+					"width": 100,
+					"height": 25,
+					"text": "Annuler",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Annuler.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Btn_Valider": {
+					"type": "button",
+					"top": 443,
+					"left": 466,
+					"width": 100,
+					"height": 25,
+					"text": "Valider",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Valider.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 14,
+					"left": 15,
+					"width": 548,
+					"height": 19,
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 14,
+					"fontWeight": "bold",
+					"text": "Prise en charge"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 135,
+					"left": 0,
+					"width": 150,
+					"height": 15,
+					"stroke": "#663300",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date du :"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 62,
+					"left": 0,
+					"width": 150,
+					"height": 15,
+					"stroke": "#663300",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Financeur :"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 172,
+					"left": 0,
+					"width": 150,
+					"height": 15,
+					"stroke": "#663300",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date du :"
+				},
+				"var_hb_nom_prenom": {
+					"type": "input",
+					"top": 99,
+					"left": 158,
+					"width": 400,
+					"height": 16,
+					"dataSource": "var_hb_nom_prenom",
+					"focusable": false,
+					"borderStyle": "double",
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 98,
+					"left": 0,
+					"width": 150,
+					"height": 15,
+					"stroke": "#663300",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Hébergé :"
+				},
+				"btn_supprimer": {
+					"type": "button",
+					"top": 443,
+					"left": 21,
+					"width": 100,
+					"height": 25,
+					"text": "Supprimer",
+					"focusable": false,
+					"method": "ObjectMethods/btn_supprimer.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"tb_pe_financeurs": {
+					"type": "dropdown",
+					"top": 62,
+					"left": 158,
+					"width": 400,
+					"height": 22,
+					"dataSource": "tb_pe_financeurs",
+					"focusable": false,
+					"method": "ObjectMethods/tb_pe_financeurs.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {
+				"objects": [
+					"Rectangle"
+				]
+			}
+		}
+	}
+}

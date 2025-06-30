@@ -1,0 +1,350 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 0,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 1110,
+					"height": 50,
+					"sizingX": "grow",
+					"fill": "#333333"
+				},
+				"Texte": {
+					"type": "text",
+					"top": 14,
+					"left": 0,
+					"width": 1110,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 18
+				}
+			}
+		},
+		{
+			"objects": {
+				"Variable": {
+					"type": "input",
+					"top": 70,
+					"left": 125,
+					"width": 200,
+					"height": 16,
+					"dataSource": "Form:C1466.refSelection[0].reference",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 70,
+					"left": 10,
+					"width": 80,
+					"height": 16,
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Référence"
+				},
+				"Ligne": {
+					"type": "line",
+					"top": 86,
+					"left": 125,
+					"width": 200,
+					"stroke": "#CCCCCC"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 70,
+					"left": 335,
+					"width": 520,
+					"height": 16,
+					"visibility": "hidden",
+					"stroke": "#FF0000",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fontWeight": "bold",
+					"text": "L'édition de la référence produit n'est possible que si une seule référence est sélectionnée"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 106,
+					"left": 10,
+					"width": 105,
+					"height": 16,
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Quantité maximale"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 106,
+					"left": 125,
+					"width": 200,
+					"height": 16,
+					"dataSource": "Form:C1466.refSelection[0].quantiteMax",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"entryFilter": "&9",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Variable1.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 122,
+					"left": 125,
+					"width": 200,
+					"stroke": "#CCCCCC"
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 106,
+					"left": 365,
+					"width": 150,
+					"height": 16,
+					"dataSource": "Form:C1466.quantiteMaxDateDu",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"placeholder": "01/01/2021",
+					"entryFilter": "##/##/####",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Variable2.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 106,
+					"left": 335,
+					"width": 20,
+					"height": 16,
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Du"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 106,
+					"left": 525,
+					"width": 20,
+					"height": 16,
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Au"
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 106,
+					"left": 555,
+					"width": 150,
+					"height": 16,
+					"dataSource": "Form:C1466.quantiteMaxDateAu",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"placeholder": "01/01/2021",
+					"entryFilter": "##/##/####",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Variable3.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 122,
+					"left": 365,
+					"width": 150,
+					"stroke": "#CCCCCC"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 122,
+					"left": 555,
+					"width": 150,
+					"stroke": "#CCCCCC"
+				},
+				"Image1": {
+					"type": "picture",
+					"top": 168,
+					"left": 10,
+					"width": 60,
+					"height": 60,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image1.png"
+				},
+				"Bouton invisible": {
+					"type": "button",
+					"top": 168,
+					"left": 10,
+					"width": 60,
+					"height": 60,
+					"sizingX": "move",
+					"display": false,
+					"method": "ObjectMethods/Bouton invisible.4dm",
+					"events": [
+						"onClick",
+						"onMouseMove"
+					]
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 142,
+					"left": 10,
+					"width": 100,
+					"height": 16,
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Quantité restante"
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 142,
+					"left": 125,
+					"width": 200,
+					"height": 16,
+					"dataSource": "Form:C1466.refSelection[0].quantite",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"entryFilter": "&9",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 158,
+					"left": 125,
+					"width": 200,
+					"stroke": "#CCCCCC"
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 142,
+					"left": 365,
+					"width": 150,
+					"height": 16,
+					"dataSource": "Form:C1466.quantiteDateDu",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"placeholder": "01/01/2021",
+					"entryFilter": "##/##/####",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Variable5.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 142,
+					"left": 335,
+					"width": 20,
+					"height": 16,
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Du"
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 142,
+					"left": 525,
+					"width": 20,
+					"height": 16,
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Au"
+				},
+				"Variable6": {
+					"type": "input",
+					"top": 142,
+					"left": 555,
+					"width": 150,
+					"height": 16,
+					"dataSource": "Form:C1466.quantiteDateAu",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"placeholder": "01/01/2021",
+					"entryFilter": "##/##/####",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Variable6.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 158,
+					"left": 365,
+					"width": 150,
+					"stroke": "#CCCCCC"
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 158,
+					"left": 555,
+					"width": 150,
+					"stroke": "#CCCCCC"
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 168,
+					"left": 125,
+					"width": 580,
+					"height": 59,
+					"visibility": "hidden",
+					"stroke": "#FF0000",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fontWeight": "bold",
+					"text": "L'édition de la quantité restante n'est possible que si une seule référence est sélectionnée"
+				}
+			}
+		}
+	]
+}

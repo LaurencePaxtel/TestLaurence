@@ -1,0 +1,2 @@
+//Script b_RupMajV
+Tab_PopRub3(->[HeberGement:5]HG_FicheNuméro:3; <>ta_RdsNomNew{<>vlSTR_Std-<>vlSTR}{28}; ->[HeberGement:5]HG_RupMajeur1:40; ->[HeberGement:5]HG_RupMajeur1_2:72; ->[HeberGement:5]HG_RupMajeur2:41; ->[HeberGement:5]HG_RupMajeur2_2:73; ->[HeberGement:5]HG_RupMajeur3:42; ->[HeberGement:5]HG_RupMajeur3_2:74)

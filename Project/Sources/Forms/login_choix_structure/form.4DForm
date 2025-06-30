@@ -1,0 +1,130 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onTimer",
+		"onAfterKeystroke",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Liste_entreprises": {
+					"type": "listbox",
+					"top": 38,
+					"left": 14,
+					"width": 401,
+					"height": 115,
+					"resizingMode": "legacy",
+					"dataSource": "Liste_entreprises",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"horizontalLineStroke": "transparent",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"method": "ObjectMethods/Liste_entreprises.4dm",
+					"events": [
+						"onClick",
+						"onDoubleClick",
+						"onDataChange"
+					],
+					"columns": [
+						{
+							"name": "Liste_nom_entreprise",
+							"dataSource": "Liste_nom_entreprise",
+							"width": 384,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"resizable": false,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête1",
+								"text": "Entête1",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				},
+				"Btn_Ok": {
+					"type": "button",
+					"top": 161,
+					"left": 294,
+					"width": 121,
+					"height": 25,
+					"dataSource": "Btn_Ok",
+					"text": "Ok",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Ok.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Btn_Annuler": {
+					"type": "button",
+					"top": 161,
+					"left": 164,
+					"width": 121,
+					"height": 25,
+					"dataSource": "Btn_Annuler",
+					"text": "Annuler",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Annuler.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Texte": {
+					"type": "text",
+					"top": 11,
+					"left": 14,
+					"width": 401,
+					"height": 15,
+					"fontWeight": "bold",
+					"text": "Veuillez choisir votre entreprise :\rVeuillez choisir votre structure :"
+				}
+			}
+		}
+	]
+}

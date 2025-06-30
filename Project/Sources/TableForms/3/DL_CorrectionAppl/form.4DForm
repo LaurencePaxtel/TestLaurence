@@ -1,0 +1,537 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 38,
+					"left": 5,
+					"width": 576,
+					"height": 456,
+					"fill": "transparent"
+				},
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 575,
+					"height": 27,
+					"fill": "transparent",
+					"stroke": "#999999"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 6,
+					"left": 6,
+					"width": 575,
+					"height": 27,
+					"fill": "transparent",
+					"stroke": "#FFFFFF"
+				},
+				"Variable18": {
+					"type": "button",
+					"top": 505,
+					"left": 355,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_ValAppl",
+					"action": "accept",
+					"shortcutKey": "[Enter]",
+					"text": "Appliquer",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Variable18.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 505,
+					"left": 473,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_Annxx",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 499,
+					"left": 5,
+					"width": 575
+				},
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 40,
+					"left": 7,
+					"width": 572,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 43,
+					"left": 10,
+					"width": 567,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Champ à modifier : <va_ItemTitre>"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 62,
+					"left": 7,
+					"width": 572
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 13,
+					"left": 9,
+					"width": 37,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": ":30004,1"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 13,
+					"left": 236,
+					"width": 34,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": ":30004,2"
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 13,
+					"left": 456,
+					"width": 28,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": ":30004,3"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 13,
+					"left": 48,
+					"width": 140,
+					"height": 15,
+					"dataSource": "<>va_User",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 13,
+					"left": 274,
+					"width": 110,
+					"height": 15,
+					"dataSource": "<>va_ProfUser",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 13,
+					"left": 489,
+					"width": 85,
+					"height": 15,
+					"dataSource": "<>DDJ",
+					"dataSourceTypeHint": "date",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dateFormat": "systemMedium",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"CH_RecRes1": {
+					"type": "text",
+					"top": 75,
+					"left": 23,
+					"width": 153,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"text": "Nombre de fiches à modifier"
+				},
+				"sdqSD": {
+					"type": "input",
+					"top": 75,
+					"left": 196,
+					"width": 83,
+					"height": 16,
+					"dataSource": "vL_NbFiches",
+					"dataSourceTypeHint": "number",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#EEEEEE",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "### ### ##0",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"qsdq": {
+					"type": "input",
+					"top": 453,
+					"left": 305,
+					"width": 252,
+					"height": 16,
+					"dataSource": "va_ItemValeur",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 72,
+					"left": 304,
+					"width": 256,
+					"height": 370,
+					"fill": "transparent"
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 96,
+					"left": 306,
+					"width": 252
+				},
+				"Rectangle8": {
+					"type": "rectangle",
+					"top": 74,
+					"left": 306,
+					"width": 252,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 77,
+					"left": 309,
+					"width": 247,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Choix"
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 100,
+					"left": 25,
+					"width": 256,
+					"height": 369,
+					"fill": "transparent"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 124,
+					"left": 27,
+					"width": 252
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 102,
+					"left": 27,
+					"width": 252,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 105,
+					"left": 30,
+					"width": 247,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Vue de détail"
+				},
+				"LB": {
+					"type": "listbox",
+					"top": 126,
+					"left": 28,
+					"width": 250,
+					"height": 340,
+					"resizingMode": "legacy",
+					"sortable": false,
+					"movableRows": false,
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "automatic",
+					"fill": "#EEEEEE",
+					"alternateFill": "automatic",
+					"method": "ObjectMethods/LB.4dm",
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Colonne1",
+							"dataSource": "td_ItemOldDate",
+							"width": 60,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête3",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied3",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne2",
+							"dataSource": "tt_ItemOld",
+							"width": 190,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête4",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied4",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				},
+				"LB1": {
+					"type": "listbox",
+					"top": 98,
+					"left": 307,
+					"width": 250,
+					"height": 341,
+					"resizingMode": "legacy",
+					"sortable": false,
+					"movableRows": false,
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "automatic",
+					"fill": "#EEEEEE",
+					"alternateFill": "automatic",
+					"method": "ObjectMethods/LB1.4dm",
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Colonne3",
+							"dataSource": "ta_ItemEum",
+							"width": 250,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête1",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

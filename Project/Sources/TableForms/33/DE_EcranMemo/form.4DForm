@@ -1,0 +1,624 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 107,
+	"markerBody": 757,
+	"markerBreak": 764,
+	"markerFooter": 810,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 767,
+					"left": 2,
+					"width": 556,
+					"height": 24,
+					"fill": "transparent"
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 372,
+					"left": 6,
+					"width": 546,
+					"height": 377,
+					"dataSource": "vt_memoNote",
+					"stroke": "#000000",
+					"fontFamily": "Arial",
+					"fontSize": 9,
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 79,
+					"left": 2,
+					"width": 556,
+					"height": 24,
+					"fill": "transparent"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 2,
+					"left": 2,
+					"width": 556,
+					"height": 68,
+					"fill": "transparent"
+				},
+				"Texte11": {
+					"type": "text",
+					"top": 5,
+					"left": 5,
+					"width": 550,
+					"height": 27,
+					"stroke": "#000000",
+					"class": "Stat_Titre2",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "<◊va_T_01>"
+				},
+				"Texte12": {
+					"type": "text",
+					"top": 38,
+					"left": 5,
+					"width": 550,
+					"height": 16,
+					"stroke": "#000000",
+					"textAlign": "center",
+					"fontFamily": "Times New Roman",
+					"fontSize": 12,
+					"text": "<◊va_T_02>"
+				},
+				"Texte13": {
+					"type": "text",
+					"top": 53,
+					"left": 5,
+					"width": 550,
+					"height": 16,
+					"stroke": "#000000",
+					"textAlign": "center",
+					"fontFamily": "Times New Roman",
+					"fontSize": 12,
+					"text": "<◊va_T_03>"
+				},
+				"Texte18": {
+					"type": "text",
+					"top": 773,
+					"left": 9,
+					"width": 182,
+					"height": 13,
+					"stroke": "#000000",
+					"class": "TNR_11g1",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "Date et heure d'impression :"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 82,
+					"left": 5,
+					"width": 150,
+					"height": 17,
+					"dataSource": "[DossierSante:33]DE_Nom:14",
+					"stroke": "#000000",
+					"class": "TNR_14g1",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 773,
+					"left": 207,
+					"width": 164,
+					"height": 15,
+					"dataSource": "va_DateEtHeure",
+					"dataSourceTypeHint": "time",
+					"stroke": "#000000",
+					"class": "TNR_13",
+					"textAlign": "center",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Sans titre123"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"timeFormat": "hh_mm",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 362,
+					"left": 2,
+					"width": 556
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 82,
+					"left": 157,
+					"width": 150,
+					"height": 17,
+					"dataSource": "[DossierSante:33]DE_Prénom:15",
+					"stroke": "#000000",
+					"class": "TNR_14g1",
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 82,
+					"left": 465,
+					"width": 50,
+					"height": 17,
+					"dataSource": "[DossierSante:33]DE_Age:16",
+					"stroke": "#000000",
+					"class": "TNR_14g1",
+					"textAlign": "right",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Texte": {
+					"type": "text",
+					"top": 82,
+					"left": 516,
+					"width": 39,
+					"height": 18,
+					"fontFamily": "MS Sans Serif",
+					"fontSize": 14,
+					"fontWeight": "bold",
+					"text": "Ans"
+				},
+				"Champ": {
+					"type": "input",
+					"top": 116,
+					"left": 123,
+					"width": 163,
+					"height": 16,
+					"dataSource": "[DossierSante:33]DE_Etatgénéral:47",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 136,
+					"left": 123,
+					"width": 163,
+					"height": 16,
+					"dataSource": "[DossierSante:33]DE_EtatCutané:48",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 156,
+					"left": 123,
+					"width": 163,
+					"height": 16,
+					"dataSource": "[DossierSante:33]DE_EtatRelation:49",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 176,
+					"left": 123,
+					"width": 163,
+					"height": 16,
+					"dataSource": "[DossierSante:33]DE_EtatAutonomie:50",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ4": {
+					"type": "input",
+					"top": 196,
+					"left": 123,
+					"width": 163,
+					"height": 16,
+					"dataSource": "[DossierSante:33]DE_EtatDépendance1:51",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ5": {
+					"type": "input",
+					"top": 216,
+					"left": 123,
+					"width": 163,
+					"height": 16,
+					"dataSource": "[DossierSante:33]DE_EtatDépendance2:52",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ6": {
+					"type": "input",
+					"top": 236,
+					"left": 123,
+					"width": 163,
+					"height": 16,
+					"dataSource": "[DossierSante:33]DE_EtatDépendance3:53",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ7": {
+					"type": "input",
+					"top": 256,
+					"left": 123,
+					"width": 163,
+					"height": 17,
+					"dataSource": "[DossierSante:33]DE_EtatParasitose1:54",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ8": {
+					"type": "input",
+					"top": 276,
+					"left": 123,
+					"width": 163,
+					"height": 17,
+					"dataSource": "[DossierSante:33]DE_EtatParasitose2:55",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ9": {
+					"type": "input",
+					"top": 113,
+					"left": 388,
+					"width": 163,
+					"height": 17,
+					"dataSource": "[DossierSante:33]DE_EntréeMode:64",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ10": {
+					"type": "input",
+					"top": 133,
+					"left": 388,
+					"width": 163,
+					"height": 17,
+					"dataSource": "[DossierSante:33]DE_EntréeMotif:65",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 115,
+					"left": 5,
+					"width": 110,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Orientation Temps :"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 135,
+					"left": 5,
+					"width": 110,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Orientation Espace :"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 155,
+					"left": 5,
+					"width": 110,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Cohérence comm. :"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 177,
+					"left": 5,
+					"width": 110,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Cohérence comp. :"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 197,
+					"left": 5,
+					"width": 110,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Lever :\t"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 217,
+					"left": 5,
+					"width": 110,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Assis :"
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 237,
+					"left": 5,
+					"width": 110,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Coucher :"
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 257,
+					"left": 5,
+					"width": 110,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Déplacement int. :"
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 277,
+					"left": 5,
+					"width": 110,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Déplacement ext."
+				},
+				"Texte10": {
+					"type": "text",
+					"top": 114,
+					"left": 314,
+					"width": 70,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Pouls :"
+				},
+				"Texte14": {
+					"type": "text",
+					"top": 134,
+					"left": 314,
+					"width": 70,
+					"height": 15,
+					"textAlign": "right",
+					"text": "TA :"
+				},
+				"Champ11": {
+					"type": "input",
+					"top": 296,
+					"left": 123,
+					"width": 163,
+					"height": 17,
+					"dataSource": "[DossierSante:33]DE_EtatAllergie1:57",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ12": {
+					"type": "input",
+					"top": 316,
+					"left": 123,
+					"width": 163,
+					"height": 17,
+					"dataSource": "[DossierSante:33]DE_EtatParasitose2:55",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Texte15": {
+					"type": "text",
+					"top": 297,
+					"left": 5,
+					"width": 110,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Toilette haut :"
+				},
+				"Texte16": {
+					"type": "text",
+					"top": 317,
+					"left": 5,
+					"width": 110,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Toilette bas :"
+				},
+				"Champ13": {
+					"type": "input",
+					"top": 153,
+					"left": 388,
+					"width": 163,
+					"height": 17,
+					"dataSource": "[DossierSante:33]DE_ObjectifPatient:67",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Champ14": {
+					"type": "input",
+					"top": 173,
+					"left": 388,
+					"width": 163,
+					"height": 17,
+					"dataSource": "[DossierSante:33]DE_SortieOrientation:70",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 154,
+					"left": 314,
+					"width": 70,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Temp :"
+				},
+				"Texte19": {
+					"type": "text",
+					"top": 174,
+					"left": 314,
+					"width": 70,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Sat :"
+				},
+				"Variable6": {
+					"type": "input",
+					"top": 82,
+					"left": 325,
+					"width": 100,
+					"height": 17,
+					"dataSource": "[DossierSante:33]DE_DateNéLe:17",
+					"dataSourceTypeHint": "date",
+					"stroke": "#000000",
+					"class": "TNR_14g1",
+					"textAlign": "right",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				}
+			}
+		}
+	]
+}

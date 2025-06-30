@@ -1,0 +1,214 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 465,
+					"height": 387,
+					"fill": "transparent"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 29,
+					"left": 7,
+					"width": 461
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 7,
+					"left": 67,
+					"height": 22
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 7,
+					"left": 7,
+					"width": 60,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 10,
+					"left": 10,
+					"width": 55,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Note"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 7,
+					"left": 68,
+					"width": 400,
+					"height": 22,
+					"fill": "#EEEEEE",
+					"stroke": "#EEEEEE"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 10,
+					"left": 69,
+					"width": 396,
+					"height": 15,
+					"dataSource": "[HeBerge:4]HB_Clé:2",
+					"stroke": "#0000FF",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#EEEEEE",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable6": {
+					"type": "input",
+					"top": 402,
+					"left": 6,
+					"width": 462,
+					"height": 72,
+					"dataSource": "<>vt_CNIL_ChampLibre",
+					"stroke": "#EE0000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 485,
+					"left": 6,
+					"width": 463
+				}
+			}
+		},
+		{
+			"objects": {
+				"Champ2": {
+					"type": "input",
+					"top": 30,
+					"left": 7,
+					"width": 445,
+					"height": 360,
+					"dataSource": "[HeBerge:4]HB_Psycho:44",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"scrollbarVertical": "visible",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable1": {
+					"type": "button",
+					"top": 490,
+					"left": 343,
+					"width": 127,
+					"height": 22,
+					"dataSource": "b_ValHB",
+					"shortcutKey": "[Enter]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton2": {
+					"type": "button",
+					"top": 490,
+					"left": 5,
+					"width": 168,
+					"height": 22,
+					"dataSource": "b_P10",
+					"text": "Date - Heure - Utilisateur",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton2.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	],
+	"geometryStamp": 1,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

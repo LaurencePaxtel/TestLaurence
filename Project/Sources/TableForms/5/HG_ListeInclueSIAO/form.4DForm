@@ -1,0 +1,281 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 20,
+	"markerBreak": 20,
+	"markerFooter": 20,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle10": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 504,
+					"height": 21,
+					"stroke": "transparent"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 0,
+					"left": 88,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 1,
+					"left": 1,
+					"width": 86,
+					"height": 16,
+					"dataSource": "[HeberGement:5]HG_FicheNuméro:3",
+					"stroke": "#000000",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 1,
+					"left": 112,
+					"width": 62,
+					"height": 16,
+					"dataSource": "[HeberGement:5]HG_Date:4",
+					"dataSourceTypeHint": "date",
+					"stroke": "#000000",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 1,
+					"left": 90,
+					"width": 19,
+					"height": 16,
+					"dataSource": "va_Gpe",
+					"stroke": "#663300",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne11": {
+					"type": "line",
+					"top": 0,
+					"left": 110,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Champ6": {
+					"type": "checkbox",
+					"top": 1,
+					"left": 180,
+					"width": 16,
+					"height": 16,
+					"dataSource": "[HeberGement:5]HG_Cloturée:67",
+					"enterable": false,
+					"text": " ",
+					"stroke": "#0000FF",
+					"textAlign": "center",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne12": {
+					"type": "line",
+					"top": 0,
+					"left": 175,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne15": {
+					"type": "line",
+					"top": 0,
+					"left": 199,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Champ7": {
+					"type": "input",
+					"top": 1,
+					"left": 202,
+					"width": 234,
+					"height": 16,
+					"dataSource": "[HeberGement:5]HG_CentreNom:62",
+					"stroke": "#0D72B9",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 1,
+					"left": 463,
+					"width": 39,
+					"height": 16,
+					"dataSource": "va_Rép2",
+					"stroke": "#009900",
+					"textAlign": "right",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne14": {
+					"type": "line",
+					"top": 0,
+					"left": 437,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne16": {
+					"type": "line",
+					"top": 0,
+					"left": 461,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Champ9": {
+					"type": "checkbox",
+					"top": 1,
+					"left": 442,
+					"width": 16,
+					"height": 16,
+					"dataSource": "[HeberGement:5]HG_Réservation:91",
+					"enterable": false,
+					"text": " ",
+					"stroke": "#009900",
+					"textAlign": "center",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 19,
+					"left": 0,
+					"width": 504,
+					"stroke": "#AAAAAA"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

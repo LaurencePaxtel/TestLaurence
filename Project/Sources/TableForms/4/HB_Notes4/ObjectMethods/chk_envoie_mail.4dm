@@ -1,0 +1,26 @@
+Case of 
+	: (Form event code:C388=Sur chargement:K2:1)
+		C_BOOLEAN:C305(chk_envoie_mail)
+		
+		chk_envoie_mail:=[HeBerge:4]HB_FAC_Envoie_Mail:79
+	: (Form event code:C388=Sur clic:K2:4)
+		[HeBerge:4]HB_FAC_Envoie_Mail:79:=chk_envoie_mail
+		
+		READ WRITE:C146([Factures:86])
+		
+		QUERY:C277([Factures:86]; [Factures:86]FAC_Destinataire_ID:11=[HeBerge:4]HB_ReferenceID:1)
+		MultiSoc_Filter(->[Factures:86])
+		
+		If (chk_envoie_mail)
+			chk_envoie_courrier:=False:C215
+			
+			[HeBerge:4]HB_FAC_Envoie_Courrier:78:=False:C215
+			
+			APPLY TO SELECTION:C70([Factures:86]; [Factures:86]FAC_Mode_Envoie:45:="E-mail")
+		Else 
+			APPLY TO SELECTION:C70([Factures:86]; [Factures:86]FAC_Mode_Envoie:45:="")
+		End if 
+		
+		UNLOAD RECORD:C212([Factures:86])
+		READ ONLY:C145([Factures:86])
+End case 

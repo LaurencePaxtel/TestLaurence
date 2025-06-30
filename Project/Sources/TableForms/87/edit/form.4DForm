@@ -1,0 +1,417 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"width": 695,
+	"height": 192,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "Lettre US (215,9 x 279,4 mm)",
+		"paperWidth": "611pt",
+		"paperHeight": "791pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 1,
+					"width": 694,
+					"height": 192,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"stroke": "transparent"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Texte2": {
+					"type": "text",
+					"top": 49,
+					"left": 11,
+					"width": 94,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "Désignation"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 75,
+					"left": -1,
+					"width": 106,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "Date fiche produit"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 101,
+					"left": 30,
+					"width": 75,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "Quantité"
+				},
+				"txt_fac_date": {
+					"type": "input",
+					"top": 49,
+					"left": 116,
+					"width": 570,
+					"height": 14,
+					"dataSource": "[Factures_Lignes:87]FACL_Titre:6",
+					"stroke": "#000000",
+					"class": "Champs",
+					"borderStyle": "solid",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"txt_fac_date2": {
+					"type": "input",
+					"top": 75,
+					"left": 116,
+					"width": 127,
+					"height": 14,
+					"dataSource": "[Factures_Lignes:87]FACL_Date_Fiche_Produit:27",
+					"stroke": "#000000",
+					"class": "Champs",
+					"borderStyle": "solid",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"txt_fac_date3": {
+					"type": "input",
+					"top": 101,
+					"left": 116,
+					"width": 80,
+					"height": 14,
+					"dataSource": "[Factures_Lignes:87]FACL_Quantite:18",
+					"dataSourceTypeHint": "integer",
+					"stroke": "#000000",
+					"class": "Champs",
+					"borderStyle": "solid",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/txt_fac_date3.4dm",
+					"events": [
+						"onLosingFocus",
+						"onDataChange",
+						"onAfterKeystroke",
+						"onAfterEdit"
+					]
+				},
+				"Field6": {
+					"type": "input",
+					"top": 127,
+					"left": 116,
+					"width": 80,
+					"height": 14,
+					"dataSource": "[Factures_Lignes:87]FACL_Prix_Unit_HT:8",
+					"dataSourceTypeHint": "number",
+					"borderStyle": "solid",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Field6.4dm",
+					"events": [
+						"onLosingFocus",
+						"onGettingFocus",
+						"onDataChange",
+						"onAfterKeystroke"
+					]
+				},
+				"Field4": {
+					"type": "input",
+					"top": 126,
+					"left": 273,
+					"width": 80,
+					"height": 14,
+					"dataSource": "[Factures_Lignes:87]FACL_Remise_Taux:13",
+					"dataSourceTypeHint": "number",
+					"borderStyle": "solid",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Field4.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Field2": {
+					"type": "input",
+					"top": 126,
+					"left": 441,
+					"width": 80,
+					"height": 14,
+					"dataSource": "[Factures_Lignes:87]FACL_Prix_Unit_Net:15",
+					"dataSourceTypeHint": "number",
+					"borderStyle": "solid",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Field": {
+					"type": "input",
+					"top": 126,
+					"left": 606,
+					"width": 80,
+					"height": 14,
+					"dataSource": "[Factures_Lignes:87]FACL_Prix_Unit_TTC:16",
+					"dataSourceTypeHint": "number",
+					"borderStyle": "solid",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Field7": {
+					"type": "input",
+					"top": 154,
+					"left": 116,
+					"width": 80,
+					"height": 14,
+					"dataSource": "[Factures_Lignes:87]FACL_Montant_HT:9",
+					"dataSourceTypeHint": "number",
+					"borderStyle": "solid",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Field5": {
+					"type": "input",
+					"top": 154,
+					"left": 273,
+					"width": 80,
+					"height": 14,
+					"dataSource": "[Factures_Lignes:87]FACL_Taux_TVA:10",
+					"dataSourceTypeHint": "number",
+					"borderStyle": "solid",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Field5.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Field3": {
+					"type": "input",
+					"top": 154,
+					"left": 441,
+					"width": 80,
+					"height": 14,
+					"dataSource": "[Factures_Lignes:87]FACL_Montant_TVA:11",
+					"dataSourceTypeHint": "number",
+					"borderStyle": "solid",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Field1": {
+					"type": "input",
+					"top": 154,
+					"left": 606,
+					"width": 80,
+					"height": 14,
+					"dataSource": "[Factures_Lignes:87]FACL_Montant_TTC:12",
+					"dataSourceTypeHint": "number",
+					"borderStyle": "solid",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"btn_valider": {
+					"type": "button",
+					"top": 11,
+					"left": 575,
+					"width": 112,
+					"height": 25,
+					"sizingX": "move",
+					"dataSource": "btn_valider",
+					"action": "accept",
+					"text": "Valider",
+					"focusable": false,
+					"method": "ObjectMethods/btn_valider.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_annuler": {
+					"type": "button",
+					"top": 11,
+					"left": 450,
+					"width": 112,
+					"height": 25,
+					"sizingX": "move",
+					"dataSource": "btn_annuler",
+					"action": "cancel",
+					"text": "Annuler",
+					"focusable": false,
+					"method": "ObjectMethods/btn_annuler.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 127,
+					"left": 30,
+					"width": 75,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "Prix Unit HT"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 126,
+					"left": 205,
+					"width": 56,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "% remise"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 127,
+					"left": 356,
+					"width": 78,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "Prix Unit Net"
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 128,
+					"left": 521,
+					"width": 78,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "Prix Unit TTC"
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 154,
+					"left": 30,
+					"width": 75,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "Montant HT"
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 152,
+					"left": 205,
+					"width": 56,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "% TVA"
+				},
+				"Texte10": {
+					"type": "text",
+					"top": 153,
+					"left": 356,
+					"width": 78,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "TVA"
+				},
+				"Texte11": {
+					"type": "text",
+					"top": 154,
+					"left": 521,
+					"width": 78,
+					"height": 13,
+					"class": "En_tete_champ",
+					"textAlign": "right",
+					"fontWeight": "bold",
+					"text": "Montant TTC"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {
+				"objects": [
+					"Rectangle"
+				]
+			}
+		}
+	}
+}

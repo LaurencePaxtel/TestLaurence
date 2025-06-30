@@ -1,0 +1,274 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 20,
+	"markerBreak": 20,
+	"markerFooter": 20,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle10": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 773,
+					"height": 23,
+					"fill": "#FFF0DF",
+					"stroke": "#FFF0DF"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 1,
+					"left": 1,
+					"width": 209,
+					"height": 15,
+					"dataSource": "[HeberGement:5]HG_EtatCivil:20",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#FFF0DF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Champ4": {
+					"type": "input",
+					"top": 1,
+					"left": 288,
+					"width": 206,
+					"height": 15,
+					"dataSource": "[HeberGement:5]HG_Nom:21",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#FFF0DF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 1,
+					"left": 596,
+					"width": 42,
+					"height": 15,
+					"dataSource": "va_sex",
+					"stroke": "#EE0000",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"focusable": false,
+					"fill": "#FFF0DF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 1,
+					"left": 213,
+					"width": 72,
+					"height": 15,
+					"dataSource": "[HeberGement:5]HG_Date:4",
+					"dataSourceTypeHint": "date",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#FFF0DF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 1,
+					"left": 498,
+					"width": 95,
+					"height": 15,
+					"dataSource": "[HeberGement:5]HG_Prénom:22",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#FFF0DF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Champ5": {
+					"type": "input",
+					"top": 1,
+					"left": 641,
+					"width": 72,
+					"height": 15,
+					"dataSource": "[HeberGement:5]HG_DateNéLe:24",
+					"dataSourceTypeHint": "date",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#FFF0DF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Champ6": {
+					"type": "input",
+					"top": 1,
+					"left": 716,
+					"width": 41,
+					"height": 15,
+					"dataSource": "[HeberGement:5]HG_Age:23",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#FFF0DF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 2,
+					"left": 211,
+					"height": 18,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 2,
+					"left": 594,
+					"height": 18,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 2,
+					"left": 714,
+					"height": 18,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 2,
+					"left": 639,
+					"height": 18,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 19,
+					"left": 0,
+					"width": 773,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 2,
+					"left": 495,
+					"height": 18,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 2,
+					"left": 286,
+					"height": 18,
+					"stroke": "#FFFFFF"
+				}
+			}
+		}
+	]
+}

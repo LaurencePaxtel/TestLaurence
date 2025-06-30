@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+    <!-- <link href="FilesCss/testBootstrap.css" rel="stylesheet">-->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+  
+	  <div class="modal hide" id="infos">
+  		<div class="container-fluid">  
+      		<div class="row-fluid"> 
+      			<div class="tabbable"> 
+    				<ul class="nav nav-tabs">
+        				<li class="active"><a href="#accueil" data-toggle="tab">Critères d'analyse</a></li>
+        				<li><a href="#livres" data-toggle="tab">Cumuls</a></li>
+        				
+    				</ul>
+    				<div class="tab-content">
+        				<div class="tab-pane active" id="accueil">
+        					<div class="span3">  
+          						<div class="well sidebar-nav">  
+            						<ul class="">  
+              							<li ><a href="#"  class="champDrag">test</a></li>  
+              							<li ><a href="#"  class="champDrag">HTML 4.01</a></li>  
+              							<li><a href="#"  class="champDrag">HTML5</a></li>  
+              							<li><a href="" class="champDrag">Firebug</a></li>  
+              							<li >Backend</li>  
+              							<li><a href="#"  class="champDrag">PHP</a></li>  
+              							<li><a href="#"  class="champDrag">SQL</a></li>   
+           							</ul>  
+          						</div><!--/.well -->  
+        					</div><!--/span-->  
+        					<div class="span9">  
+        						<form class="well">
+          			 				
+  									<div class="row-fluid">
+  										<div class="controls span6">
+    									</div>
+    									<div class="controls span6">
+    										<table id="tabelSearch"  class="table table-bordered table-striped table-condensed">
+   												<thead>
+      												<tr>
+            											<th style="width: 10%">Axe horizontal</th>
+           												<th style="width: 30%">Nbre</th>
+      												</tr>
+   												</thead>
+   												<tbody>
+          											<tr class="champDrop">
+            											<td ></td>
+            											<td	></td>
+            										</tr>
+            										<tr class="champDrop">
+            											<td ></td>
+            											<td	></td>
+            										</tr>
+            										<tr class="champDrop">
+            											<td ></td>
+            											<td	></td>
+            										</tr>
+            										<tr class="champDrop">
+            											<td ></td>
+            											<td	></td>
+            										</tr>
+            										<tr class="champDrop">
+            											<td ></td>
+            											<td	></td>
+            										</tr>
+    											</tbody>
+											</table>
+    									</div>
+    								</div>
+  									<div class="row-fluid">
+  										<div class="controls span6">
+    										<table id="tabelSearch"  class="table table-bordered table-striped table-condensed">
+   												<thead>
+      												<tr>
+            											<th style="width: 10%">Axe horizontal</th>
+           												<th style="width: 30%">Nbre</th>
+      												</tr>
+   												</thead>
+   												<tbody>
+          											<tr class="champDrop">
+            											<td ></td>
+            											<td	></td>
+            										</tr>
+            										<tr class="champDrop">
+            											<td ></td>
+            											<td	></td>
+            										</tr>
+            										<tr class="champDrop">
+            											<td ></td>
+            											<td	></td>
+            										</tr>
+            										<tr class="champDrop">
+            											<td ></td>
+            											<td	></td>
+            										</tr>
+            										<tr class="champDrop">
+            											<td ></td>
+            											<td	></td>
+            										</tr>
+    											</tbody>
+											</table>
+    									</div>
+  										<div class="controls span6">
+  											    <form>
+    												<label>Périodicité d'analyse des heures</label>
+    												<select class="">
+            											<option>1</option>
+            											<option>2</option>
+            											<option>3</option>
+            											<option>4</option>
+            											<option>5</option>
+            										</select>
+            										<label>Périodicité d'analyse des dates</label>
+            										<select class="">
+            											<option>1</option>
+            											<option>2</option>
+            											<option>3</option>
+            											<option>4</option>
+            											<option>5</option>
+            										</select>
+					    							<label class="checkbox">
+    													<input type="checkbox"> Cumul global
+    												</label>
+    												<label class="checkbox">
+    													<input type="checkbox"> Cumuls annuels
+    												</label>
+    												<label class="checkbox">
+    													<input type="checkbox"> Cumuls semestriels
+    												</label>
+    												<label class="checkbox">
+    													<input type="checkbox"> Cumuls trimestriels
+    												</label>
+												</form>
+        								</div>
+        								<div class="row-fluid">
+  											<div class="controls span4">
+    											<label class="checkbox">
+            										<input type="checkbox" value="option1" id="inlineCheckbox1"> Filtrer les valeurs nulles
+        										</label>
+        									</div>
+        									<div class="controls span4">
+    											<label class="checkbox">
+            										<input type="checkbox" value="option1" id="inlineCheckbox1"> Filtrer les lignes vides
+        										</label>
+        									</div>
+        									<div class="controls span4">
+    										
+        									</div>
+  										</div>
+  										<div class="row-fluid">
+  											<div class="controls span4">
+  										 		<label>Recherche associée</label>
+  										 	</div>
+  										 	<div class="controls span8">
+												<input type="text" placeholder="Type something…">
+											</div>
+  										</div>
+  									</div>
+  									
+								</form>
+    						</div>
+        				</div>
+        				<div class="tab-pane" id="livres">
+						
+							<div class="row-fluid">
+  								<div class="controls span6">
+  									<table id="tabelSearch"  class="table table-bordered table-striped table-condensed">
+   										<thead>
+      										<tr>
+            									<th style="width: 10%">Axe horizontal</th>
+           										<th style="width: 30%">Nbre</th>
+	      									</tr>
+   										</thead>
+   										<tbody>
+          									<tr class="champDrop">
+            									<td ></td>
+            									<td	></td>
+            								</tr>
+            								<tr class="champDrop">
+            									<td ></td>
+            									<td	></td>
+            								</tr>
+	            							<tr class="champDrop">
+    	        								<td ></td>
+        	    								<td	></td>
+            								</tr>
+            								<tr class="champDrop">
+            									<td ></td>
+            									<td	></td>
+            								</tr>
+            								<tr class="champDrop">
+            									<td ></td>
+            									<td	></td>
+            								</tr>
+    									</tbody>
+									</table>
+    							</div>
+    							<div class="controls span6">
+    								<table id="tabelSearch"  class="table table-bordered table-striped table-condensed">
+   										<thead>
+      										<tr>
+            									<th style="width: 10%">Axe horizontal</th>
+           										<th style="width: 30%">Nbre</th>
+	      									</tr>
+   										</thead>
+   										<tbody>
+          									<tr class="champDrop">
+            									<td ></td>
+            									<td	></td>
+            								</tr>
+            								<tr class="champDrop">
+            									<td ></td>
+            									<td	></td>
+            								</tr>
+	            							<tr class="champDrop">
+    	        								<td ></td>
+        	    								<td	></td>
+            								</tr>
+            								<tr class="champDrop">
+            									<td ></td>
+            									<td	></td>
+            								</tr>
+            								<tr class="champDrop">
+            									<td ></td>
+            									<td	></td>
+            								</tr>
+    									</tbody>
+									</table>
+    							</div>
+    						</div>
+						
+						</div>
+    				</div>
+				</div> 
+      	  			<div class="controls span4">
+    					<a class="btn btn-small btn-block  btn btn-primary btnNewSearch" type="submit" >Chargement et mémoirisation des synthèses</a>
+    				</div>
+    				<div class="controls span4">
+    					<a class="btn btn-small btn-block  btn btn-primary btnNewSearch" type="submit" >Annuler</a>
+    				</div>
+    				<div class="controls span4">
+    					<a class="btn btn-small btn-block  btn btn-primary btnNewSearch" type="submit" >Calculer la synthèse</a>
+    				</div>
+        		
+			</div>
+		</div>
+	</div>
+
+	<a class="btn btn-primary" data-toggle="modal" href="#infos" >Plus d'informations</a>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
+<script src="../js/FilesJS/bootstrap.js"></script>
+<script type="text/javascript" src="../js/FilesJS/jquery-ui-1.8.22.custom.min.js"></script>
+<script>
+
+	$(function() {
+        $( ".champDrag" ).draggable({
+        	revert: true,
+        	revertDuration: 1
+        });
+        
+        $( ".champDrop" ).droppable({
+            drop: function( event, ui ) {
+            	$(this).children().eq(1).text($(ui.draggable).text());
+            	
+              }
+        });
+    });
+	
+	
+	$(document).ready(function() {
+    	
+    
+    
+    	$(".btnNewSearch").live('click',function() {
+			$('#tabelSearch > tbody').html('<tr class="champDrop"><td ></td><td></td><td ><select class="span1"><option>=</option><option>#</option></select></td><td  class="dblClickShowInput"></td></tr>');
+       		$( ".champDrag" ).draggable({
+				revert: true,
+        		revertDuration: 1
+        	});
+        
+        	$( ".champDrop" ).droppable({
+        		drop: function( event, ui ) {
+           			$(this).children().eq(1).text($(ui.draggable).text());
+            	}
+        	});
+		});
+    
+    
+    
+    	$(".btnRemoveLineToSearchTable").live('click',function() {
+     		//$("#tabelSearch > thead:nth-child(1) > tr > td:nth-child(3)").show();
+		     var nmbrLineTable = $("#tabelSearch >  tbody  > tr").length;
+     		
+     		for (var i =  nmbrLineTable ;i > 1; i--){
+     		//var element = $('#tabelSearch > tbody > tr:nth-child('+i+')');
+     			if ($('#tabelSearch > tbody > tr:nth-child('+i+')').hasClass('champDrop')){
+       				
+       				//$('#tabelSearch > tbody > tr:nth-child('+i+') > td:nth-child(1)').text("");
+       				$('#tabelSearch > tbody > tr:nth-child('+i+') ').remove();
+       				//element.removeclass("champDrop");
+       				  //$(".champDrop" ).droppable( 'disable' );
+       				//$('#tabelSearch > tbody > tr:nth-child('+i+') > td:nth-child(4)').removeClass('dblClickShowInput');
+       				//$('#tabelSearch > tbody > tr:nth-child('+i+')').removeClass("champDrop  ui-droppable");
+       				
+       				break;
+      			}
+     		}
+     		
+       
+    	});
+    
+     	$(".btnAddLineToSearchTable").live('click',function() {
+     		//$("#tabelSearch > thead:nth-child(1) > tr > td:nth-child(3)").show();
+		     var nmbrLineTable = $("#tabelSearch >  tbody  > tr").length + 1;
+     	/*
+     		for (var i = 1;i < nmbrLineTable; i++){
+     		
+     			if (!$('#tabelSearch > tbody > tr:nth-child('+i+')').hasClass('champDrop')){
+       				$('#tabelSearch > tbody > tr:nth-child('+i+')').addClass("champDrop");
+       				$('#tabelSearch > tbody > tr:nth-child('+i+') > td:nth-child(4)').addClass("dblClickShowInput");
+       				$('#tabelSearch > tbody > tr:nth-child('+i+') > td:nth-child(1)').text("&");;
+       				//$('#tabelSearch > tbody > tr:nth-child('+i+')').addClass("ui.draggable");
+       			
+      				break;
+      			}
+     		}*/
+     		//$('.champDrop:last').after('<tr class="champDrop"><td >&</td><td></td><td ></td><td  class="dblClickShowInput"></td></tr>');
+     		$('<tr class="champDrop"><td ><select class="span1"><option>&</option><option>ou</option></select></td><td></td><td ><select class="span1"><option>=</option><option>#</option></select></td><td  class="dblClickShowInput"></td></tr>').appendTo('#tabelSearch > tbody');
+     		
+     		$( ".champDrag" ).draggable({
+        		revert: true,
+        		revertDuration: 1
+        	});
+        
+        	$( ".champDrop" ).droppable({
+        	    drop: function( event, ui ) {
+            		$(this).children().eq(1).text($(ui.draggable).text());
+            	
+             	}
+        	});
+       
+    	});
+    	
+    	$(".dblClickShowInput").live('dblclick',function(event) {
+       	 	addInput(this);
+    	});
+	});
+	
+	
+	//$(".dblClickShowInput").dblclick(function() {
+ // alert('Handler for .dblclick() called.');
+//});
+	function closeInput(elm) {
+    	var td = elm.parentNode;
+    	var value = elm.value;
+    	td.removeChild(elm);
+    	td.innerHTML = value;
+	}
+
+		function addInput(elm) {
+    		if (elm.getElementsByTagName('input').length > 0) return;
+
+    		var value = elm.innerHTML;
+    		elm.innerHTML = '';
+
+    		var input = document.createElement('input');
+    		input.setAttribute('type', 'text');
+    		input.setAttribute('value', value);
+    		input.setAttribute('onBlur', 'closeInput(this)');
+    		elm.appendChild(input);
+    		input.focus();
+		}
+	
+	
+	$("p").click(function () {
+      $(this).slideUp();
+    });
+	
+</script>
+
+
+  </body>
+  
+</html>

@@ -1,0 +1,159 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 20,
+	"markerBreak": 20,
+	"markerFooter": 20,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 333,
+					"height": 21,
+					"fill": "#EEEEEE",
+					"stroke": "#EEEEEE"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 17,
+					"left": 0,
+					"width": 333,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 18,
+					"left": 0,
+					"width": 333,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 0,
+					"left": 219,
+					"height": 22,
+					"stroke": "#AAAAAA"
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 2,
+					"left": 2,
+					"width": 212,
+					"height": 15,
+					"dataSource": "va_PR_GPLib",
+					"dataSourceTypeHint": "number",
+					"stroke": "#EE0000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#EEEEEE",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "# ##0;;",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail"
+					]
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 2,
+					"left": 300,
+					"width": 25,
+					"height": 15,
+					"dataSource": "ve_NbGPGH",
+					"dataSourceTypeHint": "number",
+					"stroke": "#EE0000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#EEEEEE",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "# ##0;;",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail"
+					]
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 2,
+					"left": 221,
+					"width": 75,
+					"height": 15,
+					"dataSource": "[Prolongation:38]PR_RésaDateDébut:6",
+					"dataSourceTypeHint": "date",
+					"stroke": "#0000FF",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#EEEEEE",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 0,
+					"left": 297,
+					"height": 22,
+					"stroke": "#AAAAAA"
+				}
+			}
+		}
+	]
+}

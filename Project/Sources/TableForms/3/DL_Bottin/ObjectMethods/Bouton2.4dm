@@ -1,0 +1,1 @@
+P_Bottin(10; <>Va_SitPar; ->vl_Situation_Fiches; ->vl_Situation_Items; ->vt_Situation_Chemin; True:C214)

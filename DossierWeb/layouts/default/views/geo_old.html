@@ -1,0 +1,30 @@
+﻿<div id="container">
+	<form action="" name="direction" id="direction" method="get" class="form-horizontal well smallFormLeft" >
+		<fieldset>
+			<legend><span>Voir Autour de : <!--4Dhtmlvar soc_nom--></span></legend>			
+			<div class="control-group">
+				<label class="control-label">Rayon de: </label>
+				<div class="controls">
+					<input type="text" id="rayon" name="rayon" class="span1" value="<!--4Dhtmlvar KM -->"/> Km
+					<input id="voirautour" value="Voir Autour"  class="btn btn-primary custom"/>
+					<input type="hidden" id="adressegeo" name="adressegeo" value="<!--4Dhtmlvar adressegeo -->" />
+					<input type="hidden" id="donnesgps" name="donnesgps" value="<!--4Dhtmlvar resultats -->" />
+					<input type="hidden" id="uidsoc" name="uidsoc" value="<!--4Dhtmlvar uidsoc -->" />
+				</div>
+			<!--<div class="form-actions">
+			<input id="voirautour" value="Voir Autour" class="btn btn-primary"/>
+			</div>-->
+			</div>
+		</fieldset>
+	</form>	
+	<form action="" name="direction" id="direction" method="get" class="form-horizontal well smallFormRight" >	
+		<legend>Légende</legend>
+		<table class="legend-table">
+
+		</table>
+	</form>	
+	<div id="panel"></div>
+	<div id="map">
+		<p>Veuillez patienter pendant le chargement de la carte...</p>
+	</div>
+</div>

@@ -1,0 +1,1133 @@
+{
+	"destination": "listScreen",
+	"rightMargin": 16,
+	"bottomMargin": 10,
+	"markerHeader": 22,
+	"markerBody": 42,
+	"markerBreak": 47,
+	"markerFooter": 47,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "594pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle42": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 2507,
+					"height": 44,
+					"sizingX": "grow",
+					"fill": "transparent"
+				},
+				"Picture21": {
+					"type": "picture",
+					"top": 2,
+					"left": 2,
+					"width": 2503,
+					"height": 20,
+					"sizingX": "grow",
+					"pictureFormat": "scaled",
+					"picture": "Images/Picture21.png"
+				},
+				"S1_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 15,
+					"width": 48,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "ID : "
+				},
+				"S2_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 75,
+					"width": 77,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_Chambres : "
+				},
+				"S3_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 164,
+					"width": 63,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_Cuisine : "
+				},
+				"S4_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 239,
+					"width": 96,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_Salle_de_bain : "
+				},
+				"S5_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 347,
+					"width": 65,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_Surface : "
+				},
+				"S6_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 424,
+					"width": 210,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_Type : "
+				},
+				"S7_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 646,
+					"width": 116,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_Pieces_Principales : "
+				},
+				"S8_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 774,
+					"width": 55,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_Salon : "
+				},
+				"S9_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 841,
+					"width": 106,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_Salle_a_manger : "
+				},
+				"S10_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 959,
+					"width": 210,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_WC : "
+				},
+				"S11_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 1181,
+					"width": 210,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_Electricite_No_Compteur : "
+				},
+				"S12_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 1403,
+					"width": 210,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_Gaz_Naturel_No_Compteur : "
+				},
+				"S13_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 1625,
+					"width": 71,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_PV_Cave : "
+				},
+				"S14_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 1708,
+					"width": 83,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_PV_Parking : "
+				},
+				"S15_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 1803,
+					"width": 76,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_PV_Jardin : "
+				},
+				"S16_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 1891,
+					"width": 79,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_PV_Balcon : "
+				},
+				"S17_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 1982,
+					"width": 89,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_PV_Terrasse : "
+				},
+				"S18_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 2083,
+					"width": 67,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_ID_Bien : "
+				},
+				"S19_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 2162,
+					"width": 210,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "Ref_Structure : "
+				},
+				"S20_Text": {
+					"type": "text",
+					"top": 7,
+					"left": 2384,
+					"width": 115,
+					"height": 13,
+					"sizingX": "grow",
+					"text": "INV_Origine_Table_No : "
+				},
+				"Rectangle22": {
+					"type": "rectangle",
+					"top": 22,
+					"left": 2,
+					"width": 2503,
+					"height": 22,
+					"sizingX": "grow",
+					"stroke": "transparent"
+				},
+				"S1_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 15,
+					"width": 48,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]ID:1",
+					"dataSourceTypeHint": "integer",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S2_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 75,
+					"width": 77,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_Chambres:2",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S3_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 164,
+					"width": 63,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_Cuisine:3",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S4_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 239,
+					"width": 96,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_Salle_de_bain:4",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S5_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 347,
+					"width": 65,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_Surface:5",
+					"dataSourceTypeHint": "number",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S6_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 424,
+					"width": 210,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_Type:6",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S7_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 646,
+					"width": 116,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_Pieces_Principales:7",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S8_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 774,
+					"width": 55,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_Salon:8",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S9_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 841,
+					"width": 106,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_Salle_a_manger:9",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S10_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 959,
+					"width": 210,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_WC:10",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S11_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 1181,
+					"width": 210,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_Electricite_No_Compteur:11",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S12_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 1403,
+					"width": 210,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_Gaz_Naturel_No_Compteur:12",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S13_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 1625,
+					"width": 71,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_PV_Cave:13",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S14_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 1708,
+					"width": 83,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_PV_Parking:14",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S15_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 1803,
+					"width": 76,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_PV_Jardin:15",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S16_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 1891,
+					"width": 79,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_PV_Balcon:16",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S17_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 1982,
+					"width": 89,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_PV_Terrasse:17",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S18_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 2083,
+					"width": 67,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_ID_Bien:18",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S19_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 2162,
+					"width": 210,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]Ref_Structure:19",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"S20_Field": {
+					"type": "input",
+					"top": 26,
+					"left": 2384,
+					"width": 115,
+					"height": 14,
+					"sizingX": "grow",
+					"dataSource": "[Inventaire_Pieces:96]INV_Origine_Table_No:20",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Line23": {
+					"type": "line",
+					"top": 2,
+					"left": 2378,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter2": {
+					"type": "button",
+					"top": 0,
+					"left": 2377,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line24": {
+					"type": "line",
+					"top": 2,
+					"left": 2156,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter3": {
+					"type": "button",
+					"top": 0,
+					"left": 2155,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line25": {
+					"type": "line",
+					"top": 2,
+					"left": 2077,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter4": {
+					"type": "button",
+					"top": 0,
+					"left": 2076,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line26": {
+					"type": "line",
+					"top": 2,
+					"left": 1976,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter5": {
+					"type": "button",
+					"top": 0,
+					"left": 1975,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line27": {
+					"type": "line",
+					"top": 2,
+					"left": 1885,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter6": {
+					"type": "button",
+					"top": 0,
+					"left": 1884,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line28": {
+					"type": "line",
+					"top": 2,
+					"left": 1797,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter7": {
+					"type": "button",
+					"top": 0,
+					"left": 1796,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line29": {
+					"type": "line",
+					"top": 2,
+					"left": 1702,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter8": {
+					"type": "button",
+					"top": 0,
+					"left": 1701,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line30": {
+					"type": "line",
+					"top": 2,
+					"left": 1619,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter9": {
+					"type": "button",
+					"top": 0,
+					"left": 1618,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line31": {
+					"type": "line",
+					"top": 2,
+					"left": 1397,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter10": {
+					"type": "button",
+					"top": 0,
+					"left": 1396,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line32": {
+					"type": "line",
+					"top": 2,
+					"left": 1175,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter11": {
+					"type": "button",
+					"top": 0,
+					"left": 1174,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line33": {
+					"type": "line",
+					"top": 2,
+					"left": 953,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter12": {
+					"type": "button",
+					"top": 0,
+					"left": 952,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line34": {
+					"type": "line",
+					"top": 2,
+					"left": 835,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter13": {
+					"type": "button",
+					"top": 0,
+					"left": 834,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line35": {
+					"type": "line",
+					"top": 2,
+					"left": 768,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter14": {
+					"type": "button",
+					"top": 0,
+					"left": 767,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line36": {
+					"type": "line",
+					"top": 2,
+					"left": 640,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter15": {
+					"type": "button",
+					"top": 0,
+					"left": 639,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line37": {
+					"type": "line",
+					"top": 2,
+					"left": 418,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter16": {
+					"type": "button",
+					"top": 0,
+					"left": 417,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line38": {
+					"type": "line",
+					"top": 2,
+					"left": 341,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter17": {
+					"type": "button",
+					"top": 0,
+					"left": 340,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line39": {
+					"type": "line",
+					"top": 2,
+					"left": 233,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter18": {
+					"type": "button",
+					"top": 0,
+					"left": 232,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line40": {
+					"type": "line",
+					"top": 2,
+					"left": 158,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter19": {
+					"type": "button",
+					"top": 0,
+					"left": 157,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line41": {
+					"type": "line",
+					"top": 2,
+					"left": 69,
+					"height": 42,
+					"stroke": "#A8A8A8"
+				},
+				"Splitter20": {
+					"type": "button",
+					"top": 0,
+					"left": 68,
+					"width": 3,
+					"height": 46,
+					"action": "automaticSplitter",
+					"display": false,
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	]
+}

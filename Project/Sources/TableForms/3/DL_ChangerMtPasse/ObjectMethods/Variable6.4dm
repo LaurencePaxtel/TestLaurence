@@ -1,0 +1,1 @@
+outilsPasswordCheckValid(Get edited text:C655; va_MPmot2; <>ve_MotPasseLongueur; "Variable18")

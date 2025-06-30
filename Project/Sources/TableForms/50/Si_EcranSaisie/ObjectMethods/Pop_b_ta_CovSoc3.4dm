@@ -1,0 +1,8 @@
+
+If (vl_SP_Reference>0)
+	If (F_Tab_Pop("Couverture sociale"; -><>ta_SIAO_CouvSoc; ->va_Ss_CS_Intitule3))
+		If (F_SIAO_Var_SsCS(10; vl_Ss_CS_Reference3; Field:C253(->[SIAO_Situations:52]Ss_Intitule:9); ->va_Ss_CS_Intitule3; ta_SP_Nom))
+		End if 
+	End if 
+End if 
+

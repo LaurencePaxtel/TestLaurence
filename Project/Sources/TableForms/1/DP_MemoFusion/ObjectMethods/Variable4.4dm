@@ -1,0 +1,1 @@
+P_NotesUser(->[DePart:1]DP_Texte:7)

@@ -1,0 +1,147 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 20,
+	"markerBreak": 20,
+	"markerFooter": 20,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 319,
+					"height": 18,
+					"fill": "#FFF0DF",
+					"stroke": "#FFFFFF"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 18,
+					"left": 0,
+					"width": 319,
+					"stroke": "#FFFFFF"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 1,
+					"left": 0,
+					"width": 237,
+					"height": 12,
+					"dataSource": "[HeBerge:4]HB_Clé:2",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFF0DF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 1,
+					"left": 264,
+					"width": 52,
+					"height": 12,
+					"dataSource": "vl_NbHGi",
+					"dataSourceTypeHint": "number",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"focusable": false,
+					"fill": "#FFF0DF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "### ### ##0;;",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onDisplayDetail"
+					]
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 1,
+					"left": 240,
+					"width": 21,
+					"height": 12,
+					"dataSource": "ve_NbSP",
+					"stroke": "#EE0000",
+					"class": "TNR_11",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFF0DF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"textFormat": "X;;",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDisplayDetail"
+					]
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 0,
+					"left": 238,
+					"height": 19
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 0,
+					"left": 262,
+					"height": 19
+				}
+			}
+		}
+	]
+}

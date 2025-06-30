@@ -1,0 +1,39 @@
+//Script 
+
+CONFIRM:C162("Purger SIAO."+Char:C90(13)+"Confirmez-vous la suppression ?")
+If (OK=1)
+	i_Message("SIAO : suppression en cours")
+	READ WRITE:C146([SIAO:50])
+	READ WRITE:C146([SIAO_Personnes:51])
+	READ WRITE:C146([SIAO_Situations:52])
+	READ WRITE:C146([Adresses:53])
+	READ WRITE:C146([SIAO_SiteReference:54])
+	READ WRITE:C146([SIAO_SiteAccueil:55])
+	
+	ALL RECORDS:C47([SIAO:50])
+	DELETE SELECTION:C66([SIAO:50])
+	
+	ALL RECORDS:C47([SIAO_Personnes:51])
+	DELETE SELECTION:C66([SIAO_Personnes:51])
+	
+	ALL RECORDS:C47([SIAO_Situations:52])
+	DELETE SELECTION:C66([SIAO_Situations:52])
+	
+	ALL RECORDS:C47([Adresses:53])
+	DELETE SELECTION:C66([Adresses:53])
+	
+	ALL RECORDS:C47([SIAO_SiteReference:54])
+	DELETE SELECTION:C66([SIAO_SiteReference:54])
+	
+	ALL RECORDS:C47([SIAO_SiteAccueil:55])
+	DELETE SELECTION:C66([SIAO_SiteAccueil:55])
+	
+	
+	READ ONLY:C145([SIAO:50])
+	READ ONLY:C145([SIAO_Personnes:51])
+	READ ONLY:C145([SIAO_Situations:52])
+	READ ONLY:C145([Adresses:53])
+	READ ONLY:C145([SIAO_SiteReference:54])
+	READ ONLY:C145([SIAO_SiteAccueil:55])
+	CLOSE WINDOW:C154
+End if 

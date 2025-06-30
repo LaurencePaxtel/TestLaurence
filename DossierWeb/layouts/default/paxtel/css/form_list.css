@@ -1,0 +1,410 @@
+#list_table{
+	margin-top:15px;
+}
+
+#iw_form_popup,#iw_form_popupautre{
+	display:none;
+}
+
+.form-horizontal .control-group {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.fdp_boutons{
+	width:100%;
+}
+
+#recherche{
+	margin:0px !important;
+}
+
+
+ /*ui-menu ui-widget ui-widget-content ui-corner-all*/
+
+    .ui-autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    display: none;
+    min-width: 160px;   
+    padding: 4px 0;
+    margin: 0 0 10px 25px;
+    list-style: none;
+    background-color: #ffffff;
+    border-color: #ccc;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+}
+
+.ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.ui-state-hover, .ui-state-active {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #0088cc;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    background-image: none;
+}
+
+.ui-autocomplete a:hover{
+	color:#fff !important;
+}
+
+.ui-autocomplete{
+	 width: 250px;
+}
+
+
+.iw_search_form{
+    width: 100%;
+    float: left;
+    padding: 5px 5px 5px 5px;
+    background-color: #fdfdfd;
+    border: 1px solid #f5f5f5;  
+    margin-bottom: 10px;
+}
+
+.fdp_resp_table{
+    margin-bottom:10px;
+}
+
+/* Tablesorter */
+.tablesorter-blue tbody td, .tablesorter-blue tfoot th, .tablesorter-blue tfoot td {
+    padding: 3px; /* Modifié Scanu Remy - remy@connect-io.fr - 09/03/2023 (valeur precédente : 10px 5px 10px 5px) */
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.2;
+    font-weight: unset !important;
+}
+
+.tablesorter-blue .header, .tablesorter-blue .tablesorter-header {
+    padding: 10px 18px 10px 6px;
+}
+
+.tablesorter-blue th, .tablesorter-blue thead td {
+    font:normal 12px/18px Arial, Sans-serif;
+    color: #fff;
+    background-color: #0d72b9;
+    text-shadow: none !important;
+}
+
+.table-advance thead tr th {
+    background-color: #0d72b9;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.tablesorter-blue .headerSortUp, .tablesorter-blue .tablesorter-headerSortUp, .tablesorter-blue .tablesorter-headerAsc {
+    background-color: #2d8cd0;
+}
+
+.tablesorter-blue .headerSortDown, .tablesorter-blue .tablesorter-headerSortDown, .tablesorter-blue .tablesorter-headerDesc {
+    background-color: #218bd6;
+}
+
+td:hover {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.tablesorter-errorRow,.tablesorter-ignoreRow{
+    display:none;
+}
+
+/*pager*/
+.tablesorterPager .btn {
+    background-color: #fdfdfd;
+    float: left;
+    padding: 8px 15px 8px 15px;
+    margin: 0px 2px 0px 0px;
+}
+
+div.tablesorterPager input {
+    font-size: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+    display: inline !important;
+    height: 32px !important;
+    padding: 5px 10px !important;
+    font-size: 13px !important;
+    text-align: center !important;
+    margin: 0px 5px 0px 5px !important;
+    vertical-align: middle !important;
+    width: 120px !important;
+    float: left;
+}
+
+.pagesize {
+    margin-top: 0px;
+    margin-left: 5px;
+    float: left;
+    height: 32px;
+}
+
+#pager {
+    float: left;
+    width: 100% !important;
+    border-top: 1px solid #f9f9f9;
+    border-bottom: 1px solid #f9f9f9;
+    padding: 3px 0px 3px 0px !important;
+    background-color: #f9f9f9 !important;
+    margin: 0px 10px 1px 0px !important;
+    text-align: left;
+}
+
+.iw_btn_icon_only{
+    border: solid 1px #fff;
+    border-radius: 3px;
+    background-color: #0d72b9;
+    color: #fff;
+    font-size: 14px;
+    line-height: 27px;
+    font-weight: normal;
+    text-decoration: none;
+    margin: 0px;
+    padding: 5px 5px 5px 14px;
+    display: inline-block;
+    margin-top: 0px !important;   
+}
+
+.iw_cg_btn_icon .controls{
+    padding-top:6px;
+}
+
+.iw_btn_icon_only:hover{
+    background-color: #2b95e0;
+}
+
+.iw_btn_dashboard{
+   width: 145px !important;
+}
+
+.iw_btn_first{
+    margin-left:0px !important;
+}
+
+.iw_text_center{
+    text-align:center;
+}
+
+#list_table_factures_ th:first-child{
+    width:40px !important;
+}
+
+.table-striped tbody tr:nth-child(odd) td, .table-striped tbody tr:nth-child(odd) th {
+    background-color: #e6f1f8;
+}
+
+.iw_data_table{
+    margin-top: 7px;
+    float: left;
+    overflow-x: overlay;
+    display: block;
+}
+
+/*hover*/
+.tablesorter-blue tbody > tr:hover > td, .tablesorter-blue tbody > tr:hover + tr.tablesorter-childRow > td, .tablesorter-blue tbody > tr:hover + tr.tablesorter-childRow + tr.tablesorter-childRow > td, .tablesorter-blue tbody > tr.even:hover > td, .tablesorter-blue tbody > tr.even:hover + tr.tablesorter-childRow > td, .tablesorter-blue tbody > tr.even:hover + tr.tablesorter-childRow + tr.tablesorter-childRow > td {
+    background: #e0f3ff;
+}
+
+.tablesorter-blue th, .tablesorter-blue td {
+    border: #cadeea 1px solid;
+    border-width: 0 1px 1px 0;
+}
+
+.tablesorter-blue {
+    border: none !important;
+}
+
+.tablesorter-blue th{
+    border: #7fadce 1px solid;
+}
+
+.tablesorter-blue th:last-child{
+   border-right: #0d72b9 1px solid;
+}
+
+.strc_logo{
+    /*height:100px;*/
+        width: 200px;
+}
+
+
+/*******************************************/
+/* Popup form CSS*/
+/*******************************************/
+@media screen and (min-width: 980px) {
+
+	.iw_popup_form .iw_btn_save{
+		float:right;
+	}
+
+	.iw_popup_form .iw_btn_close{
+		float:right;
+	} 
+
+	.iw_popup_form .iw_btn_delete{
+		float:left;
+    }
+	.iw_popup_form .jconfirm-buttons{
+		width:100%;
+	}
+
+    .iw_popup_form_small{
+        max-width:600px;
+        margin: auto;
+    }
+
+    .iw_popup_form_medium .jconfirm-box{
+        max-width: 900px !important;
+        margin: auto;
+    }
+}
+
+.iw_form_popup_gb{
+    display:none;
+}
+/*********************side bar btns**********************/
+
+.iw_btns_sidebar{
+    position: fixed;
+    float: left;
+    left: 0px;
+    top: 30%;
+}
+
+.iw_btns_sidebar .btn{
+    text-align: left;
+    font-size: 15px;
+    padding: 4px 0px 4px 7px;
+    color: #0d72b9;
+}
+
+.iw_btns_sidebar .btn i{
+    margin-right: 5px;
+    color: #333333;
+}
+
+.iw_btns_sidebar .fa{
+   font-weight:bold;
+}
+
+.fa.icon_right{
+    margin-right: 0px;
+    margin-left: 10px;
+}
+
+.iw_btns_sidebar .btn_left{
+    float:left;
+  }
+
+.iw_btns_sidebar .btn_right{
+  float:right;
+}
+
+.iw_btns_sidebar .btn_right .fa{
+    margin-right: 0px;
+}
+
+
+.btn-group-vertical .btn:first-child{
+    border-radius: 0px 4px 0 0;
+}
+
+.btn-group-vertical .btn:last-child{
+    border-radius: 0 0 4px 0px;
+}
+
+.sb_hide {
+    transform:translateX( -150px);
+}
+
+.sb_pushed{
+    transform:translateX( +150px);
+}
+
+.sb_btn_toggle{
+    border-top-right-radius: 5px;
+    background-color: #f5f5f5;
+    padding: 4px 15px 4px 7px;
+    width: 30px;
+    border-top: 1px solid #ddd6d6;
+    border-right: 1px solid #ddd6d6;
+    border-bottom: 1px solid #ddd6d6;
+}
+
+.sb_btn_toggle .fa{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*********************************************************/
+/* Popup form jconfirm  
+/*********************************************************/
+
+@media screen and (min-width: 980px) {
+
+	.iw_popup_form .iw_btn_right{
+		float:right;
+	}
+
+	.iw_popup_form .iw_btn_left{
+		float:left;
+	}
+    
+	.iw_popup_form .jconfirm-buttons{
+		width:100%;
+    }
+    
+}
+
+div.tablesorterPager select {
+    margin: 0 0 0rem !important;
+    height: 28px !important;
+}
+
+div.tablesorterPager input{
+    height: 28px !important;
+}
+
+.iw_input_browse{
+    width:250px !important;
+}
+
+
+.iw_popup_form .fa{
+    font-size: 20px !important;
+    font-weight: bold;    
+}
+
+input[type=checkbox] {
+    width: 20px !important;
+    height: 20px !important;
+}

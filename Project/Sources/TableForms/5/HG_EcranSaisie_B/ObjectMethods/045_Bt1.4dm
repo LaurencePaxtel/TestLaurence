@@ -1,0 +1,2 @@
+//Script b_ResActV
+Tab_PopRub3(->[HeberGement:5]HG_FicheNuméro:3; <>ta_RdsNomNew{<>vlSTR_Std-<>vlSTR}{31}; ->[HeberGement:5]HG_Ressources1:45; ->[HeberGement:5]HG_Ressource1_2:75; ->[HeberGement:5]HG_Ressources2:46; ->[HeberGement:5]HG_Ressource2_2:76; ->[HeberGement:5]HG_Ressources3:47; ->[HeberGement:5]HG_Ressource3_2:77)

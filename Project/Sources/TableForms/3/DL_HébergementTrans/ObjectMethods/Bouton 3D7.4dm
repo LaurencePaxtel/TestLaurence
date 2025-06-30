@@ -1,0 +1,15 @@
+//Script b_VoirST
+MESSAGES ON:C181
+QUERY SELECTION:C341([HeberGement:5]; [HeberGement:5]HG_DispoSpé:90=True:C214)
+ORDER BY:C49([HeberGement:5]; [HeberGement:5]HG_FicheNuméro:3; >)
+vl_NbHB:=Records in selection:C76([HeberGement:5])
+If (vl_NbHB>0)
+	OBJECT SET ENABLED:C1123(b_DSVoir; True:C214)
+Else 
+	OBJECT SET ENABLED:C1123(b_DSVoir; False:C215)
+End if 
+OBJECT SET ENABLED:C1123(b_VoirNotes; False:C215)
+OBJECT SET ENABLED:C1123(b_VoirSP; False:C215)
+OBJECT SET ENABLED:C1123(b_DSOui; False:C215)
+OBJECT SET ENABLED:C1123(b_DSNon; False:C215)
+MESSAGES OFF:C175

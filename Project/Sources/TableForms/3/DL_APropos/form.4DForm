@@ -1,0 +1,624 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 1,
+					"left": 70,
+					"width": 289,
+					"height": 373,
+					"stroke": "transparent"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Texte38": {
+					"type": "text",
+					"top": 252,
+					"left": 68,
+					"width": 285,
+					"height": 30,
+					"stroke": "#000000",
+					"textAlign": "center",
+					"text": "© conception et réalisation\rF. Phanchi"
+				},
+				"Texte39": {
+					"type": "text",
+					"top": 289,
+					"left": 68,
+					"width": 284,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "center",
+					"text": "version"
+				},
+				"Image1": {
+					"type": "picture",
+					"top": 337,
+					"left": 211,
+					"width": 32,
+					"height": 29,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image1.bmp"
+				},
+				"Image3": {
+					"type": "picture",
+					"top": 338,
+					"left": 178,
+					"width": 29,
+					"height": 25,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image3.bmp"
+				},
+				"About_version": {
+					"type": "input",
+					"top": 306,
+					"left": 109,
+					"width": 203,
+					"height": 16,
+					"dataSource": "<>T_VersionDB__C",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"logo": {
+					"type": "input",
+					"top": 120,
+					"left": 90,
+					"width": 241,
+					"height": 127,
+					"dataSourceTypeHint": "picture",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"pictureFormat": "proportionalCenter",
+					"dragging": "none"
+				},
+				"logo_paxtel": {
+					"type": "input",
+					"top": 27,
+					"left": 106,
+					"width": 208,
+					"height": 87,
+					"dataSourceTypeHint": "picture",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"pictureFormat": "proportionalCenter",
+					"dragging": "none"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Rectangle10": {
+					"type": "rectangle",
+					"top": 41,
+					"left": 75,
+					"width": 277,
+					"height": 325,
+					"fill": "transparent"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 63,
+					"left": 77,
+					"width": 273
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 46,
+					"left": 80,
+					"width": 268,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"borderStyle": "raised",
+					"text": "à propos"
+				},
+				"Ligne11": {
+					"type": "line",
+					"top": 365,
+					"left": 77,
+					"width": 274,
+					"stroke": "#AAAAAA"
+				},
+				"Variable41": {
+					"type": "input",
+					"top": 64,
+					"left": 77,
+					"width": 258,
+					"height": 300,
+					"dataSource": "tx_apropos",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"scrollbarVertical": "visible",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Zone de groupe1": {
+					"type": "groupBox",
+					"top": 30,
+					"left": 75,
+					"width": 277,
+					"height": 197,
+					"stroke": "#000000",
+					"class": "Bt_Page",
+					"text": "informations sur le programme"
+				},
+				"Zone de groupe3": {
+					"type": "groupBox",
+					"top": 232,
+					"left": 75,
+					"width": 277,
+					"height": 134,
+					"stroke": "#000000",
+					"class": "Bt_Page",
+					"text": "informations sur le système"
+				},
+				"Zone de groupe4": {
+					"type": "groupBox",
+					"top": 279,
+					"left": 80,
+					"width": 132,
+					"height": 82,
+					"stroke": "#000000",
+					"class": "Bt_Page",
+					"text": "Moniteur"
+				},
+				"Texte49": {
+					"type": "text",
+					"top": 325,
+					"left": 85,
+					"width": 118,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"text": "Couleurs"
+				},
+				"Texte41": {
+					"type": "text",
+					"top": 46,
+					"left": 80,
+					"width": 103,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"text": "Programme"
+				},
+				"Texte42": {
+					"type": "text",
+					"top": 103,
+					"left": 80,
+					"width": 103,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"text": "Données"
+				},
+				"Texte43": {
+					"type": "text",
+					"top": 159,
+					"left": 80,
+					"width": 103,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"text": "Utilisateur"
+				},
+				"Texte44": {
+					"type": "text",
+					"top": 246,
+					"left": 80,
+					"width": 103,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"text": "Plateforme"
+				},
+				"Texte48": {
+					"type": "text",
+					"top": 292,
+					"left": 85,
+					"width": 98,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"text": "Taille écran"
+				},
+				"Zone de groupe8": {
+					"type": "groupBox",
+					"top": 280,
+					"left": 215,
+					"width": 132,
+					"height": 82,
+					"stroke": "#000000",
+					"class": "Bt_Page",
+					"text": "Réseau"
+				},
+				"Texte51": {
+					"type": "text",
+					"top": 325,
+					"left": 220,
+					"width": 118,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"text": "Proprétaire"
+				},
+				"Texte52": {
+					"type": "text",
+					"top": 292,
+					"left": 220,
+					"width": 118,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"text": "Nom du poste"
+				},
+				"Texte54": {
+					"type": "text",
+					"top": 192,
+					"left": 80,
+					"width": 143,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"text": "Version de 4ème dimension"
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 175,
+					"left": 81,
+					"width": 264,
+					"height": 15,
+					"dataSource": "<>va_Utilisateur",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable6": {
+					"type": "input",
+					"top": 262,
+					"left": 81,
+					"width": 264,
+					"height": 15,
+					"dataSource": "<>va_PlateForme",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable7": {
+					"type": "input",
+					"top": 310,
+					"left": 86,
+					"width": 56,
+					"height": 15,
+					"dataSource": "<>vl_LargeurEcran",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable8": {
+					"type": "input",
+					"top": 343,
+					"left": 86,
+					"width": 119,
+					"height": 15,
+					"dataSource": "<>va_CouleurEcran",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable9": {
+					"type": "input",
+					"top": 310,
+					"left": 221,
+					"width": 119,
+					"height": 15,
+					"dataSource": "<>va_NomMachine",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable10": {
+					"type": "input",
+					"top": 343,
+					"left": 221,
+					"width": 119,
+					"height": 15,
+					"dataSource": "<>va_NomPpossesseur",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable11": {
+					"type": "input",
+					"top": 208,
+					"left": 81,
+					"width": 264,
+					"height": 15,
+					"dataSource": "<>va_VersionApplication",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable12": {
+					"type": "input",
+					"top": 310,
+					"left": 150,
+					"width": 56,
+					"height": 15,
+					"dataSource": "<>vl_HauteurEcran",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable13": {
+					"type": "input",
+					"top": 62,
+					"left": 81,
+					"width": 264,
+					"height": 36,
+					"dataSource": "<>vt_ApplStructure",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable14": {
+					"type": "input",
+					"top": 119,
+					"left": 81,
+					"width": 264,
+					"height": 36,
+					"dataSource": "<>vt_ApplDonnees",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Texte2": {
+					"type": "text",
+					"top": 152,
+					"left": 97,
+					"width": 234,
+					"height": 81,
+					"stroke": "#9E00FF",
+					"class": "TNR_36",
+					"textAlign": "center",
+					"text": "Au revoir !"
+				}
+			}
+		}
+	],
+	"editor": {
+		"defaultView": "View 1",
+		"activeView": "View 9",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {
+				"objects": [
+					"Rectangle",
+					"Image3",
+					"About_version",
+					"logo",
+					"logo_paxtel"
+				]
+			}
+		}
+	}
+}

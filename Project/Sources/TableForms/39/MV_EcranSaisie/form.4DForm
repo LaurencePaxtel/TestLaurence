@@ -1,0 +1,435 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 8,
+					"left": 5,
+					"width": 465,
+					"height": 72,
+					"fill": "transparent"
+				},
+				"Variable1": {
+					"type": "button",
+					"top": 422,
+					"left": 342,
+					"width": 127,
+					"height": 22,
+					"dataSource": "b_ValHB",
+					"shortcutKey": "[Enter]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable5": {
+					"type": "button",
+					"top": 484,
+					"left": 309,
+					"width": 127,
+					"height": 22,
+					"dataSource": "b_AnnHB",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Variable5.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 82,
+					"left": 5,
+					"width": 465,
+					"height": 327,
+					"fill": "transparent"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 106,
+					"left": 7,
+					"width": 461
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 84,
+					"left": 117,
+					"height": 22
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 84,
+					"left": 7,
+					"width": 110,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 87,
+					"left": 10,
+					"width": 105,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "MESSAGE"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 84,
+					"left": 118,
+					"width": 350,
+					"height": 22,
+					"fill": "#FFFFDF",
+					"stroke": "#FFFFDF"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 417,
+					"left": 5,
+					"width": 464
+				},
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 33,
+					"left": 7,
+					"width": 110,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 36,
+					"left": 10,
+					"width": 105,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Clé"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 32,
+					"left": 117,
+					"height": 23
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 33,
+					"left": 118,
+					"width": 350,
+					"height": 22,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 32,
+					"left": 7,
+					"width": 461
+				},
+				"Rectangle9": {
+					"type": "rectangle",
+					"top": 10,
+					"left": 335,
+					"width": 133,
+					"height": 22,
+					"fill": "#FFFFDF",
+					"stroke": "#FFFFDF"
+				},
+				"Rectangle10": {
+					"type": "rectangle",
+					"top": 10,
+					"left": 7,
+					"width": 110,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 13,
+					"left": 10,
+					"width": 105,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Date"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 9,
+					"left": 117,
+					"height": 23
+				},
+				"Ligne8": {
+					"type": "line",
+					"top": 9,
+					"left": 240,
+					"height": 23
+				},
+				"Rectangle11": {
+					"type": "rectangle",
+					"top": 10,
+					"left": 241,
+					"width": 93,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 13,
+					"left": 244,
+					"width": 88,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Heure"
+				},
+				"Ligne9": {
+					"type": "line",
+					"top": 9,
+					"left": 334,
+					"height": 23
+				},
+				"Rectangle12": {
+					"type": "rectangle",
+					"top": 10,
+					"left": 118,
+					"width": 122,
+					"height": 22,
+					"fill": "#FFFFDF",
+					"stroke": "#FFFFDF"
+				},
+				"Rectangle8": {
+					"type": "rectangle",
+					"top": 56,
+					"left": 7,
+					"width": 110,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 59,
+					"left": 10,
+					"width": 105,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Traité"
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 55,
+					"left": 7,
+					"width": 461
+				},
+				"Ligne10": {
+					"type": "line",
+					"top": 56,
+					"left": 117,
+					"height": 23
+				},
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 56,
+					"left": 118,
+					"width": 122,
+					"height": 22,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne11": {
+					"type": "line",
+					"top": 56,
+					"left": 240,
+					"height": 23
+				}
+			}
+		},
+		{
+			"objects": {
+				"Champ3": {
+					"type": "input",
+					"top": 14,
+					"left": 358,
+					"width": 75,
+					"height": 15,
+					"dataSource": "[MessagerieVSM:39]MV_Heure:3",
+					"dataSourceTypeHint": "time",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFDF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"entryFilter": "!0&9##:##:##",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"Champ5": {
+					"type": "input",
+					"top": 13,
+					"left": 119,
+					"width": 110,
+					"height": 15,
+					"dataSource": "[MessagerieVSM:39]MV_Date:2",
+					"dataSourceTypeHint": "date",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFDF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"entryFilter": "!0&9##/##/####",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 107,
+					"left": 7,
+					"width": 445,
+					"height": 300,
+					"dataSource": "[MessagerieVSM:39]MV_Texte:7",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"scrollbarVertical": "visible",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 37,
+					"left": 121,
+					"width": 345,
+					"height": 15,
+					"dataSource": "[MessagerieVSM:39]MV_Clé:6",
+					"stroke": "#0000FF",
+					"class": "TNR_12",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"Champ4_first": {
+					"type": "radio",
+					"top": 59,
+					"left": 119,
+					"width": 36,
+					"height": 15,
+					"dataSource": "[MessagerieVSM:39]MV_Traité:8",
+					"text": "Oui",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"radioGroup": "Champ4_group",
+					"events": [
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"Champ4": {
+					"type": "radio",
+					"top": 59,
+					"left": 175,
+					"width": 54,
+					"height": 15,
+					"dataSource": "Non:C34([MessagerieVSM:39]MV_Traité:8)",
+					"text": "Non",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"radioGroup": "Champ4_group",
+					"events": [
+						"onClick",
+						"onDataChange"
+					]
+				}
+			}
+		}
+	]
+}

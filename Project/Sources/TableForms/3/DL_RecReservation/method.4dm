@@ -1,0 +1,27 @@
+If (Form event code:C388=Sur chargement:K2:1)
+	q1:=Num:C11(ve_RecReservation=0)
+	q2:=Num:C11(ve_RecReservation=1)
+	q3:=Num:C11(ve_RecReservation=2)
+	q4:=Num:C11(ve_RecReservation=3)
+	Case of 
+		: (ve_RecReservation=0)
+			OBJECT SET VISIBLE:C603(*; "CH_RecRes@"; False:C215)
+		: (ve_RecReservation=1)
+			OBJECT SET VISIBLE:C603(*; "CH_RecRes@"; False:C215)
+			OBJECT SET VISIBLE:C603(*; "CH_RecResDer@"; False:C215)
+			OBJECT SET VISIBLE:C603(*; "CH_RecResPasDer@"; False:C215)
+		: (ve_RecReservation=2)
+			OBJECT SET VISIBLE:C603(*; "CH_RecResDer@"; False:C215)
+			OBJECT SET VISIBLE:C603(*; "CH_RecRes@"; False:C215)
+			OBJECT SET VISIBLE:C603(*; "CH_RecRes3"; True:C214)
+			OBJECT SET VISIBLE:C603(*; "CH_RecRes15"; True:C214)
+			
+			OBJECT SET VISIBLE:C603(*; "CH_RecResPasDer@"; True:C214)
+			OBJECT SET VISIBLE:C603(*; "CH_RecRes3"; False:C215)
+			OBJECT SET VISIBLE:C603(*; "CH_RecRes4"; False:C215)
+		: (ve_RecReservation=3)
+			OBJECT SET VISIBLE:C603(*; "CH_RecRes@"; False:C215)
+			OBJECT SET VISIBLE:C603(*; "CH_RecRes3"; True:C214)
+			OBJECT SET VISIBLE:C603(*; "CH_RecRes4"; True:C214)
+	End case 
+End if 

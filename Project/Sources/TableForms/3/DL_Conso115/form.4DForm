@@ -1,0 +1,585 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 268,
+					"left": 5,
+					"width": 456,
+					"height": 26,
+					"fill": "transparent"
+				},
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 270,
+					"left": 7,
+					"width": 452,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 273,
+					"left": 10,
+					"width": 447,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Lancer la procédure de consolidation sur le poste "
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 292,
+					"left": 7,
+					"width": 452
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 38,
+					"left": 5,
+					"width": 456,
+					"height": 358,
+					"fill": "transparent"
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 455,
+					"height": 27,
+					"fill": "transparent",
+					"stroke": "#999999"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 6,
+					"left": 6,
+					"width": 455,
+					"height": 27,
+					"fill": "transparent",
+					"stroke": "#FFFFFF"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 399,
+					"left": 5,
+					"width": 455
+				},
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 40,
+					"left": 7,
+					"width": 452,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 43,
+					"left": 10,
+					"width": 447,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Paramètres de la consolidation du 115 - partie serveur"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 62,
+					"left": 7,
+					"width": 452
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 81,
+					"left": 11,
+					"width": 193,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Consolidation  automatiques"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 13,
+					"left": 9,
+					"width": 37,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": ":30004,1"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 13,
+					"left": 186,
+					"width": 34,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": ":30004,2"
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 13,
+					"left": 336,
+					"width": 28,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": ":30004,3"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 13,
+					"left": 48,
+					"width": 140,
+					"height": 15,
+					"dataSource": "<>va_User",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 13,
+					"left": 224,
+					"width": 110,
+					"height": 15,
+					"dataSource": "<>va_ProfUser",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 13,
+					"left": 369,
+					"width": 85,
+					"height": 15,
+					"dataSource": "<>DDJ",
+					"dataSourceTypeHint": "date",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dateFormat": "systemMedium",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 79,
+					"left": 216,
+					"width": 124,
+					"height": 19
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 111,
+					"left": 218,
+					"width": 79,
+					"height": 16,
+					"dataSource": "<>vh_Conso115Auto1",
+					"dataSourceTypeHint": "time",
+					"class": "TNR_12",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"timeFormat": "hh_mm",
+					"entryFilter": "!0&9##:##",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable5.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable6": {
+					"type": "input",
+					"top": 111,
+					"left": 331,
+					"width": 79,
+					"height": 16,
+					"dataSource": "<>vh_Conso115Auto2",
+					"dataSourceTypeHint": "time",
+					"class": "TNR_12",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"timeFormat": "hh_mm",
+					"entryFilter": "!0&9##:##",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable6.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 405,
+					"left": 343,
+					"width": 117,
+					"height": 22,
+					"dataSource": "b_Ann",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 111,
+					"left": 11,
+					"width": 193,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Consolidation Heures : entre"
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 111,
+					"left": 301,
+					"width": 26,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "et"
+				},
+				"Bouton1": {
+					"type": "button",
+					"top": 405,
+					"left": 5,
+					"width": 146,
+					"height": 22,
+					"dataSource": "b_Sur serveur",
+					"text": "Lancer sur le serveur",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton3": {
+					"type": "button",
+					"top": 192,
+					"left": 294,
+					"width": 147,
+					"height": 22,
+					"dataSource": "b_Défaut",
+					"text": "Données par défaut",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton3.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton5": {
+					"type": "button",
+					"top": 405,
+					"left": 161,
+					"width": 172,
+					"height": 22,
+					"dataSource": "b_Val",
+					"shortcutKey": "[Enter]",
+					"text": "Enregistrer les paramètres",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton5.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Texte10": {
+					"type": "text",
+					"top": 297,
+					"left": 10,
+					"width": 311,
+					"height": 64,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"text": "Cette option lance une consolidation.\rCette action manuelle est à relancer pour chaque consolidation.\rVérifiez que la consolidation n'est pas active sur le serveur.\rLancer les deux process simultanément est interdit ."
+				},
+				"Variable7": {
+					"type": "input",
+					"top": 369,
+					"left": 15,
+					"width": 433,
+					"height": 16,
+					"dataSource": "<>va_Conso_Chrono",
+					"stroke": "#EE0000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton radio1": {
+					"type": "radio",
+					"top": 82,
+					"left": 221,
+					"width": 54,
+					"height": 13,
+					"dataSource": "r1",
+					"text": "Oui",
+					"class": "TNR_12",
+					"method": "ObjectMethods/Bouton radio1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton radio2": {
+					"type": "radio",
+					"top": 82,
+					"left": 281,
+					"width": 54,
+					"height": 13,
+					"dataSource": "r2",
+					"text": "Non",
+					"class": "TNR_12",
+					"method": "ObjectMethods/Bouton radio2.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 141,
+					"left": 218,
+					"width": 59,
+					"height": 16,
+					"dataSource": "<>vl_Conso115Ticks",
+					"class": "TNR_12",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable2.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 141,
+					"left": 51,
+					"width": 153,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Consolidation ticks d'attente :"
+				},
+				"Variable8": {
+					"type": "input",
+					"top": 141,
+					"left": 291,
+					"width": 100,
+					"height": 16,
+					"dataSource": "<>vh_Conso115Ticks",
+					"dataSourceTypeHint": "time",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"timeFormat": "hh_mm_ss",
+					"entryFilter": "!0&9##:##:##",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Rectangle8": {
+					"type": "rectangle",
+					"top": 273,
+					"left": 381,
+					"width": 16,
+					"height": 16,
+					"fill": "#FFFF00",
+					"stroke": "#FFFF00"
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 275,
+					"left": 382,
+					"width": 14,
+					"height": 14,
+					"stroke": "#EE0000",
+					"class": "TNR_11g",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "W"
+				}
+			}
+		}
+	],
+	"editor": {
+		"groups": {
+			"Groupe1": [
+				"Rectangle8",
+				"Texte8"
+			]
+		},
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

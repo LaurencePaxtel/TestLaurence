@@ -1,0 +1,1 @@
+PAR_Calcul(OBJECT Get value:C1743(OBJECT Get name:C1087); 2)

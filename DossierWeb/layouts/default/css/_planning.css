@@ -1,0 +1,401 @@
+.planning{
+	display:none;
+ }
+ 
+ 
+.pl {
+	text-align: left;
+	margin: 20px;
+	position: relative;
+	/*border: 1px solid red;*/
+	float: left;
+	/*display: none;*/
+	;
+	margin-top: 109px;
+	min-width: 1230px;
+}
+.pl-collabs{
+     margin-top:0px;   
+}
+	
+.pl table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	/*width:1194px;*/
+	}
+	 
+html .pl,
+.pl table {
+	font-size: 1em;
+	}
+
+/*.pl tr td.collab,
+.pl tr th.collab{
+	border:1px solid #fff;
+	border-right:1px solid #ccc;
+	}*/
+	
+	.hide{
+		display:none !important;
+	}
+.pl td,
+.pl th {
+	padding: 0;
+	vertical-align: top;
+	/*width:31px;*/
+	height: 27px;
+	border:1px solid #ccc;
+	text-align:center;
+	vertical-align: middle;
+	position: relative;
+	}
+	
+.tache{
+	/*height:31px;*/
+	height: 27px;
+	/*background:rgb(140, 196, 240);*/
+	font-size: 10px;
+	position: absolute !important;
+	z-index:100;
+	white-space: nowrap;
+	border: 1px solid #6FADFC;
+	background: #D8E9FF;
+	border-width: 0px 1px;
+}
+
+.pl .collab{
+	width: 190px;
+	padding-left: 5px;
+	text-align: left;
+	font-size: 11px;
+	}
+		
+.taches{
+	position: absolute;
+	top: 0;
+	left: 201px;
+	/*width: 79.9%;*/
+	/*border: 1px solid red;*/
+	float: left;
+	height: 100%;
+	overflow: hidden;
+}
+
+.pl .taches a{
+	color:#000;
+	display: block;
+	position: relative;
+	font-size: 10px;
+	}
+	
+.pl .taches .title_tache{
+	position: absolute;
+	z-index: 120; 
+	left: 8px;
+	}
+	
+.pl .next, .pl .previous, .pl .current, .pl .month{
+	position: absolute;
+	top: -30px;
+	font-size: 17px;
+	right: 0;
+	width: 50px;
+	padding: 2px;
+	border-radius: 2px;
+	text-align: center;
+	line-height: 17px;
+	/*border: 1px solid #ccc;
+	color: rgb(129, 129, 129);
+	background: #eee;*/
+	}
+
+	.dossier{
+		margin-top: 60px;
+	}
+	.pl .current{
+		right: 60px;
+		width: 75px;
+		font-size: 11px;
+		line-height: 18px;
+	}
+	.pl .previous{
+		right: 145px;
+	}
+	.pl .current.week{
+		top:-30px;
+	}
+	.pl .current.month{
+		top:-56px;
+	}
+	.pl .current.term{
+		top:-82px;
+	}
+	.pl .current.year{
+		top:-108px;
+	}
+
+/* positionnement des boutons */
+	.pl .prev-week,
+	.pl .next-week{
+		top:-30px;
+	}
+	.pl .prev-month,
+	.pl .next-month{
+		top:-56px;
+	}	
+	.pl .prev-term,
+	.pl .next-term{
+		top:-82px;
+	}	
+	.pl .prev-year,
+	.pl .next-year{
+		top:-108px;
+	}	
+
+	
+.pl .title{
+	top: -30px;
+	position: absolute;
+	left:50%;
+	text-align: center;
+	font-size: 12px; /*20*/
+	width: 200px;
+	margin-left: -100px;
+	}
+	
+.pl td.blue{
+	background:rgb(216, 246, 253);
+	}
+
+.pl .today{
+	background:#ffc;
+	}
+	
+.pl th.today{
+	background:#ffc !important;
+	}
+	
+.pl .weekend{
+	background:#eee;
+	}
+	
+.pl .fete-France{
+	background:rgb(202, 232, 255);
+	}
+	
+.pl .fete-Maroc{
+	background:rgb(255, 202, 202);
+	}
+	
+.pl .conge1{
+	background:rgb(210, 165, 240);
+	}
+	
+.pl .conge{
+	width: 31px;
+	height: 19px;
+	/*border: 1px solid royalblue;*/
+	border-width: 1px 0;
+	background: rgb(210, 165, 240);
+	}
+.pl .deadline{
+	height: 20px;
+	color: orange;
+	font-weight: bold;
+	position: absolute;
+	top: 5px;
+	line-height: 20px;
+	font-size: 18px;
+	border-bottom: 2px solid orange;
+	z-index: 10000;
+}
+
+.pl .tache-title {
+    z-index: 10000;
+    position:  relative;
+}
+
+.pl .temp-out {
+    background: #FAD7B1 !important;
+}
+	
+.pl .temp{
+	/*width:31px;*/
+	height: 27px; /*23px;*/
+	background:#d4fab1;
+	border-width: 1px 0;
+	/*position: absolute;
+	top: 4px;*/
+	;
+	position: absolute;
+ 
+	top: 0;
+}
+	
+.temp.left {
+	width: 28px;
+	float: right;
+}
+
+.temp.right {
+	width: 28px;
+	float: left;
+}
+
+.temp.more {
+	background:rgb(250, 215, 177);
+}
+	
+/*.pl .temp1{
+	width:32px;
+	height:24px;
+	background:d4fab1;
+	}
+	
+.pl .temp2{
+	width:32px;
+	height:24px;
+	background:rgb(250, 215, 177);
+	}*/
+	
+.pl .highlight{
+	background:#ffc;
+	}
+	
+.dossier {
+	float:left;
+	position:relative;
+	width: 100%;
+}
+
+.dossier h3{
+	padding-left: 20px;
+	margin-bottom: 15px;
+	color: #bc312a;
+	font-size: 16px;
+}
+
+.dossier h3 a{
+	color: #bc312a;
+}
+
+.dossier h3 a.btn{
+	margin-right:15px;
+	width: 50px;
+}
+
+.dossier h3 a.showAll,
+.dossier h3 a.hideAll{
+	width: 77px;
+}
+
+#core {
+	width: auto;
+}
+
+.external_tache{ 
+	/*float: right;*/
+	float: left;
+	margin-top: 109px;
+	width: 17%;
+	border: 1px dashed #ccc;
+	min-height: 100px;
+	/*background:#ebebeb;*/
+	/*display:none;*/
+	margin-right: 2%;
+	margin-left: 1%;
+}
+
+.ex_tache{
+	font-size: 10px;
+	color: #000;
+	margin:5px;
+	padding-left:10px;
+	line-height:15px;
+	background:rgb(220, 248, 146);
+	border:1px solid #000;
+	z-index: 100;
+}
+
+.external_tache a:hover{
+	text-decoration:none;
+	}
+	
+
+.label-collab {
+	width: 44px;
+	display: inline-block;
+	text-align: center;
+	margin-right: 5px;
+}
+
+.loading{
+	/*display:none;*/
+}
+	
+/* Mozilla / Opera / IE hacks */
+.pl td,.pl th {
+border-width: 1px 1px 0 0;
+display: inline-block;
+}
+
+.pl table { 
+border-left:1px solid #ccc;
+border-bottom:1px solid #ccc;
+}
+
+
+/* hack Chrome / Safari */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.pl td, .pl th {
+		display: table-cell;
+	}
+}
+
+/* mozilla hacks */ 
+@-moz-document url-prefix() { 
+	.pl .temp {
+		margin-top: 4px;
+	}
+}
+.week-end{
+    background-color: #f2f2f2;   
+}	
+#planning-wrapper{
+    width: 79%;
+    float: left;
+    overflow-x: auto;
+}
+.planning-taches,
+.planning-collabs{
+	height: 265px;
+	overflow: auto;  
+    position: relative;
+}
+.planning-taches{
+     margin-bottom:15px;   
+}
+.collab-name{
+    position: absolute;
+    left:10px;
+    height: 19px;
+    font-size: 11px;
+    color:#666;
+    background: #fff;
+    z-index: 200;
+	padding:0 5px;
+	border:1px solid #ccc;
+	cursor:pointer;
+}
+.remove-task{
+     position:absolute;
+     left:-15px;
+     top:0px;
+     z-index:10001;   
+}
+.remove-task:hover i{
+     opacity:0.5;   
+}
+.external_tache > a{
+     display:block;   
+}

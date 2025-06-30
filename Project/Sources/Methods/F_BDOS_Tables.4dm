@@ -1,0 +1,484 @@
+//%attributes = {}
+//{=================================================================}
+//{ DB.solutions : SSP
+//{         Methode : F_BDOS_Tables
+//{         lundi 7 novembre 2011 a 14:48:07
+//{         Developpement : DBs / Acces 4D : ßPAXTEL_DBs
+//{=================================================================}
+C_BOOLEAN:C305($0)
+$0:=False:C215
+C_TEXT:C284($1)
+C_TEXT:C284($2)
+C_LONGINT:C283($3)
+C_LONGINT:C283($ii)
+C_BOOLEAN:C305($vb_OK)
+Case of 
+	: ($1="Declarer")
+		$ii:=$3
+		Case of 
+			: ($2="Variables")
+				C_TEXT:C284(<>va_BDOS_FichierNom; <>va_BDOS_FichierTable)
+				C_TEXT:C284(<>vt_BDOS_VALEUR; <>vt_BDOS_DOSSIER)
+				
+			: ($2="Fichiers")
+				ARRAY LONGINT:C221(<>tl_BDOS_FichierRang; $ii)
+				ARRAY TEXT:C222(<>ta_BDOS_FichierCode; $ii)
+				ARRAY TEXT:C222(<>ta_BDOS_FichierNom; $ii)
+				ARRAY LONGINT:C221(<>tl_BDOS_FichierChamps; $ii)
+				
+			: ($2="Champs")
+				ARRAY LONGINT:C221(<>tl_BDOS_ChampRang; $ii)
+				ARRAY TEXT:C222(<>ta_BDOS_ChampNom; $ii)
+				ARRAY TEXT:C222(<>ta_BDOS_ChampValeur; $ii)
+				ARRAY TEXT:C222(<>ta_BDOS_ChampType; $ii)
+				ARRAY TEXT:C222(<>tt_BDOS_ORIGINE; $ii)
+				For ($ii; 1; $3)
+					<>ta_BDOS_ChampValeur{$ii}:=""
+				End for 
+				
+		End case 
+	: ($1="Initialiser")
+		$vb_OK:=F_BDOS_Tables("Declarer"; "Fichiers"; 6)
+		$ii:=1
+		<>tl_BDOS_FichierRang{$ii}:=$ii
+		<>ta_BDOS_FichierCode{$ii}:="SIA"
+		<>ta_BDOS_FichierNom{$ii}:="Référentiel SIAO"
+		<>tl_BDOS_FichierChamps{$ii}:=13
+		$ii:=2
+		<>tl_BDOS_FichierRang{$ii}:=$ii
+		<>ta_BDOS_FichierCode{$ii}:="DMR"
+		<>ta_BDOS_FichierNom{$ii}:="Demandeurs"
+		<>tl_BDOS_FichierChamps{$ii}:=13
+		$ii:=3
+		<>tl_BDOS_FichierRang{$ii}:=$ii
+		<>ta_BDOS_FichierCode{$ii}:="DME"
+		<>ta_BDOS_FichierNom{$ii}:="Demandes"
+		<>tl_BDOS_FichierChamps{$ii}:=13
+		$ii:=4
+		<>tl_BDOS_FichierRang{$ii}:=$ii
+		<>ta_BDOS_FichierCode{$ii}:="ORI"
+		<>ta_BDOS_FichierNom{$ii}:="Orientations"
+		<>tl_BDOS_FichierChamps{$ii}:=14
+		$ii:=5
+		<>tl_BDOS_FichierRang{$ii}:=$ii
+		<>ta_BDOS_FichierCode{$ii}:="PRC"
+		<>ta_BDOS_FichierNom{$ii}:="Parcours"
+		<>tl_BDOS_FichierChamps{$ii}:=10
+		$ii:=6
+		<>tl_BDOS_FichierRang{$ii}:=$ii
+		<>ta_BDOS_FichierCode{$ii}:="OFF"
+		<>ta_BDOS_FichierNom{$ii}:="Offres ou structures"
+		<>tl_BDOS_FichierChamps{$ii}:=13
+		
+		<>tl_BDOS_FichierRang:=1
+		<>ta_BDOS_FichierCode:=1
+		<>ta_BDOS_FichierNom:=1
+		<>tl_BDOS_FichierChamps:=1
+		$vb_OK:=F_BDOS_Tables(<>ta_BDOS_FichierCode{<>ta_BDOS_FichierNom}; ""; 0)
+		<>va_BDOS_FichierNom:=F_BDOS_Fichier(<>ta_BDOS_FichierNom)
+		
+	: ($1="SIA")
+		$vb_OK:=F_BDOS_Tables("Declarer"; "Champs"; 13)
+		$ii:=1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_SIAO"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Site de référence;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DATE_CREATION"
+		<>ta_BDOS_ChampType{$ii}:="DATE"
+		<>tt_BDOS_ORIGINE{$ii}:="Siao_Demande_Date (AAAAMMJJ 00:00:00) 19c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DATE_MODIFICATION"
+		<>tt_BDOS_ORIGINE{$ii}:="Siao_Demande_Etat_modifié_le (AAAAMMJJ 00:00:00) 19c"
+		<>ta_BDOS_ChampType{$ii}:="DATE"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="NOM_SIAO"
+		<>ta_BDOS_ChampType{$ii}:="A80"
+		<>tt_BDOS_ORIGINE{$ii}:="Siao_Demande_Numero"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_POSTAL"
+		<>ta_BDOS_ChampType{$ii}:="A5"
+		<>tt_BDOS_ORIGINE{$ii}:="Raison sociale : CodePostal"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_INSEE"
+		<>ta_BDOS_ChampType{$ii}:="A5"
+		<>tt_BDOS_ORIGINE{$ii}:="Raison sociale : CodeINSEEl"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="VILLE"
+		<>ta_BDOS_ChampType{$ii}:="A45"
+		<>tt_BDOS_ORIGINE{$ii}:="Raison sociale : Ville"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_TERRITOIRE"
+		<>ta_BDOS_ChampType{$ii}:="A10"
+		<>tt_BDOS_ORIGINE{$ii}:="Raison sociale : CodeTerritoire"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="LIBELLE_TERRITOIRE"
+		<>ta_BDOS_ChampType{$ii}:="A255"
+		<>tt_BDOS_ORIGINE{$ii}:="Raison sociale : LibelléTerritoire"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_DEPARTEMENT"
+		<>ta_BDOS_ChampType{$ii}:="A3"
+		<>tt_BDOS_ORIGINE{$ii}:="Raison sociale : CodeDepartement"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="LIBELLE_DEPARTEMENT"
+		<>ta_BDOS_ChampType{$ii}:="A45"
+		<>tt_BDOS_ORIGINE{$ii}:="Raison sociale : LibelléDepartement"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_REGION"
+		<>ta_BDOS_ChampType{$ii}:="A2"
+		<>tt_BDOS_ORIGINE{$ii}:="Raison sociale : CodeRegion"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="LIBELLE_REGION"
+		<>ta_BDOS_ChampType{$ii}:="A45"
+		<>tt_BDOS_ORIGINE{$ii}:="Raison sociale : Libelléregion"
+		$0:=True:C214
+	: ($1="DMR")
+		$vb_OK:=F_BDOS_Tables("Declarer"; "Champs"; 13)
+		$ii:=1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_DEMANDEUR"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Hébergé_RéférenceID;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_SIAO"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Site de référence;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DATE_CREATION"
+		<>ta_BDOS_ChampType{$ii}:="DATE"
+		<>tt_BDOS_ORIGINE{$ii}:="Siao_Demande (AAAAMMJJ 00:00:00) 19c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DATE_MODIFICATION"
+		<>ta_BDOS_ChampType{$ii}:="DATE"
+		<>tt_BDOS_ORIGINE{$ii}:="Siao_Demande_Etat_modifié_le (AAAAMMJJ 00:00:00) 19c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="NUMERO_IDENTIFICATION"
+		<>ta_BDOS_ChampType{$ii}:="A255"
+		<>tt_BDOS_ORIGINE{$ii}:="pas encore défini pour le moment le code du demandeur"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DATE_NAISSANCE"
+		<>ta_BDOS_ChampType{$ii}:="DATE"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergé_DateNéLe (AAAAMMJJ 00:00:00) 19c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="SEXE"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergé_Genre (0 ou 1) 1c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="TYPE_DE_MENAGE"
+		<>ta_BDOS_ChampType{$ii}:="A45"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_EtatCivil"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="FLAG_PRIORITAIRE_DAHO"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Flag_DAHO (0 ou 1) 1c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="FLAG_FEMME_VIOLENCE"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Flag_FemViolence (0 ou 1) 1c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="SITUATION"
+		<>ta_BDOS_ChampType{$ii}:="A45"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_DernierHéber"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="FLAG_CAPACITE_ACCES"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Flag_CapaciteAcces (0 ou 1) 1c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="FLAG_EXPERIENCE_LOG_AUTONOME"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Flag_LogAutonome (0 ou 1) 1c"
+		$0:=True:C214
+		
+	: ($1="OFF")
+		$vb_OK:=F_BDOS_Tables("Declarer"; "Champs"; 13)
+		$ii:=1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CLE"
+		<>ta_BDOS_ChampType{$ii}:="A31"
+		<>tt_BDOS_ORIGINE{$ii}:=""
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_STRUCTURE"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Centre_RéférenceID;(10c))"
+		
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="NOM_STRUCTURE"
+		<>ta_BDOS_ChampType{$ii}:="A255"
+		<>tt_BDOS_ORIGINE{$ii}:=""
+		<>tt_BDOS_ORIGINE{$ii}:="Centre_Nom"
+		
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_SIAO"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Site de référence;(10c))"
+		
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DATE_CREATION_STRUCTURE"
+		<>ta_BDOS_ChampType{$ii}:="DATE"
+		<>tt_BDOS_ORIGINE{$ii}:=""
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="NB_PLACE_DISPO_URGENCE"
+		<>ta_BDOS_ChampType{$ii}:="LONG"
+		<>tt_BDOS_ORIGINE{$ii}:=""
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="NB_PLACE_DISPO_INSERTION"
+		<>ta_BDOS_ChampType{$ii}:="LONG"
+		<>tt_BDOS_ORIGINE{$ii}:=""
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="NB_PLACE_DISPO_STABILISATION"
+		<>ta_BDOS_ChampType{$ii}:="LONG"
+		<>tt_BDOS_ORIGINE{$ii}:=""
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="NB_PLACE_DISPO_LOGEMENT"
+		<>ta_BDOS_ChampType{$ii}:="LONG"
+		<>tt_BDOS_ORIGINE{$ii}:=""
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="NB_PLACE_OCCUPEES_URGENCE"
+		<>ta_BDOS_ChampType{$ii}:="LONG"
+		<>tt_BDOS_ORIGINE{$ii}:=""
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="NB_PLACE_ OCCUPEES_INSERTION"
+		<>ta_BDOS_ChampType{$ii}:="LONG"
+		<>tt_BDOS_ORIGINE{$ii}:=""
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="NB_PLACE_ OCCUPEES_STABILISATION"
+		<>ta_BDOS_ChampType{$ii}:="LONG"
+		<>tt_BDOS_ORIGINE{$ii}:=""
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="NB_PLACE_ OCCUPEES_LOGEMENT"
+		<>ta_BDOS_ChampType{$ii}:="LONG"
+		<>tt_BDOS_ORIGINE{$ii}:=""
+		$0:=True:C214
+		
+	: ($1="DME")
+		$vb_OK:=F_BDOS_Tables("Declarer"; "Champs"; 12)
+		$ii:=1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_DEMANDE"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Hébergement_RéférenceID;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_DEMANDEUR"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Hébergé_RéférenceID;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_GROUPE"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Siao_RéférenceID;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_SIAO"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Site de référence;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DATE_CREATION_DEMANDE"
+		<>ta_BDOS_ChampType{$ii}:="DATE"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Date (AAAAMMJJ 00:00:00) 19c - ou - [SIAO]Si_Demande_Numero"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DATE_MODIFICATION_DEMANDE"
+		<>ta_BDOS_ChampType{$ii}:="DATE"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Date (AAAAMMJJ 00:00:00) 19c - ou - [SIAO]Si_Demande_Numero"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DATE_TRANSMISSION_DEMANDE"
+		<>ta_BDOS_ChampType{$ii}:="DATE"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Date (AAAAMMJJ 00:00:00) 19c- ou - [SIAO]Si_Trans_Date"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="TYPE_DE_DEMANDE"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="Siao_Trans_Type (Urgence/Insertion)"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="TYPE_PRESCRIPTEUR"
+		<>ta_BDOS_ChampType{$ii}:="A45"
+		<>tt_BDOS_ORIGINE{$ii}:="[HeberGement]HG_Type_Prescripteur"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="FLAG_ADMISSION_DIRECTE"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="Non si l'origine de l'hébergement vient du 115 / Oui si l'inscription est direct"+" au centre"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="TYPE_DE_PLACE_PRECONISEE"
+		<>ta_BDOS_ChampType{$ii}:="A45"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_HG_CentreNom découpé OO urgence; 01 Stabilisation; 02 Insertion, 03 "+"t + Autres SINON le libellé)"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="FLAG_SOUHAIT"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Flag_Souhait (0 ou 1) 1c"
+		$0:=True:C214
+		
+	: ($1="ORI")
+		$vb_OK:=F_BDOS_Tables("Declarer"; "Champs"; 14)
+		$ii:=1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_ORIENTATION"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Hébergement_RéférenceID;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_DEMANDE"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Hébergement_RéférenceID;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_DEMANDEUR"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Hébergé_RéférenceID;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_SIAO"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Site Accueil;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_STRUCTURE"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Centre_RéférenceID;(10c))"
+		
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DATE_ORIENTATION"
+		<>ta_BDOS_ChampType{$ii}:="DATE"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Date (AAAAMMJJ 00:00:00) 19c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DATE_REPONSE_STRUCTURE"
+		<>ta_BDOS_ChampType{$ii}:="DATE"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Date (AAAAMMJJ 00:00:00) 19c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="FLAG_DEMANDE_ACCEPTEE"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Cloturée (0 ou 1) 1c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="FLAG_ORIENTATION_CORRESPOND"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Flag_OrientCorrespondant (0 ou 1) 1c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="FLAG_REFERENT_ORIENTATION"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_AssistSocial (0 si champ vide ou 1 si champ rempli)"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="FLAG_REFUS_PAR_STRUCTURE"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Flag_RefusParStructure (0 ou 1) 1c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="FLAG_REFUS_PAR_DEMANDEUR"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_Flag_RefusParDemandeur (0 ou 1) 1c"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="TYPE_DE_PLACE"
+		<>ta_BDOS_ChampType{$ii}:="A45"
+		<>tt_BDOS_ORIGINE{$ii}:="Hébergement_HG_CentreNom découpé OO urgence; 01 Stabilisation; 02 Insertion, 03 "+"t + Autres SINON le libellé)"
+		
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="FLAG_ADMISSION_DIRECTE"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="Non si l'origine de l'hébergement vient du 115 / Oui si l'inscription est direct"+" au centre"
+		$0:=True:C214
+		
+	: ($1="PRC")
+		$vb_OK:=F_BDOS_Tables("Declarer"; "Champs"; 10)
+		$ii:=1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_PARCOURS"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Hebergement_RéférenceID de la fiche nuit en cours n°1;(1"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_DEMANDE"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine([HeBerge]HB_ReferenceID;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_DEMANDEUR"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine([HeBerge]HB_ReferenceID;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_ORIENTATION"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Hébergement_RéférenceID;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="CODE_SIAO"
+		<>ta_BDOS_ChampType{$ii}:="A15"
+		<>tt_BDOS_ORIGINE{$ii}:="SITE(3c)+Dep(2c)+chaine(Site Accueil;(10c))"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DATE_ENTREE"
+		<>ta_BDOS_ChampType{$ii}:="DATE"
+		<>tt_BDOS_ORIGINE{$ii}:="Date de la fiche d'hébergement dont la nuit en cours = 1"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DATE_SORTIE"
+		<>ta_BDOS_ChampType{$ii}:="DATE"
+		<>tt_BDOS_ORIGINE{$ii}:="Date du jour de sortie (après la nuit)"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="DESTINATION_SORTIE"
+		<>ta_BDOS_ChampType{$ii}:="A45"
+		<>tt_BDOS_ORIGINE{$ii}:="Orientation 2"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="TYPE_DE_PLACE"
+		<>ta_BDOS_ChampType{$ii}:="A45"
+		<>tt_BDOS_ORIGINE{$ii}:="Selon la codification du centre d'hébergement (115 et 00 =Urg; 01=Stb; 02=Ins"+"; 03…=Log)"
+		$ii:=$ii+1
+		<>tl_BDOS_ChampRang{$ii}:=$ii
+		<>ta_BDOS_ChampNom{$ii}:="FLAG_ADMISSION_DIRECTE"
+		<>ta_BDOS_ChampType{$ii}:="BOOL"
+		<>tt_BDOS_ORIGINE{$ii}:="t : Signament = 115;  f les autres"
+		$0:=True:C214
+		
+End case 

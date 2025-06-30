@@ -1,0 +1,115 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 810,
+	"markerBreak": 810,
+	"markerFooter": 810,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 2,
+					"left": 2,
+					"width": 559,
+					"height": 68,
+					"fill": "transparent"
+				},
+				"Texte11": {
+					"type": "text",
+					"top": 5,
+					"left": 5,
+					"width": 553,
+					"height": 29,
+					"stroke": "#000000",
+					"class": "Stat_Titre",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "Tables"
+				},
+				"Texte12": {
+					"type": "text",
+					"top": 38,
+					"left": 5,
+					"width": 553,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "Stat_Titre1",
+					"textAlign": "center",
+					"text": "<◊va_T_02>"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 52,
+					"left": 5,
+					"width": 553,
+					"height": 16,
+					"dataSource": "[TypesTables:11]TT_Libellé:4",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Sous-formulaire1": {
+					"type": "subform",
+					"top": 80,
+					"left": 2,
+					"width": 543,
+					"height": 724,
+					"dataSourceTypeHint": "text",
+					"table": 12,
+					"listForm": "TA_ListeInclue",
+					"focusable": false,
+					"scrollbarVertical": "visible",
+					"enterableInList": false,
+					"deletableInList": false,
+					"printFrame": "variable"
+				}
+			}
+		}
+	]
+}

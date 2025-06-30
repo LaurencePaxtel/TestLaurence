@@ -1,0 +1,1 @@
+P_ItemRessources(2; ta_ItemRub)

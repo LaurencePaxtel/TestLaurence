@@ -1,0 +1,370 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 23,
+	"markerBody": 43,
+	"markerBreak": 43,
+	"markerFooter": 43,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 23,
+					"left": 1,
+					"width": 981,
+					"height": 23,
+					"stroke": "transparent"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 26,
+					"left": 892,
+					"width": 86,
+					"height": 16,
+					"dataSource": "vl_NbHGi",
+					"dataSourceTypeHint": "number",
+					"textAlign": "right",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "### ### ##0;;",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable1.4dm",
+					"events": [
+						"onDisplayDetail"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 26,
+					"left": 594,
+					"width": 79,
+					"height": 16,
+					"dataSource": "cleLien_t",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Clé de LienFam"
+					}
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 26,
+					"left": 5,
+					"width": 382,
+					"height": 16,
+					"dataSource": "[HeBerge:4]HB_Clé:2",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 23,
+					"left": 591,
+					"height": 22,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 23,
+					"left": 678,
+					"height": 22,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 23,
+					"left": 787,
+					"height": 22,
+					"stroke": "#AAAAAA"
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 26,
+					"left": 682,
+					"width": 98,
+					"height": 16,
+					"dataSource": "ve_NbSP",
+					"stroke": "#EE0000",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"textFormat": "X;;",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 26,
+					"left": 793,
+					"width": 79,
+					"height": 16,
+					"dataSource": "vl_NbSii",
+					"dataSourceTypeHint": "number",
+					"stroke": "#000000",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "### ### ##0;;",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDisplayDetail"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 24,
+					"left": 879,
+					"height": 22,
+					"stroke": "#AAAAAA"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 590,
+					"height": 23,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Rectangle10": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 592,
+					"width": 85,
+					"height": 23,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 679,
+					"width": 107,
+					"height": 23,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Rectangle12": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 788,
+					"width": 91,
+					"height": 23,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 881,
+					"width": 104,
+					"height": 23,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 5,
+					"left": 594,
+					"width": 83,
+					"height": 12,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"fontWeight": "bold",
+					"text": "Lien"
+				},
+				"Texte13": {
+					"type": "text",
+					"top": 5,
+					"left": 679,
+					"width": 107,
+					"height": 12,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"fontWeight": "bold",
+					"text": "SP"
+				},
+				"Texte14": {
+					"type": "text",
+					"top": 5,
+					"left": 788,
+					"width": 91,
+					"height": 12,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"fontWeight": "bold",
+					"text": "SIAO"
+				},
+				"Texte15": {
+					"type": "text",
+					"top": 5,
+					"left": 884,
+					"width": 97,
+					"height": 12,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"fontWeight": "bold",
+					"text": "Situations"
+				},
+				"Image1": {
+					"type": "picture",
+					"top": 3,
+					"left": 16,
+					"width": 15,
+					"height": 17,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/img/Buttons/DECOUPES/DECOUPES/Icon feather-users.png"
+				},
+				"pastilleAlerteDirectionBtn": {
+					"type": "input",
+					"top": 26,
+					"left": 405,
+					"width": 16,
+					"height": 16,
+					"dataSource": "vt_Pastille",
+					"dataSourceTypeHint": "undefined",
+					"focusable": false,
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/pastilleAlerteDirectionBtn.4dm",
+					"events": [
+						"onMouseLeave",
+						"onMouseMove"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"pastilleAlerteDirection": {
+					"type": "rectangle",
+					"top": 26,
+					"left": 405,
+					"width": 16,
+					"height": 16,
+					"visibility": "hidden",
+					"fill": "transparent",
+					"stroke": "transparent"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"geometryStamp": 3,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

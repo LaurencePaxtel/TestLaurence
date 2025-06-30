@@ -1,0 +1,317 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 20,
+	"markerBreak": 20,
+	"markerFooter": 20,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 598,
+					"height": 20,
+					"stroke": "#FFFFFF"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 2,
+					"left": 1,
+					"width": 129,
+					"height": 11,
+					"dataSource": "[DossierSocial_DS_EnfantsNom:63]Nom:1",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 2,
+					"left": 133,
+					"width": 57,
+					"height": 11,
+					"dataSource": "[DossierSocial_DS_EnfantsNom:63]Prénom:2",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 2,
+					"left": 194,
+					"width": 60,
+					"height": 11,
+					"dataSource": "[DossierSocial_DS_EnfantsNom:63]Néle:3",
+					"dataSourceTypeHint": "date",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"entryFilter": "!0&9##/##/####",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Champ3.4dm",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ4": {
+					"type": "input",
+					"top": 2,
+					"left": 257,
+					"width": 33,
+					"height": 11,
+					"dataSource": "[DossierSocial_DS_EnfantsNom:63]Age:4",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ5": {
+					"type": "input",
+					"top": 2,
+					"left": 293,
+					"width": 81,
+					"height": 11,
+					"dataSource": "[DossierSocial_DS_EnfantsNom:63]Lieu de vie:6",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ6": {
+					"type": "input",
+					"top": 2,
+					"left": 377,
+					"width": 102,
+					"height": 11,
+					"dataSource": "[DossierSocial_DS_EnfantsNom:63]Adresse1:7",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ7": {
+					"type": "input",
+					"top": 2,
+					"left": 482,
+					"width": 37,
+					"height": 11,
+					"dataSource": "[DossierSocial_DS_EnfantsNom:63]CodePostal:9",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"textFormat": " ",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ8": {
+					"type": "input",
+					"top": 2,
+					"left": 522,
+					"width": 72,
+					"height": 11,
+					"dataSource": "[DossierSocial_DS_EnfantsNom:63]Ville:10",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 0,
+					"left": 255,
+					"height": 21,
+					"stroke": "#CCCCCC"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 0,
+					"left": 480,
+					"height": 21,
+					"stroke": "#CCCCCC"
+				},
+				"Ligne8": {
+					"type": "line",
+					"top": 0,
+					"left": 191,
+					"height": 21,
+					"stroke": "#CCCCCC"
+				},
+				"Ligne10": {
+					"type": "line",
+					"top": 0,
+					"left": 520,
+					"height": 21,
+					"stroke": "#CCCCCC"
+				},
+				"Ligne11": {
+					"type": "line",
+					"top": 0,
+					"left": 131,
+					"height": 21,
+					"stroke": "#CCCCCC"
+				},
+				"Ligne12": {
+					"type": "line",
+					"top": 0,
+					"left": 291,
+					"height": 21,
+					"stroke": "#CCCCCC"
+				},
+				"Ligne13": {
+					"type": "line",
+					"top": 0,
+					"left": 375,
+					"height": 21,
+					"stroke": "#CCCCCC"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 20,
+					"left": 0,
+					"width": 598,
+					"stroke": "#CCCCCC"
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,232 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 54,
+					"left": 3,
+					"width": 468,
+					"height": 391,
+					"fill": "transparent"
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 78,
+					"left": 5,
+					"width": 464,
+					"height": 365,
+					"stroke": "#FFFFFF"
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 56,
+					"left": 5,
+					"width": 64,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 59,
+					"left": 8,
+					"width": 58,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Date"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 56,
+					"left": 69,
+					"height": 22
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 56,
+					"left": 70,
+					"width": 123,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 59,
+					"left": 73,
+					"width": 116,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Expéditeur"
+				},
+				"Ligne12": {
+					"type": "line",
+					"top": 56,
+					"left": 193,
+					"height": 22
+				},
+				"Rectangle8": {
+					"type": "rectangle",
+					"top": 56,
+					"left": 194,
+					"width": 275,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 59,
+					"left": 197,
+					"width": 268,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Message"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 78,
+					"left": 5,
+					"width": 464
+				},
+				"Bouton 3D1": {
+					"type": "button",
+					"top": 26,
+					"left": 369,
+					"width": 97,
+					"height": 22,
+					"dataSource": "b_QuitTab",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton1": {
+					"type": "button",
+					"top": 26,
+					"left": 262,
+					"width": 97,
+					"height": 22,
+					"dataSource": "b_SupTab",
+					"text": "Supprimer",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton3": {
+					"type": "button",
+					"top": 26,
+					"left": 155,
+					"width": 97,
+					"height": 22,
+					"dataSource": "b_ModTab",
+					"text": "Modifier",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton3.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton4": {
+					"type": "button",
+					"top": 26,
+					"left": 48,
+					"width": 97,
+					"height": 22,
+					"dataSource": "b_AddTab",
+					"text": "Ajouter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton4.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Sous-formulaire2": {
+					"type": "subform",
+					"top": 79,
+					"left": 5,
+					"width": 449,
+					"height": 364,
+					"dataSourceTypeHint": "text",
+					"table": 34,
+					"listForm": "MS_ListeInclue",
+					"focusable": false,
+					"scrollbarVertical": "visible",
+					"enterableInList": false,
+					"deletableInList": false,
+					"selectionMode": "single",
+					"printFrame": "variable"
+				}
+			}
+		}
+	]
+}

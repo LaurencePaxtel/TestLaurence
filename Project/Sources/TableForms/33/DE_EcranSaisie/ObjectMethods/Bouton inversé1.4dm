@@ -1,0 +1,1 @@
+Tab_PopRub3(->[DossierSante:33]DE_FicheNuméro:3; <>ta_RdsNomNew{<>vlSTR_DE-<>vlSTR}{27}; ->[DossierSante:33]DE_Papiers1_1:32; ->[DossierSante:33]DE_Papiers1_2:33; ->[DossierSante:33]DE_Papiers2_1:34; ->[DossierSante:33]DE_Papiers2_2:35; ->[DossierSante:33]DE_Papiers3_1:36; ->[DossierSante:33]DE_Papiers3_2:37)

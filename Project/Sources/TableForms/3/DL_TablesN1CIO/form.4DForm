@@ -1,0 +1,260 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 10,
+	"bottomMargin": 10,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onDoubleClick"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 8,
+					"left": 7,
+					"width": 346,
+					"height": 504,
+					"fill": "transparent"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 32,
+					"left": 9,
+					"width": 342
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 10,
+					"left": 9,
+					"width": 342,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 13,
+					"left": 12,
+					"width": 337,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Choix"
+				},
+				"Bouton 3D1": {
+					"type": "button",
+					"top": 529,
+					"left": 246,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_Ann",
+					"action": "cancel",
+					"shortcutKey": "",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					],
+					"shortcutAccel": false,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false
+				},
+				"Bouton 3D3": {
+					"type": "button",
+					"top": 529,
+					"left": 7,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_ValTab1",
+					"action": "accept",
+					"shortcutKey": "",
+					"text": "Valider",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton 3D3.4dm",
+					"events": [
+						"onClick"
+					],
+					"shortcutAccel": false,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false
+				},
+				"LB": {
+					"type": "listbox",
+					"top": 66,
+					"left": 10,
+					"width": 339,
+					"height": 443,
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"sortable": false,
+					"movableRows": false,
+					"showHeaders": false,
+					"dataSource": "Form:C1466.t_TabNiv1",
+					"currentItemSource": "Form:C1466.elementCurrentElmt",
+					"currentItemPositionSource": "Form:C1466.elementCurrentElmtPos",
+					"selectedItemsSource": "Form:C1466.elementSelected",
+					"selectionMode": "single",
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "automatic",
+					"fill": "#EEEEEE",
+					"alternateFill": "automatic",
+					"method": "ObjectMethods/LB.4dm",
+					"events": [
+						"onClick",
+						"onDoubleClick"
+					],
+					"horizontalLineStroke": "transparent",
+					"fontFamily": "Arial",
+					"fontSize": 14,
+					"columns": [
+						{
+							"name": "Colonne1",
+							"dataSource": "This:C1470.checked",
+							"dataSourceTypeHint": "boolean",
+							"width": 30,
+							"minWidth": 10,
+							"maxWidth": 30,
+							"controlType": "checkbox",
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onDataChange"
+							],
+							"method": "ObjectMethods/Colonne1.4dm",
+							"header": {
+								"name": "Entête3",
+								"text": "zaza",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied3",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne2",
+							"dataSource": "This:C1470.choix",
+							"width": 309,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête1",
+								"text": "Entête1",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				},
+				"Variable": {
+					"type": "input",
+					"top": 32,
+					"left": 9,
+					"width": 342,
+					"height": 32,
+					"dataSource": "Form:C1466.filtre",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fontWeight": "bold",
+					"contextMenu": "none",
+					"multiline": "no",
+					"placeholder": "Tapez du texte pour affiner votre filtre",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"allSelected": {
+					"type": "button",
+					"top": 529,
+					"left": 127,
+					"width": 107,
+					"height": 22,
+					"dataSource": "",
+					"action": "",
+					"shortcutKey": "",
+					"text": "Tout sélectionner",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/allSelected.4dm",
+					"events": [
+						"onClick"
+					],
+					"shortcutAccel": false,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"geometryStamp": 127,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

@@ -1,0 +1,1 @@
+P_HébergementPrestation([Maraude:24]MR_HB_ID:10; Uut_HébergéClé(->[Maraude:24]MR_Nom:17; ->[Maraude:24]MR_Prénom:18; ->[Maraude:24]MR_DateNéLe:20); "MR")

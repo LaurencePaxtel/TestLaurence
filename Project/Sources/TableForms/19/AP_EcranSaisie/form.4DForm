@@ -1,0 +1,298 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 6,
+					"left": 6,
+					"width": 418,
+					"height": 27,
+					"fill": "transparent",
+					"stroke": "#FFFFFF"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 12,
+					"left": 10,
+					"width": 27,
+					"height": 12,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "left",
+					"text": ":30004,1",
+					"fontFamily": "Arial"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 12,
+					"left": 231,
+					"width": 34,
+					"height": 12,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": "Date",
+					"fontFamily": "Arial"
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 12,
+					"left": 337,
+					"width": 28,
+					"height": 12,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": "heure",
+					"fontFamily": "Arial"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 12,
+					"left": 36,
+					"width": 200,
+					"height": 12,
+					"dataSource": "<>va_User",
+					"stroke": "automatic",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 12,
+					"left": 269,
+					"width": 64,
+					"height": 12,
+					"dataSource": "[APpels:19]AP_Date:2",
+					"dataSourceTypeHint": "date",
+					"stroke": "automatic",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 12,
+					"left": 370,
+					"width": 48,
+					"height": 12,
+					"dataSource": "[APpels:19]AP_Heure:3",
+					"dataSourceTypeHint": "time",
+					"stroke": "automatic",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Champ3_first": {
+					"type": "radio",
+					"top": 39,
+					"left": 120,
+					"width": 40,
+					"height": 15,
+					"dataSource": "[APpels:19]AP_Nuit:4",
+					"text": "Nuit",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"radioGroup": "Champ3_group",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ3": {
+					"type": "radio",
+					"top": 39,
+					"left": 180,
+					"width": 50,
+					"height": 15,
+					"dataSource": "Not:C34([APpels:19]AP_Nuit:4)",
+					"text": "jour",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"radioGroup": "Champ3_group",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 97,
+					"left": 304,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_Ann",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Annuler",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Variable18": {
+					"type": "button",
+					"top": 97,
+					"left": 186,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_Val",
+					"action": "accept",
+					"shortcutKey": "[Enter]",
+					"text": "Valider",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					]
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 66,
+					"left": 10,
+					"width": 103,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Type d'appel :",
+					"fontFamily": "Arial"
+				},
+				"Pop-up/Liste déroulante1": {
+					"type": "dropdown",
+					"top": 64,
+					"left": 119,
+					"width": 292,
+					"height": 20,
+					"dataSource": "<>ta_Appels",
+					"class": "TNR_12",
+					"method": "ObjectMethods/Pop-up%2FListe déroulante1.4dm",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		}
+	],
+	"geometryStamp": 259,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

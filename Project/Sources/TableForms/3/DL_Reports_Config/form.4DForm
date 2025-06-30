@@ -1,0 +1,209 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "Lettre US (215,9 x 279,4 mm)",
+		"paperWidth": "612pt",
+		"paperHeight": "792pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Zone de groupe": {
+					"type": "groupBox",
+					"top": 30,
+					"left": 12,
+					"width": 578,
+					"height": 121,
+					"sizingX": "grow",
+					"class": "Par_défaut",
+					"text": "Choix des jours"
+				},
+				"chk_lundi": {
+					"type": "checkbox",
+					"top": 92,
+					"left": 29,
+					"width": 75,
+					"height": 19,
+					"dataSource": "chk_lundi",
+					"text": "Lundi",
+					"class": "Champs",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"chk_mardi": {
+					"type": "checkbox",
+					"top": 92,
+					"left": 104,
+					"width": 75,
+					"height": 19,
+					"dataSource": "chk_mardi",
+					"text": "Mardi",
+					"class": "Champs",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"chk_mercredi": {
+					"type": "checkbox",
+					"top": 92,
+					"left": 180,
+					"width": 75,
+					"height": 19,
+					"dataSource": "chk_mercredi",
+					"text": "Mercredi",
+					"class": "Champs",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"chk_jeudi": {
+					"type": "checkbox",
+					"top": 92,
+					"left": 256,
+					"width": 75,
+					"height": 19,
+					"dataSource": "chk_jeudi",
+					"text": "Jeudi",
+					"class": "Champs",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"chk_vendredi": {
+					"type": "checkbox",
+					"top": 92,
+					"left": 332,
+					"width": 75,
+					"height": 19,
+					"dataSource": "chk_vendredi",
+					"text": "Vendredi",
+					"class": "Champs",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"chk_samedi": {
+					"type": "checkbox",
+					"top": 92,
+					"left": 408,
+					"width": 75,
+					"height": 19,
+					"dataSource": "chk_samedi",
+					"text": "Samedi",
+					"class": "Champs",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"chk_dimanche": {
+					"type": "checkbox",
+					"top": 92,
+					"left": 484,
+					"width": 75,
+					"height": 19,
+					"dataSource": "chk_dimanche",
+					"text": "Dimanche",
+					"class": "Champs",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"b_Fermer_Rech_appel": {
+					"type": "button",
+					"top": 159,
+					"left": 330,
+					"width": 127,
+					"height": 28,
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSource": "b_Fermer_Rech_appel",
+					"text": "Fermer",
+					"class": "Par_défaut",
+					"method": "ObjectMethods/b_Fermer_Rech_appel.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_valider": {
+					"type": "button",
+					"top": 159,
+					"left": 463,
+					"width": 127,
+					"height": 28,
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSource": "btn_valider",
+					"text": "Valider",
+					"class": "Par_défaut",
+					"method": "ObjectMethods/btn_valider.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 60,
+					"left": 26,
+					"width": 285,
+					"height": 13,
+					"class": "Par_défaut",
+					"fontWeight": "bold",
+					"text": "Faire les reports automatiques chaque :"
+				},
+				"Text": {
+					"type": "text",
+					"top": 8,
+					"left": 12,
+					"width": 574,
+					"height": 19,
+					"sizingX": "grow",
+					"class": "titre_1",
+					"textAlign": "center",
+					"text": "Reports automatiques - Paramétrage"
+				}
+			}
+		}
+	]
+}

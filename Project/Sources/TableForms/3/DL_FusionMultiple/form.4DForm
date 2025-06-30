@@ -1,0 +1,1103 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 932,
+					"height": 561,
+					"stroke": "transparent"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 15,
+					"left": 7,
+					"width": 268,
+					"height": 212,
+					"fill": "#D9EDF0",
+					"borderRadius": 15,
+					"stroke": "transparent"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 262,
+					"left": 7,
+					"width": 648,
+					"height": 27,
+					"borderRadius": 15,
+					"stroke": "#4BAABA",
+					"strokeWidth": 2
+				},
+				"Zone de groupe2": {
+					"type": "groupBox",
+					"top": 0,
+					"left": 5,
+					"width": 776,
+					"height": 235,
+					"stroke": "#000000",
+					"class": "TNR_12i",
+					"text": "Rechercher le demandeur",
+					"fontFamily": "Arial"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 40,
+					"left": 11,
+					"width": 36,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Nom :",
+					"fontFamily": "Arial"
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 40,
+					"left": 53,
+					"width": 217,
+					"height": 16,
+					"dataSource": "va_HGRNom",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"entryFilter": "&\"a-z;A-Z;0-9; ;,;.;-\"",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable5.4dm",
+					"events": [
+						"onClick",
+						"onBeforeKeystroke",
+						"onDataChange",
+						"onAfterKeystroke"
+					]
+				},
+				"bJoker": {
+					"type": "button",
+					"top": 38,
+					"left": 11,
+					"width": 38,
+					"height": 17,
+					"dataSource": "bJoker",
+					"display": false,
+					"method": "ObjectMethods/bJoker.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Rectangle10": {
+					"type": "rectangle",
+					"top": 13,
+					"left": 283,
+					"width": 494,
+					"height": 216,
+					"fill": "transparent",
+					"stroke": "#4BAABA",
+					"borderRadius": 15,
+					"strokeWidth": 2
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 43,
+					"left": 285,
+					"width": 489,
+					"stroke": "#4BAABA"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 47,
+					"left": 288,
+					"width": 321,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Clé",
+					"fontFamily": "Arial"
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 66,
+					"left": 285,
+					"width": 489,
+					"stroke": "#4BAABA"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 47,
+					"left": 685,
+					"width": 22,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "SP",
+					"fontFamily": "Arial"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 47,
+					"left": 712,
+					"width": 57,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Situations",
+					"fontFamily": "Arial"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 47,
+					"left": 615,
+					"width": 64,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Lien",
+					"fontFamily": "Arial"
+				},
+				"Sous-formulaire2": {
+					"type": "subform",
+					"top": 67,
+					"left": 289,
+					"width": 468,
+					"height": 153,
+					"dataSourceTypeHint": "text",
+					"table": 4,
+					"listForm": "HB_ListeInclueC",
+					"focusable": false,
+					"scrollbarVertical": "visible",
+					"enterableInList": false,
+					"deletableInList": false,
+					"selectionMode": "single",
+					"printFrame": "variable"
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 18,
+					"left": 289,
+					"width": 143,
+					"height": 23,
+					"fill": "#D9EDF0",
+					"stroke": "transparent",
+					"borderRadius": 15
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 22,
+					"left": 288,
+					"width": 141,
+					"height": 16,
+					"stroke": "#4BAABA",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Liste des demandeurs\t",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fontWeight": "bold"
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 22,
+					"left": 438,
+					"width": 44,
+					"height": 16,
+					"dataSource": "vL_Nb_HB_F",
+					"dataSourceTypeHint": "number",
+					"stroke": "#4BAABA",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "### ### ##0;;aucun",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDataChange"
+					],
+					"fontFamily": "Arial",
+					"textAlign": "center",
+					"fontWeight": "bold"
+				},
+				"Variable6": {
+					"type": "button",
+					"top": 18,
+					"left": 496,
+					"width": 58,
+					"height": 22,
+					"dataSource": "b_VoirNotes",
+					"shortcutKey": "n",
+					"shortcutAccel": true,
+					"text": "Notes",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable6.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable7": {
+					"type": "button",
+					"top": 18,
+					"left": 558,
+					"width": 58,
+					"height": 22,
+					"dataSource": "b_VoirActs",
+					"text": "Actions",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable7.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable8": {
+					"type": "button",
+					"top": 18,
+					"left": 620,
+					"width": 58,
+					"height": 22,
+					"dataSource": "b_VoirSP",
+					"text": "SP",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable8.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton 3D1": {
+					"type": "button",
+					"top": 18,
+					"left": 682,
+					"width": 88,
+					"height": 22,
+					"dataSource": "b_CléM",
+					"text": "Clé maîtresse",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#4BAABA",
+					"method": "ObjectMethods/Bouton 3D1.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Zone de groupe1": {
+					"type": "groupBox",
+					"top": 76,
+					"left": 15,
+					"width": 253,
+					"height": 142,
+					"stroke": "#000000",
+					"class": "TNR_12i",
+					"text": "Recherche suite",
+					"fontFamily": "Arial"
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 146,
+					"left": 24,
+					"width": 56,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Né(e) le :",
+					"fontFamily": "Arial"
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 122,
+					"left": 24,
+					"width": 56,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Prénom :",
+					"fontFamily": "Arial"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 122,
+					"left": 86,
+					"width": 177,
+					"height": 16,
+					"dataSource": "va_HGRPré",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onBeforeKeystroke",
+						"onDataChange"
+					]
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 146,
+					"left": 86,
+					"width": 64,
+					"height": 16,
+					"dataSource": "vd_HGRNé",
+					"dataSourceTypeHint": "date",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dateFormat": "short",
+					"entryFilter": "!0&9##/##/####",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onBeforeKeystroke",
+						"onDataChange"
+					]
+				},
+				"Bouton3": {
+					"type": "button",
+					"top": 192,
+					"left": 26,
+					"width": 90,
+					"height": 22,
+					"dataSource": "b_Rec",
+					"text": "Rechercher",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton3.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton4": {
+					"type": "button",
+					"top": 192,
+					"left": 126,
+					"width": 90,
+					"height": 22,
+					"dataSource": "b_StdRec",
+					"text": "Editeur",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton4.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Rectangle93": {
+					"type": "rectangle",
+					"top": 325,
+					"left": 6,
+					"width": 381,
+					"height": 22,
+					"fill": "#ff6347",
+					"stroke": "#ff6347",
+					"borderRadius": 15,
+					"strokeWidth": 2
+				},
+				"Texte646": {
+					"type": "text",
+					"top": 328,
+					"left": 9,
+					"width": 376,
+					"height": 16,
+					"stroke": "#FFFFFF",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Clé",
+					"fontFamily": "Arial",
+					"fill": "transparent",
+					"fontWeight": "bold"
+				},
+				"Rectangle13": {
+					"type": "rectangle",
+					"top": 325,
+					"left": 388,
+					"width": 179,
+					"height": 22,
+					"fill": "#ff6347",
+					"stroke": "#ff6347",
+					"borderRadius": 15,
+					"strokeWidth": 2
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 328,
+					"left": 391,
+					"width": 174,
+					"height": 16,
+					"stroke": "#FFFFFF",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Nom",
+					"fontFamily": "Arial",
+					"fontWeight": "bold"
+				},
+				"Rectangle14": {
+					"type": "rectangle",
+					"top": 325,
+					"left": 568,
+					"width": 87,
+					"height": 22,
+					"fill": "#ff6347",
+					"stroke": "#ff6347",
+					"borderRadius": 15,
+					"strokeWidth": 2
+				},
+				"Texte10": {
+					"type": "text",
+					"top": 328,
+					"left": 571,
+					"width": 82,
+					"height": 16,
+					"stroke": "#FFFFFF",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Prénom",
+					"fontFamily": "Arial",
+					"fontWeight": "bold"
+				},
+				"Rectangle15": {
+					"type": "rectangle",
+					"top": 325,
+					"left": 656,
+					"width": 64,
+					"height": 22,
+					"fill": "#ff6347",
+					"stroke": "#ff6347",
+					"borderRadius": 15,
+					"strokeWidth": 2
+				},
+				"Texte11": {
+					"type": "text",
+					"top": 328,
+					"left": 659,
+					"width": 59,
+					"height": 16,
+					"stroke": "#FFFFFF",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Né(e) le",
+					"fontFamily": "Arial",
+					"fontWeight": "bold"
+				},
+				"Rectangle16": {
+					"type": "rectangle",
+					"top": 325,
+					"left": 721,
+					"width": 58,
+					"height": 22,
+					"fill": "#ff6347",
+					"stroke": "#ff6347",
+					"borderRadius": 15,
+					"strokeWidth": 2
+				},
+				"Texte12": {
+					"type": "text",
+					"top": 328,
+					"left": 724,
+					"width": 53,
+					"height": 16,
+					"stroke": "#FFFFFF",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Hébergnts",
+					"fontFamily": "Arial",
+					"fontWeight": "bold"
+				},
+				"Rectangle17": {
+					"type": "rectangle",
+					"top": 261,
+					"left": 6,
+					"width": 170,
+					"height": 28,
+					"fill": "#4BAABA",
+					"stroke": "transparent",
+					"borderRadius": 15
+				},
+				"Texte13": {
+					"type": "text",
+					"top": 268,
+					"left": 9,
+					"width": 165,
+					"height": 16,
+					"stroke": "#FFFFFF",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Clé maîtresse",
+					"fontFamily": "Arial",
+					"fontWeight": "bold"
+				},
+				"Rectangle18": {
+					"type": "rectangle",
+					"top": 297,
+					"left": 177,
+					"width": 64,
+					"height": 25,
+					"fill": "#FFFFFF",
+					"stroke": "#EEEEEE",
+					"borderRadius": 15
+				},
+				"Rectangle19": {
+					"type": "rectangle",
+					"top": 296,
+					"left": 6,
+					"width": 170,
+					"height": 28,
+					"fill": "#FFFFFF",
+					"stroke": "transparent",
+					"borderRadius": 30
+				},
+				"Texte14": {
+					"type": "text",
+					"top": 303,
+					"left": 9,
+					"width": 165,
+					"height": 16,
+					"stroke": "#ff6347",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Liste des clés à fusionner",
+					"fontFamily": "Arial",
+					"fontWeight": "bold"
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 302,
+					"left": 181,
+					"width": 49,
+					"height": 16,
+					"dataSource": "vL_Nb_HB_Fu",
+					"dataSourceTypeHint": "number",
+					"stroke": "#ff6347",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "### ### ##0;;aucune",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDataChange"
+					],
+					"fontFamily": "Arial",
+					"fontWeight": "bold",
+					"textAlign": "center"
+				},
+				"Variable11": {
+					"type": "button",
+					"top": 503,
+					"left": 58,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_VoirNotesTab",
+					"text": "Notes",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable11.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable12": {
+					"type": "button",
+					"top": 503,
+					"left": 176,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_VoirSPTab",
+					"text": "SP",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable12.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable13": {
+					"type": "button",
+					"top": 503,
+					"left": 294,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_ModCléHGTab",
+					"text": "Modifier",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable13.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable9": {
+					"type": "button",
+					"top": 503,
+					"left": 412,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_SUPCléHGTab",
+					"text": "Supprimer",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable9.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable10": {
+					"type": "button",
+					"top": 503,
+					"left": 530,
+					"width": 132,
+					"height": 22,
+					"dataSource": "b_Fuse",
+					"text": "Fusionner",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable10.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 503,
+					"left": 673,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_AnnHB",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable14": {
+					"type": "input",
+					"top": 267,
+					"left": 182,
+					"width": 454,
+					"height": 17,
+					"dataSource": "va_IDT_Typ1",
+					"stroke": "#4BAABA",
+					"class": "TNR_14",
+					"textAlign": "center",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDataChange"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fontWeight": "bold"
+				},
+				"Bouton1": {
+					"type": "button",
+					"top": 236,
+					"left": 666,
+					"width": 111,
+					"height": 22,
+					"dataSource": "b_VoirHG",
+					"text": "Situations",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"focusable": false,
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton2": {
+					"type": "button",
+					"top": 299,
+					"left": 667,
+					"width": 110,
+					"height": 22,
+					"dataSource": "b_CléRetirer",
+					"text": "Retirer une Clé",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton2.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton5": {
+					"type": "button",
+					"top": 264,
+					"left": 667,
+					"width": 110,
+					"height": 22,
+					"dataSource": "b_CléEffacer",
+					"text": "Effacer",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton5.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton6": {
+					"type": "button",
+					"top": 192,
+					"left": 226,
+					"width": 37,
+					"height": 22,
+					"dataSource": "b_VoirSD",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/à fusionner"
+					},
+					"text": "SD",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton6.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"LB": {
+					"type": "listbox",
+					"top": 351,
+					"left": 12,
+					"width": 762,
+					"height": 134,
+					"resizingMode": "legacy",
+					"sortable": false,
+					"movableRows": false,
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "automatic",
+					"fill": "#EEEEEE",
+					"alternateFill": "automatic",
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"columns": [
+						{
+							"name": "Colonne1",
+							"dataSource": "ta_Fu_Clé",
+							"width": 381,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête3",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied3",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne2",
+							"dataSource": "ta_Fu_Nom",
+							"width": 180,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête4",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied4",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne3",
+							"dataSource": "ta_Fu_Prénom",
+							"width": 88,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête1",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne4",
+							"dataSource": "td_Fu_Néle",
+							"width": 65,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête2",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied2",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne5",
+							"dataSource": "tl_Fu_Nb",
+							"width": 120,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête5",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied5",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				},
+				"Texte": {
+					"type": "text",
+					"text": "Double clic sur le demandeur à fusionner sur la clé maîtresse\t",
+					"top": 302,
+					"left": 256,
+					"width": 399,
+					"height": 15,
+					"fontStyle": "italic",
+					"fontFamily": "Arial",
+					"fontSize": 10,
+					"stroke": "#ff6347"
+				},
+				"Texte15": {
+					"type": "text",
+					"text": "Pour désigner la clé maîtresse, sélectionnez le demandeur puis cliquez sur le bouton Clé maitresse",
+					"top": 242,
+					"left": 15,
+					"width": 631,
+					"height": 15,
+					"fontStyle": "italic",
+					"fontFamily": "Arial",
+					"fontSize": 10,
+					"stroke": "#4BAABA"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 1382
+}

@@ -1,0 +1,1406 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 5,
+	"bottomMargin": 5,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onOutsideCall"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 260,
+					"width": 1330,
+					"height": 46,
+					"sizingX": "grow",
+					"fill": "#4BAABA",
+					"stroke": "transparent",
+					"right": 1590
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 249,
+					"height": 45,
+					"fill": "#4BAABA",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 14,
+					"left": 15,
+					"width": 220,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"fontFamily": "Arial",
+					"fontSize": 18,
+					"text": "Filtres"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 51,
+					"left": 5,
+					"width": 249,
+					"height": 586,
+					"stroke": "transparent",
+					"sizingY": "grow"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 52,
+					"left": 260,
+					"width": 1330,
+					"height": 586,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"stroke": "transparent",
+					"right": 1590
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 14,
+					"left": 70,
+					"width": 170,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"fontFamily": "Arial",
+					"fontSize": 18,
+					"text": "statistiques séjours"
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 597,
+					"left": 1467,
+					"width": 113,
+					"height": 22,
+					"dataSource": "b_Ann",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Sans titre"
+					},
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Fermer",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton": {
+					"type": "button",
+					"top": 597,
+					"left": 1319,
+					"width": 137,
+					"height": 22,
+					"dataSource": "",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Sans titre"
+					},
+					"action": "",
+					"shortcutKey": "",
+					"text": "Copier lignes tableaux",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					],
+					"shortcutAccel": false,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"method": "ObjectMethods/Bouton.4dm",
+					"visibility": "visible",
+					"fontFamily": "Arial"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 25,
+					"left": 291,
+					"width": 145,
+					"height": 18,
+					"borderRadius": 30,
+					"stroke": "transparent"
+				},
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 25,
+					"left": 610,
+					"width": 145,
+					"height": 18,
+					"borderRadius": 30,
+					"stroke": "transparent"
+				},
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 25,
+					"left": 773,
+					"width": 145,
+					"height": 18,
+					"borderRadius": 30,
+					"stroke": "transparent"
+				},
+				"Rectangle8": {
+					"type": "rectangle",
+					"top": 26,
+					"left": 1381,
+					"width": 145,
+					"height": 18,
+					"borderRadius": 30,
+					"stroke": "transparent"
+				},
+				"List Box2": {
+					"type": "listbox",
+					"top": 75,
+					"left": 270,
+					"width": 1310,
+					"height": 508,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"focusable": false,
+					"movableRows": false,
+					"hideExtraBlankRows": true,
+					"rowHeight": "18px",
+					"headerHeight": "24px",
+					"dataSource": "Form:C1466.passageGlobal_c",
+					"currentItemSource": "Form:C1466.refCourant",
+					"currentItemPositionSource": "Form:C1466.refPosition",
+					"selectedItemsSource": "Form:C1466.refSelection",
+					"metaSource": "",
+					"scrollbarHorizontal": "hidden",
+					"fontFamily": "Arial",
+					"fontSize": 10,
+					"method": "ObjectMethods/List Box2.4dm",
+					"columns": [
+						{
+							"name": "Colonne8",
+							"dataSource": "This:C1470.cle",
+							"width": 250,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#D6D6D6",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête8",
+								"text": "Clé",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied8",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Colonne4",
+							"dataSource": "This:C1470.etatCivil",
+							"width": 75,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#D6D6D6",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête4",
+								"text": "#",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied4",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Colonne13",
+							"dataSource": "This:C1470.numSejour",
+							"width": 40,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#D6D6D6",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête13",
+								"text": "#",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied13",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Colonne10",
+							"dataSource": "This:C1470.dateDebut",
+							"width": 100,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#D6D6D6",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête10",
+								"text": "Du",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied10",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Colonne11",
+							"dataSource": "This:C1470.dateFin",
+							"width": 100,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#D6D6D6",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête11",
+								"text": "Au",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied11",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Colonne1",
+							"dataSource": "This:C1470.nbNuit",
+							"width": 70,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#D6D6D6",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête1",
+								"text": "Nuits",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Colonne12",
+							"dataSource": "This:C1470.nbNuitReference",
+							"width": 110,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#D6D6D6",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête12",
+								"text": "Nb nuit référence",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied12",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 10
+							}
+						},
+						{
+							"header": {
+								"name": "Entête3",
+								"text": "Date de sortie saisie",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"name": "Colonne3",
+							"dataSource": "This:C1470.dateSortie",
+							"footer": {
+								"name": "Pied3"
+							},
+							"enterable": false,
+							"alternateFill": "#CCCCCC",
+							"fontSize": 12,
+							"fontFamily": "Arial",
+							"width": 130,
+							"verticalAlign": "middle",
+							"textAlign": "center"
+						},
+						{
+							"name": "Colonne14",
+							"dataSource": "This:C1470.motifSortie",
+							"width": 150,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#D6D6D6",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête14",
+								"text": "Motif de sortie",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied14",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Colonne2",
+							"dataSource": "This:C1470.service",
+							"width": 110,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#D6D6D6",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête2",
+								"text": "Service",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied2",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Colonne9",
+							"dataSource": "This:C1470.centre",
+							"width": 200,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#D6D6D6",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête9",
+								"text": "Centre hébergement",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied9",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 10
+							}
+						}
+					]
+				},
+				"DateEntry": {
+					"type": "subform",
+					"top": 94,
+					"left": 45,
+					"width": 138,
+					"height": 25,
+					"dataSource": "dateDu_d",
+					"dataSourceTypeHint": "date",
+					"detailForm": "DateEntry",
+					"hideFocusRing": true,
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"selectionMode": "multiple",
+					"printFrame": "variable",
+					"method": "ObjectMethods/DateEntry.4dm",
+					"events": [
+						"onLoad"
+					]
+				},
+				"DateEntry1": {
+					"type": "subform",
+					"top": 124,
+					"left": 45,
+					"width": 138,
+					"height": 25,
+					"dataSource": "dateAu_d",
+					"dataSourceTypeHint": "date",
+					"detailForm": "DateEntry",
+					"hideFocusRing": true,
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"selectionMode": "multiple",
+					"printFrame": "variable",
+					"method": "ObjectMethods/DateEntry1.4dm",
+					"events": [
+						"onLoad"
+					]
+				},
+				"Zone de groupe2": {
+					"type": "text",
+					"top": 99,
+					"left": 15,
+					"width": 18,
+					"height": 15,
+					"stroke": "#000000",
+					"text": "Du",
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 69,
+					"left": 15,
+					"width": 227,
+					"height": 16,
+					"stroke": "#000000",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date de sortie",
+					"fontWeight": "bold"
+				},
+				"Zone de groupe3": {
+					"type": "text",
+					"top": 129,
+					"left": 15,
+					"width": 18,
+					"height": 15,
+					"stroke": "#000000",
+					"text": "Au",
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 386,
+					"left": 15,
+					"width": 225,
+					"height": 16,
+					"stroke": "#000000",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nuits",
+					"fontWeight": "bold"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 412,
+					"left": 45,
+					"width": 62,
+					"height": 16,
+					"dataSource": "Form:C1466.nbNuitDe",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"placeholder": "1",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Variable1.4dm",
+					"events": [],
+					"dataSourceTypeHint": "number",
+					"entryFilter": "&9"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 428,
+					"left": 45,
+					"width": 62,
+					"stroke": "#DDDDDD",
+					"height": 1
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 412,
+					"left": 150,
+					"width": 95,
+					"height": 16,
+					"dataSource": "Form:C1466.nbNuitA",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"placeholder": "10",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Variable3.4dm",
+					"events": [],
+					"dataSourceTypeHint": "number",
+					"entryFilter": "&9",
+					"right": 245
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 428,
+					"left": 150,
+					"width": 95,
+					"stroke": "#DDDDDD",
+					"right": 245
+				},
+				"Zone de groupe1": {
+					"type": "text",
+					"top": 413,
+					"left": 15,
+					"width": 18,
+					"height": 15,
+					"stroke": "#000000",
+					"text": "De",
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Zone de groupe4": {
+					"type": "text",
+					"top": 413,
+					"left": 118,
+					"width": 18,
+					"height": 15,
+					"stroke": "#000000",
+					"text": "À",
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Bouton1": {
+					"type": "button",
+					"text": ":<>vlSTR_Std_Soc,62",
+					"top": 255,
+					"left": 15,
+					"width": 203,
+					"height": 20,
+					"events": [
+						"onClick",
+						"onMouseMove"
+					],
+					"style": "roundedBevel",
+					"method": "ObjectMethods/Bouton1.4dm",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"stroke": "#000000",
+					"borderStyle": "none",
+					"fontWeight": "bold"
+				},
+				"Bouton2": {
+					"type": "button",
+					"text": ":◊vlSTR_Std_Soc,50",
+					"top": 284,
+					"left": 15,
+					"width": 203,
+					"height": 20,
+					"events": [
+						"onClick",
+						"onMouseMove"
+					],
+					"style": "roundedBevel",
+					"method": "ObjectMethods/Bouton2.4dm",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"stroke": "#000000",
+					"fontWeight": "bold"
+				},
+				"Image6": {
+					"type": "picture",
+					"top": 257,
+					"left": 230,
+					"width": 20,
+					"height": 20,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image6.png"
+				},
+				"Bouton3": {
+					"type": "button",
+					"text": "",
+					"top": 257,
+					"left": 228,
+					"width": 19,
+					"height": 20,
+					"events": [
+						"onClick",
+						"onMouseMove"
+					],
+					"style": "custom",
+					"method": "ObjectMethods/Bouton3.4dm"
+				},
+				"Image1": {
+					"type": "picture",
+					"top": 286,
+					"left": 230,
+					"width": 20,
+					"height": 20,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image6.png"
+				},
+				"Bouton4": {
+					"type": "button",
+					"text": "",
+					"top": 286,
+					"left": 228,
+					"width": 19,
+					"height": 20,
+					"events": [
+						"onClick",
+						"onMouseMove"
+					],
+					"style": "custom",
+					"method": "ObjectMethods/Bouton4.4dm"
+				},
+				"Bouton5": {
+					"type": "button",
+					"text": ":◊vlSTR_Std_Soc,40",
+					"top": 314,
+					"left": 15,
+					"width": 203,
+					"height": 20,
+					"events": [
+						"onClick",
+						"onMouseMove"
+					],
+					"style": "roundedBevel",
+					"method": "ObjectMethods/Bouton5.4dm",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"stroke": "#000000",
+					"fontWeight": "bold"
+				},
+				"Image2": {
+					"type": "picture",
+					"top": 316,
+					"left": 230,
+					"width": 20,
+					"height": 20,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image6.png"
+				},
+				"Bouton6": {
+					"type": "button",
+					"text": "",
+					"top": 316,
+					"left": 228,
+					"width": 19,
+					"height": 20,
+					"events": [
+						"onClick",
+						"onMouseMove"
+					],
+					"style": "custom",
+					"method": "ObjectMethods/Bouton6.4dm"
+				},
+				"DateEntry2": {
+					"type": "subform",
+					"top": 187,
+					"left": 45,
+					"width": 138,
+					"height": 25,
+					"dataSource": "dateReferenceDu_d",
+					"dataSourceTypeHint": "date",
+					"detailForm": "DateEntry",
+					"hideFocusRing": true,
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"selectionMode": "multiple",
+					"printFrame": "variable",
+					"method": "ObjectMethods/DateEntry2.4dm",
+					"events": [
+						"onLoad"
+					]
+				},
+				"DateEntry3": {
+					"type": "subform",
+					"top": 217,
+					"left": 45,
+					"width": 138,
+					"height": 25,
+					"dataSource": "dateReferenceAu_d",
+					"dataSourceTypeHint": "date",
+					"detailForm": "DateEntry",
+					"hideFocusRing": true,
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"selectionMode": "multiple",
+					"printFrame": "variable",
+					"method": "ObjectMethods/DateEntry3.4dm",
+					"events": [
+						"onLoad"
+					]
+				},
+				"Zone de groupe5": {
+					"type": "text",
+					"top": 192,
+					"left": 15,
+					"width": 18,
+					"height": 15,
+					"stroke": "#000000",
+					"text": "Du",
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 162,
+					"left": 15,
+					"width": 227,
+					"height": 16,
+					"stroke": "#000000",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Dates de présence",
+					"fontWeight": "bold"
+				},
+				"Zone de groupe6": {
+					"type": "text",
+					"top": 222,
+					"left": 15,
+					"width": 18,
+					"height": 15,
+					"stroke": "#000000",
+					"text": "Au",
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Case à cocher": {
+					"type": "checkbox",
+					"text": "Inclure fiches inconnus",
+					"top": 448,
+					"left": 15,
+					"width": 250,
+					"height": 16,
+					"events": [],
+					"dataSourceTypeHint": "boolean",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"dataSource": "Form:C1466.ficheInconnu",
+					"method": "ObjectMethods/Case à cocher.4dm"
+				},
+				"Case à cocher1": {
+					"type": "checkbox",
+					"text": "Cumul",
+					"top": 477,
+					"left": 15,
+					"width": 250,
+					"height": 16,
+					"events": [],
+					"dataSourceTypeHint": "boolean",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"dataSource": "Form:C1466.cumul",
+					"method": "ObjectMethods/Case à cocher1.4dm"
+				},
+				"Image3": {
+					"type": "picture",
+					"top": 190,
+					"left": 190,
+					"width": 20,
+					"height": 20,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image6.png"
+				},
+				"Bouton7": {
+					"type": "button",
+					"text": "",
+					"top": 190,
+					"left": 190,
+					"width": 20,
+					"height": 20,
+					"events": [
+						"onClick",
+						"onMouseMove"
+					],
+					"style": "custom",
+					"method": "ObjectMethods/Bouton7.4dm"
+				},
+				"Image4": {
+					"type": "picture",
+					"top": 221,
+					"left": 190,
+					"width": 20,
+					"height": 20,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image6.png"
+				},
+				"Bouton8": {
+					"type": "button",
+					"text": "",
+					"top": 221,
+					"left": 190,
+					"width": 20,
+					"height": 20,
+					"events": [
+						"onClick",
+						"onMouseMove"
+					],
+					"style": "custom",
+					"method": "ObjectMethods/Bouton8.4dm"
+				},
+				"Bouton9": {
+					"type": "button",
+					"text": ":◊vlSTR_Std_Soc,51",
+					"top": 344,
+					"left": 15,
+					"width": 203,
+					"height": 20,
+					"events": [
+						"onClick",
+						"onMouseMove"
+					],
+					"style": "roundedBevel",
+					"method": "ObjectMethods/Bouton9.4dm",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"stroke": "#000000",
+					"fontWeight": "bold"
+				},
+				"Image5": {
+					"type": "picture",
+					"top": 346,
+					"left": 230,
+					"width": 20,
+					"height": 20,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image6.png"
+				},
+				"Bouton10": {
+					"type": "button",
+					"text": "",
+					"top": 346,
+					"left": 228,
+					"width": 19,
+					"height": 20,
+					"events": [
+						"onClick",
+						"onMouseMove"
+					],
+					"style": "custom",
+					"method": "ObjectMethods/Bouton10.4dm"
+				},
+				"Bouton11": {
+					"type": "button",
+					"text": "Rechercher",
+					"top": 569,
+					"left": 8,
+					"width": 225,
+					"height": 40,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Bouton11.4dm"
+				},
+				"Zone de saisie": {
+					"type": "input",
+					"left": 611,
+					"top": 26,
+					"width": 138,
+					"height": 22,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"fontFamily": "Calibri",
+					"fontSize": 14,
+					"stroke": "#000000",
+					"dataSource": "Form:C1466.nbHebergeDistinct",
+					"fontWeight": "normal",
+					"textAlign": "center"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 7,
+					"left": 609,
+					"width": 147,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"fontFamily": "Arial",
+					"fontSize": 14,
+					"text": "Usagers différents",
+					"fontWeight": "bold",
+					"textAlign": "center"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 7,
+					"left": 774,
+					"width": 141,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"fontFamily": "Arial",
+					"fontSize": 14,
+					"text": "Nuits totales",
+					"fontWeight": "bold",
+					"textAlign": "center"
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 8,
+					"left": 1380,
+					"width": 145,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"fontFamily": "Arial",
+					"fontSize": 14,
+					"text": "Nuits de présence",
+					"fontWeight": "bold",
+					"textAlign": "center"
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 7,
+					"left": 295,
+					"width": 137,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"fontFamily": "Arial",
+					"fontSize": 14,
+					"text": "Lignes",
+					"fontWeight": "bold",
+					"textAlign": "center"
+				},
+				"Zone de saisie1": {
+					"type": "input",
+					"left": 776,
+					"top": 26,
+					"width": 136,
+					"height": 22,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"fontFamily": "Calibri",
+					"fontSize": 14,
+					"stroke": "#000000",
+					"dataSource": "Form:C1466.nbNuitTotale",
+					"fontWeight": "normal",
+					"textAlign": "center"
+				},
+				"Zone de saisie2": {
+					"type": "input",
+					"left": 1388,
+					"top": 27,
+					"width": 130,
+					"height": 22,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"fontFamily": "Calibri",
+					"fontSize": 14,
+					"stroke": "#000000",
+					"dataSource": "Form:C1466.nbNuitReference",
+					"fontWeight": "normal",
+					"textAlign": "center"
+				},
+				"Rectangle9": {
+					"type": "rectangle",
+					"top": 25,
+					"left": 449,
+					"width": 145,
+					"height": 18,
+					"borderRadius": 30,
+					"stroke": "transparent"
+				},
+				"Texte10": {
+					"type": "text",
+					"top": 7,
+					"left": 453,
+					"width": 137,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"fontFamily": "Arial",
+					"fontSize": 14,
+					"text": "Ménages",
+					"fontWeight": "bold",
+					"textAlign": "center"
+				},
+				"Zone de saisie3": {
+					"type": "input",
+					"left": 295,
+					"top": 26,
+					"width": 138,
+					"height": 22,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"fontFamily": "Calibri",
+					"fontSize": 14,
+					"stroke": "#000000",
+					"dataSource": "Form:C1466.passageGlobal_c.length",
+					"fontWeight": "normal",
+					"textAlign": "center"
+				},
+				"Case à cocher2": {
+					"type": "checkbox",
+					"text": "Séjour en cours",
+					"top": 506,
+					"left": 15,
+					"width": 250,
+					"height": 16,
+					"events": [],
+					"dataSourceTypeHint": "boolean",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"dataSource": "Form:C1466.sejourEnCours",
+					"method": "ObjectMethods/Case à cocher2.4dm"
+				},
+				"Zone de saisie4": {
+					"type": "input",
+					"left": 452,
+					"top": 26,
+					"width": 138,
+					"height": 22,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"fontFamily": "Calibri",
+					"fontSize": 14,
+					"stroke": "#000000",
+					"dataSource": "Form:C1466.nbChefFamille",
+					"fontWeight": "normal",
+					"textAlign": "center"
+				},
+				"Rectangle10": {
+					"type": "rectangle",
+					"top": 25,
+					"left": 947,
+					"width": 181,
+					"height": 18,
+					"borderRadius": 30,
+					"stroke": "transparent"
+				},
+				"Texte11": {
+					"type": "text",
+					"top": 7,
+					"left": 948,
+					"width": 185,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"fontFamily": "Arial",
+					"fontSize": 14,
+					"text": "Durée moyenne séjour (J)",
+					"fontWeight": "bold",
+					"textAlign": "center"
+				},
+				"Zone de saisie5": {
+					"type": "input",
+					"left": 950,
+					"top": 26,
+					"width": 169,
+					"height": 22,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"fontFamily": "Calibri",
+					"fontSize": 14,
+					"stroke": "#000000",
+					"dataSource": "Form:C1466.nbNuitTotale/Form:C1466.nbHebergeDistinct",
+					"fontWeight": "normal",
+					"textAlign": "center",
+					"dataSourceTypeHint": "number",
+					"numberFormat": "#####0"
+				},
+				"Rectangle11": {
+					"type": "rectangle",
+					"top": 25,
+					"left": 1161,
+					"width": 181,
+					"height": 18,
+					"borderRadius": 30,
+					"stroke": "transparent"
+				},
+				"Texte12": {
+					"type": "text",
+					"top": 7,
+					"left": 1162,
+					"width": 185,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"fontFamily": "Arial",
+					"fontSize": 14,
+					"text": "Durée moyenne séjour (M)",
+					"fontWeight": "bold",
+					"textAlign": "center"
+				},
+				"Zone de saisie6": {
+					"type": "input",
+					"left": 1164,
+					"top": 26,
+					"width": 169,
+					"height": 22,
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"fontFamily": "Calibri",
+					"fontSize": 14,
+					"stroke": "#000000",
+					"dataSource": "Form:C1466.nbNuitTotale/Form:C1466.nbHebergeDistinct/30",
+					"fontWeight": "normal",
+					"textAlign": "center",
+					"dataSourceTypeHint": "number",
+					"numberFormat": "#####0"
+				}
+			},
+			"entryOrder": [
+				"DateEntry",
+				"DateEntry1",
+				"DateEntry2",
+				"Bouton1",
+				"Bouton3",
+				"Bouton2",
+				"Bouton4",
+				"Bouton5",
+				"Bouton6",
+				"Variable1",
+				"Variable3",
+				"List Box2",
+				"Case à cocher",
+				"Case à cocher1",
+				"Bouton7",
+				"Bouton8",
+				"Bouton9",
+				"Bouton10",
+				"Bouton11",
+				"Zone de saisie",
+				"Zone de saisie1",
+				"Zone de saisie2",
+				"Zone de saisie3",
+				"Case à cocher2",
+				"Zone de saisie4",
+				"Zone de saisie5",
+				"Zone de saisie6"
+			]
+		}
+	],
+	"editor": {
+		"groups": {
+			"Group2": [
+				"Rectangle9",
+				"Texte10"
+			],
+			"Group4": [
+				"Rectangle8",
+				"Texte8",
+				"Zone de saisie2"
+			]
+		},
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"geometryStamp": 3645,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"method": "method.4dm",
+	"windowTitle": "Statistique séjour"
+}

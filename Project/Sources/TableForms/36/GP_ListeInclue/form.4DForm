@@ -1,0 +1,97 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerBody": 20,
+	"markerBreak": 20,
+	"markerFooter": 20,
+	"events": [
+		"onDisplayDetail"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Ligne3": {
+					"type": "line",
+					"top": 17,
+					"left": 0,
+					"width": 277,
+					"stroke": "#FFFFFF"
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 1,
+					"left": 291,
+					"width": 46,
+					"height": 16,
+					"dataSource": "ve_NbGPGH",
+					"dataSourceTypeHint": "number",
+					"stroke": "#EE0000",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#EEEEEE",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "# ##0;;",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable2.4dm",
+					"events": [
+						"onDisplayDetail"
+					]
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 1,
+					"left": 5,
+					"width": 277,
+					"height": 16,
+					"dataSource": "[GrouPe:36]GP_Intitulé:4",
+					"stroke": "#0000FF",
+					"focusable": false,
+					"fill": "#EEEEEE",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 18,
+					"left": 0,
+					"width": 342,
+					"stroke": "#FFFFFF",
+					"strokeWidth": 0.1
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 0,
+					"left": 285,
+					"height": 22,
+					"stroke": "#AAAAAA"
+				}
+			}
+		}
+	]
+}

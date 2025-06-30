@@ -1,0 +1,588 @@
+.planning{
+	display:none;
+ }
+ 
+ 
+.pl {
+	text-align: left;
+	margin: 20px; 
+	position: relative;
+	/*border: 1px solid red;*/
+	float: left;
+	/*display: none;*/
+	margin-top: 66px;
+	min-width: 1230px; 
+}
+.pl-collabs{
+     margin-top:0px;   
+}
+	
+.pl table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	/*width:1194px;*/
+	}
+
+.pl-collabs table{
+    /* margin-left: 167px;   */
+}
+html .pl,
+.pl table {
+	font-size: 1em; 
+	}
+
+/*.pl tr td.collab,
+.pl tr th.collab{
+	border:1px solid #fff;
+	border-right:1px solid #ccc;
+	}*/
+	
+	.hide{
+		display:none !important;
+	}
+	/*.planning-collabs tr td.hide{
+		display:block !important;
+	}*/
+	/*.pl-collabs td.hide{
+	    display:block !important; 
+	}*/
+td,
+th {
+	padding: 0;
+	vertical-align: top;
+	/*width:31px;*/
+	height: 27px;
+	border:1px solid #DBDADA;
+	text-align:center;
+	vertical-align: middle;
+	position: relative;
+	margin: 0;
+}
+	
+.tache{
+	/*height:31px;*/
+	height: 27px;
+	/*background:rgb(140, 196, 240);*/
+	font-size: 10px;
+	position: absolute !important;
+	z-index:100;
+	white-space: nowrap;
+	border: 1px solid #6FADFC;
+	background: #D8E9FF;
+	border-width: 0px 1px;
+}
+.fete{
+    z-index: 600;   
+}
+.pl .collab{
+	width: 190px;
+	padding-left: 5px;
+	text-align: left;
+	font-size: 11px;
+	}
+		
+.taches{
+	position: absolute;
+	top: 0;
+	left: 201px;
+	/*width: 79.9%;*/
+	/*border: 1px solid red;*/
+	float: left;
+	height: 100%;
+	overflow: hidden; 
+}
+
+.pl .taches a{
+	color:#000;
+	display: block;
+	position: relative;
+	font-size: 10px;
+	}
+	
+.pl .taches .title_tache{
+	position: absolute;
+	z-index: 120; 
+	left: 8px;
+	}
+	
+.pl .next, .pl .previous, .pl .current, .pl .month{
+	position: absolute;
+	top: -30px;
+	font-size: 17px;
+	right: 0;
+	width: 50px;
+	padding: 2px;
+	border-radius: 2px;
+	text-align: center;
+	line-height: 17px;
+	/*border: 1px solid #ccc;
+	color: rgb(129, 129, 129);
+	background: #eee;*/
+	}
+
+	.dossier{
+		margin-top: 60px;
+	}
+	.pl .current{
+		right: 60px;
+		width: 75px;
+		font-size: 11px;
+		line-height: 18px;
+	}
+	/*.pl .previous{
+		right: 149px;
+    }*/
+	/*.pl .current.week{
+		top:-30px;
+	}
+	.pl .current.month{
+		top:-56px;
+	}
+	.pl .current.term{
+		top:-82px;
+	}
+	.pl .current.year{
+		top:-108px;
+	}*/
+
+/* positionnement des boutons */
+	/*.pl .prev-week,
+	.pl .next-week{
+		top:-30px;
+	}
+	.pl .prev-month,
+	.pl .next-month{
+		top:-56px;
+	}	
+	.pl .prev-term,
+	.pl .next-term{
+		top:-82px;
+	}	
+	.pl .prev-year,
+	.pl .next-year{
+		top:-108px;
+	}	*/
+
+	
+.pl .title{
+	top: -30px;
+	position: absolute;
+	left:50%;
+	text-align: center;
+	font-size: 12px; /*20*/
+	width: 200px;
+	margin-left: -100px;
+	}
+	
+.pl td.blue{
+	background:rgb(216, 246, 253);
+	}
+
+.pl .today{
+	background:#ffc;
+	}
+	
+.pl th.today{
+	background:#ffc !important;
+	}
+	
+.pl .weekend{
+	background:#eee;
+	}
+	
+.pl .fete-France{
+	background:rgb(202, 232, 255);
+	}
+	
+.pl .fete-Maroc{
+	background:rgb(255, 202, 202);
+	}
+	
+.pl .conge1{
+	background:rgb(210, 165, 240);
+	}
+	
+.pl .conge{
+	width: 31px;
+	height: 27px;
+	/*border: 1px solid royalblue;*/
+	border-width: 1px 0;
+	background: rgb(210, 165, 240);
+	border: 0;
+}
+.pl .deadline{
+	height: 20px;
+	color: orange;
+	font-weight: bold;
+	position: absolute;
+	top: 5px;
+	line-height: 20px;
+	font-size: 18px;
+	border-bottom: 2px solid orange;
+	z-index: 10000;
+}
+
+.pl .tache-title {
+    z-index: 10000;
+    position:  relative;
+	font-weight: bold;
+}
+
+.pl .temp-out {
+    background: #FAD7B1 !important;
+}
+	
+.pl .temp{
+	/*width:31px;*/
+	height: 27px; /*23px;*/
+	background:#d4fab1;
+	border-width: 1px 0;
+	/*position: absolute;
+	top: 4px;*/
+	;
+	position: absolute;
+ 
+	top: 0;
+}
+	
+.temp.left {
+	width: 28px;
+	float: right;
+}
+
+.temp.right {
+	width: 28px;
+	float: left;
+}
+
+.temp.more {
+	background:rgb(250, 215, 177);
+}
+	
+/*.pl .temp1{
+	width:32px;
+	height:24px;
+	background:d4fab1;
+	}
+	
+.pl .temp2{
+	width:32px;
+	height:24px;
+	background:rgb(250, 215, 177);
+	}*/
+	
+.pl .highlight{
+	background:#ffc;
+	}
+	
+.dossier {
+	float:left;
+	position:relative;
+	width: 100%;
+}
+
+.dossier h3{
+	padding-left: 20px;
+	margin-bottom: 15px;
+	color: #bc312a;
+	font-size: 16px;
+}
+.dossier h3 .temps-non-planifie{
+     color: rgb(116, 94, 94);
+     margin-left:10px;   
+}
+.dossier h3 a{
+	color: #bc312a;
+}
+
+.dossier h3 a.btn{
+	margin-right:15px;
+	width: 50px;
+}
+
+.dossier h3 a.showAll,
+.dossier h3 a.hideAll{
+	width: 77px;
+}
+
+#core {
+	width: auto;
+}
+
+.external_tache{ 
+	/*float: right;*/
+	
+	border: 1px dashed #ccc;
+	//min-height: 100px;
+	/*background:#ebebeb;*/
+	/*display:none;*/
+	/*width: 17%;*/
+	/*height: 493px;*/
+	/*float: left;*/
+	/*margin-right: 2%;*/
+	/*margin-left: 1%;*/
+	/*overflow: auto;*/
+	/*margin-top: 109px;*/
+}
+.external-tasks{
+    width: 17%;
+	
+    height: 360px;
+	float: left;
+	margin-right: 2%;
+	margin-left: 1%;
+	overflow: auto;
+	
+    margin-top: 4px;
+}
+.ex_tache{
+	font-size: 10px;
+	color: #000;
+	margin:5px;
+	padding-left:10px;
+	line-height:15px;
+	background: rgb(220, 248, 146);
+	border:1px solid #000;
+	z-index: 100;
+}
+.ex_tache.avancement-test,
+.tache.avancement-test{
+    background: rgb(228, 203, 172);
+}
+.external_tache a:hover{
+	text-decoration:none;
+}
+	
+
+.label-collab {
+	width: 44px;
+	display: inline-block;
+	text-align: center;
+	margin-right: 5px;
+}
+
+.loading{
+	/*display:none;*/
+}
+	
+/* Mozilla / Opera / IE hacks */
+.pl td,.pl th {
+border-width: 1px 1px 0 0;
+/*display: inline-block;*/
+;
+}
+
+.pl table { 
+    border-left:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    /*float: left;*/
+}
+
+
+/* hack Chrome / Safari */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.pl td, 
+	.pl th {
+    display: table-cell;
+	/*display: table-cell; */
+	
+}
+}
+
+/* mozilla hacks */ 
+@-moz-document url-prefix() { 
+	.pl .temp {
+		margin-top: 4px;
+	}
+}
+
+#planning-wrapper{
+    float: left;
+    overflow-x: auto;
+    width: 79%; 
+}
+.planning-taches,
+.planning-collabs{
+	height: 265px;
+	overflow: auto;  
+    
+	position: relative;
+}
+.planning-taches{
+     margin-bottom:15px;   
+}
+.collab-name{
+	position: absolute;
+	left: 10px;
+	font-size: 9px;
+	color: #666;
+	background: #DCF7C0;
+	z-index: 200;
+	padding: 0 4px;
+	border: 1px solid #6AD125;
+	cursor: pointer;
+	line-height: 14px;
+}
+.remove-task{
+    position:absolute;
+    left:-15px;
+    top:0px;
+    z-index:10001;   
+}
+.remove-task.right{
+	right : -15px;
+	left : auto;
+}
+.remove-task:hover i{
+     opacity:0.5;   
+}
+.external_tache > a{
+     display:block;   
+     position: relative;
+}
+.week-end{ 
+    background-color: #f2f2f2 !important;   
+}	
+.fete{
+     background-color: rgb(231, 136, 136);   
+     height: 28px;
+     border: 0;
+     opacity: 0.6;
+}
+.fete.maroc{
+    background-color:rgb(231, 136, 136); 
+}
+.fete.france{
+    background-color:rgb(76, 130, 189); 
+}
+.conge{
+     background-color:#999;   
+}
+#nav{
+    position: absolute;
+    
+    left: 18px;
+    top: 0;
+    width: 100%;
+}
+.nom-dossier{
+     padding:4px; 
+     display:block;   
+}
+.my-tooltip{
+     position:absolute;
+     font-size: 12px;
+     color: #333;
+     background: #f2f2f2;
+     z-index: 9999;
+     font-family: arial;
+     border-radius:4px; 
+     box-shadow:0 0 2px #777;
+     padding:5px; 
+} 
+
+.name-collab {
+	color: #8C6FC0;
+}
+
+.temps-passe {
+	color: #FF4700;
+}
+
+.temps-prevu {
+	color: #42AC07;
+}
+.by-skills{
+	position: fixed;
+	z-index: 100;
+	padding-left: 5px;
+}
+.external_tache .competences {
+	background: rgb(220, 248, 146);
+	border: 1px solid #000;
+	height: 8px;
+	line-height: 0;
+	padding: 2px 5px;
+}
+.external_tache .competences span{
+   padding-left:18px;     
+}
+.refresh{
+	position:absolute;
+	top: -22px;
+	left: 18px;
+}
+.head-cloned{
+     position:absolute;
+     left: 18px;
+     top:0;   
+     background: #FFF;
+     z-index: 500;
+}
+.prev-week{
+    left:0;
+}
+.current.week{
+    left: 58px;   
+}
+.next-week{
+    left: 141px;
+}
+
+
+
+.prev-month{
+    left: 207px;
+}
+.current.month{
+    left: 265px;   
+}
+.next-month{
+    left: 348px;
+}
+
+
+
+.prev-term{
+    left: 414px;
+}
+.current.term{
+    left: 472px;   
+}
+.next-term{
+    left: 555px;
+}
+
+
+
+.prev-year{
+    left: 621px;
+}
+.current.year{
+    left: 679px;   
+}
+.next-year{
+    left: 762px;
+}
+
+#nav a{
+    top: -65px;   
+}
+.labels-content{
+    position:absolute;
+    top: 525px;
+    height: 232px;
+    width: 184px;
+    left: 151px;
+    overflow: hidden;
+}
+.cloned-label{
+    position:relative;   
+    margin-bottom: 12px;
+    width: 160px;
+}
+.labels-list{
+    position:absolute;
+    left:0;
+    top:0;
+}    

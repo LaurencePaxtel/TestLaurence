@@ -1,0 +1,607 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 38,
+					"left": 5,
+					"width": 506,
+					"height": 208,
+					"fill": "transparent"
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 505,
+					"height": 27,
+					"fill": "transparent",
+					"stroke": "#999999"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 6,
+					"left": 6,
+					"width": 505,
+					"height": 27,
+					"fill": "transparent",
+					"stroke": "#FFFFFF"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 249,
+					"left": 5,
+					"width": 505
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 40,
+					"left": 7,
+					"width": 502,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 43,
+					"left": 10,
+					"width": 497,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Exporter les fiches"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 62,
+					"left": 7,
+					"width": 502
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 114,
+					"left": 15,
+					"width": 53,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"text": "Dates :"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 13,
+					"left": 9,
+					"width": 37,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": ":30004,1"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 13,
+					"left": 186,
+					"width": 34,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": ":30004,2"
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 13,
+					"left": 376,
+					"width": 28,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": ":30004,3"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 13,
+					"left": 48,
+					"width": 140,
+					"height": 15,
+					"dataSource": "<>va_User",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 13,
+					"left": 224,
+					"width": 110,
+					"height": 15,
+					"dataSource": "<>va_ProfUser",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 13,
+					"left": 409,
+					"width": 85,
+					"height": 15,
+					"dataSource": "<>DDJ",
+					"dataSourceTypeHint": "date",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dateFormat": "systemMedium",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 211,
+					"left": 15,
+					"width": 153,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"text": "Nombre de fiches reportées :"
+				},
+				"Variable6": {
+					"type": "input",
+					"top": 111,
+					"left": 128,
+					"width": 119,
+					"height": 21,
+					"dataSource": "vd_ExportReportD",
+					"dataSourceTypeHint": "date",
+					"class": "TNR_18",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dateFormat": "short",
+					"entryFilter": "!0&9##/##/####",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable6.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 211,
+					"left": 166,
+					"width": 89,
+					"height": 16,
+					"dataSource": "vl_ExportReport",
+					"stroke": "#0000FF",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 255,
+					"left": 403,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_Ann",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Variable18": {
+					"type": "button",
+					"top": 255,
+					"left": 285,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_Val",
+					"shortcutKey": "[Enter]",
+					"text": "Exporter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable18.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Image1": {
+					"type": "picture",
+					"top": 146,
+					"left": 130,
+					"width": 14,
+					"height": 12,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image1.pict"
+				},
+				"Image2": {
+					"type": "picture",
+					"top": 146,
+					"left": 161,
+					"width": 14,
+					"height": 12,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image2.pict"
+				},
+				"Bouton inversé1": {
+					"type": "button",
+					"top": 139,
+					"left": 126,
+					"width": 23,
+					"height": 24,
+					"dataSource": "b_razDt",
+					"display": false,
+					"method": "ObjectMethods/Bouton inversé1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton inversé2": {
+					"type": "button",
+					"top": 139,
+					"left": 156,
+					"width": 23,
+					"height": 24,
+					"dataSource": "b_razDt",
+					"display": false,
+					"method": "ObjectMethods/Bouton inversé2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 111,
+					"left": 308,
+					"width": 119,
+					"height": 21,
+					"dataSource": "vd_ExportReportF",
+					"dataSourceTypeHint": "date",
+					"class": "TNR_18",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dateFormat": "short",
+					"entryFilter": "!0&9##/##/####",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable2.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Image statique1": {
+					"type": "picture",
+					"top": 146,
+					"left": 310,
+					"width": 14,
+					"height": 12,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image statique1.pict"
+				},
+				"Image statique2": {
+					"type": "picture",
+					"top": 146,
+					"left": 341,
+					"width": 14,
+					"height": 12,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image statique2.pict"
+				},
+				"Bouton inversé3": {
+					"type": "button",
+					"top": 139,
+					"left": 306,
+					"width": 23,
+					"height": 24,
+					"dataSource": "b_razDt",
+					"display": false,
+					"method": "ObjectMethods/Bouton inversé3.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton inversé4": {
+					"type": "button",
+					"top": 139,
+					"left": 336,
+					"width": 23,
+					"height": 24,
+					"dataSource": "b_razDt",
+					"display": false,
+					"method": "ObjectMethods/Bouton inversé4.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 114,
+					"left": 81,
+					"width": 43,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "du :"
+				},
+				"Bouton inversé5": {
+					"type": "button",
+					"top": 109,
+					"left": 95,
+					"width": 29,
+					"height": 24,
+					"dataSource": "b_DesDates",
+					"display": false,
+					"method": "ObjectMethods/Bouton inversé5.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 114,
+					"left": 261,
+					"width": 43,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "au :"
+				},
+				"Bouton inversé6": {
+					"type": "button",
+					"top": 109,
+					"left": 275,
+					"width": 29,
+					"height": 24,
+					"dataSource": "b_DesDates",
+					"display": false,
+					"method": "ObjectMethods/Bouton inversé6.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 211,
+					"left": 271,
+					"width": 103,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Nombre de jours :"
+				},
+				"Variable7": {
+					"type": "input",
+					"top": 211,
+					"left": 378,
+					"width": 49,
+					"height": 16,
+					"dataSource": "vl_ExportJours",
+					"stroke": "#0000FF",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Case à cocher2": {
+					"type": "radio",
+					"top": 79,
+					"left": 199,
+					"width": 102,
+					"height": 12,
+					"dataSource": "rExport_1",
+					"text": "Reportées",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"method": "ObjectMethods/Case à cocher2.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton radio1": {
+					"type": "radio",
+					"top": 79,
+					"left": 354,
+					"width": 102,
+					"height": 12,
+					"dataSource": "rExport_2",
+					"text": "Prestations",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"method": "ObjectMethods/Bouton radio1.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 174,
+					"left": 15,
+					"width": 83,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"text": "Plateforme :"
+				},
+				"Variable8": {
+					"type": "input",
+					"top": 171,
+					"left": 128,
+					"width": 299,
+					"height": 21,
+					"dataSource": "va_ExportReportPlateforme",
+					"dataSourceTypeHint": "date",
+					"class": "TNR_18",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dateFormat": "short",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable8.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Bouton radio2": {
+					"type": "radio",
+					"top": 79,
+					"left": 88,
+					"width": 92,
+					"height": 12,
+					"dataSource": "rExport_3",
+					"text": "1ère nuit",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"method": "ObjectMethods/Bouton radio2.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

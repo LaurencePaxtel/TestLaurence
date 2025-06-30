@@ -1,0 +1,318 @@
+{
+	"destination": "listScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"rightMargin": 15,
+	"bottomMargin": 10,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Zone de groupe1": {
+					"type": "groupBox",
+					"top": 40,
+					"left": 5,
+					"width": 342,
+					"height": 99,
+					"stroke": "#0000FF",
+					"class": "TNR_12",
+					"text": "Recherche du dernier n° de fiche utilisé à la date de fin de mois"
+				},
+				"Zone de groupe2": {
+					"type": "groupBox",
+					"top": 142,
+					"left": 5,
+					"width": 342,
+					"height": 111,
+					"stroke": "#0000FF",
+					"class": "TNR_12",
+					"text": "Nouveau numéro"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Bouton 3D1": {
+					"type": "button",
+					"top": 269,
+					"left": 240,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_AnnNhb",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Anuler",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton 3D2": {
+					"type": "button",
+					"top": 269,
+					"left": 114,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_OKNhb",
+					"shortcutKey": "[Enter]",
+					"text": "Valider",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 69,
+					"left": 140,
+					"width": 91,
+					"height": 16,
+					"dataSource": "vd_Date",
+					"dataSourceTypeHint": "date",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dateFormat": "short",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable1.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 100,
+					"left": 140,
+					"width": 131,
+					"height": 16,
+					"dataSource": "va_NoFiche",
+					"stroke": "#EE0000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ1": {
+					"type": "checkbox",
+					"top": 202,
+					"left": 140,
+					"width": 129,
+					"height": 15,
+					"dataSource": "[DePart:1]DP_Param:3",
+					"enterable": false,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 171,
+					"left": 140,
+					"width": 129,
+					"height": 16,
+					"dataSource": "[DePart:1]DP_NumHeberg:4",
+					"dataSourceTypeHint": "integer",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 69,
+					"left": 17,
+					"width": 110,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Date :"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 100,
+					"left": 17,
+					"width": 110,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "N° d'hébergement : "
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 171,
+					"left": 17,
+					"width": 110,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "N° d'hébergement : "
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 202,
+					"left": 17,
+					"width": 110,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Statut du paramètre : "
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 8,
+					"left": 7,
+					"width": 338,
+					"height": 17,
+					"stroke": "#0000FF",
+					"class": "TNR_14",
+					"textAlign": "center",
+					"text": "Numérotation des fiches d'hébergement"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 263,
+					"left": 5,
+					"width": 341
+				},
+				"Rectangle rond1": {
+					"type": "rectangle",
+					"top": 9,
+					"left": 5,
+					"width": 341,
+					"height": 21,
+					"fill": "#EEEEEE",
+					"stroke": "#0000FF",
+					"strokeWidth": 2,
+					"borderRadius": 5
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 13,
+					"left": 9,
+					"width": 332,
+					"height": 14,
+					"dataSource": "<>va_T_00",
+					"stroke": "#0000FF",
+					"class": "TNR_11g",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"focusable": false,
+					"fill": "#EEEEEE",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

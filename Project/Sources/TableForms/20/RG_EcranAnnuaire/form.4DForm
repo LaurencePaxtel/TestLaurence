@@ -1,0 +1,364 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 2,
+					"left": 3,
+					"width": 626,
+					"height": 27,
+					"fill": "transparent",
+					"stroke": "#999999"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 3,
+					"left": 4,
+					"width": 626,
+					"height": 27,
+					"fill": "transparent",
+					"stroke": "#FFFFFF"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 11,
+					"left": 254,
+					"width": 54,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"text": ":30004,2"
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 11,
+					"left": 477,
+					"width": 37,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"text": ":30004,3"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 11,
+					"left": 71,
+					"width": 160,
+					"height": 15,
+					"dataSource": "<>va_User",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 11,
+					"left": 312,
+					"width": 130,
+					"height": 15,
+					"dataSource": "<>va_ProfUser",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 11,
+					"left": 517,
+					"width": 85,
+					"height": 15,
+					"dataSource": "<>DDJ",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Main_User": {
+					"type": "text",
+					"top": 11,
+					"left": 7,
+					"width": 61,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"text": ":30004,1"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Bouton 3D1": {
+					"type": "button",
+					"top": 208,
+					"left": 523,
+					"width": 97,
+					"height": 22,
+					"dataSource": "b_AnnS",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					]
+				},
+				"Assoc_Bt": {
+					"type": "button",
+					"top": 156,
+					"left": 90,
+					"width": 237,
+					"height": 28,
+					"dataSource": "b_Assosc",
+					"display": false,
+					"method": "ObjectMethods/Assoc_Bt.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"DemPrest_Bt": {
+					"type": "dropdown",
+					"top": 52,
+					"left": 90,
+					"width": 237,
+					"height": 28,
+					"dataSource": "<>ta_DemP",
+					"display": false,
+					"class": "TNR_12",
+					"method": "ObjectMethods/DemPrest_Bt.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"AdrUtil_Bt": {
+					"type": "dropdown",
+					"top": 86,
+					"left": 90,
+					"width": 237,
+					"height": 28,
+					"dataSource": "<>ta_AdUtil",
+					"display": false,
+					"class": "TNR_12",
+					"method": "ObjectMethods/AdrUtil_Bt.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"SitPart_Bt": {
+					"type": "dropdown",
+					"top": 120,
+					"left": 90,
+					"width": 237,
+					"height": 28,
+					"dataSource": "<>ta_SitPar",
+					"display": false,
+					"class": "TNR_12",
+					"method": "ObjectMethods/SitPart_Bt.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Assoc_Texte1": {
+					"type": "text",
+					"top": 159,
+					"left": 93,
+					"width": 229,
+					"height": 21,
+					"stroke": "#FF6600",
+					"class": "TNR_18",
+					"textAlign": "center",
+					"text": "Associations"
+				},
+				"DemPrest_Texte1": {
+					"type": "text",
+					"top": 55,
+					"left": 93,
+					"width": 229,
+					"height": 21,
+					"stroke": "#0000FF",
+					"class": "TNR_18",
+					"textAlign": "center",
+					"text": "Demande de prestations"
+				},
+				"AdrUtil_Texte1": {
+					"type": "text",
+					"top": 89,
+					"left": 93,
+					"width": 229,
+					"height": 21,
+					"stroke": "#777777",
+					"class": "TNR_18",
+					"textAlign": "center",
+					"text": "Adresses utiles"
+				},
+				"SitPart_Texte1": {
+					"type": "text",
+					"top": 123,
+					"left": 93,
+					"width": 229,
+					"height": 21,
+					"stroke": "#EE0000",
+					"class": "TNR_18",
+					"textAlign": "center",
+					"text": "Situations particulières"
+				},
+				"DemPrest_Image1": {
+					"type": "picture",
+					"top": 54,
+					"left": 72,
+					"width": 19,
+					"height": 19,
+					"pictureFormat": "scaled",
+					"picture": "Images/DemPrest_Image1.pict"
+				},
+				"DemPrest_Image2": {
+					"type": "picture",
+					"top": 57,
+					"left": 95,
+					"width": 16,
+					"height": 16,
+					"pictureFormat": "scaled",
+					"picture": "Images/DemPrest_Image2.pict"
+				},
+				"AdrUtil_Image1": {
+					"type": "picture",
+					"top": 88,
+					"left": 72,
+					"width": 19,
+					"height": 19,
+					"pictureFormat": "scaled",
+					"picture": "Images/AdrUtil_Image1.pict"
+				},
+				"SitPart_Image1": {
+					"type": "picture",
+					"top": 122,
+					"left": 72,
+					"width": 19,
+					"height": 19,
+					"pictureFormat": "scaled",
+					"picture": "Images/SitPart_Image1.pict"
+				},
+				"AdrUtil_Image2": {
+					"type": "picture",
+					"top": 91,
+					"left": 95,
+					"width": 16,
+					"height": 16,
+					"pictureFormat": "scaled",
+					"picture": "Images/AdrUtil_Image2.pict"
+				},
+				"SitPart_Image2": {
+					"type": "picture",
+					"top": 125,
+					"left": 95,
+					"width": 16,
+					"height": 16,
+					"pictureFormat": "scaled",
+					"picture": "Images/SitPart_Image2.pict"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 201,
+					"left": 4,
+					"width": 626
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,193 @@
+<div id="modalReinitialiserMotDePasse" class="modal hide fade msmodal modal-xl" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <form id="formulaireReinitialiserMotDePasse" enctype="multipart/form-data" action="#" method="post">
+            <div class="modal-content">        
+                <div class="modal-header">
+                    <h4 class="modal-title ng-binding" ng-show="!isWithinlist">Changer de mot de passe</h4>
+                </div>
+
+                <div id="modalBodyReinitialiserMotDePasse" class="modal-body">
+                    <div class="rowB g-mb-10">
+                        <div class="col-xl-12 col-md-12 col-12">
+                            <div class="rowB g-mb-10">
+                                <div class="col-6 g-mb-10">
+                                    <label class="g-align-center-vertically-and-horizontally">Nouveau mot de passe</label>
+                                </div>
+
+                                <div class="col-6 g-mb-10">
+                                    <input id="motDePasse" name="motDePasse" type="password" class="g-width-100x" required />
+                                </div>
+
+                                <div class="col-6">
+                                    <label class="g-align-center-vertically-and-horizontally">Confirmer mot de passe</label>
+                                </div>
+
+                                <div class="col-6">
+                                    <input id="motDePasseConfirmation" name="motDePasseConfirmation" type="password" class="g-width-100x" required />
+                                </div>
+                            </div>  
+                            
+                            <div class="rowB">
+                                <div class="col-12">
+                                    <p class="text-right"><em>Le mot de passe doit comporter au moins <span id="nbCaractereMotDePasse"></span> caractères</em></p>
+                                </div>
+                            </div>
+
+                            <div class="rowB g-mt-10">
+                                <div id="CGUCheckbox" class="col-12"></div>
+                                <div class="col-12">
+                                    <div id="CGUDiv" style="width: 100%; text-align: center;">
+                                        <iframe id="CGUIframe" height="300" src="/cgu.pdf" style=""></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rowB">
+                        <div class="col-xl-8 col-md-8 col-12"></div>
+                        <div class="col-xl-4 col-md-4 col-12">
+                            <div class="rowB">
+                                <div class="col-xl-6 col-md-6 col-12 g-mb-10">
+                                    <button id="resetPasswordButton" type="submit" class="fdp_Button fdp_btn_top fdp-btn-green g-width-100x">
+                                        <i class="fa fa-plus"></i>Valider
+                                    </button>
+                                </div>
+
+                                <div class="col-xl-6 col-md-6 col-12">
+                                    <button id="cancelResetPasswordButton" type="button" class="fdp_Button fdp_btn_top fdp-btn-red g-width-100x">
+                                        <i class="fa fa-trash"></i>Annuler
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    $("#resetPasswordButton").click(function(event) {
+        event.preventDefault();
+
+        var reportValidity = $( "#formulaireReinitialiserMotDePasse")[0].reportValidity();
+
+        var motDePasse = $('#motDePasse').val();
+        var motDePasseConfirmation = $('#motDePasseConfirmation').val();
+
+        var motDePasseNbCaractere = parseInt($("#nbCaractereMotDePasse").text());
+
+        if (reportValidity) {
+            
+            if (motDePasse.length < motDePasseNbCaractere) {
+
+                $.alert({
+                    title: 'Alerte',
+                    content: "Le nombre de caractère dans les champs de mot de passe n'est pas égal à " + $("#nbCaractereMotDePasse").text() + " caractère(s)",
+                    icon: 'fa fa-warning',
+                    animation: 'scale',
+                    closeAnimation: 'scale',
+                    columnClass: 'iw_alert',
+                    buttons: {
+                        okay: {
+                            text: 'Ok',
+                            btnClass: 'btn-blue'
+                        }
+                    }
+                });
+                
+                return;
+            }
+
+            if (motDePasse != motDePasseConfirmation) {
+             
+                $.alert({
+                    title: 'Alerte',
+                    content: "Les mots de passe saisis ne sont pas identiques",
+                    icon: 'fa fa-warning',
+                    animation: 'scale',
+                    closeAnimation: 'scale',
+                    columnClass: 'iw_alert',
+                    buttons: {
+                        okay: {
+                            text: 'Ok',
+                            btnClass: 'btn-blue'
+                        }
+                    }
+                });
+                
+                return;
+            }
+
+            $.LoadingOverlay("show");
+
+            $.ajax({
+                method: 'POST',
+                url: "/4DACTION/outilsWebResetPasswordAjax",
+                data: $("#formulaireReinitialiserMotDePasse").serializeIncludeDisabled() + "&action=resetPassword&intervenantID=" + intervenantID,
+                success: function(response){
+                    var reponseParse = JSON.parse(response);
+
+                    if (reponseParse.notificationError != null) {
+
+                        $.alert({
+                            title: '',
+                            content: reponseParse.notificationError,
+                            icon: 'fa fa-error',
+                            animation: 'scale',
+                            closeAnimation: 'scale',
+                            columnClass: 'iw_alert',
+                            buttons: {
+                                okay: {
+                                text: 'Ok',
+                                btnClass: 'btn-blue'
+                                }
+                            }
+                        });
+                        
+                    }else{
+                        
+                        $.alert({
+                            title: 'Succès',
+                            content: 'Enregistrement effectué avec succès.',
+                            icon: 'fa fa-check',
+                            animation: 'scale',
+                            closeAnimation: 'scale',
+                            columnClass: 'iw_alert',
+                            buttons: {
+                                okay: {
+                                    text: 'Ok',
+                                    btnClass: 'btn-blue',
+                                    action: function () {
+                                        window.location = "/INT?action=usager-list&login=true";
+                                    }
+                                }
+                            }
+                        });
+
+                        $("#modalReinitialiserMotDePasse").modal('hide');
+                    }
+
+                    console.log(reponseParse);
+                    $.LoadingOverlay("hide");
+                }
+		    });
+        }
+    });
+
+    $("#cancelResetPasswordButton").click(function(){
+        window.location.href = '/deconnexion';
+    });
+
+    $(document).ready(function(){
+
+        if (visiteur.societe.SO_MotPasseLongueur == null) {
+            $("#nbCaractereMotDePasse").text("4");
+        }else if (visiteur.societe.SO_MotPasseLongueur > 0){
+            $("#nbCaractereMotDePasse").text(visiteur.societe.SO_MotPasseLongueur.toString());
+        }
+
+    })
+</script>

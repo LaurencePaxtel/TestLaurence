@@ -1,0 +1,178 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 7,
+					"left": 76,
+					"width": 251,
+					"height": 22,
+					"stroke": "#FFFFFF"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 15,
+					"width": 314,
+					"height": 293,
+					"fill": "transparent",
+					"stroke": "#4BAABA"
+				},
+				"Rectangle93": {
+					"type": "rectangle",
+					"top": 6,
+					"left": 16,
+					"width": 61,
+					"height": 24,
+					"fill": "#4BAABA",
+					"stroke": "transparent"
+				},
+				"Texte646": {
+					"type": "text",
+					"top": 9,
+					"left": 18,
+					"width": 54,
+					"height": 16,
+					"stroke": "#FFFFFF",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Clé ",
+					"fontFamily": "Arial",
+					"fontWeight": "bold"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 30,
+					"left": 15,
+					"width": 313,
+					"stroke": "#4BAABA",
+					"height": 1,
+					"startPoint": "topLeft"
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 305,
+					"left": 219,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_AnnHB",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable19.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton 3D1": {
+					"type": "button",
+					"top": 305,
+					"left": 101,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_ModCléHG",
+					"shortcutKey": "[Enter]",
+					"text": "Modifier la clé",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton 3D1.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 10,
+					"left": 81,
+					"width": 246,
+					"height": 15,
+					"dataSource": "[DePart:1]DP_Libelle:6",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					],
+					"fontFamily": "Arial",
+					"textAlign": "center"
+				},
+				"Sous-formulaire1": {
+					"type": "subform",
+					"top": 31,
+					"left": 16,
+					"width": 295,
+					"height": 264,
+					"dataSourceTypeHint": "text",
+					"table": 4,
+					"listForm": "HB_ListeInclueClé",
+					"focusable": false,
+					"scrollbarVertical": "visible",
+					"enterableInList": false,
+					"deletableInList": false,
+					"selectionMode": "single",
+					"printFrame": "variable"
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 243,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

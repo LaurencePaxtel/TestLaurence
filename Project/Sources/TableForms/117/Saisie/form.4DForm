@@ -1,0 +1,379 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"width": 600,
+	"height": 480,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 1,
+					"width": 600,
+					"height": 479,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"stroke": "transparent"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Champ1": {
+					"type": "input",
+					"top": 97,
+					"left": 158,
+					"width": 400,
+					"height": 16,
+					"dataSource": "[Financeurs:117]FIN_Nom:3",
+					"borderStyle": "double",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 63,
+					"left": 158,
+					"width": 400,
+					"height": 16,
+					"dataSource": "[Financeurs:117]FIN_Code:4",
+					"focusable": false,
+					"borderStyle": "double",
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"Btn_Valider": {
+					"type": "button",
+					"top": 443,
+					"left": 502,
+					"width": 81,
+					"height": 23,
+					"text": "Valider",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Valider.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Btn_Annuler": {
+					"type": "button",
+					"top": 443,
+					"left": 415,
+					"width": 81,
+					"height": 23,
+					"text": "Annuler",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Annuler.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 14,
+					"left": 15,
+					"width": 548,
+					"height": 19,
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 14,
+					"fontWeight": "bold",
+					"text": "Financeur "
+				},
+				"Champ21": {
+					"type": "input",
+					"top": 132,
+					"left": 158,
+					"width": 400,
+					"height": 14,
+					"dataSource": "[Adresses:53]AD_Adresse1:16",
+					"stroke": "#000000",
+					"class": "Style_Champ",
+					"borderStyle": "double",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Champ21.4dm",
+					"events": [
+						"onLoad"
+					]
+				},
+				"Champ22": {
+					"type": "input",
+					"top": 164,
+					"left": 158,
+					"width": 400,
+					"height": 14,
+					"dataSource": "[Adresses:53]AD_Adresse2:17",
+					"stroke": "#000000",
+					"class": "Style_Champ",
+					"borderStyle": "double",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Champ23": {
+					"type": "input",
+					"top": 196,
+					"left": 158,
+					"width": 400,
+					"height": 14,
+					"dataSource": "[Adresses:53]AD_Adresse3:18",
+					"stroke": "#000000",
+					"class": "Style_Champ",
+					"borderStyle": "double",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Champ24": {
+					"type": "input",
+					"top": 228,
+					"left": 158,
+					"width": 132,
+					"height": 14,
+					"dataSource": "[Adresses:53]AD_Code_postal:19",
+					"stroke": "#000000",
+					"class": "Style_Champ",
+					"borderStyle": "double",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Champ25": {
+					"type": "input",
+					"top": 228,
+					"left": 303,
+					"width": 255,
+					"height": 14,
+					"dataSource": "[Adresses:53]AD_Ville:20",
+					"stroke": "#000000",
+					"class": "Style_Champ",
+					"borderStyle": "double",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Texte29": {
+					"type": "text",
+					"top": 229,
+					"left": 0,
+					"width": 150,
+					"height": 15,
+					"stroke": "#663300",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Code Postal & Ville :"
+				},
+				"Texte30": {
+					"type": "text",
+					"top": 130,
+					"left": 0,
+					"width": 150,
+					"height": 15,
+					"stroke": "#663300",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Adresse ligne 1 :"
+				},
+				"Texte58": {
+					"type": "text",
+					"top": 163,
+					"left": 0,
+					"width": 150,
+					"height": 15,
+					"stroke": "#663300",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Adresse ligne 2 :"
+				},
+				"Texte59": {
+					"type": "text",
+					"top": 196,
+					"left": 0,
+					"width": 150,
+					"height": 15,
+					"stroke": "#663300",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Adresse ligne 3 :"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 97,
+					"left": 0,
+					"width": 150,
+					"height": 15,
+					"stroke": "#663300",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nom :"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 62,
+					"left": 0,
+					"width": 150,
+					"height": 15,
+					"stroke": "#663300",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Code :"
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 260,
+					"left": 158,
+					"width": 400,
+					"height": 16,
+					"dataSource": "[Financeurs:117]FIN_Siret:5",
+					"borderStyle": "double",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 262,
+					"left": 0,
+					"width": 150,
+					"height": 15,
+					"stroke": "#663300",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Siret :"
+				},
+				"Champ4": {
+					"type": "input",
+					"top": 295,
+					"left": 157,
+					"width": 400,
+					"height": 16,
+					"dataSource": "[Financeurs:117]FIN_Num_TVA:6",
+					"borderStyle": "double",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 295,
+					"left": -1,
+					"width": 150,
+					"height": 15,
+					"stroke": "#663300",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "N° TVA :"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {
+				"objects": [
+					"Rectangle"
+				]
+			}
+		}
+	}
+}

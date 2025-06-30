@@ -1,0 +1,145 @@
+.animation-slide .input-group-addon{
+  border: none;
+  box-shadow: none;
+  background: initial;
+}
+
+.animation-slide .form-control{
+  border: none;
+  box-shadow: none;
+}
+
+.list-group-item .glyphicon {
+  float: right;
+}
+
+.item-label{
+  padding: 15px;
+  cursor: pointer;
+}
+
+.list-group{
+  float: left;
+  width: 570px;
+}
+
+.modal-content{
+  overflow: hidden;
+}
+
+.animation-slide{
+  min-height: 340px;
+  overflow: hidden;
+  /*width: 490px;*/
+}
+
+.list-group1{
+  transition: margin-left 0.3s cubic-bezier(0, 0, 0, 1.22);
+}
+
+.list-group1 {
+  margin-left : 0px
+}
+
+
+.list-group1.ng-hide{
+  transition: margin-left 0.3s cubic-bezier(0, 0, 0, 1.22);
+}
+
+.list-group1.ng-hide {
+  margin-left : -570px
+}
+
+/* bootstrap v2*/
+.list-group{
+  float: left;
+  width: 540px;
+}
+
+.msmodal .modal-body{
+  /*max-width: 557px;*/
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.msmodal .modal-body .search {
+  margin-bottom: 15px;
+}
+
+.list-group1 td ,
+.list-group2 td {
+  padding: 0;
+}
+
+.list-group1 td label,
+.list-group2 td label {
+  font-size: 14px;
+}
+
+.msmodal .icon-chevron-left{
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.msmodal .icon-chevron-right{
+  float: right;
+}
+
+/* kev custom*/
+.ng-isolate-scope label {
+  line-height: 16px;
+  font-weight: bold;  
+  color: #333333;
+  padding: 15px 15px 10px 15px;
+  /*display: flex;*/
+  align-items: center;
+}
+
+.ng-isolate-scope label i {
+  margin-left:5px;
+}
+
+.ng-isolate-scope .search {
+  width: 100%;
+}
+
+.ng-isolate-scope .modal-header {
+  padding: 15px 15px;
+}
+
+.ng-isolate-scope [class^="icon-"], .ng-isolate-scope [class*=" icon-"] {
+  margin: 2px 2px 2px 2px !important;
+}
+
+.ng-isolate-scope input[type=checkbox], .ng-isolate-scope input[type=radio] {
+  /* -webkit-appearance: checkbox;*/
+  background-color: #fff;
+  float: left;
+  display: inline;
+  width: 25px;
+  margin: 0px 10px 0px 0px;
+}
+
+.list-group-item, .list-group-item i {
+  display:block;
+}
+
+/***** iw_popups  custom***/
+.ng-isolate-scope label {
+  line-height: 22px;
+  padding: 8px 15px 1px 10px;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.ng-isolate-scope label input{
+  margin-right:10px !important;
+}
+
+.ng-isolate-scope .modal-header {
+  padding: 10px 10px;
+}
+
+.modal-body {
+  max-height: 650px;
+}

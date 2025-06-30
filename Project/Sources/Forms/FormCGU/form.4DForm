@@ -1,0 +1,87 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Sous formulaire": {
+					"type": "subform",
+					"top": 115,
+					"left": 0,
+					"width": 595,
+					"height": 550,
+					"dataSource": "pdfViewer_o",
+					"dataSourceTypeHint": "undefined",
+					"detailForm": "FormPdfViewer",
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"selectionMode": "multiple",
+					"printFrame": "variable",
+					"borderStyle": "system"
+				},
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 595,
+					"height": 54,
+					"fill": "#444444",
+					"stroke": "transparent"
+				},
+				"Texte": {
+					"type": "text",
+					"top": 17,
+					"left": 12,
+					"width": 400,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"fontFamily": "Arial",
+					"fontSize": 18,
+					"text": "Condition Générale d'Utilisation"
+				},
+				"Case à cocher": {
+					"type": "checkbox",
+					"top": 76,
+					"left": 10,
+					"width": 200,
+					"height": 16,
+					"dataSource": "Form:C1466.cguAccept",
+					"text": "J'accepte les conditions CGU",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton": {
+					"type": "button",
+					"top": 69,
+					"left": 459,
+					"width": 126,
+					"height": 30,
+					"text": "Valider",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	]
+}

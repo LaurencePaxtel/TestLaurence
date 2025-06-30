@@ -1,0 +1,7 @@
+MESSAGES ON:C181
+QUERY WITH ARRAY:C644([HeBerge:4]HB_ReferenceID:1; <>tl_HBCheffamille)
+
+ORDER BY:C49([HeBerge:4]; [HeBerge:4]HB_CléFam:47; <)
+FIRST RECORD:C50([HeBerge:4])
+
+MESSAGES OFF:C175

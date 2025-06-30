@@ -1,0 +1,733 @@
+
+<div class="well span2 listeh">
+<!--4Dhtmlvar NAV_BODY -->
+</div>
+	
+ <!-- Liste  -->
+<div class="span9">
+ 	<!--#4DIF (HTML_VIEW_ERROR#"")-->
+	<div class="alert alert-<!--4Dhtmlvar MESSAGE_ETAT-->">
+		 <a class="close" data-dismiss="alert" href="#">×</a>
+		 <!--4Dhtmlvar HTML_VIEW_ERROR -->
+	</div>
+	<!--#4DELSE--> 
+		<!--4Dhtmlvar HTML_VIEW -->
+	<!--#4DENDIF-->
+</div>
+ <!-- Liste  -->
+ 			<div id="choixdate" class="hide">
+				<form>
+					<div class="divChoseDate2">
+						<div id="dp6" class="datepicker" data-date="12/02/2012" data-date-format="dd-mm-yyyy">
+							<div class="datepicker datepicker-inline" style="">
+								<div class="datepicker-days" style="display: block;">
+									<table class=" table-condensed">
+										<thead>
+											<tr>
+												<th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i>
+												</th>
+												<th colspan="5" class="switch">February 2012</th>
+												<th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i>
+												</th>
+											</tr>
+											<tr>
+												<th class="dow">Su</th>
+												<th class="dow">Mo</th>
+												<th class="dow">Tu</th>
+												<th class="dow">We</th>
+												<th class="dow">Th</th>
+												<th class="dow">Fr</th>
+												<th class="dow">Sa</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="day old">29</td>
+												<td class="day old">30</td>
+												<td class="day old">31</td>
+												<td class="day">1</td>
+												<td class="day">2</td>
+												<td class="day">3</td>
+												<td class="day">4</td>
+											</tr>
+											<tr>
+												<td class="day">5</td>
+												<td class="day">6</td>
+												<td class="day">7</td>
+												<td class="day">8</td>
+												<td class="day">9</td>
+												<td class="day">10</td>
+												<td class="day">11</td>
+											</tr>
+											<tr>
+												<td class="day active">12</td>
+												<td class="day">13</td>
+												<td class="day">14</td>
+												<td class="day">15</td>
+												<td class="day">16</td>
+												<td class="day">17</td>
+												<td class="day">18</td>
+											</tr>
+											<tr>
+												<td class="day">19</td>
+												<td class="day">20</td>
+												<td class="day">21</td>
+												<td class="day">22</td>
+												<td class="day">23</td>
+												<td class="day">24</td>
+												<td class="day">25</td>
+											</tr>
+											<tr>
+												<td class="day">26</td>
+												<td class="day">27</td>
+												<td class="day">28</td>
+												<td class="day">29</td>
+												<td class="day new">1</td>
+												<td class="day new">2</td>
+												<td class="day new">3</td>
+											</tr>
+											<tr>
+												<td class="day new">4</td>
+												<td class="day new">5</td>
+												<td class="day new">6</td>
+												<td class="day new">7</td>
+												<td class="day new">8</td>
+												<td class="day new">9</td>
+												<td class="day new">10</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<th colspan="7" class="today" style="display: none;">Today</th>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+								<div class="datepicker-months" style="display: none;">
+									<table class="table-condensed">
+										<thead>
+											<tr>
+												<th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i>
+												</th>
+												<th colspan="5" class="switch">2012</th>
+												<th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td colspan="7"><span class="month">Jan</span><span class="month active">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span>
+													<span
+													class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month">Dec</span>
+												</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<th colspan="7" class="today" style="display: none;">Today</th>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+								<div class="datepicker-years" style="display: none;">
+									<table class="table-condensed">
+										<thead>
+											<tr>
+												<th class="prev" style="visibility: visible;"><i class="icon-arrow-left"></i>
+												</th>
+												<th colspan="5" class="switch">2010-2019</th>
+												<th class="next" style="visibility: visible;"><i class="icon-arrow-right"></i>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year active">2012</span><span class="year">2013</span><span class="year">2014</span><span class="year">2015</span><span class="year">2016</span>
+													<span
+													class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year old">2020</span>
+												</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<th colspan="7" class="today" style="display: none;">Today</th>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="divChoseDate1">
+						<div class="control-group">
+							<div class="alertDate alert-error hide">Merci de saisir une date valide</div>
+							<label class="control-label" for="inputDate">Date</label>
+							<div class="controls">
+								<div class="input-prepend">
+									<input class="span2" id="inputDate" type="text" value="00/00/000">
+								</div>
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<select id="selectDatePicker">
+									<option>...</option>
+									<option>Hier</option>
+									<option>Aujourd'hui</option>
+									<option>Demain</option>
+									<option>Semaine courante</option>
+									<option>Semaine précédente</option>
+									<option>Semaine prochaine</option>
+									<option>Mois courant</option>
+									<option>Mois précédent</option>
+									<option>Mois suivant</option>
+									<option>2 mois précédents</option>
+									<option>3 mois précédents</option>
+									<option>6 mois précédents</option>
+									<option>9 mois précédents</option>
+									<option>Trimestre courant</option>
+									<option>Trimestre précédent</option>
+									<option>Trimestre prochain</option>
+									<option>Semestre courant</option>
+									<option>Semestre précédent</option>
+									<option>Semestre prochain</option>
+									<option>Année courant</option>
+									<option>Année précédent</option>
+									<option>Année suivant</option>
+									<option>Janvier précédent</option>
+									<option>Février précédent</option>
+									<option>Mars précédent</option>
+									<option>Juin précédent</option>
+									<option>juillet précédent</option>
+									<option>Aout précédent</option>
+									<option>Septembre précédent</option>
+									<option>Octobre précédent</option>
+									<option>Novembre précédent</option>
+									<option>Décembre précédent</option>
+									<option>1er Janvier</option>
+									<option>Lundi de Pâques</option>
+									<option>1er Mai</option>
+									<option>8 Mai</option>
+									<option>Ascension</option>
+									<option>Lundi de Pentecôte</option>
+									<option>14 juillet</option>
+									<option>15 Août</option>
+									<option>Toussaint</option>
+									<option>11 Novembre</option>
+									<option>Noël</option>
+									<option>Du lundi au vendredi</option>
+									<option>Samedi</option>
+									<option>Dimanche</option>
+									<option>Jours fériés</option>
+									<option>Jours fériés et ponts</option>
+								</select>
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="row-fluid">
+								<div class="controls span6">
+									<a class="btn btn-primary validatDate">Valider</a>
+								</div>
+								<div class="controls span6">
+									<a class="btn cancelDate" type="reset">Annuler</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+	
+	<div class="modal hide fade" id="recherche" >
+		<div class="modal-header">
+	
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3><!--4Dhtmlvar HTML_RECH_TITLE --></h3>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="span2 well well-small" id="listeChamps">
+				<!--#4DIF (RECH_HTML#"")-->
+					<!--4Dhtmlvar RECH_HTML -->
+				<!--#4DELSE-->
+					<p>Utiliser la méthode : WebAGL_get_nom_champs !!</p>
+				<!--#4DENDIF-->
+				</div>
+				<div class="span6 pull-right">
+					<div class="well">
+						<div class="controls">
+							<input type="text" id="NomRecherche"  class="span2" style="width: 240px;">
+							<input type="hidden" id="prefRecherche"  value="<!--4Dhtmlvar NOM_PREF_RECHERCHE -->" />
+							<!--4Dhtmlvar SELECT -->
+							<label class="radio inline">
+								<input type="radio" name="optionsRadios" id="optionPersonnelle" value="1" checked>
+								<!--4Dhtmlvar HTML_RECH_PERSO -->
+							</label>
+							<label class="radio inline">
+								<input type="radio" name="optionsRadios" id="optionEntreprise" value="2" >
+								<!--4Dhtmlvar HTML_RECH_ENTP -->
+							</label>
+							<label class="radio inline">
+								<input type="radio" name="optionsRadios" id="optionSystem" value="3" >
+								<!--4Dhtmlvar HTML_RECH_SYS -->
+							</label><br/><br/>
+							<div class="row">
+								<div class="span form-inline">
+									<label class="checkbox span2">
+											<input type="checkbox" id="Exlcure" name="Exlcure" value="0"><!--4Dhtmlvar HTML_RECH_EXCLURE -->
+									</label>
+									<label class="checkbox span2">
+											<input type="checkbox" id="FiltreRech" name="FiltreRech" value="0"><!--4Dhtmlvar HTML_RECH_FILTRE -->
+									</label>
+									<label class="checkbox">
+											<input type="checkbox" id="DansSelection" name="DansSelection" value="0"><!--4Dhtmlvar HTML_RECH_DANS_SELECTION -->
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="span6 pull-right" style="margin-bottom: 24px;">
+						<a  href="#" class="btn btn-info btn-small btnNewSearch"><!--4Dhtmlvar HTML_RECH_BTN_NV_RECH --></a>
+						<a href="#" id="idBtnAddLineToSearchTable" class="btn btn-info btn-small btn- btnAddLineToSearchTable" ><!--4Dhtmlvar HTML_RECH_BTN_ADD_LIGNE --></a>
+						<a id="idBtnRemoveLineToSearchTable" class="btn btn-info btn-small btnRemoveLineToSearchTable" type="submit"><!--4Dhtmlvar HTML_RECH_BTN_DEL_LIGNE --></a>
+					</div>
+					<div class="span6 pull-right">
+					<table id="tabelSearch"  class="table table-bordered table-striped table-condensed">
+						<thead>
+							<tr>
+								<th style="width: 10%"></th>
+								<th style="width: 30%"><!--4Dhtmlvar HTML_RECH_TB_CHAMP --></th>
+								<th style="width: 20%" ><!--4Dhtmlvar HTML_RECH_TB_COMPARS --></th>
+								<th style="width: 40%"><!--4Dhtmlvar HTML_RECH_TB_VAL --></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class=" ChDp champDrop">
+								<td ></td>
+								<td	></td>
+								<td >
+									<select class="span2">
+										<option value="Contient"><!--4Dhtmlvar HTML_RECH_TB_OP_1 --></option>
+										<option value="Ne contient pas"><!--4Dhtmlvar HTML_RECH_TB_OP_2 --></option>
+										<option value="Est égale à"><!--4Dhtmlvar HTML_RECH_TB_OP_3 --></option>
+										<option value="Est différent de"><!--4Dhtmlvar HTML_RECH_TB_OP_4 --></option>
+										<option value="Est vide"><!--4Dhtmlvar HTML_RECH_TB_OP_5 --></option>
+										<option value="N'est pas vide"><!--4Dhtmlvar HTML_RECH_TB_OP_6 --></option>
+										<option value="Commence par"><!--4Dhtmlvar HTML_RECH_TB_OP_7 --></option>
+										<option value="Est inférieur à"><!--4Dhtmlvar HTML_RECH_TB_OP_8 --></option>
+										<option value="Est inférieur ou égal à"><!--4Dhtmlvar HTML_RECH_TB_OP_9 --></option>
+										<option value="Est supérieur à"><!--4Dhtmlvar HTML_RECH_TB_OP_10 --></option>
+										<option value="Est supérieur ou égal à"><!--4Dhtmlvar HTML_RECH_TB_OP_11 --></option>
+										<option value="Est vrai"><!--4Dhtmlvar HTML_RECH_TB_OP_12 --></option>
+										<option value="Est faux"><!--4Dhtmlvar HTML_RECH_TB_OP_13 --></option>
+									</select>
+								</td>
+								<td  class="dblClickShowInput" data-type=""></td>
+								
+							</tr>
+						</tbody>
+					</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+		<a href="#" class="btn btn-close"><!--4Dhtmlvar HTML_RECH_BTN_ANNUL --></a>
+			<a href="#" class="btn btn-memoriser btn-primary disableme" data-loadingtext="Mémorisation encours..."><!--4Dhtmlvar HTML_RECH_BTN_MEMO_RECH --></a>
+			<a href="#" class="btn btn-primary btn-Recherche disableme" data-loadingtext="Recherche encours..."><!--4Dhtmlvar HTML_RECH_BTN_RECH --></a>
+		</div>
+	</div>
+
+
+	<div class="modal hide fade" style="overflow: initial;overflow-x:scroll;overflow-y:scroll;" id="infos">
+	
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3><!--4Dhtmlvar HTML_SYNTH_TITLE --></h3>
+			</div>
+  		<div class="container-fluid">  
+      		<div class="row-fluid"> 
+      			<div class="tabbable"> 
+    				<ul class="nav nav-tabs">
+        				<li  class="active"><a class="Critab" href="#accueil" data-toggle="tab"><!--4Dhtmlvar HTML_SYNTH_ONGLT_1 --></a></li>
+        				<li><a class="Cumtab" href="#livres" data-toggle="tab"><!--4Dhtmlvar HTML_SYNTH_ONGLT_2 --></a></li>
+						<li><a class="synth_result" href="#result" data-toggle="tab"><!--4Dhtmlvar HTML_SYNTH_ONGLT_3 --></a></li>
+        				
+    				</ul>
+
+					<a id="NewWindow" href="#" data-toggle="tab" style="color:rgb(204, 0, 0);margin-bottom: 5px;" class=" hidden pull-right"> <!--4Dhtmlvar HTML_SYNTH_NV_PAGE --></a>
+    				<div class="tab-content">
+        				<div class="tab-pane active" id="accueil">
+        					<div class="span3">  
+          						<div class="welll sidebar-nav">  
+									<div class="span22 well" id="listeChamps">
+									<!--#4DIF (RECH_HTML#"")-->
+									<!--4Dhtmlvar RECH_HTML -->
+									<!--#4DELSE-->
+									<p>Utiliser la méthode : WebAGL_get_nom_champs !!</p>
+									<!--#4DENDIF-->
+									</div>
+          						</div><!--/.well -->  
+        					</div><!--/span-->  
+        					<div class="span9">  
+        						<form class="well">
+          			 				
+  									<div class="row-fluid">
+									<div class="controls span6 pull-left">
+    										<table    class="table table-bordered table-striped table-condensed">
+   												<thead>
+      												<tr>
+            											<th style="width: 10%"><!--4Dhtmlvar HTML_SYNTH_TB_AXV --></th>
+           												
+      												</tr>
+   												</thead>
+   												<tbody id="axevertical" data-listevalue="" data-listetype="" >
+          											<tr class="champDrop">
+            											<td style="height: 25px"  data-tdchamp="" data-tdtype=""></td>
+            										</tr>
+            										<tr class="champDrop">
+            											<td style="height: 25px"   data-tdchamp="" data-tdtype=""></td>
+            											
+            										</tr>
+            										<tr class="champDrop">
+            											<td style="height: 25px"   data-tdchamp="" data-tdtype=""></td>
+            											
+            										</tr>
+            										<tr class="champDrop">
+            											<td style="height: 25px"   data-tdchamp="" data-tdtype=""></td>
+            											
+            										</tr>
+            										<tr class="champDrop">
+            											<td style="height: 25px"   data-tdchamp="" data-tdtype=""></td>
+            											
+            										</tr>
+    											</tbody>
+											</table>
+    									</div>
+  										<div class="controls span6 pull-right">
+    										<table   class="table table-bordered table-striped table-condensed">
+   												<thead>
+      												<tr>
+            											<th style="width: 10%"><!--4Dhtmlvar HTML_SYNTH_TB_AXH --></th>
+           												
+      												</tr>
+   												</thead>
+   												<tbody id="axehorizontal" data-listevalue="" data-listetype="" >
+          											<tr class="champDrop">
+            											<td style="height: 25px"  data-tdchamp="" data-tdtype=""></td>
+            										</tr>
+            										<tr class="champDrop">
+            											<td style="height: 25px"   data-tdchamp="" data-tdtype=""></td>
+            											
+            										</tr>
+            										<tr class="champDrop">
+            											<td style="height: 25px"   data-tdchamp="" data-tdtype=""></td>
+            											
+            										</tr>
+            										<tr class="champDrop">
+            											<td style="height: 25px"   data-tdchamp="" data-tdtype=""></td>
+            											
+            										</tr>
+            										<tr class="champDrop">
+            											<td style="height: 25px"  data-tdchamp="" data-tdtype=""></td>
+            											
+            										</tr>
+    											</tbody>
+											</table>
+    									</div>
+    									
+    								</div>
+  									<div class="row-fluid">
+  										
+  										<div class="controls span6">
+  											   
+    												<label><!--4Dhtmlvar HTML_SYNTH_PERH_LABEL --></label>
+    												<select class="Pheureanalyse">
+            											<option value="1"><!--4Dhtmlvar HTML_SYNTH_PERH_OP1 --></option>
+            											<option value="2"><!--4Dhtmlvar HTML_SYNTH_PERH_OP2 --></option>
+            											<option value="3"><!--4Dhtmlvar HTML_SYNTH_PERH_OP3 --></option>
+            											<option value="4" selected><!--4Dhtmlvar HTML_SYNTH_PERH_OP4 --></option>
+            											<option value="5"><!--4Dhtmlvar HTML_SYNTH_PERH_OP5 --></option>
+														<option value="6"><!--4Dhtmlvar HTML_SYNTH_PERH_OP6 --></option>
+														<option value="7"><!--4Dhtmlvar HTML_SYNTH_PERH_OP7 --></option>
+														<option value="8"><!--4Dhtmlvar HTML_SYNTH_PERH_OP8 --></option>
+													</select>
+            										<label><!--4Dhtmlvar HTML_SYNTH_PERD_LABEL --></label>
+            										<select class="Pdateanalyse">
+            											<option value="1"><!--4Dhtmlvar HTML_SYNTH_PERD_OP1 --></option>
+            											<option value="2"><!--4Dhtmlvar HTML_SYNTH_PERD_OP2 --></option>
+            											<option value="3" selected><!--4Dhtmlvar HTML_SYNTH_PERD_OP3 --></option>
+            											<option value="4"><!--4Dhtmlvar HTML_SYNTH_PERD_OP4 --></option>
+            											<option value="5"><!--4Dhtmlvar HTML_SYNTH_PERD_OP5 --></option>
+														<option value="6"><!--4Dhtmlvar HTML_SYNTH_PERD_OP6 --></option>
+														<option value="7"><!--4Dhtmlvar HTML_SYNTH_PERD_OP7 --></option>
+            										</select>
+
+					    							<label class="checkbox">
+    													<input type="checkbox" id="cmgl" name="cmgl" checked> <!--4Dhtmlvar HTML_SYNTH_CHKBOX_CUMLG --> Cumul global
+    												</label>
+    												<label class="checkbox">
+    													<input type="checkbox" id="cman" name="cman"> <!--4Dhtmlvar HTML_SYNTH_CHKBOX_CUMLA --> Cumuls annuels
+    												</label>
+    												<label class="checkbox">
+    													<input type="checkbox" id="cmsm" name="cmsm"> <!--4Dhtmlvar HTML_SYNTH_CHKBOX_CUMLS --> Cumuls semestriels
+    												</label>
+    												<label class="checkbox">
+    													<input type="checkbox" id="cmtr" name="cmtr"> <!--4Dhtmlvar HTML_SYNTH_CHKBOX_CUMLT --> Cumuls trimestriels
+    												</label>
+												
+												
+        								</div>
+        								<div class="row-fluid">
+  											<div class="controls span4">
+    											<label class="checkbox">
+            										<input type="checkbox"  id="flvn"><!--4Dhtmlvar HTML_SYNTH_CHKBOX_FLT_VN -->
+        										</label>
+        									</div>
+        									<div class="controls span4">
+    											<label class="checkbox">
+            										<input type="checkbox"  id="fllv"><!--4Dhtmlvar HTML_SYNTH_CHKBOX_FLT_VV -->
+        										</label>
+        									</div>
+        									<div class="controls span4">
+												<label class="checkbox">
+            										<input type="checkbox"  id="graphe_1"><!--4Dhtmlvar HTML_SYNTH_CHKBOX_GEN_GS --> 
+        										</label>
+        									</div>
+											<div class="controls span4">
+												<label class="checkbox">
+            										<input type="checkbox"  id="graph_N"><!--4Dhtmlvar HTML_SYNTH_CHKBOX_GEN_GD --> 
+        										</label>
+        									</div>
+  										</div>
+  										<div class="row-fluid">
+  											<div class="controls span4">
+  										 		<label><!--4Dhtmlvar HTML_SYNTH_RECH_ASSO --></label>
+  										 	</div>
+  										 	<div class="controls span8">
+												<input type="text" placeholder="Type something…">
+											</div>
+  										</div>
+  									</div>
+  									
+								</form>
+    						</div>
+        				</div>
+        				<div class="tab-pane" id="livres">
+						
+							<div class="row-fluid">
+  								<div class="controls span6 pull-left">
+    								<!--4Dhtmlvar Synth_HTML -->	
+									
+    							</div>
+  								<div class="controls span6 pull-right">
+    								<table   class="table table-bordered table-striped table-condensed">
+   												<thead>
+      												<tr>
+            											<th style="width: 10%"><!--4Dhtmlvar HTML_SYNTH_TB_CHOX_CUML2 --></th>
+           												<th style="width: 5%"><!--4Dhtmlvar HTML_SYNTH_TB_TYPE_VAL --></th>
+														<th style="width: 1%"></th>
+      												</tr>
+   												</thead>
+   												<tbody id="tbChoixCumulsVal"  >
+          											
+            									</tbody>
+											</table>
+									
+    							</div>		
+    						</div>
+						
+						</div>
+						<div class="tab-pane" id="result">
+							<div id="resultdiv" class="row-fluid">
+  									
+    						</div>
+						</div>
+    				</div>
+				</div> 
+				
+			</div>
+		</div>
+		
+		<div class="modal-footer">
+		    <a href="#" class="btn btn-memoriserSynth btn-primary disableme pull-left" data-loadingtext="Mémorisation encours..."><!--4Dhtmlvar HTML_SYNTH_BTN_MEMO_SYNTH --></a>	  		
+			<a href="#" class="btn btn-close"><!--4Dhtmlvar HTML_SYNTH_BTN_ANNUL --></a>
+			<a href="#"  id="btncal"  class="btn btn-primary disableme" data-loadingtext="Calcul encours..."><!--4Dhtmlvar HTML_SYNTH_BTN_SYNTH --></a>
+			<a href="http://178.33.92.213:8080/Temporary_Files/22022013191701181955143331832.html"  id="btnResult" ></a>
+		</div>
+	</div>
+<script>
+
+	$(function() {
+	
+	/*------------------- Choix de cumuls --------------------*/
+	$('.champchoix').live('dblclick',function(){
+			
+			var array=[];
+			var listval ;
+			var defaultval='';
+				if($(this).text()=='Compter les enregistrements'){
+					listval ='<ul class="dropdown-menu "><li> <a class="linkvalue" >Compter</a></li></ul>';
+					defaultval='Compter';
+				}else{
+				listval ='<ul class="dropdown-menu "><li> <a class="linkvalue" >Compter</a></li><li> <a class="linkvalue"  >Somme</a></li><li> <a class="linkvalue" >Moyenne</a></li><li> <a class="linkvalue" >Moyenne des non-vide</a></li><li> <a class="linkvalue"  >% du total</a></li><li> <a class="linkvalue" >Classement</a></li></ul>'; 			
+				defaultval='Somme';
+				}
+				
+				
+				$('.tdchampchoixV').each(function(){array.push($(this).data().tdchoixchampV);});
+				if ( $.inArray($(this).data().tdchamp, array) <= -1) {
+				
+					$('<tr ><td class="tdchampchoixV" style="height: 25px"  >'+$(this).text()+' </td><td>  <div class="dropdown btns " style="text-align: left;"><a class=" drw dropdown-toggle pull-left" data-toggle="dropdown" href="#">'+defaultval+'</a> '+listval+'</td><td><a href="#" class=" delvaltype btn btn-mini pull-right" id="btn-clearval"><i class="icon-remove"></i></a></td></tr>').appendTo('#tbChoixCumulsVal');
+					$('#tbChoixCumulsVal tr:last td:first').data('tdchoixchampV',$(this).data().tdchamp);
+					$('#tbChoixCumulsVal tr:last td:first').data('tdchoixtypeV',$(this).data().tdchamptype);
+					
+					}
+					
+			
+						
+		});
+		/* --------------Click Choix Type*/
+		$('.linkvalue').live('click',function(){
+		$(this).parents().closest( 'td div').find("a:first").text($(this).text());
+		});
+		
+		/*--------------------------------------------------*/
+			/* --------------Show link Ouvrir dans nouvelle page*/
+		$('.synth_result').live('click',function(){
+			$('#NewWindow').removeClass('hidden');
+		});
+		$('.Cumtab ,.Critab').live('click',function(){
+			$('#NewWindow').addClass('hidden');
+		});
+		
+		
+		/*--------------------------------------------------*/
+	/*---------------------------------------------------------*/	
+		
+		$('#btn-clearval').live('click',function(){
+			 if ( $(this).hasClass("delchamp") ){
+				$(this).closest('td').data({'tdchamp':''});
+				$(this).closest('td').data({'tdtype':''});
+				$(this).closest('td').html('');
+			}else{
+				//$(this).closest('td:first').data({'tdchamp':''});
+				//$(this).closest('td:first').data({'tdchamptype':''});
+				$(this).closest('tr').remove();
+			
+			}
+		});
+		
+        $( ".champDrag" ).draggable({
+        	revert: true,
+        	revertDuration: 1
+        });
+        
+        $( ".champDrop" ).droppable({
+				
+			
+            drop: function( event, ui ) {
+				var addchamp = true;
+				var seconddate=false;
+							
+				var array=[];
+				/* Check si le champ est déja un critére d'analyse  */
+				
+				$('.synth-vertic').each(function(){array.push($(this).data().tdchamp);});
+				if ( $.inArray($(ui.draggable).data().champ, array) > -1) {
+						 addchamp = false;
+					
+					}
+				$('.synth-horiz').each(function(){array.push($(this).data().tdchamp);});
+				if ( $.inArray($(ui.draggable).data().champ, array) > -1) {
+						 addchamp = false;
+					
+					}
+					
+					/* Check si l'analyse est déja fait par  un critére date  */
+			if ($(ui.draggable).data().type=='Date') {
+				var array=[];
+				$('.synth-vertic').each(function(){array.push($(this).data().tdtype);});
+				if ( $.inArray($(ui.draggable).data().type, array) > -1) {
+						seconddate = true;
+				
+				}
+				$('.synth-horiz').each(function(){array.push($(this).data().tdtype);});
+				if ( $.inArray($(ui.draggable).data().type, array) > -1) {
+						seconddate = true;
+				
+				}
+			}
+				if(addchamp){
+				
+					if(seconddate){
+						alert('Vous ne pouvez faire de synthèse sur 2 dates.');		
+					}else{
+						if($(this).parents("tbody:first").attr("id") =='axevertical'){
+						
+							$('#axevertical').data().listevalue =$('#axevertical').data().listevalue+';' + $(ui.draggable).data().champ;
+							$('#axevertical').data().listetype =$('#axevertical').data().listetype +';'+ $(ui.draggable).data().type;
+							
+							$(this).children().eq(0).addClass('synth-vertic');
+						}else if ($(this).parents("tbody:first").attr("id") =='axehorizontal'){
+						
+							$('#axehorizontal').data().listevalue =$('#axehorizontal').data().listevalue+';' + $(ui.draggable).data().champ;
+							$('#axehorizontal').data().listetype =$('#axehorizontal').data().listetype +';'+ $(ui.draggable).data().type;
+							
+							$(this).children().eq(0).addClass('synth-horiz');
+							
+						}
+								
+						/*$(this).children().eq(0).text($(ui.draggable).text());*/
+						$(this).children().eq(0).html($(ui.draggable).text() +'<a href="#" class="delchamp btn btn-mini pull-right" id="btn-clearval"><i class="icon-remove"></i></a>');
+						$(this).children().eq(0).data().tdchamp=$(ui.draggable).data().champ;
+						$(this).children().eq(0).data().tdtype=$(ui.draggable).data().type;
+							
+
+					}
+					
+				}else{
+					alert('Vous ne pouvez analyser deux fois le même critère');
+				}
+				
+				
+            	
+				/*<a href="#" data-type="Chaine" data-champ="[Societes]SOC_Nom" class="champDrag ui-draggable" rel="[Societes]SOC_Nom"> Nom</a>*/
+              }
+        });
+    });
+	
+	
+	
+	//$(".dblClickShowInput").dblclick(function() {
+ // alert('Handler for .dblclick() called.');
+//});
+	function closeInput(elm) {
+    	var td = elm.parentNode;
+    	var value = elm.value;
+    	td.removeChild(elm);
+    	td.innerHTML = value;
+	}
+
+		function addInput(elm) {
+    		if (elm.getElementsByTagName('input').length > 0) return;
+
+    		var value = elm.innerHTML;
+    		elm.innerHTML = '';
+
+    		var input = document.createElement('input');
+    		input.setAttribute('type', 'text');
+    		input.setAttribute('value', value);
+    		input.setAttribute('onBlur', 'closeInput(this)');
+    		elm.appendChild(input);
+    		input.focus();
+		}
+	
+	
+	$("p").click(function () {
+      $(this).slideUp();
+    });
+	
+</script>
+	
+	<!--4Dhtmlvar HTML_DEVERSEMENT -->
+		<!--4Dhtmlvar HTML_MODALS -->

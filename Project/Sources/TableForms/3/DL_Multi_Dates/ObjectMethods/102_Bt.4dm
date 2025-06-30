@@ -1,0 +1,1 @@
+Tab_PopIn1("Centre 1"; ->tb_centres_liste_nom; ->txt_centre_1; True:C214; True:C214)

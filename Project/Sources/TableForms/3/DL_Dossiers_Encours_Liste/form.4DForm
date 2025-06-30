@@ -1,0 +1,468 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "Lettre US (215,9 x 279,4 mm)",
+		"paperWidth": "612pt",
+		"paperHeight": "792pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 1,
+					"width": 679,
+					"height": 508,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"stroke": "transparent"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Text": {
+					"type": "text",
+					"top": 11,
+					"left": 18,
+					"width": 645,
+					"height": 16,
+					"sizingX": "grow",
+					"class": "titre_fenetre",
+					"textAlign": "center",
+					"text": "Dossiers en cours"
+				},
+				"List Box": {
+					"type": "listbox",
+					"top": 127,
+					"left": 17,
+					"width": 647,
+					"height": 334,
+					"resizingMode": "legacy",
+					"dataSource": "LB_Dossiers_Encours",
+					"fill": "#FFFFFF",
+					"alternateFill": "#B1C4DD",
+					"borderStyle": "solid",
+					"events": [
+						"onClick",
+						"onDataChange",
+						"onSelectionChange",
+						"onHeaderClick"
+					],
+					"columns": [
+						{
+							"name": "tb_de_cle",
+							"dataSource": "tb_de_cle",
+							"width": 220,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#B1C4DD",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header6",
+								"text": "Clé",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Footer6",
+								"stroke": "automatic",
+								"fill": "#FFFFFF",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"fontFamily": "Arial",
+							"fontSize": 12
+						},
+						{
+							"name": "tb_de_dos_nom",
+							"dataSource": "tb_de_dos_nom",
+							"width": 130,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#B1C4DD",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header5",
+								"text": "Nom du dossier",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Footer5",
+								"stroke": "automatic",
+								"fill": "#FFFFFF",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"fontFamily": "Arial",
+							"fontSize": 12
+						},
+						{
+							"name": "tb_de_dos_num",
+							"dataSource": "tb_de_dos_num",
+							"width": 130,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#B1C4DD",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header4",
+								"text": "Numéro",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Footer4",
+								"stroke": "automatic",
+								"fill": "#FFFFFF",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"fontFamily": "Arial",
+							"fontSize": 12
+						},
+						{
+							"name": "tb_de_date_du",
+							"dataSource": "tb_de_date_du",
+							"dataSourceTypeHint": "date",
+							"width": 70,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#B1C4DD",
+							"textAlign": "center",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header3",
+								"text": "Date du",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Footer3",
+								"stroke": "automatic",
+								"fill": "#FFFFFF",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"fontFamily": "Arial",
+							"fontSize": 12
+						},
+						{
+							"name": "tb_de_date_au",
+							"dataSource": "tb_de_date_au",
+							"dataSourceTypeHint": "date",
+							"width": 81,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "#FFFFFF",
+							"alternateFill": "#B1C4DD",
+							"textAlign": "center",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header2",
+								"text": "Date au",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Footer2",
+								"stroke": "automatic",
+								"fill": "#FFFFFF",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"fontFamily": "Arial",
+							"fontSize": 12
+						}
+					]
+				},
+				"Bouton 3D1": {
+					"type": "button",
+					"top": 467,
+					"left": 580,
+					"width": 85,
+					"height": 30,
+					"dataSource": "btn_annuler",
+					"text": "Annuler/Quitter",
+					"method": "ObjectMethods/Bouton 3D1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Image11": {
+					"type": "picture",
+					"top": 467,
+					"left": 579,
+					"width": 85,
+					"height": 30,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/img/icons/32/PAXTEL-boutons-17.png"
+				},
+				"Group Box": {
+					"type": "groupBox",
+					"top": 35,
+					"left": 16,
+					"width": 648,
+					"height": 82,
+					"text": "Filtres"
+				},
+				"Texte126": {
+					"type": "text",
+					"top": 57,
+					"left": 32,
+					"width": 78,
+					"height": 13,
+					"stroke": "#000000",
+					"text": "Nom Hébergé",
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"filtre_nom_heberge": {
+					"type": "input",
+					"top": 58,
+					"left": 133,
+					"width": 163,
+					"height": 14,
+					"dataSource": "filtre_nom_heberge",
+					"textAlign": "left",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 57,
+					"left": 344,
+					"width": 73,
+					"height": 13,
+					"stroke": "#000000",
+					"text": "Nom dossier",
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"filtre_nom_dossier": {
+					"type": "input",
+					"top": 58,
+					"left": 437,
+					"width": 163,
+					"height": 14,
+					"dataSource": "filtre_nom_dossier",
+					"textAlign": "left",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 81,
+					"left": 32,
+					"width": 78,
+					"height": 13,
+					"stroke": "#000000",
+					"text": "N° dossier",
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"filtre_num_dossier": {
+					"type": "input",
+					"top": 82,
+					"left": 133,
+					"width": 163,
+					"height": 14,
+					"dataSource": "filtre_num_dossier",
+					"textAlign": "left",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 81,
+					"left": 344,
+					"width": 73,
+					"height": 13,
+					"stroke": "#000000",
+					"text": "Date",
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"filtre_date": {
+					"type": "input",
+					"top": 82,
+					"left": 437,
+					"width": 163,
+					"height": 14,
+					"dataSource": "filtre_date",
+					"dataSourceTypeHint": "date",
+					"textAlign": "left",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"btn_chercher": {
+					"type": "button",
+					"top": 58,
+					"left": 621,
+					"width": 32,
+					"height": 32,
+					"dataSource": "btn_chercher",
+					"text": "Chercher",
+					"focusable": false,
+					"method": "ObjectMethods/btn_chercher.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Image4": {
+					"type": "picture",
+					"top": 57,
+					"left": 620,
+					"width": 33,
+					"height": 33,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/img/icons/32/PAXTEL-boutons-07.png"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {
+				"objects": [
+					"Rectangle"
+				]
+			}
+		}
+	},
+	"geometryStamp": 2,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

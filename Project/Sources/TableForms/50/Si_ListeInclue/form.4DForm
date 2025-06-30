@@ -1,0 +1,263 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 27,
+	"markerBreak": 29,
+	"markerFooter": 29,
+	"events": [
+		"onDisplayDetail"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 2,
+					"left": 2,
+					"width": 993,
+					"height": 25,
+					"stroke": "#FFFFFF",
+					"borderRadius": 5
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 7,
+					"left": 1,
+					"width": 91,
+					"height": 16,
+					"dataSource": "[SIAO:50]Si_Demande_Date:2",
+					"dataSourceTypeHint": "date",
+					"stroke": "#0000FF",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dateFormat": "short",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Ligne9": {
+					"type": "line",
+					"top": 0,
+					"left": 93,
+					"height": 30,
+					"stroke": "#CCCCCC"
+				},
+				"Ligne11": {
+					"type": "line",
+					"top": 0,
+					"left": 477,
+					"height": 30,
+					"stroke": "#CCCCCC"
+				},
+				"Dos_Normal": {
+					"type": "input",
+					"top": 7,
+					"left": 96,
+					"width": 272,
+					"height": 16,
+					"dataSource": "[SIAO:50]Si_Demandeur:20",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Ligne12": {
+					"type": "line",
+					"top": 0,
+					"left": 517,
+					"height": 30,
+					"stroke": "#CCCCCC"
+				},
+				"Ligne13": {
+					"type": "line",
+					"top": 0,
+					"left": 597,
+					"height": 30,
+					"stroke": "#CCCCCC"
+				},
+				"CAS_INSERT": {
+					"type": "input",
+					"top": 7,
+					"left": 521,
+					"width": 33,
+					"height": 16,
+					"dataSource": "VA_TRANSCASTYPE",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"CAS_URGENT": {
+					"type": "input",
+					"top": 7,
+					"left": 521,
+					"width": 32,
+					"height": 16,
+					"dataSource": "VA_TRANSCASTYPE",
+					"stroke": "#EE0000",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 0,
+					"left": 557,
+					"height": 30,
+					"stroke": "#CCCCCC"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 7,
+					"left": 561,
+					"width": 33,
+					"height": 16,
+					"dataSource": "va_TitreCasReserve",
+					"stroke": "#0000FF",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Ligne14": {
+					"type": "line",
+					"top": 0,
+					"left": 796,
+					"height": 30,
+					"stroke": "#CCCCCC"
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 7,
+					"left": 481,
+					"width": 32,
+					"height": 16,
+					"dataSource": "va_TitreCasANNUL",
+					"stroke": "#EE0000",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 0,
+					"left": 369,
+					"height": 30,
+					"stroke": "#CCCCCC"
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 0,
+					"left": 437,
+					"height": 30,
+					"stroke": "#CCCCCC"
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 7,
+					"left": 373,
+					"width": 62,
+					"height": 16,
+					"dataSource": "va_TitreETCV",
+					"stroke": "#000000",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 7,
+					"left": 441,
+					"width": 32,
+					"height": 16,
+					"dataSource": "va_TitreDemande",
+					"stroke": "#000000",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable6": {
+					"type": "input",
+					"top": 7,
+					"left": 601,
+					"width": 190,
+					"height": 16,
+					"dataSource": "va_TitreProposition",
+					"stroke": "#000000",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 8,
+					"left": 800,
+					"width": 188,
+					"height": 16,
+					"dataSource": "va_TitreLogement",
+					"stroke": "#000000",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Dos_Ferme": {
+					"type": "input",
+					"top": 7,
+					"left": 96,
+					"width": 272,
+					"height": 16,
+					"dataSource": "[SIAO:50]Si_Demandeur:20",
+					"stroke": "#999999",
+					"fontStyle": "italic",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				}
+			}
+		}
+	]
+}

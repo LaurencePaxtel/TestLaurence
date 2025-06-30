@@ -1,0 +1,1 @@
+vl_NbHGi:=ds:C1482.HeberGement.query("HG_HB_ID = :1"; [HeBerge:4]HB_ReferenceID:1).length

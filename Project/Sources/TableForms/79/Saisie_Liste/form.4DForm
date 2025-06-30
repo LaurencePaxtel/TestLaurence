@@ -1,0 +1,181 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Texte4": {
+					"type": "text",
+					"top": 14,
+					"left": 15,
+					"width": 439,
+					"height": 19,
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 14,
+					"fontWeight": "bold",
+					"text": "Liste des structures"
+				},
+				"LB_NAV_Structures": {
+					"type": "listbox",
+					"top": 48,
+					"left": 15,
+					"width": 571,
+					"height": 428,
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"movableRows": false,
+					"dataSource": "Form:C1466.entitySelection",
+					"currentItemSource": "Form:C1466.elementCurrentElmt",
+					"currentItemPositionSource": "Form:C1466.elementCurrentElmtPos",
+					"selectedItemsSource": "Form:C1466.elementSelected",
+					"scrollbarHorizontal": "automatic",
+					"alternateFill": "#FFFFFF",
+					"borderStyle": "solid",
+					"method": "ObjectMethods/LB_NAV_Structures.4dm",
+					"events": [
+						"onClick",
+						"onDoubleClick"
+					],
+					"columns": [
+						{
+							"name": "Colonne3",
+							"dataSource": "This:C1470.STRC_Nom",
+							"width": 331,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête3",
+								"text": "Nom",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied3",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne2",
+							"dataSource": "This:C1470.STRC_Initiales",
+							"width": 223,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête2",
+								"text": "Initiales",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied2",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				},
+				"btn_supprimer": {
+					"type": "button",
+					"top": 13,
+					"left": 450,
+					"width": 136,
+					"height": 25,
+					"dataSource": "btn_supprimer",
+					"text": "Supprimer structure",
+					"focusable": false,
+					"method": "ObjectMethods/btn_supprimer.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_nouveau1": {
+					"type": "button",
+					"top": 13,
+					"left": 305,
+					"width": 136,
+					"height": 25,
+					"dataSource": "btn_nouveau",
+					"text": "Nouvelle structure",
+					"focusable": false,
+					"method": "ObjectMethods/btn_nouveau1.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

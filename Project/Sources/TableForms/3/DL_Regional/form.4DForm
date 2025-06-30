@@ -1,0 +1,668 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onClick",
+		"onOutsideCall",
+		"onMenuSelect",
+		"onDataChange",
+		"onDragOver",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle8": {
+					"type": "rectangle",
+					"top": 38,
+					"left": 5,
+					"width": 456,
+					"height": 388,
+					"fill": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 66,
+					"left": 14,
+					"width": 431,
+					"height": 60,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"text": "<◊vt_ConsoRTXT>"
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 298,
+					"left": 5,
+					"width": 456,
+					"height": 26,
+					"fill": "transparent"
+				},
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 300,
+					"left": 7,
+					"width": 452,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte11": {
+					"type": "text",
+					"top": 303,
+					"left": 10,
+					"width": 447,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Etat de la consolidation régionale"
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 322,
+					"left": 7,
+					"width": 452
+				},
+				"Rectangle9": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 455,
+					"height": 27,
+					"fill": "transparent",
+					"stroke": "#999999"
+				},
+				"Rectangle10": {
+					"type": "rectangle",
+					"top": 6,
+					"left": 6,
+					"width": 455,
+					"height": 27,
+					"fill": "transparent",
+					"stroke": "#FFFFFF"
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 429,
+					"left": 5,
+					"width": 455
+				},
+				"Rectangle11": {
+					"type": "rectangle",
+					"top": 40,
+					"left": 7,
+					"width": 452,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte12": {
+					"type": "text",
+					"top": 43,
+					"left": 10,
+					"width": 447,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Nature de cette base de donnée"
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 62,
+					"left": 7,
+					"width": 452
+				},
+				"Texte14": {
+					"type": "text",
+					"top": 13,
+					"left": 9,
+					"width": 37,
+					"height": 12,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": ":30004,1"
+				},
+				"Texte15": {
+					"type": "text",
+					"top": 13,
+					"left": 186,
+					"width": 34,
+					"height": 12,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": ":30004,2"
+				},
+				"Texte16": {
+					"type": "text",
+					"top": 13,
+					"left": 336,
+					"width": 28,
+					"height": 12,
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"text": ":30004,3"
+				},
+				"Variable7": {
+					"type": "input",
+					"top": 13,
+					"left": 48,
+					"width": 140,
+					"height": 12,
+					"dataSource": "<>va_User",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable10": {
+					"type": "input",
+					"top": 13,
+					"left": 224,
+					"width": 110,
+					"height": 12,
+					"dataSource": "<>va_ProfUser",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable11": {
+					"type": "input",
+					"top": 13,
+					"left": 369,
+					"width": 85,
+					"height": 12,
+					"dataSource": "<>DDJ",
+					"stroke": "#0000FF",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Rectangle13": {
+					"type": "rectangle",
+					"top": 118,
+					"left": 5,
+					"width": 456,
+					"height": 26,
+					"fill": "transparent"
+				},
+				"Rectangle14": {
+					"type": "rectangle",
+					"top": 120,
+					"left": 7,
+					"width": 452,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte23": {
+					"type": "text",
+					"top": 123,
+					"left": 10,
+					"width": 447,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Paramètres de la consolidation régionale"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 142,
+					"left": 7,
+					"width": 452
+				},
+				"Texte24": {
+					"type": "text",
+					"top": 187,
+					"left": 14,
+					"width": 190,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "(Export ou import)   Heures : entre"
+				},
+				"Texte25": {
+					"type": "text",
+					"top": 187,
+					"left": 297,
+					"width": 26,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "et"
+				},
+				"Texte26": {
+					"type": "text",
+					"top": 217,
+					"left": 14,
+					"width": 190,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Périodicité : toutes les xx heures"
+				},
+				"Texte27": {
+					"type": "text",
+					"top": 247,
+					"left": 14,
+					"width": 190,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Ticks d'attente"
+				},
+				"Variable23": {
+					"type": "input",
+					"top": 247,
+					"left": 287,
+					"width": 100,
+					"height": 15,
+					"dataSource": "<>vh_ConsoRTicks",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"entryFilter": "!0&9##:##:##",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Texte13": {
+					"type": "text",
+					"top": 157,
+					"left": 14,
+					"width": 190,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Automatique"
+				},
+				"Rectangle12": {
+					"type": "rectangle",
+					"top": 155,
+					"left": 209,
+					"width": 124,
+					"height": 19
+				},
+				"Bouton radio3": {
+					"type": "radio",
+					"top": 158,
+					"left": 214,
+					"width": 54,
+					"height": 13,
+					"dataSource": "r1",
+					"text": "Oui",
+					"class": "TNR_12",
+					"method": "ObjectMethods/Bouton radio3.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton radio4": {
+					"type": "radio",
+					"top": 158,
+					"left": 274,
+					"width": 54,
+					"height": 13,
+					"dataSource": "r2",
+					"text": "Non",
+					"class": "TNR_12",
+					"method": "ObjectMethods/Bouton radio4.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Variable18": {
+					"type": "input",
+					"top": 187,
+					"left": 214,
+					"width": 79,
+					"height": 15,
+					"dataSource": "<>vh_ConsoRAuto1",
+					"class": "TNR_12",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"entryFilter": "!0&9##:##",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 187,
+					"left": 326,
+					"width": 79,
+					"height": 15,
+					"dataSource": "<>vh_ConsoRAuto2",
+					"class": "TNR_12",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"entryFilter": "!0&9##:##",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable21": {
+					"type": "input",
+					"top": 217,
+					"left": 214,
+					"width": 59,
+					"height": 15,
+					"dataSource": "<>vh_ConsoR_Periode",
+					"class": "TNR_12",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable22": {
+					"type": "input",
+					"top": 247,
+					"left": 214,
+					"width": 59,
+					"height": 15,
+					"dataSource": "<>vl_ConsoRTicks",
+					"class": "TNR_12",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable22.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton2": {
+					"type": "button",
+					"top": 435,
+					"left": 343,
+					"width": 117,
+					"height": 22,
+					"dataSource": "b_Ann",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton3": {
+					"type": "button",
+					"top": 435,
+					"left": 162,
+					"width": 146,
+					"height": 22,
+					"dataSource": "b_ConsoSurServeur",
+					"text": "Lancer sur le serveur",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton3.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 337,
+					"left": 4,
+					"width": 133,
+					"height": 15,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Type de process lancé"
+				},
+				"Bouton radio1": {
+					"type": "radio",
+					"top": 338,
+					"left": 152,
+					"width": 74,
+					"height": 15,
+					"dataSource": "p1",
+					"text": "Aucun",
+					"class": "TNR_12",
+					"focusable": false
+				},
+				"Bouton radio2": {
+					"type": "radio",
+					"top": 338,
+					"left": 236,
+					"width": 85,
+					"height": 15,
+					"dataSource": "p2",
+					"text": "Sur le poste",
+					"class": "TNR_12",
+					"focusable": false
+				},
+				"Bouton radio5": {
+					"type": "radio",
+					"top": 338,
+					"left": 328,
+					"width": 98,
+					"height": 15,
+					"dataSource": "p3",
+					"text": "Sur le serveur",
+					"class": "TNR_12",
+					"focusable": false
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 367,
+					"left": 34,
+					"width": 399,
+					"height": 15,
+					"dataSource": "va_ConsoProcessEtat",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Bouton1": {
+					"type": "button",
+					"top": 435,
+					"left": 10,
+					"width": 146,
+					"height": 22,
+					"dataSource": "b_ConsoSurPoste",
+					"text": "Lancer sur le poste",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton5": {
+					"type": "button",
+					"top": 394,
+					"left": 12,
+					"width": 76,
+					"height": 22,
+					"dataSource": "b_ConsoSurEtat",
+					"text": "Etat",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton5.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Thermomètre1": {
+					"type": "progress",
+					"top": 397,
+					"left": 254,
+					"width": 200,
+					"height": 16,
+					"dataSource": "vl_Thermomètre",
+					"continuousExecution": false,
+					"min": 0,
+					"max": 100,
+					"graduationStep": 10,
+					"step": 10,
+					"class": "Par_défaut"
+				},
+				"Bouton6": {
+					"type": "button",
+					"top": 270,
+					"left": 282,
+					"width": 172,
+					"height": 22,
+					"dataSource": "b_Val",
+					"shortcutKey": "[Enter]",
+					"text": "Enregistrer les paramètres",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton6.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton4": {
+					"type": "button",
+					"top": 394,
+					"left": 91,
+					"width": 146,
+					"height": 22,
+					"dataSource": "b_ConsoSurArreter",
+					"text": "Arreter le process",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton4.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	]
+}

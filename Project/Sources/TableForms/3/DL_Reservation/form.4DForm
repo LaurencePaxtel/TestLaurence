@@ -1,0 +1,322 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 0,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 595,
+					"height": 54,
+					"fill": "#444444",
+					"stroke": "transparent"
+				},
+				"Texte": {
+					"type": "text",
+					"top": 17,
+					"left": 12,
+					"width": 400,
+					"height": 22,
+					"stroke": "#FFFFFF",
+					"fontFamily": "Arial",
+					"fontSize": 18,
+					"text": "Formulaire de réservation"
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 66,
+					"left": 127,
+					"width": 150,
+					"height": 16,
+					"dataSource": "Form:C1466.dateDu",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"placeholder": "01/01/2021",
+					"entryFilter": "##/##/####",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable2.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 66,
+					"left": 12,
+					"width": 100,
+					"height": 16,
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Du"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 82,
+					"left": 127,
+					"width": 150,
+					"stroke": "#CCCCCC"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 66,
+					"left": 419,
+					"width": 150,
+					"height": 16,
+					"dataSource": "Form:C1466.dateAu",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"placeholder": "01/01/2021",
+					"entryFilter": "##/##/####",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable1.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 66,
+					"left": 304,
+					"width": 100,
+					"height": 16,
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Au"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 82,
+					"left": 419,
+					"width": 150,
+					"stroke": "#CCCCCC"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 107,
+					"left": 12,
+					"width": 100,
+					"height": 14,
+					"stroke": "#000000",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": ":◊vlSTR_Std,62"
+				},
+				"Bouton inversé": {
+					"type": "button",
+					"top": 102,
+					"left": 12,
+					"width": 100,
+					"height": 20,
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/Bouton inversé.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 106,
+					"left": 127,
+					"width": 442,
+					"height": 16,
+					"dataSource": "Form:C1466.service",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Ligne": {
+					"type": "line",
+					"top": 122,
+					"left": 127,
+					"width": 442,
+					"stroke": "#CCCCCC"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 147,
+					"left": 12,
+					"width": 100,
+					"height": 14,
+					"stroke": "#000000",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "Centre"
+				},
+				"Bouton inversé1": {
+					"type": "button",
+					"top": 142,
+					"left": 12,
+					"width": 100,
+					"height": 20,
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/Bouton inversé1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 146,
+					"left": 127,
+					"width": 442,
+					"height": 16,
+					"dataSource": "Form:C1466.centre",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 162,
+					"left": 127,
+					"width": 442,
+					"stroke": "#CCCCCC"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 182,
+					"left": 12,
+					"width": 100,
+					"height": 16,
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Rés. provisoire"
+				},
+				"Popup Liste déroulante": {
+					"type": "dropdown",
+					"top": 182,
+					"left": 127,
+					"width": 159,
+					"height": 16,
+					"dataSource": "reservationProvisoire_at",
+					"focusable": false,
+					"method": "ObjectMethods/Popup Liste déroulante.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 182,
+					"left": 419,
+					"width": 150,
+					"height": 16,
+					"dataSource": "Form:C1466.nbPlace",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"entryFilter": "&9",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 198,
+					"left": 419,
+					"width": 150,
+					"stroke": "#CCCCCC"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 182,
+					"left": 304,
+					"width": 100,
+					"height": 16,
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nombre de place"
+				},
+				"Image1": {
+					"type": "picture",
+					"top": 218,
+					"left": 509,
+					"width": 60,
+					"height": 60,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image1.png"
+				},
+				"Bouton invisible": {
+					"type": "button",
+					"top": 218,
+					"left": 509,
+					"width": 60,
+					"height": 60,
+					"display": false,
+					"method": "ObjectMethods/Bouton invisible.4dm",
+					"events": [
+						"onClick",
+						"onMouseMove"
+					]
+				}
+			}
+		}
+	]
+}

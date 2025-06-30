@@ -1,0 +1,913 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 5,
+	"bottomMargin": 5,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 4,
+					"left": 5,
+					"width": 732,
+					"height": 27,
+					"fill": "transparent",
+					"stroke": "#999999",
+					"right": 737
+				},
+				"Rectangle10": {
+					"type": "rectangle",
+					"top": 39,
+					"left": 7,
+					"width": 302,
+					"height": 22,
+					"fill": "#4BAABA",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 42,
+					"left": 10,
+					"width": 297,
+					"height": 16,
+					"stroke": "#FFFFFF",
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"fontWeight": "bold",
+					"text": "Fiches"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 12,
+					"left": 9,
+					"width": 37,
+					"height": 15,
+					"textAlign": "right",
+					"fontFamily": "Montserrat",
+					"fontSize": 11,
+					"text": ":30004,1"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 12,
+					"left": 226,
+					"width": 34,
+					"height": 15,
+					"textAlign": "right",
+					"fontFamily": "Montserrat",
+					"fontSize": 11,
+					"text": ":30004,2"
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 12,
+					"left": 436,
+					"width": 28,
+					"height": 15,
+					"textAlign": "right",
+					"fontFamily": "Montserrat",
+					"fontSize": 11,
+					"text": ":30004,3"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 12,
+					"left": 48,
+					"width": 140,
+					"height": 15,
+					"dataSource": "<>va_User",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 12,
+					"left": 264,
+					"width": 120,
+					"height": 15,
+					"dataSource": "<>va_ProfUser",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 12,
+					"left": 469,
+					"width": 85,
+					"height": 15,
+					"dataSource": "<>DDJ",
+					"dataSourceTypeHint": "date",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Sans titre"
+					},
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dateFormat": "systemMedium",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 437,
+					"left": 730,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_Ann",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Sans titre"
+					},
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Fermer",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 62,
+					"left": 7,
+					"width": 58,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 65,
+					"left": 10,
+					"width": 53,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "#"
+				},
+				"Rectangle11": {
+					"type": "rectangle",
+					"top": 62,
+					"left": 65,
+					"width": 98,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 65,
+					"left": 68,
+					"width": 93,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Date"
+				},
+				"Rectangle12": {
+					"type": "rectangle",
+					"top": 62,
+					"left": 163,
+					"width": 37,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 65,
+					"left": 166,
+					"width": 32,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Clô."
+				},
+				"Rectangle13": {
+					"type": "rectangle",
+					"top": 62,
+					"left": 201,
+					"width": 37,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte11": {
+					"type": "text",
+					"top": 65,
+					"left": 204,
+					"width": 32,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Nuit"
+				},
+				"Rectangle14": {
+					"type": "rectangle",
+					"top": 62,
+					"left": 239,
+					"width": 70,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte12": {
+					"type": "text",
+					"top": 65,
+					"left": 242,
+					"width": 65,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Réservé"
+				},
+				"Rectangle16": {
+					"type": "rectangle",
+					"top": 39,
+					"left": 330,
+					"width": 521,
+					"height": 22,
+					"fill": "#4BAABA",
+					"stroke": "transparent",
+					"right": 851
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 42,
+					"left": 330,
+					"width": 524,
+					"height": 16,
+					"stroke": "#FFFFFF",
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"fontWeight": "bold",
+					"text": "Passages",
+					"right": 854
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 62,
+					"left": 329,
+					"width": 37,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 65,
+					"left": 332,
+					"width": 32,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "#"
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 62,
+					"left": 367,
+					"width": 100,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 65,
+					"left": 367,
+					"width": 100,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Du"
+				},
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 62,
+					"left": 467,
+					"width": 100,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte10": {
+					"type": "text",
+					"top": 65,
+					"left": 467,
+					"width": 100,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Au"
+				},
+				"Rectangle8": {
+					"type": "rectangle",
+					"top": 62,
+					"left": 567,
+					"width": 71,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte13": {
+					"type": "text",
+					"top": 65,
+					"left": 567,
+					"width": 70,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Nuits",
+					"right": 637
+				},
+				"LB1": {
+					"type": "listbox",
+					"top": 86,
+					"left": 8,
+					"width": 301,
+					"height": 341,
+					"resizingMode": "legacy",
+					"sortable": false,
+					"movableRows": false,
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "visible",
+					"fill": "#D9EDF0",
+					"alternateFill": "automatic",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Colonne8",
+							"dataSource": "tl_Pas_Réf",
+							"width": 60,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#D9EDF0",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête8",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied8",
+								"stroke": "automatic",
+								"fill": "#D9EDF0",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							}
+						},
+						{
+							"name": "Colonne9",
+							"dataSource": "td_Pas_Date",
+							"width": 95,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#D9EDF0",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête9",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied9",
+								"stroke": "automatic",
+								"fill": "#D9EDF0",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							}
+						},
+						{
+							"name": "Colonne10",
+							"dataSource": "tb_Pas_Cloture",
+							"width": 38,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#D9EDF0",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête10",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied10",
+								"stroke": "automatic",
+								"fill": "#D9EDF0",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							}
+						},
+						{
+							"name": "Colonne11",
+							"dataSource": "tl_Pas_Nuit",
+							"width": 38,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#D9EDF0",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête11",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied11",
+								"stroke": "automatic",
+								"fill": "#D9EDF0",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							}
+						},
+						{
+							"name": "Colonne12",
+							"dataSource": "tl_Pas_NuitT",
+							"width": 50,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#D9EDF0",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête12",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied12",
+								"stroke": "automatic",
+								"fill": "#D9EDF0",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							}
+						}
+					]
+				},
+				"LB2": {
+					"type": "listbox",
+					"top": 86,
+					"left": 330,
+					"width": 519,
+					"height": 341,
+					"resizingMode": "legacy",
+					"sortable": false,
+					"movableRows": false,
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"fill": "#D9EDF0",
+					"alternateFill": "automatic",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"method": "ObjectMethods/LB2.4dm",
+					"columns": [
+						{
+							"name": "Colonne1",
+							"dataSource": "tl_PasS_Séjour",
+							"width": 38,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#D9EDF0",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête1",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "#D9EDF0",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							}
+						},
+						{
+							"name": "Colonne2",
+							"dataSource": "td_PasS_Date1",
+							"width": 100,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#D9EDF0",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête2",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied2",
+								"stroke": "automatic",
+								"fill": "#D9EDF0",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							}
+						},
+						{
+							"name": "Colonne3",
+							"dataSource": "td_PasS_Date2",
+							"width": 100,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#D9EDF0",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête3",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied3",
+								"stroke": "automatic",
+								"fill": "#D9EDF0",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							}
+						},
+						{
+							"name": "Colonne5",
+							"dataSource": "tl_PasS_NbNuits",
+							"width": 70,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#D9EDF0",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête5",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied5",
+								"stroke": "automatic",
+								"fill": "#D9EDF0",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							}
+						},
+						{
+							"name": "Colonne4",
+							"dataSource": "tt_PasS_Service",
+							"width": 85,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#D9EDF0",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête4",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied4",
+								"stroke": "automatic",
+								"fill": "#D9EDF0",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							}
+						}
+					]
+				},
+				"Bouton": {
+					"type": "button",
+					"top": 437,
+					"left": 589,
+					"width": 130,
+					"height": 22,
+					"dataSource": "",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Sans titre"
+					},
+					"action": "",
+					"shortcutKey": "",
+					"text": "Copier lignes tableaux",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					],
+					"shortcutAccel": false,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"method": "ObjectMethods/Bouton.4dm"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 62,
+					"left": 638,
+					"width": 211,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent",
+					"right": 849
+				},
+				"Texte14": {
+					"type": "text",
+					"top": 65,
+					"left": 638,
+					"width": 216,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Service",
+					"right": 854
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"geometryStamp": 375,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

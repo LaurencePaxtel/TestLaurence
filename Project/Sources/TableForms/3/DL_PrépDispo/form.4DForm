@@ -1,0 +1,384 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 7,
+					"left": 9,
+					"width": 452,
+					"height": 121,
+					"fill": "#FFFFFF",
+					"stroke": "#808080"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 173,
+					"left": 4,
+					"width": 457,
+					"height": 31,
+					"fill": "transparent",
+					"stroke": "#FFFFFF"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 9,
+					"left": 11,
+					"width": 448,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 12,
+					"left": 14,
+					"width": 443,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Préparation des disponibilités",
+					"fontFamily": "Arial"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 31,
+					"left": 11,
+					"width": 450,
+					"stroke": "#696969",
+					"height": 1
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 47,
+					"left": 111,
+					"width": 62,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Date du :",
+					"fontFamily": "Arial"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 181,
+					"left": 9,
+					"width": 28,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "left",
+					"text": ":30004,1",
+					"fontFamily": "Arial"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 182,
+					"left": 147,
+					"width": 29,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "left",
+					"text": ":30004,2",
+					"fontFamily": "Arial"
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 182,
+					"left": 313,
+					"width": 28,
+					"height": 15,
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "left",
+					"text": ":30004,3",
+					"fontFamily": "Arial"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 181,
+					"left": 38,
+					"width": 102,
+					"height": 15,
+					"dataSource": "<>va_User",
+					"stroke": "#0000cd",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 182,
+					"left": 177,
+					"width": 110,
+					"height": 15,
+					"dataSource": "<>va_ProfUser",
+					"stroke": "#0000cd",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 182,
+					"left": 338,
+					"width": 118,
+					"height": 15,
+					"dataSource": "<>DDJ",
+					"dataSourceTypeHint": "date",
+					"stroke": "#0000cd",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dateFormat": "systemMedium",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"textAlign": "left"
+				},
+				"Variable18": {
+					"type": "button",
+					"top": 145,
+					"left": 235,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_Val",
+					"action": "accept",
+					"shortcutKey": "[Enter]",
+					"text": "Valider",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable18.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 145,
+					"left": 353,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_Ann",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Annuler",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable7": {
+					"type": "input",
+					"top": 47,
+					"left": 188,
+					"width": 69,
+					"height": 16,
+					"dataSource": "vd_DateSel1",
+					"dataSourceTypeHint": "date",
+					"class": "TNR_12",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dateFormat": "short",
+					"entryFilter": "!0&9##/##/####",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"textAlign": "center"
+				},
+				"Variable8": {
+					"type": "input",
+					"top": 47,
+					"left": 291,
+					"width": 69,
+					"height": 16,
+					"dataSource": "vd_DateSel2",
+					"dataSourceTypeHint": "date",
+					"class": "TNR_12",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dateFormat": "short",
+					"entryFilter": "!0&9##/##/####",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"textAlign": "center"
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 47,
+					"left": 261,
+					"width": 26,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "au",
+					"fontFamily": "Arial"
+				},
+				"Bouton radio": {
+					"type": "radio",
+					"text": "Jour",
+					"top": 88,
+					"left": 187,
+					"width": 69,
+					"height": 13,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "rJour",
+					"radioGroup": "JourNuit",
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Bouton radio3": {
+					"type": "radio",
+					"text": "Nuit",
+					"top": 88,
+					"left": 287,
+					"width": 69,
+					"height": 13,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "rNuit",
+					"radioGroup": "JourNuit",
+					"fontFamily": "Arial",
+					"fontSize": 12
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 2575
+}

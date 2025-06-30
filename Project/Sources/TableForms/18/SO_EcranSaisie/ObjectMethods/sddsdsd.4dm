@@ -1,0 +1,1 @@
+<>vl_T_SIAOType:=(1*Num:C11(SIAO_1=1))+(2*Num:C11(SIAO_2=1))

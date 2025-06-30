@@ -1,0 +1,964 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "Lettre US (215,9 x 279,4 mm)",
+		"paperWidth": "612pt",
+		"paperHeight": "792pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 1,
+					"width": 611,
+					"height": 662,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"stroke": "transparent"
+				}
+			}
+		},
+		{
+			"objects": {
+				"104_ico1": {
+					"type": "picture",
+					"top": 122,
+					"left": 285,
+					"width": 14,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/104_ico1.png"
+				},
+				"txt_date_1": {
+					"type": "input",
+					"top": 122,
+					"left": 26,
+					"width": 240,
+					"height": 14,
+					"dataSource": "txt_date_1",
+					"dataSourceTypeHint": "date",
+					"class": "Champs",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"txt_date_2": {
+					"type": "input",
+					"top": 172,
+					"left": 26,
+					"width": 240,
+					"height": 14,
+					"dataSource": "txt_date_2",
+					"dataSourceTypeHint": "date",
+					"class": "Champs",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"txt_date_3": {
+					"type": "input",
+					"top": 222,
+					"left": 26,
+					"width": 240,
+					"height": 14,
+					"dataSource": "txt_date_3",
+					"dataSourceTypeHint": "date",
+					"class": "Champs",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"txt_date_4": {
+					"type": "input",
+					"top": 272,
+					"left": 26,
+					"width": 240,
+					"height": 14,
+					"dataSource": "txt_date_4",
+					"dataSourceTypeHint": "date",
+					"class": "Champs",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"txt_date_5": {
+					"type": "input",
+					"top": 322,
+					"left": 26,
+					"width": 240,
+					"height": 14,
+					"dataSource": "txt_date_5",
+					"dataSourceTypeHint": "date",
+					"class": "Champs",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"txt_date_6": {
+					"type": "input",
+					"top": 372,
+					"left": 26,
+					"width": 240,
+					"height": 14,
+					"dataSource": "txt_date_6",
+					"dataSourceTypeHint": "date",
+					"class": "Champs",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"txt_date_7": {
+					"type": "input",
+					"top": 426,
+					"left": 26,
+					"width": 240,
+					"height": 14,
+					"dataSource": "txt_date_7",
+					"dataSourceTypeHint": "date",
+					"class": "Champs",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"txt_date_8": {
+					"type": "input",
+					"top": 480,
+					"left": 26,
+					"width": 240,
+					"height": 14,
+					"dataSource": "txt_date_8",
+					"dataSourceTypeHint": "date",
+					"class": "Champs",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"txt_date_9": {
+					"type": "input",
+					"top": 534,
+					"left": 26,
+					"width": 240,
+					"height": 14,
+					"dataSource": "txt_date_9",
+					"dataSourceTypeHint": "date",
+					"class": "Champs",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"txt_date_10": {
+					"type": "input",
+					"top": 588,
+					"left": 26,
+					"width": 240,
+					"height": 14,
+					"dataSource": "txt_date_10",
+					"dataSourceTypeHint": "date",
+					"class": "Champs",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"b_Fermer_Rech_appel": {
+					"type": "button",
+					"top": 623,
+					"left": 330,
+					"width": 127,
+					"height": 28,
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSource": "b_Fermer_Rech_appel",
+					"text": "Fermer",
+					"class": "Par_défaut",
+					"method": "ObjectMethods/b_Fermer_Rech_appel.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_valider": {
+					"type": "button",
+					"top": 623,
+					"left": 463,
+					"width": 127,
+					"height": 28,
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSource": "btn_valider",
+					"text": "Valider",
+					"class": "Par_défaut",
+					"method": "ObjectMethods/btn_valider.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"txt_centre_1": {
+					"type": "input",
+					"top": 122,
+					"left": 306,
+					"width": 284,
+					"height": 14,
+					"dataSource": "txt_centre_1",
+					"class": "Champs",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 98,
+					"left": 26,
+					"width": 240,
+					"height": 13,
+					"class": "Par_défaut",
+					"fontWeight": "bold",
+					"text": "Date 1"
+				},
+				"Text": {
+					"type": "text",
+					"top": 8,
+					"left": 12,
+					"width": 574,
+					"height": 19,
+					"sizingX": "grow",
+					"class": "titre_1",
+					"textAlign": "center",
+					"text": "Saisie Multi-Dates"
+				},
+				"102_Txt": {
+					"type": "text",
+					"top": 97,
+					"left": 306,
+					"width": 284,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"text": "Centre 1"
+				},
+				"102_Bt": {
+					"type": "button",
+					"top": 119,
+					"left": 279,
+					"width": 311,
+					"height": 20,
+					"dataSource": "b_ta_FMGrp",
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/102_Bt.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"104_ico2": {
+					"type": "picture",
+					"top": 172,
+					"left": 285,
+					"width": 14,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/104_ico2.png"
+				},
+				"txt_centre_2": {
+					"type": "input",
+					"top": 172,
+					"left": 306,
+					"width": 284,
+					"height": 14,
+					"dataSource": "txt_centre_2",
+					"class": "Champs",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 148,
+					"left": 26,
+					"width": 240,
+					"height": 13,
+					"class": "Par_défaut",
+					"fontWeight": "bold",
+					"text": "Date 2"
+				},
+				"102_Txt1": {
+					"type": "text",
+					"top": 147,
+					"left": 306,
+					"width": 284,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"text": "Centre 2"
+				},
+				"102_Bt1": {
+					"type": "button",
+					"top": 169,
+					"left": 279,
+					"width": 311,
+					"height": 20,
+					"dataSource": "b_ta_FMGrp",
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/102_Bt1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"104_ico3": {
+					"type": "picture",
+					"top": 222,
+					"left": 285,
+					"width": 14,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/104_ico3.png"
+				},
+				"txt_centre_3": {
+					"type": "input",
+					"top": 222,
+					"left": 306,
+					"width": 284,
+					"height": 14,
+					"dataSource": "txt_centre_3",
+					"class": "Champs",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 198,
+					"left": 26,
+					"width": 240,
+					"height": 13,
+					"class": "Par_défaut",
+					"fontWeight": "bold",
+					"text": "Date 3"
+				},
+				"102_Txt2": {
+					"type": "text",
+					"top": 197,
+					"left": 306,
+					"width": 284,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"text": "Centre 3"
+				},
+				"102_Bt2": {
+					"type": "button",
+					"top": 219,
+					"left": 279,
+					"width": 311,
+					"height": 20,
+					"dataSource": "b_ta_FMGrp",
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/102_Bt2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"104_ico4": {
+					"type": "picture",
+					"top": 272,
+					"left": 285,
+					"width": 14,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/104_ico4.png"
+				},
+				"txt_centre_4": {
+					"type": "input",
+					"top": 272,
+					"left": 306,
+					"width": 284,
+					"height": 14,
+					"dataSource": "txt_centre_4",
+					"class": "Champs",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 248,
+					"left": 26,
+					"width": 240,
+					"height": 13,
+					"class": "Par_défaut",
+					"fontWeight": "bold",
+					"text": "Date 4"
+				},
+				"102_Txt3": {
+					"type": "text",
+					"top": 247,
+					"left": 306,
+					"width": 284,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"text": "Centre 4"
+				},
+				"102_Bt3": {
+					"type": "button",
+					"top": 269,
+					"left": 279,
+					"width": 311,
+					"height": 20,
+					"dataSource": "b_ta_FMGrp",
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/102_Bt3.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"104_ico5": {
+					"type": "picture",
+					"top": 322,
+					"left": 285,
+					"width": 14,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/104_ico5.png"
+				},
+				"txt_centre_5": {
+					"type": "input",
+					"top": 322,
+					"left": 306,
+					"width": 284,
+					"height": 14,
+					"dataSource": "txt_centre_5",
+					"class": "Champs",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 298,
+					"left": 26,
+					"width": 240,
+					"height": 13,
+					"class": "Par_défaut",
+					"fontWeight": "bold",
+					"text": "Date 5"
+				},
+				"102_Txt4": {
+					"type": "text",
+					"top": 297,
+					"left": 306,
+					"width": 284,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"text": "Centre 5"
+				},
+				"102_Bt4": {
+					"type": "button",
+					"top": 319,
+					"left": 279,
+					"width": 311,
+					"height": 20,
+					"dataSource": "b_ta_FMGrp",
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/102_Bt4.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"104_ico6": {
+					"type": "picture",
+					"top": 372,
+					"left": 285,
+					"width": 14,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/104_ico6.png"
+				},
+				"txt_centre_6": {
+					"type": "input",
+					"top": 372,
+					"left": 306,
+					"width": 284,
+					"height": 14,
+					"dataSource": "txt_centre_6",
+					"class": "Champs",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 348,
+					"left": 26,
+					"width": 240,
+					"height": 13,
+					"class": "Par_défaut",
+					"fontWeight": "bold",
+					"text": "Date 6"
+				},
+				"102_Txt5": {
+					"type": "text",
+					"top": 347,
+					"left": 306,
+					"width": 284,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"text": "Centre 6"
+				},
+				"102_Bt5": {
+					"type": "button",
+					"top": 369,
+					"left": 279,
+					"width": 311,
+					"height": 20,
+					"dataSource": "b_ta_FMGrp",
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/102_Bt5.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"104_ico7": {
+					"type": "picture",
+					"top": 426,
+					"left": 285,
+					"width": 14,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/104_ico7.png"
+				},
+				"txt_centre_7": {
+					"type": "input",
+					"top": 426,
+					"left": 306,
+					"width": 284,
+					"height": 14,
+					"dataSource": "txt_centre_7",
+					"class": "Champs",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 402,
+					"left": 26,
+					"width": 240,
+					"height": 13,
+					"class": "Par_défaut",
+					"fontWeight": "bold",
+					"text": "Date 7"
+				},
+				"102_Txt6": {
+					"type": "text",
+					"top": 401,
+					"left": 306,
+					"width": 284,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"text": "Centre 7"
+				},
+				"102_Bt6": {
+					"type": "button",
+					"top": 423,
+					"left": 279,
+					"width": 311,
+					"height": 20,
+					"dataSource": "b_ta_FMGrp",
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/102_Bt6.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"104_ico8": {
+					"type": "picture",
+					"top": 480,
+					"left": 285,
+					"width": 14,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/104_ico8.png"
+				},
+				"txt_centre_8": {
+					"type": "input",
+					"top": 480,
+					"left": 306,
+					"width": 284,
+					"height": 14,
+					"dataSource": "txt_centre_8",
+					"class": "Champs",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 456,
+					"left": 26,
+					"width": 240,
+					"height": 13,
+					"class": "Par_défaut",
+					"fontWeight": "bold",
+					"text": "Date 8"
+				},
+				"102_Txt7": {
+					"type": "text",
+					"top": 455,
+					"left": 306,
+					"width": 284,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"text": "Centre 8"
+				},
+				"102_Bt7": {
+					"type": "button",
+					"top": 477,
+					"left": 279,
+					"width": 311,
+					"height": 20,
+					"dataSource": "b_ta_FMGrp",
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/102_Bt7.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"104_ico9": {
+					"type": "picture",
+					"top": 534,
+					"left": 285,
+					"width": 14,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/104_ico9.png"
+				},
+				"txt_centre_9": {
+					"type": "input",
+					"top": 534,
+					"left": 306,
+					"width": 284,
+					"height": 14,
+					"dataSource": "txt_centre_9",
+					"class": "Champs",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 510,
+					"left": 26,
+					"width": 240,
+					"height": 13,
+					"class": "Par_défaut",
+					"fontWeight": "bold",
+					"text": "Date 9"
+				},
+				"102_Txt8": {
+					"type": "text",
+					"top": 509,
+					"left": 306,
+					"width": 284,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"text": "Centre 9"
+				},
+				"102_Bt8": {
+					"type": "button",
+					"top": 531,
+					"left": 279,
+					"width": 311,
+					"height": 20,
+					"dataSource": "b_ta_FMGrp",
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/102_Bt8.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"104_ico10": {
+					"type": "picture",
+					"top": 588,
+					"left": 285,
+					"width": 14,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/104_ico10.png"
+				},
+				"txt_centre_10": {
+					"type": "input",
+					"top": 588,
+					"left": 306,
+					"width": 284,
+					"height": 14,
+					"dataSource": "txt_centre_10",
+					"class": "Champs",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"Texte10": {
+					"type": "text",
+					"top": 564,
+					"left": 26,
+					"width": 240,
+					"height": 13,
+					"class": "Par_défaut",
+					"fontWeight": "bold",
+					"text": "Date 10"
+				},
+				"102_Txt9": {
+					"type": "text",
+					"top": 563,
+					"left": 306,
+					"width": 284,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"text": "Centre 10"
+				},
+				"102_Bt9": {
+					"type": "button",
+					"top": 585,
+					"left": 279,
+					"width": 311,
+					"height": 20,
+					"dataSource": "b_ta_FMGrp",
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/102_Bt9.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"104_ico11": {
+					"type": "picture",
+					"top": 72,
+					"left": 285,
+					"width": 14,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/104_ico11.png"
+				},
+				"txt_groupe": {
+					"type": "input",
+					"top": 72,
+					"left": 306,
+					"width": 284,
+					"height": 14,
+					"dataSource": "txt_groupe",
+					"class": "Champs",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					]
+				},
+				"102_Txt10": {
+					"type": "text",
+					"top": 47,
+					"left": 306,
+					"width": 284,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "left",
+					"fontWeight": "bold",
+					"text": ":◊vlSTR_Std,62"
+				},
+				"102_Bt10": {
+					"type": "button",
+					"top": 69,
+					"left": 279,
+					"width": 311,
+					"height": 20,
+					"dataSource": "b_ta_FMGrp",
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/102_Bt10.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"060_ico2": {
+					"type": "picture",
+					"top": 47,
+					"left": 284,
+					"width": 15,
+					"height": 15,
+					"pictureFormat": "scaled",
+					"picture": "Images/060_ico2.png"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {
+				"objects": [
+					"Rectangle"
+				]
+			}
+		}
+	}
+}

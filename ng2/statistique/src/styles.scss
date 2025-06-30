@@ -1,0 +1,174 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+body, html {
+  font-size: 14px;
+}
+
+body {
+  margin: 0px;
+}
+
+.p-datepicker {
+  height: 300px !important;
+}
+
+// Réduction générale de la taille des composants
+.p-component {
+  font-size: 0.875rem; // 14px au lieu de 16px par défaut
+}
+
+// Inputs, Dropdowns, et autres champs
+.p-inputtext,
+.p-dropdown,
+.p-multiselect,
+.p-calendar .p-inputtext {
+  font-size: 0.875rem;
+
+  .p-dropdown-label,
+  .p-multiselect-label {
+  }
+}
+
+// Float Labels
+.p-float-label {
+  label {
+    font-size: 0.875rem;
+  }
+
+  input:focus ~ label,
+  input.p-filled ~ label,
+  textarea:focus ~ label,
+  textarea.p-filled ~ label,
+  .p-inputwrapper-focus ~ label,
+  .p-inputwrapper-filled ~ label {
+    top: -0.75rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+// Boutons
+.p-button {
+  font-size: 0.875rem;
+
+  &.p-button-icon-only {
+    padding: 0.4rem;
+  }
+
+  .p-button-icon {
+    font-size: 0.875rem;
+  }
+}
+
+// Tables
+.p-datatable {
+  .p-datatable-header {
+    padding: 0.5rem;
+  }
+
+  .p-datatable-thead > tr > th {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .p-datatable-tbody > tr > td {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+// Panels, Cards
+.p-panel .p-panel-header,
+.p-card .p-card-body,
+.p-card .p-card-content {
+  padding: 0.8rem;
+}
+
+// Spacing utilities
+.p-fluid .p-inputtext {
+  padding: 0.4rem 0.5rem !important;
+}
+
+// Icons
+.pi {
+  font-size: 0.875rem;
+}
+
+// MultiSelect items
+.p-multiselect-panel {
+  .p-multiselect-items .p-multiselect-item {
+    font-size: 0.875rem;
+  }
+}
+
+// Dropdown items
+.p-dropdown-panel {
+  .p-dropdown-items .p-dropdown-item {
+    font-size: 0.875rem;
+  }
+}
+
+// Calendar
+.p-calendar {
+  .p-datepicker {
+    font-size: 0.875rem;
+
+    table td {
+      padding: 0.3rem;
+    }
+
+    .p-datepicker-header {
+      padding: 0.4rem;
+    }
+  }
+}
+
+// Style général pour les dropdowns et multiselects
+.p-dropdown, .p-multiselect {
+  height: 30px !important; // Hauteur fixe réduite
+
+  .p-dropdown-label,
+  .p-multiselect-label {
+    line-height: 1 !important;
+  }
+
+  .p-dropdown-trigger,
+  .p-multiselect-trigger {
+    width: 2rem !important;
+    padding: 0 !important;
+  }
+}
+
+// Style pour les panels (options du dropdown)
+.p-dropdown-panel {
+  .p-dropdown-items {
+    padding: 0.2rem 0 !important;
+
+    .p-dropdown-item {
+      font-size: 0.875rem !important;
+    }
+  }
+}
+
+// Style pour les panels multiselect
+.p-multiselect-panel {
+  .p-multiselect-items {
+    padding: 0.2rem 0 !important;
+
+    .p-multiselect-item {
+      font-size: 0.875rem !important;
+    }
+  }
+}
+
+// Correction pour le float label avec dropdown/multiselect
+.p-float-label {
+  .p-dropdown, .p-multiselect {
+    padding-top: 0.25rem !important;
+
+    .p-dropdown-label,
+    .p-multiselect-label {
+      line-height: 1 !important;
+    }
+  }
+}

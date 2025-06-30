@@ -1,0 +1,1 @@
+Form:C1466.apl["octobre"].solde:=Form:C1466.apl["octobre"].montantRecu-Form:C1466.apl["octobre"].montantEnvisage

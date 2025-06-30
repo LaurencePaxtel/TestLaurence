@@ -1,0 +1,178 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"List Box": {
+					"type": "listbox",
+					"top": 81,
+					"left": 11,
+					"width": 675,
+					"height": 307,
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"movableRows": false,
+					"rowHeight": "87px",
+					"showHeaders": false,
+					"dataSource": "Form:C1466.DOCWPRO",
+					"currentItemSource": "Form:C1466.elementCourrant",
+					"currentItemPositionSource": "Form:C1466.elementPosition",
+					"selectedItemsSource": "Form:C1466.elementSelection",
+					"selectionMode": "single",
+					"scrollbarHorizontal": "automatic",
+					"method": "ObjectMethods/List Box.4dm",
+					"events": [
+						"onDoubleClick"
+					],
+					"columns": [
+						{
+							"name": "Colonne1",
+							"dataSource": "This:C1470.nom",
+							"width": 658,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Arial",
+							"fontSize": 18,
+							"fontWeight": "bold",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête1",
+								"text": "Entête1",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				},
+				"Rectangle rond": {
+					"type": "rectangle",
+					"top": 22,
+					"left": 17,
+					"width": 198,
+					"height": 29,
+					"fill": "transparent",
+					"borderRadius": 15
+				},
+				"Texte": {
+					"type": "text",
+					"top": 29,
+					"left": 43,
+					"width": 147,
+					"height": 15,
+					"fontFamily": "Arial",
+					"fontSize": 17,
+					"fontWeight": "bold",
+					"text": "Nom du document"
+				},
+				"Bouton image": {
+					"type": "pictureButton",
+					"top": 3,
+					"left": 252,
+					"width": 32,
+					"height": 32,
+					"picture": "/RESOURCES/img/Buttons/connectIO/delete-item.png",
+					"loopBackToFirstFrame": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"method": "ObjectMethods/Bouton image.4dm",
+					"events": [
+						"onClick",
+						"onMouseMove"
+					]
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 34,
+					"left": 233,
+					"width": 71,
+					"height": 30,
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Supprimer la sélection"
+				},
+				"Bouton image1": {
+					"type": "pictureButton",
+					"top": 3,
+					"left": 341,
+					"width": 32,
+					"height": 32,
+					"picture": "/RESOURCES/img/Buttons/connectIO/refresh.png",
+					"loopBackToFirstFrame": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"method": "ObjectMethods/Bouton image1.4dm",
+					"events": [
+						"onClick",
+						"onMouseMove"
+					]
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 34,
+					"left": 319,
+					"width": 77,
+					"height": 30,
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Recharger la sélection"
+				},
+				"Rectangle rond1": {
+					"type": "rectangle",
+					"top": 22,
+					"left": 488,
+					"width": 198,
+					"height": 29,
+					"fill": "transparent",
+					"borderRadius": 15
+				},
+				"Variable": {
+					"type": "input",
+					"top": 28,
+					"left": 502,
+					"width": 171,
+					"height": 16,
+					"dataSource": "Form:C1466.nomDocument",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Variable.4dm",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		}
+	]
+}

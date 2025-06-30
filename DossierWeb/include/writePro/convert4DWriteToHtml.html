@@ -1,0 +1,104 @@
+<cio>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="/layouts/default/css/paxtel_custom.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            // On remonte l'entête du document 4D Write et on supprime l'attribut style
+            if ($('.section1FirstHeader').length == 0) {
+                $("<div class='section1FirstHeader'></div>").prependTo("body");
+                $(".section1Header").removeAttr("style");
+
+                $(".section1Header").css({ "margin": "auto" });
+            }
+
+            $(".section1FirstHeader").prependTo("body");
+            $(".section1FirstHeader").removeAttr("style");
+
+            $(".section1Header").appendTo(".section1FirstHeader"); 
+
+            // On supprime l'attribut style du footer du document 4D Write
+            if ($('.section1FirstFooter').length == 0) {
+                $("<div class='section1FirstFooter'></div>").appendTo("body");
+            }
+
+            $(".section1Footer").removeAttr("style");
+            $(".section1FirstFooter").removeAttr("style");
+
+            // Pour tous les blocs qui ont une class qui contient section1 je vire la propriété css margin
+            $('*[class*=section1]').css({ "margin": "auto" });
+            $(".section1Footer").css({ "margin": "auto", "margin-top": "20px" });
+
+            // Je fais la mise en page du body pour qu'il colle au document de Philippe
+            $("body").css({ "margin": "1cm 1cm 0.5cm 1.5cm", "font-size": "11pt" });
+
+            // On rend tout le contenu de l'iframe éditable... vive HTML5 :D
+            $("body").attr("contenteditable", "true");
+
+            // Il faut rendre les images accessible sur l'export PDF
+            $("img").each(function () {
+                $src = $(this).attr("src");
+                $pathName = window.location.pathname;
+
+                console.log("Information : " + JSON.stringify(location))
+                console.log("Source image : " + $src);
+                console.log("pathName : " + window.location.pathname);
+                
+                $pos_el = $src.indexOf("/");
+                $extensionPicture = $src.substring($pos_el);
+
+                $pathName = $pathName.replace(".html", $extensionPicture);
+
+                $src = location.protocol + "//" + location.host + $pathName
+                $(this).attr("src", $src);
+            });
+
+            var $i = 0;
+            var $firstPageBreak = false;
+
+            $('p').each(function() {
+
+        });
+
+        $("p").each(function () {
+
+                // C'est le premier paragraphe après le premier saut de page
+                if ($firstPageBreak == true) {
+
+                    if ($(this).closest('table').length == 0) {
+                        $("<br/><br/><br/>").insertBefore($(this));
+                    }else{
+                        $("<br/><br/><br/>").insertBefore($(this).closest('table'));
+                    }
+                    
+                    $firstPageBreak = false;
+                }
+
+                // Si un bloc fait référence à un bloc saut de page dans 4DWrite
+                if ($(this).css("page-break-after") == "always") {
+                    $i += 1;
+
+                    // Je mets les bonnes propriétés css pour le saut de page dans la conversion en PDF
+                    $(this).css({ "display": "block", "clear": "both", "page-break-after": "always", "text-align": "center", "margin": "10px 0px 10px 0px", "font-size": "11pt" });
+
+                    // J'ajoute la class breakPage pour ces blocs et je mets un repère visuel non modifiable par l'utilisateur
+                    $(this).addClass("breakPage");
+                    $(this).html('<i class="fas fa-page-break"></i>Saut de page...');
+                    $(this).attr("contenteditable", "false");
+
+                    // Si c'est le premier saut de page je déplace le bloc 4DWrite footer
+                    if ($i == 1) {
+                        $(".section1FirstFooter").insertBefore($(this));
+                        $firstPageBreak = true;
+                    }
+                }
+
+                // Remplacement de " €" par "&nbsp;€"
+                var text = $(this).html();
+                text = text.replace(/ €/g, '&nbsp;€');
+
+                $(this).html(text);
+            });
+        });
+    </script>
+</cio>

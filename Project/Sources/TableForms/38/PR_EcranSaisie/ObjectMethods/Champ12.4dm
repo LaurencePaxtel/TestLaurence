@@ -1,0 +1,1 @@
+[Prolongation:38]PR_PrixTotal:21:=[Prolongation:38]PR_PrixJour:20*[Prolongation:38]PR_NbJours:18

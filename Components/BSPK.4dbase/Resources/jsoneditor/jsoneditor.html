@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="jsoneditor.css">
+        <script src="jsoneditor.min.js"></script>
+    </head>
+    <body>
+		<div id="jsoneditor"></div>
+		<script>
+			// create the editor
+			var container = document.getElementById('jsoneditor');
+			var options = {};
+			var editor = new JSONEditor(container, options);
+			var json={};
+			function setContent(text){
+				json=JSON.parse(text);
+				editor.set(json);
+			}
+			function getContent(){
+				json=editor.get(json);
+				return JSON.stringify(json, null, 2);
+			}
+		</script>
+	</body>
+</html>

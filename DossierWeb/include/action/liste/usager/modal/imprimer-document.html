@@ -1,0 +1,118 @@
+<div id="modalImprimerDocument" class="modal hide fade msmodal modal-xl" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">        
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title ng-binding" ng-show="!isWithinlist">Imprimer un document</h4>
+            </div>
+
+            <div id="modalBodyImprimerDocument" class="modal-body">
+                <div class="rowB g-mb-20">
+                    <div class="col-8">
+                        <div class="rowB">
+                            <div class="col-8">
+                                <label class="g-align-center-vertically-and-horizontally">Choix du document</label>
+                            </div>
+
+                            <div class="col-4">
+                                <select id="listeDocument" class="g-width-100x">
+                                    <option>Sélection d'un élément</option>
+                                </select>
+                            </div>
+                        </div>             
+                    </div>
+
+                    <div class="col-4">
+                        <button id="printDocumentBtn" class="fdp_Button fdp_btn_top fdp-btn-blue g-width-150">
+                            <i class="fa fa-print"></i>Imprimer
+                        </button>
+                    </div>
+                </div>
+
+                <div class="rowB">
+                    <div class="col-12">
+                        <div id="4DWriteDiv" style="width: 100%; text-align: center;">
+                            <iframe id="4DWriteIframe" height="700" src="" style=""></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="fdp_Button fdp_btn_top fdp-btn-red g-width-150" data-dismiss="modal">
+                    <i class="fa fa-close"></i>Fermer
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#listeDocument").change(function(){
+        var $nomDocument_t = $(this).find('option:selected').text();
+        //WritePopup($nomDocument_t, {});
+
+        disabledFirstChoiceInSelect("listeDocument");
+
+        $.ajax({
+			method: 'POST',
+			url: "/4DACTION/outilsWProSendAjax",
+			data: {
+				"nomDocument": $nomDocument_t,
+				"action": "createNewVersion",
+                "hebergeID": $('#record_id').val()
+			},
+			success: function(response){
+				var reponseParse = JSON.parse(response);
+
+				$("#4DWriteIframe").attr("src", reponseParse["modelePath"]);
+				$('#4DWriteIframe').css('cssText', 'display: block !important; width: 21cm; margin: 0 auto;');
+			}
+		});
+
+    });
+
+    $("#printDocumentBtn").click(function(){
+        var breakPage = $("#4DWriteIframe").contents().find(".breakPage").first().html();
+        var contentSection1FirstFooter = $("#4DWriteIframe").contents().find(".section1FirstFooter").html();
+
+        // S'il y a des blocs "Saut de page", on clean tout
+        if (breakPage != undefined) {
+
+            $("#4DWriteIframe").contents().find(".breakPage").each(function(){
+                $(this).html("");
+            });
+
+        }
+
+        // Il y a un pied de page pour la première page
+        if (contentSection1FirstFooter != undefined) {
+
+            $("#4DWriteIframe").contents().find(".section1FirstFooter").each(function(){
+                $(this).html("");
+            });
+        }
+
+        $("#4DWriteIframe").get(0).contentWindow.print();
+
+        // S'il y a des blocs "saut de page", je remets en forme
+        if (breakPage != undefined) {
+
+            $("#4DWriteIframe").contents().find(".breakPage").each(function(){
+                $(this).html(breakPage);
+            });
+
+        }
+
+        // S'il y avait un pied de page pour la première page on le restitue
+        if (contentSection1FirstFooter != undefined) {
+
+            $("#4DWriteIframe").contents().find(".section1FirstFooter").each(function(){
+                $(this).html(contentSection1FirstFooter);
+            });
+
+        }
+    });
+</script>

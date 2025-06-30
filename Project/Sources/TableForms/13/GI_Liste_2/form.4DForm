@@ -1,0 +1,469 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 151,
+	"markerBody": 173,
+	"markerBreak": 175,
+	"markerFooter": 184,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"GIP_QuitBt": {
+					"type": "button",
+					"top": 76,
+					"left": 10,
+					"width": 100,
+					"height": 20,
+					"dataSource": "b_QuitTab",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"GIP_AddBt": {
+					"type": "button",
+					"top": 76,
+					"left": 130,
+					"width": 100,
+					"height": 20,
+					"dataSource": "b_AdGIP",
+					"shortcutKey": "n",
+					"shortcutAccel": true,
+					"text": "Nouveau",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"method": "ObjectMethods/GIP_AddBt.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"GIP_AllBt": {
+					"type": "button",
+					"top": 76,
+					"left": 370,
+					"width": 100,
+					"height": 20,
+					"dataSource": "b_Tous",
+					"shortcutKey": "+",
+					"shortcutAccel": true,
+					"shortcutShift": true,
+					"text": "Tous",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"method": "ObjectMethods/GIP_AllBt.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"GIP_SelBt": {
+					"type": "button",
+					"top": 76,
+					"left": 490,
+					"width": 100,
+					"height": 20,
+					"dataSource": "b_ValGIP",
+					"shortcutKey": "r",
+					"shortcutAccel": true,
+					"text": "Sélectionner",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"method": "ObjectMethods/GIP_SelBt.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 117,
+					"left": 9,
+					"width": 681,
+					"height": 58,
+					"fill": "transparent",
+					"stroke": "#DDDDDD"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 152,
+					"left": 10,
+					"width": 678,
+					"height": 20,
+					"fill": "automatic",
+					"stroke": "automatic"
+				},
+				"Titre_3": {
+					"type": "text",
+					"top": 126,
+					"left": 13,
+					"width": 265,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Nom",
+					"fontFamily": "Arial"
+				},
+				"Titre_7": {
+					"type": "text",
+					"top": 126,
+					"left": 288,
+					"width": 45,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "CP",
+					"fontFamily": "Arial"
+				},
+				"Titre_8": {
+					"type": "text",
+					"top": 126,
+					"left": 476,
+					"width": 95,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Téléphone",
+					"fontFamily": "Arial"
+				},
+				"Titre_9": {
+					"type": "text",
+					"top": 126,
+					"left": 586,
+					"width": 95,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Télécopie",
+					"fontFamily": "Arial"
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 126,
+					"left": 347,
+					"width": 115,
+					"height": 16,
+					"dataSource": "va_Ville",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDoubleClick",
+						"onDataChange"
+					],
+					"fontFamily": "Arial"
+				},
+				"Col": {
+					"type": "button",
+					"top": 123,
+					"left": 340,
+					"width": 128,
+					"height": 22,
+					"dataSource": "bt_ville",
+					"display": false,
+					"method": "ObjectMethods/Col.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"BackRect": {
+					"type": "rectangle",
+					"top": 151,
+					"left": 10,
+					"width": 678,
+					"height": 22,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne8": {
+					"type": "line",
+					"top": 122,
+					"left": 280,
+					"height": 51,
+					"stroke": "#777777"
+				},
+				"Ligne9": {
+					"type": "line",
+					"top": 122,
+					"left": 339,
+					"height": 51,
+					"stroke": "#777777"
+				},
+				"Ligne10": {
+					"type": "line",
+					"top": 122,
+					"left": 468,
+					"height": 51,
+					"stroke": "#777777"
+				},
+				"Ligne11": {
+					"type": "line",
+					"top": 122,
+					"left": 578,
+					"height": 51,
+					"stroke": "#777777"
+				},
+				"Ligne12": {
+					"type": "line",
+					"top": 145,
+					"left": 11,
+					"width": 676,
+					"stroke": "#777777"
+				},
+				"Ligne13": {
+					"type": "line",
+					"top": 150,
+					"left": 11,
+					"width": 676,
+					"stroke": "#777777"
+				},
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 146,
+					"left": 11,
+					"width": 677,
+					"height": 4,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Titre_2": {
+					"type": "text",
+					"top": 25,
+					"left": 13,
+					"width": 85,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"text": "Sous thème : ",
+					"fontFamily": "Arial"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 117,
+					"left": 11,
+					"width": 676,
+					"stroke": "#777777"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 122,
+					"left": 11,
+					"width": 676,
+					"stroke": "#777777"
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 118,
+					"left": 11,
+					"width": 677,
+					"height": 4,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 57,
+					"left": 11,
+					"width": 676,
+					"stroke": "#777777"
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 62,
+					"left": 11,
+					"width": 676,
+					"stroke": "#777777"
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 58,
+					"left": 11,
+					"width": 677,
+					"height": 4,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 155,
+					"left": 11,
+					"width": 267,
+					"height": 16,
+					"dataSource": "[GIP:13]GI_Nom:5",
+					"stroke": "automatic",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDisplayDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 155,
+					"left": 283,
+					"width": 54,
+					"height": 16,
+					"dataSource": "[GIP:13]GI_CP:10",
+					"stroke": "automatic",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDisplayDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Champ4": {
+					"type": "input",
+					"top": 155,
+					"left": 471,
+					"width": 105,
+					"height": 16,
+					"dataSource": "[GIP:13]GI_Téléphone:14",
+					"stroke": "automatic",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDisplayDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Champ5": {
+					"type": "input",
+					"top": 155,
+					"left": 581,
+					"width": 105,
+					"height": 16,
+					"dataSource": "[GIP:13]GI_Télécopie:15",
+					"stroke": "automatic",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDisplayDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 155,
+					"left": 342,
+					"width": 124,
+					"height": 16,
+					"dataSource": "va_VilleLib",
+					"stroke": "automatic",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onDisplayDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Popup Liste déroulante1": {
+					"type": "dropdown",
+					"top": 22,
+					"left": 104,
+					"width": 486,
+					"height": 20,
+					"dataSource": "<>ta_SsTh",
+					"class": "TNR_12g",
+					"method": "ObjectMethods/Popup Liste déroulante1.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 171,
+					"left": 10,
+					"width": 679,
+					"stroke": "#777777"
+				}
+			}
+		}
+	],
+	"geometryStamp": 2,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

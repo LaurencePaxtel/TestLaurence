@@ -1,0 +1,213 @@
+{
+	"destination": "listScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"rightMargin": 15,
+	"bottomMargin": 10,
+	"markerHeader": 17,
+	"markerBody": 37,
+	"markerBreak": 37,
+	"markerFooter": 37,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 16,
+					"left": 0,
+					"width": 465,
+					"height": 23,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 15,
+					"left": 0,
+					"width": 466
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 36,
+					"left": 0,
+					"width": 465,
+					"stroke": "#AAAAAA"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 1,
+					"left": 1,
+					"width": 137,
+					"height": 12,
+					"stroke": "#663300",
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 9,
+					"text": "Antécédent"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 1,
+					"left": 252,
+					"width": 212,
+					"height": 12,
+					"stroke": "#663300",
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 9,
+					"text": "Commentaire"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 1,
+					"left": 141,
+					"width": 107,
+					"height": 12,
+					"stroke": "#663300",
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 9,
+					"text": "Lieu"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 18,
+					"left": 1,
+					"width": 137,
+					"height": 11,
+					"dataSource": "[DossierPsycho_DY_AnteTypes:68]Type_S:1",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 18,
+					"left": 141,
+					"width": 107,
+					"height": 11,
+					"dataSource": "[DossierPsycho_DY_AnteTypes:68]Lieu:3",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 18,
+					"left": 251,
+					"width": 213,
+					"height": 11,
+					"dataSource": "[DossierPsycho_DY_AnteTypes:68]Libellé:2",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 0,
+					"left": 249,
+					"height": 15
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 0,
+					"left": 139,
+					"height": 15
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 0,
+					"left": 249,
+					"height": 36
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 0,
+					"left": 139,
+					"height": 36
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

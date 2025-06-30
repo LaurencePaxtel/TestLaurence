@@ -1,0 +1,246 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 10,
+	"bottomMargin": 10,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onClick",
+		"onOutsideCall"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Popup Liste déroulante": {
+					"type": "dropdown",
+					"top": 40,
+					"left": 10,
+					"width": 250,
+					"height": 30,
+					"dataSource": "produit_at",
+					"focusable": false,
+					"method": "ObjectMethods/Popup Liste déroulante.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange",
+						"onMouseMove"
+					]
+				},
+				"Texte": {
+					"type": "text",
+					"top": 10,
+					"left": 10,
+					"width": 250,
+					"height": 20,
+					"stroke": "#333333",
+					"textAlign": "left",
+					"fontFamily": "Arial",
+					"fontSize": 18,
+					"text": "Choix du produit"
+				},
+				"DateEntry": {
+					"type": "subform",
+					"top": 80,
+					"left": 10,
+					"width": 138,
+					"height": 25,
+					"dataSource": "date_d",
+					"dataSourceTypeHint": "date",
+					"detailForm": "DateEntry",
+					"hideFocusRing": true,
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"selectionMode": "multiple",
+					"printFrame": "variable",
+					"method": "ObjectMethods/DateEntry.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"List Box": {
+					"type": "listbox",
+					"top": 120,
+					"left": 10,
+					"width": 450,
+					"height": 350,
+					"sizingX": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"focusable": false,
+					"movableRows": false,
+					"hideExtraBlankRows": true,
+					"rowHeight": "30px",
+					"headerHeight": "24px",
+					"dataSource": "Form:C1466.reference",
+					"currentItemSource": "Form:C1466.refCourant",
+					"currentItemPositionSource": "Form:C1466.refPosition",
+					"selectedItemsSource": "Form:C1466.refSelection",
+					"metaSource": "outilsListBoxMetaInfoStockGest()",
+					"selectionMode": "single",
+					"scrollbarHorizontal": "hidden",
+					"fontFamily": "Arial",
+					"fontSize": 10,
+					"method": "ObjectMethods/List Box.4dm",
+					"events": [
+						"onDoubleClick"
+					],
+					"columns": [
+						{
+							"name": "Colonne8",
+							"dataSource": "This:C1470.reference",
+							"width": 207,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#D6D6D6",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête8",
+								"text": "Référence",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied8",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 10
+							}
+						},
+						{
+							"name": "Colonne13",
+							"dataSource": "This:C1470.quantite",
+							"width": 226,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"alternateFill": "#D6D6D6",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête13",
+								"text": "Quantité restante",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 12
+							},
+							"footer": {
+								"name": "Pied13",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 10
+							}
+						}
+					]
+				},
+				"Image11": {
+					"type": "picture",
+					"top": 193,
+					"left": 470,
+					"width": 60,
+					"height": 60,
+					"sizingX": "move",
+					"pictureFormat": "scaled",
+					"picture": "Images/Image11.png"
+				},
+				"Bouton invisible2": {
+					"type": "button",
+					"top": 193,
+					"left": 470,
+					"width": 60,
+					"height": 60,
+					"sizingX": "move",
+					"display": false,
+					"method": "ObjectMethods/Bouton invisible2.4dm",
+					"events": [
+						"onClick",
+						"onMouseMove"
+					]
+				},
+				"Image1": {
+					"type": "picture",
+					"top": 120,
+					"left": 470,
+					"width": 60,
+					"height": 60,
+					"sizingX": "move",
+					"pictureFormat": "scaled",
+					"picture": "Images/Image1.png"
+				},
+				"Bouton invisible": {
+					"type": "button",
+					"top": 120,
+					"left": 470,
+					"width": 60,
+					"height": 60,
+					"sizingX": "move",
+					"display": false,
+					"method": "ObjectMethods/Bouton invisible.4dm",
+					"events": [
+						"onClick",
+						"onMouseMove"
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {
+				"objects": [
+					"DateEntry"
+				]
+			},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

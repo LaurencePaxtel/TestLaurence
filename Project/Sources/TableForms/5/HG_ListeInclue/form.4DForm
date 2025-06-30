@@ -1,0 +1,492 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 22,
+	"markerBody": 43,
+	"markerBreak": 43,
+	"markerFooter": 43,
+	"events": [
+		"onClick",
+		"onDisplayDetail",
+		"onDoubleClick"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle10": {
+					"type": "rectangle",
+					"top": 24,
+					"left": 1,
+					"width": 1286,
+					"height": 21,
+					"stroke": "transparent"
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 25,
+					"left": 872,
+					"width": 273,
+					"height": 16,
+					"dataSource": "va_LesOrentes",
+					"stroke": "#000000",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 25,
+					"left": 1,
+					"width": 119,
+					"height": 16,
+					"dataSource": "[HeberGement:5]HG_FicheNuméro:3",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 25,
+					"left": 132,
+					"width": 79,
+					"height": 16,
+					"dataSource": "[HeberGement:5]HG_Date:4",
+					"dataSourceTypeHint": "date",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 24,
+					"left": 868,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne13": {
+					"type": "line",
+					"top": 24,
+					"left": 122,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Champ5": {
+					"type": "checkbox",
+					"top": 25,
+					"left": 225,
+					"width": 17,
+					"height": 16,
+					"dataSource": "[HeberGement:5]HG_Status:89",
+					"enterable": false,
+					"text": " ",
+					"textAlign": "center",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ6": {
+					"type": "checkbox",
+					"top": 25,
+					"left": 274,
+					"width": 16,
+					"height": 16,
+					"dataSource": "[HeberGement:5]HG_Cloturée:67",
+					"enterable": false,
+					"text": " ",
+					"textAlign": "center",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 24,
+					"left": 218,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne12": {
+					"type": "line",
+					"top": 24,
+					"left": 248,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne15": {
+					"type": "line",
+					"top": 24,
+					"left": 318,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Champ7": {
+					"type": "input",
+					"top": 25,
+					"left": 324,
+					"width": 538,
+					"height": 16,
+					"dataSource": "",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 22,
+					"left": 1250,
+					"height": 22,
+					"stroke": "#AAAAAA"
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 25,
+					"left": 1188,
+					"width": 59,
+					"height": 16,
+					"dataSource": "va_Rép2",
+					"stroke": "automatic",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Ligne14": {
+					"type": "line",
+					"top": 24,
+					"left": 1150,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne16": {
+					"type": "line",
+					"top": 24,
+					"left": 1184,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Champ9": {
+					"type": "checkbox",
+					"top": 25,
+					"left": 1161,
+					"width": 16,
+					"height": 16,
+					"dataSource": "[HeberGement:5]HG_Réservation:91",
+					"enterable": false,
+					"text": " ",
+					"textAlign": "center",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"reporte": {
+					"type": "input",
+					"top": 25,
+					"left": 1255,
+					"width": 30,
+					"height": 16,
+					"stroke": "automatic",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"fontFamily": "Arial"
+				},
+				"Rectangle93": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 1287,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent",
+					"right": 1287
+				},
+				"Texte646": {
+					"type": "text",
+					"top": 3,
+					"left": 3,
+					"width": 118,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Fiche n°"
+				},
+				"Texte19": {
+					"type": "text",
+					"top": 3,
+					"left": 125,
+					"width": 86,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Date"
+				},
+				"Texte21": {
+					"type": "text",
+					"top": 3,
+					"left": 220,
+					"width": 23,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "SP"
+				},
+				"Texte22": {
+					"type": "text",
+					"top": 3,
+					"left": 253,
+					"width": 63,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Approuvé"
+				},
+				"Texte23": {
+					"type": "text",
+					"top": 3,
+					"left": 323,
+					"width": 542,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Prestations"
+				},
+				"Rectangle23": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 1150,
+					"width": 34,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte24": {
+					"type": "text",
+					"top": 3,
+					"left": 1152,
+					"width": 30,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Rés"
+				},
+				"Rectangle24": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 1184,
+					"width": 66,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte25": {
+					"type": "text",
+					"top": 3,
+					"left": 1187,
+					"width": 61,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Nombre"
+				},
+				"Rectangle25": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 1250,
+					"width": 37,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte26": {
+					"type": "text",
+					"top": 3,
+					"left": 1253,
+					"width": 30,
+					"height": 16,
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"text": "Etat"
+				},
+				"Variable18": {
+					"type": "input",
+					"top": 2,
+					"left": 869,
+					"width": 277,
+					"height": 16,
+					"dataSource": "va_LesOrentesTitre",
+					"textAlign": "center",
+					"fontFamily": "Montserrat",
+					"fontSize": 12,
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Sans titre"
+					},
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Bouton invisible5": {
+					"type": "button",
+					"top": 0,
+					"left": 867,
+					"width": 282,
+					"height": 21,
+					"dataSource": "b_LesOrientes",
+					"display": false,
+					"method": "ObjectMethods/Bouton invisible5.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			},
+			"entryOrder": [
+				"Variable2",
+				"Champ1",
+				"Champ2",
+				"Champ5",
+				"Champ6",
+				"Champ7",
+				"Variable3",
+				"Champ9",
+				"reporte",
+				"Variable18"
+			]
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 438
+}

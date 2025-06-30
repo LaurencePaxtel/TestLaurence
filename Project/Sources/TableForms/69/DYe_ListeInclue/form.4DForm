@@ -1,0 +1,166 @@
+{
+	"destination": "listScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"rightMargin": 15,
+	"bottomMargin": 10,
+	"markerHeader": 16,
+	"markerBody": 37,
+	"markerBreak": 37,
+	"markerFooter": 37,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 16,
+					"left": 0,
+					"width": 465,
+					"height": 23,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 15,
+					"left": 0,
+					"width": 466
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 1,
+					"left": 1,
+					"width": 157,
+					"height": 12,
+					"stroke": "#663300",
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 9,
+					"text": "Etat"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 1,
+					"left": 162,
+					"width": 302,
+					"height": 12,
+					"stroke": "#663300",
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 9,
+					"text": "Commentaire"
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 0,
+					"left": 159,
+					"height": 15,
+					"stroke": "#DDDDDD"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 18,
+					"left": 1,
+					"width": 157,
+					"height": 11,
+					"dataSource": "[DossierPsycho_DY_EtatPsyTypes:69]Type_S:1",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 18,
+					"left": 161,
+					"width": 303,
+					"height": 11,
+					"dataSource": "[DossierPsycho_DY_EtatPsyTypes:69]Commentaire:2",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 36,
+					"left": 0,
+					"width": 465,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 0,
+					"left": 159,
+					"height": 36
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

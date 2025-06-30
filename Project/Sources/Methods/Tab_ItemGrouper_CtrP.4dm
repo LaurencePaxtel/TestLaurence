@@ -1,0 +1,625 @@
+//%attributes = {}
+//{==================================================}
+//{ LOGICIEL : Samu Social de Paris	
+//{ © DBsolutions/Paxtel
+//{
+//{          Procédure : Tab_ItemGrouper_CtrP
+//{
+//{          Mercredi 28 janvier 2009 à 14:15:00
+//{          Modifiée :
+//{          Développement : GABBAY Jean-Guy
+//{==================================================}
+C_LONGINT:C283($1)
+C_LONGINT:C283($2)
+C_LONGINT:C283($3)
+C_LONGINT:C283($ii; $vl_Fenetre)
+C_BOOLEAN:C305($vb_OK)
+
+Case of 
+	: ($1=0)  //Déclarations
+		//Origine
+		ARRAY LONGINT:C221(tl_xCtreP_ID; $2)
+		ARRAY TEXT:C222(ta_xCtreP; $2)
+		ARRAY INTEGER:C220(te_xCtreP; $2)
+		ARRAY INTEGER:C220(te_xCtreP_Etat; $2)
+		ARRAY INTEGER:C220(te_xCtreP_Fermé; $2)
+		//Affichage
+		ARRAY LONGINT:C221(tl_yCtreP_Réf; $2)
+		ARRAY TEXT:C222(ta_yCtreP_Réf; $2)
+		ARRAY TEXT:C222(ta_yCtreP; $2)
+		ARRAY INTEGER:C220(te_yCtreP_Ordre; $2)
+		ARRAY INTEGER:C220(te_yCtreP_Etat; $2)
+		ARRAY INTEGER:C220(te_yCtreP_Div; $2)
+		ARRAY INTEGER:C220(te_yCtreP_Check; $2)
+		//Table
+		ARRAY LONGINT:C221(tl_FileCtreP_Réf; $2)
+		ARRAY TEXT:C222(ta_FileCtreP_Réf; $2)
+		ARRAY TEXT:C222(ta_FileCtreP; $2)
+		ARRAY TEXT:C222(ta_FilexCtreP; $2)
+		ARRAY LONGINT:C221(tl_FilexCtreP_Réf; $2)
+		ARRAY INTEGER:C220(te_FileCtreP_Ordre; $2)
+		ARRAY INTEGER:C220(te_FileCtreP_Etat; $2)
+		ARRAY INTEGER:C220(te_FileCtreP_Div; $2)
+		
+		vl_NbPresta:=0
+		vl_NbPrestaGpe:=0
+		vl_NbPrestaNA:=0
+		vl_NbPrestaItem:=0
+		vl_NbPrestaLiés:=0
+		
+	: ($1=1)  //Synchro    
+		Case of 
+			: ($3=1)  //Origine
+				tl_xCtreP_ID:=$2
+				ta_xCtreP:=$2
+				te_xCtreP:=$2
+				te_xCtreP_Etat:=$2
+				te_xCtreP_Fermé:=$2
+			: ($3=2)  //Affichage
+				tl_yCtreP_Réf:=$2
+				ta_yCtreP_Réf:=$2
+				ta_yCtreP:=$2
+				te_yCtreP_Ordre:=$2
+				te_yCtreP_Etat:=$2
+				te_yCtreP_Div:=$2
+				te_yCtreP_Check:=$2
+			: ($3=3)  //Table
+				tl_FileCtreP_Réf:=$2
+				ta_FileCtreP_Réf:=$2
+				ta_FileCtreP:=$2
+				ta_FilexCtreP:=$2
+				tl_FilexCtreP_Réf:=$2
+				te_FileCtreP_Ordre:=$2
+				te_FileCtreP_Etat:=$2
+				te_FileCtreP_Div:=$2
+		End case 
+		
+	: ($1=2)  //Chargement des données
+		ARRAY LONGINT:C221($tl_Temp; 0)
+		//Tableau de gauche
+		QUERY:C277([LesCentres:9]; [LesCentres:9]LC_Prestation:55=True:C214; *)
+		QUERY:C277([LesCentres:9];  & ; [LesCentres:9]LC_Fermé:53=False:C215; *)
+		QUERY:C277([LesCentres:9];  & ; [LesCentres:9]LC_Nom:4>"")
+		MultiSoc_Filter(->[LesCentres:9])
+		vl_NbPresta:=Records in selection:C76([LesCentres:9])
+		ORDER BY:C49([LesCentres:9]; [LesCentres:9]LC_Nom:4; >)
+		SELECTION TO ARRAY:C260([LesCentres:9]LC_RéférenceID:1; tl_xCtreP_ID; [LesCentres:9]LC_Nom:4; ta_xCtreP)
+		
+		ARRAY INTEGER:C220(te_xCtreP_Fermé; vl_NbPresta)
+		For ($ii; 1; vl_NbPresta)
+			te_xCtreP_Fermé{$ii}:=0
+		End for 
+		
+		QUERY:C277([ItemGroupe:43]; [ItemGroupe:43]IT_Catégorie:2=<>ta_ItemGroupe{3}; *)
+		QUERY:C277([ItemGroupe:43];  & ; [ItemGroupe:43]IT_LibelléOrigneID:5>0)
+		MultiSoc_Filter(->[ItemGroupe:43])
+		If (Records in selection:C76([ItemGroupe:43])>0)
+			SELECTION TO ARRAY:C260([ItemGroupe:43]IT_LibelléOrigneID:5; $tl_Temp)
+			
+			
+			
+			tl_xCtreP_ID:=$2
+			ta_xCtreP:=$2
+			te_xCtreP:=$2
+			te_xCtreP_Etat:=$2
+			te_xCtreP_Fermé:=$2
+			
+			For ($ii; 1; Size of array:C274($tl_Temp))
+				$vl_Position:=Find in array:C230(tl_xCtreP_ID; $tl_Temp{$ii})
+				If ($vl_Position<=0)
+					QUERY:C277([LesCentres:9]; [LesCentres:9]LC_RéférenceID:1=$tl_Temp{$ii})
+					MultiSoc_Filter(->[LesCentres:9])
+					If (Records in selection:C76([LesCentres:9])=1)
+						vl_NbPresta:=Size of array:C274(tl_xCtreP_ID)+1
+						INSERT IN ARRAY:C227(tl_xCtreP_ID; vl_NbPresta)
+						INSERT IN ARRAY:C227(ta_xCtreP; vl_NbPresta)
+						INSERT IN ARRAY:C227(te_xCtreP_Fermé; vl_NbPresta)
+						tl_xCtreP_ID{vl_NbPresta}:=$tl_Temp{$ii}
+						ta_xCtreP{vl_NbPresta}:=[LesCentres:9]LC_Nom:4
+						te_xCtreP_Fermé{vl_NbPresta}:=1
+					End if 
+				End if 
+			End for 
+		End if 
+		vl_NbPresta:=Size of array:C274(tl_xCtreP_ID)
+		ARRAY INTEGER:C220(te_xCtreP; vl_NbPresta)
+		ARRAY INTEGER:C220(te_xCtreP_Etat; vl_NbPresta)
+		For ($ii; 1; vl_NbPresta)
+			te_xCtreP{$ii}:=0
+			te_xCtreP_Etat{$ii}:=0
+		End for 
+		//Tableau de droite
+		QUERY:C277([ItemGroupe:43]; [ItemGroupe:43]IT_Catégorie:2=<>ta_ItemGroupe{3}; *)
+		QUERY:C277([ItemGroupe:43];  & ; [ItemGroupe:43]IT_LibelléOrigneID:5=0)
+		MultiSoc_Filter(->[ItemGroupe:43])
+		vl_NbPrestaGpe:=Records in selection:C76([ItemGroupe:43])
+		ORDER BY:C49([ItemGroupe:43]; [ItemGroupe:43]IT_Libellé:3; >)
+		SELECTION TO ARRAY:C260([ItemGroupe:43]IT_RéférenceID:1; tl_yCtreP_Réf; [ItemGroupe:43]IT_Catégorie:2; ta_yCtreP_Réf; [ItemGroupe:43]IT_Libellé:3; ta_yCtreP; [ItemGroupe:43]IT_Ordre:6; te_yCtreP_Ordre; [ItemGroupe:43]IT_Diviseur:8; te_yCtreP_Div)
+		ARRAY INTEGER:C220(te_yCtreP_Etat; vl_NbPrestaGpe)
+		ARRAY INTEGER:C220(te_yCtreP_Check; vl_NbPrestaGpe)
+		For ($ii; 1; vl_NbPrestaGpe)
+			te_yCtreP_Etat{$ii}:=0
+			te_yCtreP_Check{$ii}:=0
+		End for 
+		//Tableau caché
+		QUERY:C277([ItemGroupe:43]; [ItemGroupe:43]IT_Catégorie:2=<>ta_ItemGroupe{3}; *)
+		QUERY:C277([ItemGroupe:43];  & ; [ItemGroupe:43]IT_LibelléOrigneID:5>0)
+		MultiSoc_Filter(->[ItemGroupe:43])
+		vl_NbPrestaNA:=Records in selection:C76([ItemGroupe:43])
+		ORDER BY:C49([ItemGroupe:43]; [ItemGroupe:43]IT_Libellé:3; >)
+		SELECTION TO ARRAY:C260([ItemGroupe:43]IT_RéférenceID:1; tl_FileCtreP_Réf; [ItemGroupe:43]IT_Catégorie:2; ta_FileCtreP_Réf; [ItemGroupe:43]IT_Libellé:3; ta_FileCtreP; [ItemGroupe:43]IT_LibelléOrigine:4; ta_FilexCtreP; [ItemGroupe:43]IT_LibelléOrigneID:5; tl_FilexCtreP_Réf; [ItemGroupe:43]IT_Ordre:6; te_FileCtreP_Ordre; [ItemGroupe:43]IT_Etat:7; te_FileCtreP_Etat; [ItemGroupe:43]IT_Diviseur:8; te_FileCtreP_Div)
+		
+		Tab_ItemGrouper_CtrP(3; 0; 1)  //Relié ou pas
+		Tab_ItemGrouper_CtrP(3; 0; 2)  //Nombre de prestations reliés
+		
+		If (vl_NbPresta>0)
+			$ii:=1
+		Else 
+			$ii:=0
+		End if 
+		
+		Tab_ItemGrouper_CtrP(1; $ii; 1)  //Synchroniser       
+		Tab_ItemGrouper_CtrP(4; $ii; 1)  //Clic dans le tableau de gauche
+		
+		
+	: ($1=3)  //Tableaux : Statut de l'état
+		Case of 
+			: ($3=1)  //Origine rattachée ou non 
+				For ($ii; 1; Size of array:C274(ta_xCtreP))
+					$jj:=Find in array:C230(tl_FilexCtreP_Réf; tl_xCtreP_ID{$ii})
+					te_xCtreP_Etat{$ii}:=Num:C11($jj>0)
+				End for 
+				
+			: ($3=2)  //Groupement : nb de prestationss reliés
+				//Nb de etat civils rattachés
+				vl_NbPrestaItem:=0
+				For ($ii; 1; Size of array:C274(tl_yCtreP_Réf))
+					te_yCtreP_Etat{$ii}:=0
+					For ($jj; 1; Size of array:C274(tl_FileCtreP_Réf))
+						If (ta_yCtreP{$ii}=ta_FileCtreP{$jj}) & (tl_FilexCtreP_Réf{$jj}>0)
+							te_yCtreP_Etat{$ii}:=te_yCtreP_Etat{$ii}+1
+						End if 
+					End for 
+					vl_NbPrestaItem:=vl_NbPrestaItem+te_yCtreP_Etat{$ii}
+				End for 
+		End case 
+		
+	: ($1=4)  //Tableaux : Clic
+		Case of 
+			: ($3=1)  //Origine
+				For ($ii; 1; Size of array:C274(tl_yCtreP_Réf))
+					te_yCtreP_Check{$ii}:=0
+				End for 
+				$jj:=0
+				If ($2>0)
+					$ii:=Find in array:C230(tl_FilexCtreP_Réf; tl_xCtreP_ID{$2})
+					If ($ii>0)
+						$jj:=Find in array:C230(ta_yCtreP; ta_FileCtreP{$ii})
+						If ($jj>0)
+							te_yCtreP_Check{$jj}:=1
+						End if 
+					End if 
+				End if 
+				
+			: ($3=2)  //Groupement
+				For ($ii; 1; Size of array:C274(ta_xCtreP))
+					te_xCtreP{$ii}:=0
+				End for 
+				
+				For ($ii; 1; Size of array:C274(tl_FileCtreP_Réf))
+					If (ta_yCtreP{$2}=ta_FileCtreP{$ii})
+						$jj:=Find in array:C230(tl_xCtreP_ID; tl_FilexCtreP_Réf{$ii})
+						te_xCtreP{$jj}:=Num:C11($jj>0)
+					End if 
+				End for 
+				
+				
+				
+		End case 
+		
+	: ($1=5)  //Tableaux : Ajouter
+		Case of 
+			: ($3=1)
+				$ii:=Size of array:C274(tl_xCtreP_ID)+1
+				INSERT IN ARRAY:C227(tl_xCtreP_ID; $ii)
+				INSERT IN ARRAY:C227(ta_xCtreP; $ii)
+				INSERT IN ARRAY:C227(te_xCtreP; $ii)
+				INSERT IN ARRAY:C227(te_xCtreP_Etat; $ii)
+				INSERT IN ARRAY:C227(te_xCtreP_Fermé; $ii)
+			: ($3=2)
+				$ii:=Size of array:C274(tl_yCtreP_Réf)+1
+				INSERT IN ARRAY:C227(tl_yCtreP_Réf; $ii)
+				INSERT IN ARRAY:C227(ta_yCtreP_Réf; $ii)
+				INSERT IN ARRAY:C227(ta_yCtreP; $ii)
+				INSERT IN ARRAY:C227(te_yCtreP_Ordre; $ii)
+				INSERT IN ARRAY:C227(te_yCtreP_Etat; $ii)
+				INSERT IN ARRAY:C227(te_yCtreP_Div; $ii)
+				INSERT IN ARRAY:C227(te_yCtreP_Check; $ii)
+			: ($3=3)
+				$ii:=Size of array:C274(tl_FileCtreP_Réf)+1
+				INSERT IN ARRAY:C227(tl_FileCtreP_Réf; $ii)
+				INSERT IN ARRAY:C227(ta_FileCtreP_Réf; $ii)
+				INSERT IN ARRAY:C227(ta_FileCtreP; $ii)
+				INSERT IN ARRAY:C227(ta_FilexCtreP; $ii)
+				INSERT IN ARRAY:C227(tl_FilexCtreP_Réf; $ii)
+				INSERT IN ARRAY:C227(te_FileCtreP_Ordre; $ii)
+				INSERT IN ARRAY:C227(te_FileCtreP_Etat; $ii)
+				INSERT IN ARRAY:C227(te_FileCtreP_Div; $ii)
+		End case 
+		
+	: ($1=6)  //Tableaux : Affecter
+		$ii:=$2
+		Case of 
+			: ($3=1)
+			: ($3=2)
+				tl_yCtreP_Réf{$ii}:=[ItemGroupe:43]IT_RéférenceID:1
+				ta_yCtreP_Réf{$ii}:=[ItemGroupe:43]IT_Catégorie:2
+				ta_yCtreP{$ii}:=[ItemGroupe:43]IT_Libellé:3
+				te_yCtreP_Ordre{$ii}:=[ItemGroupe:43]IT_Ordre:6
+				te_yCtreP_Etat{$ii}:=[ItemGroupe:43]IT_Etat:7
+				te_yCtreP_Div{$ii}:=[ItemGroupe:43]IT_Diviseur:8
+				te_yCtreP_Check{$ii}:=0
+			: ($3=3)
+				tl_FileCtreP_Réf{$ii}:=[ItemGroupe:43]IT_RéférenceID:1
+				ta_FileCtreP_Réf{$ii}:=[ItemGroupe:43]IT_Catégorie:2
+				ta_FileCtreP{$ii}:=[ItemGroupe:43]IT_Libellé:3
+				ta_FilexCtreP{$ii}:=[ItemGroupe:43]IT_LibelléOrigine:4
+				tl_FilexCtreP_Réf{$ii}:=[ItemGroupe:43]IT_LibelléOrigneID:5
+				te_FileCtreP_Ordre{$ii}:=[ItemGroupe:43]IT_Ordre:6
+				te_FileCtreP_Etat{$ii}:=[ItemGroupe:43]IT_Etat:7
+				te_FileCtreP_Div{$ii}:=[ItemGroupe:43]IT_Diviseur:8
+		End case 
+		
+	: ($1=7)  //Tableaux : Affecter plusieurs lignes  :synchro apres modif
+		i_Message("Mise à jour en cours…")
+		READ WRITE:C146([ItemGroupe:43])
+		For ($ii; 1; Size of array:C274(tl_FileCtreP_Réf))
+			If (ta_FileCtreP{$ii}=va_LibEnum)
+				ta_FileCtreP{$ii}:=ta_yCtreP{$2}
+				te_FileCtreP_Ordre{$ii}:=te_yCtreP_Ordre{$2}
+				te_FileCtreP_Div{$ii}:=te_yCtreP_Div{$2}
+				QUERY:C277([ItemGroupe:43]; [ItemGroupe:43]IT_RéférenceID:1=tl_FileCtreP_Réf{$ii})
+				If (Records in selection:C76([ItemGroupe:43])=1)
+					Repeat 
+						LOAD RECORD:C52([ItemGroupe:43])
+					Until (Not:C34(Locked:C147([ItemGroupe:43])))
+					[ItemGroupe:43]IT_Libellé:3:=ta_FileCtreP{$ii}
+					[ItemGroupe:43]IT_Ordre:6:=te_FileCtreP_Ordre{$ii}
+					[ItemGroupe:43]IT_Diviseur:8:=te_FileCtreP_Div{$ii}
+					SAVE RECORD:C53([ItemGroupe:43])
+					UNLOAD RECORD:C212([ItemGroupe:43])
+				End if 
+				UNLOAD RECORD:C212([ItemGroupe:43])
+			End if 
+		End for 
+		READ ONLY:C145([ItemGroupe:43])
+		CLOSE WINDOW:C154
+		
+		
+		
+	: ($1=8)  //Tableaux : Suppression de plusieurs lignes de tableau général  : synchro sup
+		Case of 
+			: ($3=1)
+				
+			: ($3=2)
+				DELETE FROM ARRAY:C228(tl_yCtreP_Réf; $2; 1)
+				DELETE FROM ARRAY:C228(ta_yCtreP_Réf; $2; 1)
+				DELETE FROM ARRAY:C228(ta_yCtreP; $2; 1)
+				DELETE FROM ARRAY:C228(te_yCtreP_Ordre; $2; 1)
+				DELETE FROM ARRAY:C228(te_yCtreP_Etat; $2; 1)
+				DELETE FROM ARRAY:C228(te_yCtreP_Div; $2; 1)
+				DELETE FROM ARRAY:C228(te_yCtreP_Check; $2; 1)
+				
+			: ($3=3)
+				
+				DELETE FROM ARRAY:C228(tl_FileCtreP_Réf; $2; 1)
+				DELETE FROM ARRAY:C228(ta_FileCtreP_Réf; $2; 1)
+				DELETE FROM ARRAY:C228(ta_FileCtreP; $2; 1)
+				DELETE FROM ARRAY:C228(ta_FilexCtreP; $2; 1)
+				DELETE FROM ARRAY:C228(tl_FilexCtreP_Réf; $2; 1)
+				DELETE FROM ARRAY:C228(te_FileCtreP_Ordre; $2; 1)
+				DELETE FROM ARRAY:C228(te_FileCtreP_Etat; $2; 1)
+				DELETE FROM ARRAY:C228(te_FileCtreP_Div; $2; 1)
+		End case 
+		
+	: ($1=9)  //Trier
+		tl_yCtreP_Réf{0}:=tl_yCtreP_Réf{ta_yCtreP}
+		Case of 
+			: ($2=1)
+				If ($3=1)
+					SORT ARRAY:C229(ta_yCtreP; tl_yCtreP_Réf; ta_yCtreP_Réf; te_yCtreP_Ordre; te_yCtreP_Etat; te_yCtreP_Div; te_yCtreP_Check; <)
+				Else 
+					SORT ARRAY:C229(ta_yCtreP; tl_yCtreP_Réf; ta_yCtreP_Réf; te_yCtreP_Ordre; te_yCtreP_Etat; te_yCtreP_Div; te_yCtreP_Check; >)
+				End if 
+				
+			: ($2=2)
+				If ($3=1)
+					SORT ARRAY:C229(te_yCtreP_Ordre; tl_yCtreP_Réf; ta_yCtreP_Réf; ta_yCtreP; te_yCtreP_Etat; te_yCtreP_Div; te_yCtreP_Check; <)
+				Else 
+					SORT ARRAY:C229(te_yCtreP_Ordre; tl_yCtreP_Réf; ta_yCtreP_Réf; ta_yCtreP; te_yCtreP_Etat; te_yCtreP_Div; te_yCtreP_Check; >)
+				End if 
+			: ($2=3)
+		End case 
+		$ii:=Find in array:C230(tl_yCtreP_Réf; tl_yCtreP_Réf{0})
+		If ($ii<0)
+			$ii:=0
+		End if 
+		Tab_ItemGrouper_CtrP(1; $ii; 2)
+		
+	: ($1=20)  //Demande de liaison
+		$vb_OK:=($2>0)
+		$vb_OK:=$vb_OK & ($3>0)
+		If ($vb_OK)
+			//Recherche dans le tableau caché l'existance d'un lien éventuel
+			$ii:=Find in array:C230(tl_FilexCtreP_Réf; tl_xCtreP_ID{$2})
+			If ($ii>0)
+				If (i_Confirmer(ta_xCtreP{$2}+" est déjà rattaché à : "+ta_FileCtreP{$ii}+<>va_CR+"Veuillez confirmer le transfert ?"))
+					//Commencer par détacher puis rattacher
+					Tab_ItemGrouper_CtrP(22; $2; $3)  //Modifier la liaison
+				End if 
+			Else   //Pas de lien
+				Tab_ItemGrouper_CtrP(21; $2; $3)
+			End if 
+		End if 
+		
+	: ($1=21)  //Effectuer la liaison
+		READ WRITE:C146([ItemGroupe:43])
+		CREATE RECORD:C68([ItemGroupe:43])
+		MultiSoc_Init_Structure(->[ItemGroupe:43])
+		[ItemGroupe:43]IT_RéférenceID:1:=Uut_Numerote(->[ItemGroupe:43])
+		[ItemGroupe:43]IT_Catégorie:2:=<>ta_ItemGroupe{3}
+		[ItemGroupe:43]IT_Libellé:3:=ta_yCtreP{$3}
+		[ItemGroupe:43]IT_LibelléOrigine:4:=ta_xCtreP{$2}
+		[ItemGroupe:43]IT_LibelléOrigneID:5:=tl_xCtreP_ID{$2}
+		[ItemGroupe:43]IT_Ordre:6:=te_yCtreP_Ordre{$3}
+		[ItemGroupe:43]IT_Etat:7:=0
+		[ItemGroupe:43]IT_Diviseur:8:=te_yCtreP_Div{$3}
+		SAVE RECORD:C53([ItemGroupe:43])
+		Tab_ItemGrouper_CtrP(5; 0; 3)
+		$ii:=Size of array:C274(tl_FileCtreP_Réf)
+		Tab_ItemGrouper_CtrP(6; $ii; 3)
+		UNLOAD RECORD:C212([ItemGroupe:43])
+		READ ONLY:C145([ItemGroupe:43])
+		//Tab_ItemGrouper_CtrP (3;0;1)
+		te_xCtreP{$2}:=1  //Signe Plus de la liaison activée 		
+		te_xCtreP_Etat{$2}:=1  //Signe X de l'existance de la laison 
+		Tab_ItemGrouper_CtrP(3; 0; 2)
+		Tab_ItemGrouper_CtrP(4; $2; 1)
+		
+	: ($1=22)  //Modifier la liaison
+		i_Message("Mise à jour en cours…")
+		$ii:=Find in array:C230(tl_FilexCtreP_Réf; tl_xCtreP_ID{$2})
+		READ WRITE:C146([ItemGroupe:43])
+		QUERY:C277([ItemGroupe:43]; [ItemGroupe:43]IT_RéférenceID:1=tl_FileCtreP_Réf{$ii})
+		MultiSoc_Filter(->[ItemGroupe:43])
+		If (Records in selection:C76([ItemGroupe:43])=1)
+			Repeat 
+				LOAD RECORD:C52([ItemGroupe:43])
+			Until (Not:C34(Locked:C147([ItemGroupe:43])))
+			[ItemGroupe:43]IT_Libellé:3:=ta_yCtreP{$3}
+			//[ItemGroupe]IT_LibelléOrigine:=ta_xCtreP{$2}
+			//[ItemGroupe]IT_LibelléOrigneID:=tl_xCtreP_ID{$2}
+			[ItemGroupe:43]IT_Ordre:6:=te_yCtreP_Ordre{$3}
+			[ItemGroupe:43]IT_Etat:7:=0
+			[ItemGroupe:43]IT_Diviseur:8:=te_yCtreP_Div{$3}
+			SAVE RECORD:C53([ItemGroupe:43])
+			UNLOAD RECORD:C212([ItemGroupe:43])
+			ta_FileCtreP{$ii}:=ta_yCtreP{$3}
+			te_FileCtreP_Ordre{$ii}:=te_yCtreP_Ordre{$3}
+			te_FileCtreP_Etat{$ii}:=0
+			te_FileCtreP_Div{$ii}:=te_yCtreP_Div{$3}
+			
+			te_xCtreP{$2}:=1  //Signe Plus de la liaison activée 		
+			te_xCtreP_Etat{$2}:=1  //Signe X de l'existance de la laison 
+		End if 
+		UNLOAD RECORD:C212([ItemGroupe:43])
+		READ ONLY:C145([ItemGroupe:43])
+		Tab_ItemGrouper_CtrP(3; 0; 1)
+		Tab_ItemGrouper_CtrP(3; 0; 2)
+		Tab_ItemGrouper_CtrP(4; $2; 1)
+		
+		
+		
+	: ($1=30)  //Supprimer une liaison
+		$vb_OK:=($2>0)
+		$vb_OK:=$vb_OK & (Find in array:C230(tl_FilexCtreP_Réf; tl_xCtreP_ID{$2})>0)
+		If ($vb_OK)
+			$ii:=Find in array:C230(tl_FilexCtreP_Réf; tl_xCtreP_ID{$2})
+			If ($ii>0)
+				$jj:=Find in array:C230(ta_yCtreP; ta_FileCtreP{$ii})
+				If ($jj>0)
+				Else 
+					$jj:=0
+				End if 
+				If (i_Confirmer(ta_xCtreP{$2}+" est rattaché à : "+ta_yCtreP{$jj}+<>va_CR+"Veuillez confirmer la suppression de la liaison ?"))
+					READ WRITE:C146([ItemGroupe:43])
+					QUERY:C277([ItemGroupe:43]; [ItemGroupe:43]IT_RéférenceID:1=tl_FileCtreP_Réf{$ii})
+					MultiSoc_Filter(->[ItemGroupe:43])
+					If (Records in selection:C76([ItemGroupe:43])=1)
+						Repeat 
+							LOAD RECORD:C52([ItemGroupe:43])
+						Until (Not:C34(Locked:C147([ItemGroupe:43])))
+						DELETE RECORD:C58([ItemGroupe:43])
+						UNLOAD RECORD:C212([ItemGroupe:43])
+						//Supprimer la ligne de tableau
+						Tab_ItemGrouper_CtrP(8; $ii; 3)
+						
+						te_xCtreP{$2}:=0  //Signe Plus de la liaison desactivée 		
+						te_xCtreP_Etat{$2}:=0  //Effacer le Signe X de l'existance de la laison
+						Tab_ItemGrouper_CtrP(3; 0; 2)
+						Tab_ItemGrouper_CtrP(4; $2; 1)
+					End if 
+					READ ONLY:C145([ItemGroupe:43])
+				End if 
+			Else 
+				ALERT:C41(ta_xCtreP{$2}+" n'est pas rattaché !")
+			End if 
+		End if 
+		
+		
+	: ($1=40)  //Ajouter une fiche dans la table
+		va_LibEnum:=<>ta_ItemGroupe{3}
+		READ WRITE:C146([ItemGroupe:43])
+		FORM SET INPUT:C55([ItemGroupe:43]; "IT_EcranSaisie")
+		$vl_Fenetre:=i_FenêtreNo(495; 140; 4; "Libellé de regroupement : nouveau"; 3; "")
+		ADD RECORD:C56([ItemGroupe:43]; *)
+		If (OK=1)
+			//Nouvelle ligne dans le tableau caché
+			//Tab_ItemGrouper_CtrP (5;0;3)
+			//Affecter le tableau caché
+			//Tab_ItemGrouper_CtrP (6;Taille tableau(tl_FileCtreP_Réf);3)
+			
+			//Nouvelle ligne dans le tableau de droite
+			Tab_ItemGrouper_CtrP(5; 0; 2)
+			//Affecter le tableau de droite
+			Tab_ItemGrouper_CtrP(6; Size of array:C274(tl_yCtreP_Réf); 2)
+			
+			Tab_ItemGrouper_CtrP(1; ta_xCtreP; 1)  //Synchroniser     
+			Tab_ItemGrouper_CtrP(4; ta_xCtreP; 1)  //Clic dans le tableau de gauche  
+			Tab_ItemGrouper_CtrP(1; Size of array:C274(tl_yCtreP_Réf); 2)  //Synchroniser     
+			Tab_ItemGrouper_CtrP(4; Size of array:C274(tl_yCtreP_Réf); 2)  //Clic dans le tableau de droite  
+			
+		End if 
+		UNLOAD RECORD:C212([ItemGroupe:43])
+		CLOSE WINDOW:C154($vl_Fenetre)
+		READ ONLY:C145([ItemGroupe:43])
+		vl_NbPrestaGpe:=Size of array:C274(tl_yCtreP_Réf)
+		
+		
+	: ($1=50)  //Modifier une fiche dans la table
+		$vb_OK:=(Size of array:C274(tl_yCtreP_Réf)>0)
+		If ($vb_OK)
+			$vb_OK:=(ta_yCtreP>0)
+		End if 
+		
+		If ($vb_OK)
+			READ WRITE:C146([ItemGroupe:43])
+			QUERY:C277([ItemGroupe:43]; [ItemGroupe:43]IT_RéférenceID:1=tl_yCtreP_Réf{ta_yCtreP})
+			MultiSoc_Filter(->[ItemGroupe:43])
+			If (Records in selection:C76([ItemGroupe:43])=1)
+				va_LibEnum:=""
+				FORM SET INPUT:C55([ItemGroupe:43]; "IT_EcranSaisie")
+				Repeat 
+					LOAD RECORD:C52([ItemGroupe:43])
+				Until (Not:C34(Locked:C147([ItemGroupe:43])))
+				$vl_Fenetre:=i_FenêtreNo(495; 140; 4; "Libellé de regroupement : modifier"; 3; "")
+				MODIFY RECORD:C57([ItemGroupe:43]; *)
+				If (OK=1)
+					//Modification de la fiche à l'écran
+					Tab_ItemGrouper_CtrP(6; ta_yCtreP; 2)
+					//Modifications générales du libellé de l'item de regroupement
+					Tab_ItemGrouper_CtrP(7; ta_yCtreP; 2)
+				End if 
+				UNLOAD RECORD:C212([ItemGroupe:43])
+				CLOSE WINDOW:C154($vl_Fenetre)
+			End if 
+			UNLOAD RECORD:C212([ItemGroupe:43])
+			READ ONLY:C145([ItemGroupe:43])
+		End if 
+		
+	: ($1=60)  //Supprimer une fiche dans la table
+		$vb_OK:=(Size of array:C274(tl_yCtreP_Réf)>0)
+		If ($vb_OK)
+			$vb_OK:=(ta_yCtreP>0)
+		End if 
+		If ($vb_OK)
+			If (i_Confirmer("Confirmez-vous la suppression de l'item : "+ta_yCtreP{$3}))
+				va_LibEnum:=ta_yCtreP{$3}
+				//Suppressions générales
+				i_Message("Mise à jour en cours…")
+				READ WRITE:C146([ItemGroupe:43])
+				QUERY:C277([ItemGroupe:43]; [ItemGroupe:43]IT_Catégorie:2=<>ta_ItemGroupe{3}; *)
+				QUERY:C277([ItemGroupe:43];  & ; [ItemGroupe:43]IT_Libellé:3=va_LibEnum)
+				MultiSoc_Filter(->[ItemGroupe:43])
+				If (Records in selection:C76([ItemGroupe:43])>0)
+					DELETE SELECTION:C66([ItemGroupe:43])
+				End if 
+				UNLOAD RECORD:C212([ItemGroupe:43])
+				READ ONLY:C145([ItemGroupe:43])
+				If (Size of array:C274(tl_FileCtreP_Réf)>0)
+					$ii:=1
+					Repeat 
+						If (ta_FileCtreP{$ii}=va_LibEnum)
+							//Suppression des lignes du tableau caché
+							Tab_ItemGrouper_CtrP(8; $ii; 3)
+						Else 
+							$ii:=$ii+1
+						End if 
+					Until (($ii>Size of array:C274(ta_FileCtreP)))
+				End if 
+				CLOSE WINDOW:C154
+				//Suppression de la fiche à l'écran
+				Tab_ItemGrouper_CtrP(8; $3; 2)
+				//Synchroniser l'ensemble
+				vl_NbPrestaGpe:=Size of array:C274(tl_yCtreP_Réf)
+				If ($3>vl_NbPrestaGpe)
+					$3:=vl_NbPrestaGpe
+				End if 
+				Tab_ItemGrouper_CtrP(1; $3; 2)
+				Tab_ItemGrouper_CtrP(4; $3; 2)
+				Tab_ItemGrouper_CtrP(3; $2; 1)
+				Tab_ItemGrouper_CtrP(3; $3; 2)
+			End if 
+		End if 
+		
+		
+	: ($1=70)  //Vérifier la table    
+		Case of 
+			: (Size of array:C274(ta_xCtreP)=0)
+				QUERY:C277([ItemGroupe:43]; [ItemGroupe:43]IT_Catégorie:2=<>ta_ItemGroupe{3}; *)
+				QUERY:C277([ItemGroupe:43];  & ; [ItemGroupe:43]IT_LibelléOrigneID:5>0)
+				MultiSoc_Filter(->[ItemGroupe:43])
+				$ii:=Records in selection:C76([ItemGroupe:43])
+				If ($ii>0)
+					If (i_Confirmer("Prestation : "+String:C10($ii)+" fiche"+("s"*Num:C11($ii>1))+" en plus à supprimer !"))
+						USE SET:C118("$e_Tous")
+						READ WRITE:C146([ItemGroupe:43])
+						DELETE SELECTION:C66([ItemGroupe:43])
+						READ ONLY:C145([ItemGroupe:43])
+					End if 
+				Else 
+					BEEP:C151
+				End if 
+				
+			: (Size of array:C274(ta_yCtreP)=0)
+				QUERY:C277([ItemGroupe:43]; [ItemGroupe:43]IT_Catégorie:2=<>ta_ItemGroupe{3})
+				MultiSoc_Filter(->[ItemGroupe:43])
+				$ii:=Records in selection:C76([ItemGroupe:43])
+				If ($ii>0)
+					If (i_Confirmer("Prestation : "+String:C10($ii)+" fiche"+("s"*Num:C11($ii>1))+" en plus à supprimer !"))
+						USE SET:C118("$e_Tous")
+						READ WRITE:C146([ItemGroupe:43])
+						DELETE SELECTION:C66([ItemGroupe:43])
+						READ ONLY:C145([ItemGroupe:43])
+					End if 
+				Else 
+					BEEP:C151
+				End if 
+				
+			: (Size of array:C274(ta_yCtreP)>0)
+				QUERY:C277([ItemGroupe:43]; [ItemGroupe:43]IT_Catégorie:2=<>ta_ItemGroupe{3})
+				QUERY:C277([ItemGroupe:43];  & ; [ItemGroupe:43]IT_LibelléOrigneID:5>0)
+				MultiSoc_Filter(->[ItemGroupe:43])
+				CREATE SET:C116([ItemGroupe:43]; "$e_Tous")
+				For ($ii; 1; Size of array:C274(ta_yCtreP))
+					QUERY:C277([ItemGroupe:43]; [ItemGroupe:43]IT_Catégorie:2=<>ta_ItemGroupe{3}; *)
+					QUERY:C277([ItemGroupe:43];  & ; [ItemGroupe:43]IT_Libellé:3=ta_yCtreP{$ii})
+					MultiSoc_Filter(->[ItemGroupe:43])
+					If (Records in selection:C76([ItemGroupe:43])>0)
+						CREATE SET:C116([ItemGroupe:43]; "$e_LaSel")
+						DIFFERENCE:C122("$e_Tous"; "$e_LaSel"; "$e_Tous")
+					End if 
+				End for 
+				$ii:=Records in set:C195("$e_Tous")
+				If ($ii>0)
+					If (i_Confirmer("Prestation : "+String:C10($ii)+" fiche"+("s"*Num:C11($ii>1))+" en plus à supprimer !"))
+						USE SET:C118("$e_Tous")
+						READ WRITE:C146([ItemGroupe:43])
+						DELETE SELECTION:C66([ItemGroupe:43])
+						READ ONLY:C145([ItemGroupe:43])
+					End if 
+				Else 
+					BEEP:C151
+				End if 
+		End case 
+End case 

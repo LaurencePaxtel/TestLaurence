@@ -1,0 +1,43 @@
+//%attributes = {}
+//{==================================================}
+//{ LOGICIEL : Samu Social de Paris	
+//{ © DBsolutions/Paxtel
+//{
+//{          Procédure : Uut_HébergéAge  
+//{
+//{          Lundi 28 Juillet 1997 à 16:53:54
+//{          Modifiée :
+//{          Développement : GABBAY Jean-Guy
+//{==================================================}
+C_LONGINT:C283($0)  // Age
+C_POINTER:C301($1)
+
+C_DATE:C307($vd_Date)
+
+$vd_Date:=Current date:C33
+
+If (Year of:C25($1->)>0)
+	
+	If (Month of:C24($vd_Date)>Month of:C24($1->))
+		$0:=Year of:C25($vd_Date)-Year of:C25($1->)
+	Else 
+		
+		If (Month of:C24($vd_Date)=Month of:C24($1->))
+			
+			If (Day of:C23($vd_Date)>=Day of:C23($1->))
+				$0:=Year of:C25($vd_Date)-Year of:C25($1->)
+			Else 
+				$0:=Year of:C25($vd_Date)-Year of:C25($1->)-1
+			End if 
+			
+		Else 
+			$0:=Year of:C25($vd_Date)-Year of:C25($1->)-1
+		End if 
+		
+	End if 
+	
+	If ($0<1)
+		$0:=0
+	End if 
+	
+End if 

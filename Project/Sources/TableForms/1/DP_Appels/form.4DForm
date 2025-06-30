@@ -1,0 +1,296 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 319,
+					"height": 271,
+					"fill": "transparent"
+				},
+				"Rectangle93": {
+					"type": "rectangle",
+					"top": 30,
+					"left": 7,
+					"width": 68,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 29,
+					"left": 7,
+					"width": 317,
+					"height": 1
+				},
+				"Texte646": {
+					"type": "text",
+					"top": 33,
+					"left": 10,
+					"width": 63,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Date",
+					"fontFamily": "Arial"
+				},
+				"Ligne164": {
+					"type": "line",
+					"top": 29,
+					"left": 75,
+					"height": 24
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 52,
+					"left": 7,
+					"width": 317,
+					"height": 1
+				},
+				"Rectangle106": {
+					"type": "rectangle",
+					"top": 7,
+					"left": 7,
+					"width": 316,
+					"height": 22,
+					"fill": "#EEEEEE",
+					"stroke": "#EEEEEE"
+				},
+				"Variable2": {
+					"type": "checkbox",
+					"top": 10,
+					"left": 211,
+					"width": 57,
+					"height": 16,
+					"dataSource": "rJour",
+					"text": "Jour",
+					"class": "TNR_12g",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable2.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable3": {
+					"type": "checkbox",
+					"top": 10,
+					"left": 276,
+					"width": 41,
+					"height": 16,
+					"dataSource": "rNuit",
+					"text": "Nuit",
+					"class": "TNR_12g",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable3.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Sous-formulaire1": {
+					"type": "subform",
+					"top": 53,
+					"left": 7,
+					"width": 299,
+					"height": 222,
+					"dataSourceTypeHint": "text",
+					"table": 19,
+					"listForm": "AP_ListeInclue",
+					"focusable": false,
+					"scrollbarVertical": "visible",
+					"enterableInList": false,
+					"deletableInList": false,
+					"selectionMode": "single",
+					"printFrame": "fixed"
+				},
+				"Variable4": {
+					"type": "button",
+					"top": 283,
+					"left": 6,
+					"width": 87,
+					"height": 22,
+					"dataSource": "b_Sup",
+					"text": "Supprimer",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable4.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable5": {
+					"type": "button",
+					"top": 283,
+					"left": 120,
+					"width": 87,
+					"height": 22,
+					"dataSource": "b_ImpETS",
+					"text": "Imprimer",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Variable5.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable6": {
+					"type": "button",
+					"top": 283,
+					"left": 234,
+					"width": 87,
+					"height": 22,
+					"dataSource": "b_AnnETS",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 10,
+					"left": 10,
+					"width": 116,
+					"height": 16,
+					"dataSource": "vl_FichAP",
+					"dataSourceTypeHint": "number",
+					"stroke": "#696969",
+					"class": "TNR_12",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#EEEEEE",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "### ##0 appel(s)",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDataChange"
+					],
+					"fontFamily": "Arial"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 29,
+					"left": 133,
+					"height": 24
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 30,
+					"left": 76,
+					"width": 57,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 33,
+					"left": 79,
+					"width": 52,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Heure",
+					"fontFamily": "Arial"
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 30,
+					"left": 134,
+					"width": 189,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 33,
+					"left": 137,
+					"width": 186,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Libellé",
+					"fontFamily": "Arial"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"geometryStamp": 177,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

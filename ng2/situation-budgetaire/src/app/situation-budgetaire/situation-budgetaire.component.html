@@ -1,0 +1,502 @@
+<p-toast/>
+<p-progressBar mode="indeterminate" [style]="{ height: '6px' }" *ngIf="loader"/>
+<div class="container" style="margin-top: 70px">
+  <div class="row">
+    <div class="flex align-items-center justify-content-between flex-wrap">
+      <h3>Situation budgétaire de {{ usager.key }}</h3>
+      <p-button label="Imprimer" icon="pi pi-print"
+                class="hide-on-print"
+                (onClick)="print()"
+                [raised]="true"/>
+    </div>
+  </div>
+  <p-divider></p-divider>
+  <div class="grid">
+    <div class="col-12">
+      <p-card class="w-full" styleClass="shadow-2">
+        <div class="formgrid grid">
+          <div class="col-12 md:col-4 lg:col-3 xl:col-3">
+            <div class="field col-12">
+              <label for="dateDernièreSituationBudgetaire">Date dernière situation budgétaire</label>
+              <p-calendar
+                id="dateDernièreSituationBudgetaire"
+                [(ngModel)]="participationDette.dateSitBudget"
+                [iconDisplay]="'input'"
+                styleClass="w-full"
+                dateFormat="dd/mm/yy"
+                dataType="string"
+                [showIcon]="true"
+                inputId="dateDernièreSituationBudgetaire"/>
+            </div>
+
+            <div class="field col-12">
+              <label for="nbPersonneMenage">Nombre de personne dans le ménage</label>
+              <p-dropdown inputId="nbPersonneMenage" id="nbPersonneMenage"
+                          styleClass="w-full"
+                          (onChange)="computeCurrentAdditionalInformations()"
+                          [options]="[1,2,3,4,5,6,7,8,9,10]"
+                          [(ngModel)]="participationDette.nbPersonneMenage"/>
+            </div>
+
+            <div class="field col-12">
+              <label for="modeFacturation">Mode de facturation</label>
+              <p-dropdown inputId="modeFacturation" id="modeFacturation"
+                          styleClass="w-full"
+                          [options]="['Prestations','Participations']"
+                          [(ngModel)]="participationDette.modeFacturation"/>
+           
+          </div>
+          </div>
+          <div class="col-12 md:col-8 lg:col-9 xl:col-9">
+            <div class="field col-12">
+              <label for="commentaire">Commentaires</label>
+              <textarea class="w-full"
+                        rows="5"
+                        pInputTextarea
+                        id="commentaire"
+                        [(ngModel)]="participationDette.commentaire"></textarea>
+            </div>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-12">
+      <p-card header="Tableau des participations" class="w-full " styleClass="shadow-2">
+        <div class="field grid">
+          <div class="sm:col-12 md:col-4 lg:col-4  xl:col-4 flex align-items-center">
+            <label class="col-fixed">Année de référence</label>
+            <p-dropdown
+              *ngIf="yearList.length"
+              [options]="yearList"
+              (onChange)="initParticipationList();computeCurrentAdditionalInformations()"
+              [(ngModel)]="selectedYear"/>
+          </div>
+          <div class="sm:col-12 md:col-4 lg:col-4  xl:col-4 flex align-items-center hide-on-print">
+            <label class="col-fixed">Activer la modification</label>
+            <p-inputSwitch [(ngModel)]="canEditRessourceAndCharge" class="enable-switch"/>
+          </div>
+        </div>
+
+        <p-tabView [activeIndex]="selectedMonth" (onChange)="onTabMonthChange($event)" [scrollable]="true">
+          <p-tabPanel *ngFor="let month of _monthList" [header]="month.label">
+
+            <ng-template pTemplate="content">
+              <div class="grid forfait-participation-container" *ngIf="participations[selectedMonth]">
+                <div class="col-12 sm:col-12 md:col-12 lg:col-6  xl:col-6">
+                  <table class="w-full">
+                    <thead>
+                    <tr class="vendorListHeading">
+                      <th>Ressources</th>
+                      <th>Montant</th>
+                      <p-button icon="pi pi-plus" severity="info" size="small" pTooltip="Ajouter une ressource"
+                                tooltipPosition="right"
+                                styleClass="hide-on-print"
+                                *ngIf="canEditRessourceAndCharge"
+                                (click)="addRessource(participations[selectedMonth])"
+                                class="action-button hide-on-print"
+                                [rounded]="true" [text]="true" [raised]="true"/>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>Salaire</td>
+                      <td>
+                          <span
+                            *ngIf="!canEditRessourceAndCharge">{{ participations[selectedMonth].salaire }}</span>
+                        <p-inputNumber
+                          *ngIf="canEditRessourceAndCharge"
+                          [(ngModel)]="participations[selectedMonth].salaire"
+                          (onInput)="computeTotalRessourceForParticipation(participations[selectedMonth]);computeCurrentAdditionalInformations()"
+                          mode="decimal"
+                          class="edit-input-number"
+                          [min]="0"
+                          [minFractionDigits]="2"
+                          [maxFractionDigits]="2"/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>APL</td>
+                      <td>
+                          <span
+                            *ngIf="!canEditRessourceAndCharge">{{ participations[selectedMonth].apl }}</span>
+                        <p-inputNumber
+                          *ngIf="canEditRessourceAndCharge"
+                          [(ngModel)]="participations[selectedMonth].apl"
+                          (onInput)="computeTotalRessourceForParticipation(participations[selectedMonth]);computeCurrentAdditionalInformations()"
+                          mode="decimal"
+                          class="edit-input-number"
+                          [minFractionDigits]="2"
+                          [maxFractionDigits]="2"/>
+                      </td>
+                    </tr>
+                    </tbody>
+                    <tbody>
+                    <tr *ngFor="let res of participations[selectedMonth].ressource; let i=index">
+                      <td>
+                          <span
+                            *ngIf="!canEditRessourceAndCharge">{{ res.lib }}</span>
+                        <input type="text" pInputText class="w-full" [(ngModel)]="res.lib"
+                               *ngIf="canEditRessourceAndCharge"/>
+                      </td>
+                      <td>
+                          <span
+                            *ngIf="!canEditRessourceAndCharge">{{ res.value }}</span>
+                        <p-inputNumber
+                          *ngIf="canEditRessourceAndCharge"
+                          (onInput)="computeTotalRessourceForParticipation(participations[selectedMonth]);computeCurrentAdditionalInformations()"
+                          [(ngModel)]="res.value"
+                          mode="decimal"
+                          class="edit-input-number"
+                          [minFractionDigits]="2"
+                          [maxFractionDigits]="2"/>
+                      </td>
+                      <p-button icon="pi pi-times" [rounded]="true" [text]="true" severity="danger"
+                                (click)="removeRessource(participations[selectedMonth], i);computeCurrentAdditionalInformations()"
+                                *ngIf="canEditRessourceAndCharge"
+                                class="action-button hide-on-print"/>
+                    </tr>
+                    </tbody>
+                    <tbody>
+                    <tr class="total">
+                      <td>Total ressources</td>
+                      <td>{{ participations[selectedMonth].totalRessource }}</td>
+                    </tr>
+                    </tbody>
+                    <tbody>
+                    <tr>
+                      <th>Charges</th>
+                      <th>Montant</th>
+                      <p-button icon="pi pi-plus" size="small" severity="info" pTooltip="Ajouter une charge"
+                                tooltipPosition="right"
+                                (click)="addCharge(participations[selectedMonth])"
+                                *ngIf="canEditRessourceAndCharge"
+                                [rounded]="true" [text]="true" [raised]="true"
+                                class="action-button hide-on-print"/>
+                    </tr>
+                    <tr>
+                      <td>Loyer</td>
+                      <td>
+                            <span
+                              *ngIf="!canEditRessourceAndCharge else displayEditLoyer">{{ participations[selectedMonth].loyer }}</span>
+                        <ng-template #displayEditLoyer>
+                          <p-inputNumber
+                            (onInput)="computeTotalChargeForParticipation(participations[selectedMonth]);computeCurrentAdditionalInformations()"
+                            [(ngModel)]="participations[selectedMonth].loyer"
+                            mode="decimal"
+                            class="edit-input-number"
+                            [minFractionDigits]="2"
+                            [maxFractionDigits]="2"/>
+                        </ng-template>
+                      </td>
+                    </tr>
+                    </tbody>
+                    <tbody>
+                    <tr *ngFor="let charge of participations[selectedMonth].charge; let i=index">
+                      <td>
+                                      <span
+                                        *ngIf="!canEditRessourceAndCharge else displayEditNewChargeLabel">{{ charge.lib }}</span>
+                        <ng-template #displayEditNewChargeLabel>
+                          <input type="text" pInputText class="w-full" [(ngModel)]="charge.lib"/>
+                        </ng-template>
+                      </td>
+                      <td>
+                                      <span
+                                        *ngIf="!canEditRessourceAndCharge else displayEditNewChargeValue">{{ charge.value }}</span>
+                        <ng-template #displayEditNewChargeValue>
+                          <p-inputNumber
+                            (onInput)="computeTotalChargeForParticipation(participations[selectedMonth]);computeCurrentAdditionalInformations()"
+                            [(ngModel)]="charge.value"
+                            mode="decimal"
+                            class="edit-input-number"
+                            [minFractionDigits]="2"
+                            [maxFractionDigits]="2"/>
+                        </ng-template>
+                      </td>
+                      <p-button icon="pi pi-times" [rounded]="true" [text]="true" severity="danger"
+                                (click)="removeCharge(participations[selectedMonth], i);computeCurrentAdditionalInformations()"
+                                *ngIf="canEditRessourceAndCharge"
+                                class="action-button hide-on-print"/>
+                    </tr>
+                    <tr class="total">
+                      <td>Total charges</td>
+                      <td>{{ participations[selectedMonth].totalCharge }}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-12 sm:col-12 md:col-12 lg:col-6  xl:col-6">
+                  <table>
+                    <tbody>
+                    <tr>
+                      <td>Reste à vivre par personne</td>
+                      <td>{{ simulateurInformation.resteAVivre }}</td>
+                    </tr>
+                    <tr>
+                      <td>Taux d'effort sur le loyer</td>
+                      <td>{{ simulateurInformation.tauxEffortLoyer }}%</td>
+                    </tr>
+                    <tr>
+                      <td>Taux d'endettement</td>
+                      <td>{{ simulateurInformation.tauxEndettement }}%</td>
+                    </tr>
+                    <tr>
+                      <td>Loyer max</td>
+                      <td>{{ simulateurInformation.loyerMax }}</td>
+                    </tr>
+                    <tr>
+                      <td>Forfait Participation</td>
+                      <td>
+                          <span
+                            *ngIf="!canEditRessourceAndCharge else displayEditForfaitParticipation">{{ participations[selectedMonth].forfaitParticipation }}
+                            %</span>
+                        <ng-template #displayEditForfaitParticipation>
+                          <p-dropdown
+                            *ngIf="forfaitParticipationList.length"
+                            [(ngModel)]="participations[selectedMonth].forfaitParticipation"
+                            (onChange)="computeCurrentAdditionalInformations()"
+                            [options]="forfaitParticipationList"/>
+                          %
+
+                        </ng-template>
+
+                      </td>
+                    </tr>
+                    <tr class="total">
+                      <td>Total participation</td>
+                      <td>{{ participations[selectedMonth].totalParticipation }}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-12">
+                  <div class="grid">
+                    <div class="col-12 sm:col-12 md:col-6 lg:col-4 xl:col-2">
+                      <p-button label="Dupliquer sur le mois suivant" icon="pi pi-copy"
+                                styleClass="w-full"
+                                class="hide-on-print"
+                                (onClick)="duplicateParticipationOnNextMonth()"
+                                [raised]="true"
+                                [loading]="duplicateNextMonthLoader"
+                                [disabled]="!participations[selectedMonth + 1]"/>
+                    </div>
+                    <div class="col-12 sm:col-12 md:col-6 lg:col-3  xl:col-2">
+                      <p-button label="Dupliquer jusqu'en Décembre" icon="pi pi-copy"
+                                styleClass="w-full"
+                                class="hide-on-print"
+                                [raised]="true"
+                                [loading]="duplicateAllMonthsLoader"
+                                (onClick)="duplicateParticipationOnAllMonths()"/>
+                    </div>
+                    <div class="col-12 sm:col-12 md:col-6 lg:col-3  xl:col-2">
+                      <p-button label="Réinitialiser" icon="pi pi-refresh"
+                                class="hide-on-print"
+                                [raised]="true"
+                                severity="secondary"
+                                [loading]="resetParticipationLoader"
+                                styleClass="w-full"
+                                (onClick)="resetParticipation()"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </p-tabPanel>
+        </p-tabView>
+      </p-card>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-12 participation-dette-container" *ngIf="participationDette" id="tableau">
+      <p-card header="Tableau des dettes" styleClass="shadow-2">
+        <p-table [value]="participationDette.dettes" [tableStyle]="{'min-width': '50rem'}"
+                 styleClass="p-datatable-gridlines" (onEditComplete)="onCompleteEditDettes($event)">
+          <ng-template pTemplate="header" let-columns>
+            <tr>
+              <th>Dette libellé</th>
+              <th>Montant</th>
+              <th>Plan d'apurement</th>
+              <th>Durée</th>
+              <th>Date début</th>
+              <th>Date fin prévue</th>
+              <th>Montant mensualités</th>
+              <th>Arrêt des paiements avant terme</th>
+              <th>Date de la dernière mensualité</th>
+              <th>Montant dette restante</th>
+              <th>
+                <p-button icon="pi pi-plus" severity="primary" size="small"
+                          styleClass="hide-on-print"
+                          (click)="addParticipationDetteInfo()"
+                          class="action-button hide-on-print"
+                          [rounded]="true" [outlined]="true"/>
+              </th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-participationDetteInfo let-columns="columns" let-i="rowIndex">
+            <tr
+              [ngClass]="{'danger': participationDetteInfo.arretAvantTerme == 'Oui', 'warning': participationDetteInfo.view.showWarning, 'success': participationDetteInfo.view.showSuccess }">
+              <td [pEditableColumn]="participationDetteInfo.lib" pEditableColumnField="lib"
+                  [pEditableColumnRowIndex]="i">
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <input
+                      pInputText
+                      type="text"
+                      [(ngModel)]="participationDetteInfo.lib"/>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{ participationDetteInfo.lib }}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+
+              <td [pEditableColumn]="participationDetteInfo.montant" pEditableColumnField="montant"
+                  [pEditableColumnRowIndex]="i">
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <p-inputNumber
+                      [(ngModel)]="participationDetteInfo.montant"
+                      mode="decimal"
+                      class="edit-input-number"
+                      [min]="0"
+                      [minFractionDigits]="2"
+                      [maxFractionDigits]="2"/>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{ participationDetteInfo.montant }}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td [pEditableColumn]="participationDetteInfo.planApurement" pEditableColumnField="planApurement"
+                  [pEditableColumnRowIndex]="i">
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <p-dropdown
+                      appendTo="body"
+                      [options]="planApurementOptions"
+                      [(ngModel)]="participationDetteInfo.planApurement"/>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{ participationDetteInfo.planApurement }}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td [pEditableColumn]="participationDetteInfo.duree" pEditableColumnField="duree"
+                  [pEditableColumnRowIndex]="i">
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <p-inputNumber
+                      [(ngModel)]="participationDetteInfo.duree"
+                      class="edit-input-number"/>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{ participationDetteInfo.duree }}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td [pEditableColumn]="participationDetteInfo.dateDebut" pEditableColumnField="dateDebut"
+                  [pEditableColumnRowIndex]="i">
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <p-calendar
+                      [(ngModel)]="participationDetteInfo.dateDebut"
+                      appendTo="body"
+                      [iconDisplay]="'input'"
+                      dateFormat="dd/mm/yy"
+                      [showIcon]="true"
+                      inputId="icondisplay"/>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                      <span
+                        *ngIf="participationDetteInfo.dateDebut">{{ participationDetteInfo.dateDebut | date:'dd/MM/yyyy' }}
+                  </span>
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td class="not-allowed"><span
+                *ngIf="participationDetteInfo.dateFin">{{ participationDetteInfo.dateFin | date:'dd/MM/yyyy' }}</span>
+              </td>
+              <td class="not-allowed"><span>{{ participationDetteInfo.montantMensuel }}</span></td>
+              <td [pEditableColumn]="participationDetteInfo.arretAvantTerme" pEditableColumnField="arretAvantTerme"
+                  [pEditableColumnRowIndex]="i">
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <p-dropdown
+                      appendTo="body"
+                      [options]="planApurementOptions"
+                      [(ngModel)]="participationDetteInfo.arretAvantTerme"/>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                    {{ participationDetteInfo.arretAvantTerme }}
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td [pEditableColumn]="participationDetteInfo.dateDerniereMensualite"
+                  pEditableColumnField="dateDerniereMensualite" [pEditableColumnRowIndex]="i">
+                <p-cellEditor>
+                  <ng-template pTemplate="input">
+                    <p-calendar
+                      [(ngModel)]="participationDetteInfo.dateDerniereMensualite"
+                      appendTo="body"
+                      [iconDisplay]="'input'"
+                      dateFormat="dd/mm/yy"
+                      [showIcon]="true"
+                      inputId="icondisplay"/>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                      <span
+                        *ngIf="participationDetteInfo.dateDerniereMensualite">{{ participationDetteInfo.dateDerniereMensualite | date:'dd/MM/yyyy' }}
+                  </span>
+                  </ng-template>
+                </p-cellEditor>
+              </td>
+              <td class="not-allowed">{{ participationDetteInfo.montantRestant }}</td>
+              <td>
+                <p-button icon="pi pi-times" severity="danger" size="small"
+                          styleClass="hide-on-print"
+                          (click)="removeParticipationDetteInfo(i)"
+                          class="action-button hide-on-print"
+                          [rounded]="true" [outlined]="true"/>
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <tr class="total-row">
+              <td>Total</td>
+              <td>{{ participationDette.totalMontant }}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>{{ participationDette.totalMontantMensualite }}</td>
+              <td></td>
+              <td></td>
+              <td>{{ participationDette.totalMontantDetteRestante }}</td>
+              <td></td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </p-card>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="grid flex justify-content-end flex-wrap">
+      <div class="col-12 sm:col-12 md:col-6 lg:col-3 xl:col-2">
+      </div>
+      <div class="col-12 sm:col-12 md:col-6 lg:col-3  xl:col-2">
+        <p-button label="Sauvegarder" icon="pi pi-save"
+                  styleClass="w-full"
+                  severity="success"
+                  class="hide-on-print"
+                  [raised]="true"
+                  [loading]="saveLoader"
+                  (onClick)="saveData()"/>
+      </div>
+    </div>
+
+  </div>
+</div>
+

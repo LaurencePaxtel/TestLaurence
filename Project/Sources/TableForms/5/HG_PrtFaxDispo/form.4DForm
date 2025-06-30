@@ -1,0 +1,1015 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 522,
+	"markerBody": 538,
+	"markerBreak": 541,
+	"markerFooter": 613,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Texte3": {
+					"type": "text",
+					"top": 94,
+					"left": 270,
+					"width": 40,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Fax: "
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 158,
+					"left": 270,
+					"width": 40,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Fax: "
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 505,
+					"left": 2,
+					"width": 559,
+					"height": 35,
+					"fill": "transparent"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 2,
+					"left": 2,
+					"width": 559,
+					"height": 68,
+					"fill": "transparent"
+				},
+				"Texte11": {
+					"type": "text",
+					"top": 5,
+					"left": 5,
+					"width": 553,
+					"height": 29,
+					"stroke": "#000000",
+					"class": "Stat_Titre",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "<◊va_T_01>"
+				},
+				"Texte12": {
+					"type": "text",
+					"top": 38,
+					"left": 5,
+					"width": 553,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "Stat_Titre1",
+					"textAlign": "center",
+					"text": "<◊va_T_02>"
+				},
+				"Texte13": {
+					"type": "text",
+					"top": 53,
+					"left": 5,
+					"width": 553,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "Stat_Titre1",
+					"textAlign": "center",
+					"text": "<◊va_T_03>"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 77,
+					"left": 5,
+					"width": 40,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Date"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 157,
+					"left": 5,
+					"width": 88,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "A l'attention de"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 77,
+					"left": 47,
+					"width": 122,
+					"height": 15,
+					"dataSource": "vd_DtJF",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Record Number"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 79,
+					"left": 270,
+					"width": 260,
+					"height": 15,
+					"dataSource": "va_LC_Nom",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Record Number"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 119,
+					"left": 270,
+					"width": 185,
+					"height": 15,
+					"dataSource": "va_LC_Ad1",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Record Number"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 132,
+					"left": 270,
+					"width": 185,
+					"height": 15,
+					"dataSource": "va_LC_Ad2",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Record Number"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 145,
+					"left": 270,
+					"width": 53,
+					"height": 15,
+					"dataSource": "va_LC_CP",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Record Number"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable6": {
+					"type": "input",
+					"top": 145,
+					"left": 325,
+					"width": 129,
+					"height": 15,
+					"dataSource": "va_LC_Ville",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Record Number"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable8": {
+					"type": "input",
+					"top": 158,
+					"left": 300,
+					"width": 155,
+					"height": 15,
+					"dataSource": "va_LC_Fax",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Record Number"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable9": {
+					"type": "input",
+					"top": 157,
+					"left": 95,
+					"width": 160,
+					"height": 15,
+					"dataSource": "va_LC_Pers",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Record Number"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 188,
+					"left": 2,
+					"width": 267,
+					"height": 288,
+					"fill": "transparent"
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 173,
+					"left": 5,
+					"width": 138,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Distribution : "
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 188,
+					"left": 295,
+					"width": 266,
+					"height": 288,
+					"fill": "transparent"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 544,
+					"left": 2,
+					"width": 559
+				},
+				"Texte10": {
+					"type": "text",
+					"top": 490,
+					"left": 5,
+					"width": 58,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Nombre : "
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 505,
+					"left": 110,
+					"height": 34
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 505,
+					"left": 203,
+					"height": 34
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 507,
+					"left": 4,
+					"width": 104,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Fiche n°"
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 507,
+					"left": 112,
+					"width": 90,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Etat Civil"
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 507,
+					"left": 205,
+					"width": 160,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Nom"
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 505,
+					"left": 453,
+					"height": 34
+				},
+				"Texte14": {
+					"type": "text",
+					"top": 507,
+					"left": 368,
+					"width": 84,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Prénom"
+				},
+				"Texte15": {
+					"type": "text",
+					"top": 507,
+					"left": 455,
+					"width": 44,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Age"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 505,
+					"left": 366,
+					"height": 34
+				},
+				"Ligne8": {
+					"type": "line",
+					"top": 505,
+					"left": 500,
+					"height": 34
+				},
+				"Texte16": {
+					"type": "text",
+					"top": 507,
+					"left": 502,
+					"width": 57,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Rés."
+				},
+				"Ligne9": {
+					"type": "line",
+					"top": 520,
+					"left": 2,
+					"width": 558
+				},
+				"Variable14": {
+					"type": "input",
+					"top": 490,
+					"left": 59,
+					"width": 53,
+					"height": 14,
+					"dataSource": "vl_NbHB",
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Record Number"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 524,
+					"left": 4,
+					"width": 105,
+					"height": 15,
+					"dataSource": "[HeberGement:5]HG_FicheNuméro:3",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 524,
+					"left": 112,
+					"width": 90,
+					"height": 15,
+					"dataSource": "[HeberGement:5]HG_EtatCivil:20",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 524,
+					"left": 205,
+					"width": 160,
+					"height": 15,
+					"dataSource": "[HeberGement:5]HG_Nom:21",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ4": {
+					"type": "input",
+					"top": 524,
+					"left": 368,
+					"width": 84,
+					"height": 15,
+					"dataSource": "[HeberGement:5]HG_Prénom:22",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable15": {
+					"type": "input",
+					"top": 524,
+					"left": 455,
+					"width": 44,
+					"height": 15,
+					"dataSource": "va_TheAge",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Record Number"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable16": {
+					"type": "input",
+					"top": 524,
+					"left": 502,
+					"width": 52,
+					"height": 15,
+					"dataSource": "va_LC_Res",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Record Number"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 587,
+					"left": 5,
+					"width": 553,
+					"height": 28,
+					"stroke": "#000000",
+					"class": "Stat_Titre1",
+					"textAlign": "center",
+					"text": "<◊va_T_04>\r<◊va_T_05>"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 584,
+					"left": 2,
+					"width": 559
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 583,
+					"left": 2,
+					"width": 559
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 558,
+					"left": 5,
+					"width": 95,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"fontWeight": "bold",
+					"text": "Responsable : "
+				},
+				"Variable17": {
+					"type": "input",
+					"top": 546,
+					"left": 385,
+					"width": 174,
+					"height": 36,
+					"dataSource": "vi_Signatur",
+					"dataSourceTypeHint": "picture",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable18": {
+					"type": "input",
+					"top": 558,
+					"left": 102,
+					"width": 228,
+					"height": 15,
+					"dataSource": "<>va_User",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable19": {
+					"type": "input",
+					"top": 94,
+					"left": 300,
+					"width": 155,
+					"height": 15,
+					"dataSource": "va_LC_Fax1",
+					"stroke": "#000000",
+					"class": "TNR_11",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Record Number"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "solid",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"LB": {
+					"type": "listbox",
+					"top": 190,
+					"left": 4,
+					"width": 263,
+					"height": 284,
+					"resizingMode": "legacy",
+					"sortable": false,
+					"movableRows": false,
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "automatic",
+					"fill": "#EEEEEE",
+					"alternateFill": "automatic",
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Colonne1",
+							"dataSource": "ta_faxDis",
+							"width": 202,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête3",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied3",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne2",
+							"dataSource": "te_faxDis",
+							"width": 61,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête4",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied4",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				},
+				"LB1": {
+					"type": "listbox",
+					"top": 190,
+					"left": 297,
+					"width": 262,
+					"height": 284,
+					"resizingMode": "legacy",
+					"sortable": false,
+					"movableRows": false,
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "automatic",
+					"fill": "#EEEEEE",
+					"alternateFill": "automatic",
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Colonne3",
+							"dataSource": "ta_faxDis1",
+							"width": 202,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête1",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne4",
+							"dataSource": "te_faxDis1",
+							"width": 60,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête2",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied2",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

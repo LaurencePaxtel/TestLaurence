@@ -1,0 +1,1 @@
+Tab_PopUser("Liste des utilisateurs"; ->ta_UserLog; ->[INtervenants:10]IN_Login:3; ->tl_UserNo; ->[INtervenants:10]IN_RéfUser:11)

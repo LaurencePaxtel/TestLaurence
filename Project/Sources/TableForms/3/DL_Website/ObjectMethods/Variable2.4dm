@@ -1,0 +1,1 @@
+vd_Date1:=vd_ws_Date

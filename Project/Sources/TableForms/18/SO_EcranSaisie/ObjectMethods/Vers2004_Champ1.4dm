@@ -1,0 +1,1 @@
+vh_TauxOccup:=[SOciete:18]SO_TauxOccupTicks:31/60

@@ -1,0 +1,118 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 20,
+	"markerBreak": 20,
+	"markerFooter": 20,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 366,
+					"height": 19,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne11": {
+					"type": "line",
+					"top": 0,
+					"left": 163,
+					"height": 20,
+					"stroke": "#CCCCCC"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 19,
+					"left": 0,
+					"width": 366,
+					"stroke": "#CCCCCC"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 2,
+					"left": 1,
+					"width": 160,
+					"height": 11,
+					"dataSource": "[Maraude_MR_PathologieListe:62]Catégorie:1",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 2,
+					"left": 165,
+					"width": 194,
+					"height": 11,
+					"dataSource": "[Maraude_MR_PathologieListe:62]Commentaire:2",
+					"stroke": "#0000FF",
+					"class": "EcranChamps",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				}
+			}
+		}
+	]
+}

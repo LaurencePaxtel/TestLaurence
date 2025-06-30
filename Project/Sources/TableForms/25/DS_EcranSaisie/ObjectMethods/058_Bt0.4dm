@@ -1,0 +1,1 @@
+Tab_PopRub3(->[DossierSocial:25]DS_FicheNuméro:3; <>ta_RdsNomNew{<>vlSTR_DS-<>vlSTR}{58}; ->[DossierSocial:25]DS_Ressour1_1:58; ->[DossierSocial:25]DS_Ressour1_2:59; ->[DossierSocial:25]DS_Ressour2_1:60; ->[DossierSocial:25]DS_Ressour2_2:61; ->[DossierSocial:25]DS_Ressour3_1:62; ->[DossierSocial:25]DS_Ressour3_2:63)

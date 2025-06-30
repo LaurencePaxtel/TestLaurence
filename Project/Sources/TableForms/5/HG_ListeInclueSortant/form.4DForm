@@ -1,0 +1,238 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 21,
+	"markerBreak": 21,
+	"markerFooter": 21,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 447,
+					"height": 21,
+					"stroke": "#FFFFFF",
+					"strokeDashArray": "1 1"
+				},
+				"Ligne21": {
+					"type": "line",
+					"top": 20,
+					"left": 0,
+					"width": 446,
+					"stroke": "#AAAAAA",
+					"height": 1
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 0,
+					"left": 324,
+					"height": 21,
+					"stroke": "#AAAAAA"
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 2,
+					"left": 371,
+					"width": 26,
+					"height": 12,
+					"dataSource": "[HeberGement:5]HG_NuitenCours:92",
+					"class": "TNR_11g",
+					"textAlign": "right",
+					"fontWeight": "normal",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 2,
+					"left": 3,
+					"width": 258,
+					"height": 12,
+					"dataSource": "va_NomClé",
+					"class": "TNR_11g",
+					"fontWeight": "normal",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 2,
+					"left": 410,
+					"width": 32,
+					"height": 12,
+					"dataSource": "[HeberGement:5]HG_NuitTOTAL:93",
+					"class": "TNR_11g",
+					"fontWeight": "normal",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"textAlign": "left"
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 2,
+					"left": 326,
+					"width": 42,
+					"height": 12,
+					"dataSource": "[HeberGement:5]HG_NuitReste:95",
+					"class": "TNR_11g",
+					"textAlign": "center",
+					"fontWeight": "normal",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 0,
+					"left": 369,
+					"height": 21,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 0,
+					"left": 259,
+					"height": 21,
+					"stroke": "#AAAAAA"
+				},
+				"Champ4": {
+					"type": "input",
+					"top": 2,
+					"left": 261,
+					"width": 62,
+					"height": 12,
+					"dataSource": "[HeberGement:5]HG_Plateforme:139",
+					"class": "TNR_11g",
+					"fontWeight": "normal",
+					"fill": "transparent",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"textAlign": "center"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 7,
+					"left": 399,
+					"width": 5,
+					"height": 5,
+					"stroke": "#AAAAAA",
+					"startPoint": "topLeft"
+				}
+			}
+		}
+	],
+	"geometryStamp": 190,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

@@ -1,0 +1,388 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 28,
+	"markerBody": 49,
+	"markerBreak": 52,
+	"markerFooter": 86,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 6,
+					"left": 5,
+					"width": 607,
+					"height": 22,
+					"stroke": "#FFFFFF"
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 28,
+					"left": 5,
+					"width": 607,
+					"height": 21,
+					"stroke": "#FFFFFF"
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 3,
+					"left": 3,
+					"width": 611,
+					"height": 49,
+					"fill": "transparent"
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 48,
+					"left": 5,
+					"width": 607,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne8": {
+					"type": "line",
+					"top": 27,
+					"left": 366,
+					"height": 22,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne9": {
+					"type": "line",
+					"top": 27,
+					"left": 484,
+					"height": 22,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 27,
+					"left": 303,
+					"height": 22,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 27,
+					"left": 5,
+					"width": 607
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 55,
+					"left": 3,
+					"width": 610
+				},
+				"Rectangle6": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 367,
+					"width": 117,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 8,
+					"left": 370,
+					"width": 110,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Téléphone"
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 298,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 8,
+					"left": 8,
+					"width": 291,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Nom"
+				},
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 485,
+					"width": 127,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 8,
+					"left": 488,
+					"width": 120,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Télécopie"
+				},
+				"Rectangle8": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 304,
+					"width": 62,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 8,
+					"left": 307,
+					"width": 55,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "C.P."
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 5,
+					"left": 366,
+					"height": 22
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 5,
+					"left": 303,
+					"height": 22
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 5,
+					"left": 484,
+					"height": 22
+				}
+			}
+		},
+		{
+			"objects": {
+				"AS_AddBt": {
+					"type": "button",
+					"top": 60,
+					"left": 4,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_AdCEL",
+					"shortcutKey": "n",
+					"shortcutAccel": true,
+					"text": "Ajouter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/AS_AddBt.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton 3D1": {
+					"type": "button",
+					"top": 60,
+					"left": 498,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_QuitTab",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"AS_SelBt": {
+					"type": "button",
+					"top": 60,
+					"left": 380,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_ValGIP",
+					"shortcutKey": "[Esc]",
+					"text": "Sélectionner",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/AS_SelBt.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak"
+					]
+				},
+				"Champ5": {
+					"type": "input",
+					"top": 30,
+					"left": 6,
+					"width": 296,
+					"height": 16,
+					"dataSource": "[Assocs:14]AS_Nom:2",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ6": {
+					"type": "input",
+					"top": 30,
+					"left": 305,
+					"width": 60,
+					"height": 16,
+					"dataSource": "[Assocs:14]AS_CP:7",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ7": {
+					"type": "input",
+					"top": 30,
+					"left": 368,
+					"width": 115,
+					"height": 16,
+					"dataSource": "[Assocs:14]AS_Téléphone:9",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ8": {
+					"type": "input",
+					"top": 30,
+					"left": 486,
+					"width": 125,
+					"height": 16,
+					"dataSource": "[Assocs:14]AS_Télécopie:10",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

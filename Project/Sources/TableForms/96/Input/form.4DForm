@@ -1,0 +1,908 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 522,
+	"markerBreak": 522,
+	"markerFooter": 532,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "594pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Text23": {
+					"type": "text",
+					"top": 10,
+					"left": 103,
+					"width": 364,
+					"height": 13,
+					"sizingX": "grow",
+					"stroke": "#000000",
+					"text": "Inventaire_Pieces"
+				},
+				"vRecNum": {
+					"type": "input",
+					"top": 11,
+					"left": 483,
+					"width": 100,
+					"height": 14,
+					"stroke": "#000000",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Record Number"
+					},
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/vRecNum.4dm",
+					"events": [
+						"onLoad",
+						"onHeader",
+						"onPrintingBreak"
+					]
+				},
+				"Line24": {
+					"type": "line",
+					"top": 0,
+					"left": 88,
+					"height": 522,
+					"sizingY": "grow"
+				},
+				"bFirst": {
+					"type": "pictureButton",
+					"top": 10,
+					"left": 20,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/First Record"
+					},
+					"action": "firstRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/FirstRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bPrevious": {
+					"type": "pictureButton",
+					"top": 65,
+					"left": 20,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Previous Record"
+					},
+					"action": "previousRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/PreviousRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bNext": {
+					"type": "pictureButton",
+					"top": 120,
+					"left": 20,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Next Record"
+					},
+					"action": "nextRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/NextRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bLast": {
+					"type": "pictureButton",
+					"top": 175,
+					"left": 20,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Last Record"
+					},
+					"action": "lastRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/LastRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bDelete": {
+					"type": "pictureButton",
+					"top": 230,
+					"left": 20,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Delete Record"
+					},
+					"action": "deleteRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/DeleteRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bCancel": {
+					"type": "pictureButton",
+					"top": 285,
+					"left": 20,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Cancel"
+					},
+					"action": "cancel",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/Cancel.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bValidate": {
+					"type": "pictureButton",
+					"top": 340,
+					"left": 20,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/OK"
+					},
+					"action": "accept",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/Validate.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"Text25": {
+					"type": "text",
+					"top": 45,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "ID : "
+				},
+				"Text26": {
+					"type": "text",
+					"top": 68,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_Chambres : "
+				},
+				"Text27": {
+					"type": "text",
+					"top": 91,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_Cuisine : "
+				},
+				"Text28": {
+					"type": "text",
+					"top": 114,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_Salle_de_bain : "
+				},
+				"Text29": {
+					"type": "text",
+					"top": 137,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_Surface : "
+				},
+				"Text30": {
+					"type": "text",
+					"top": 160,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_Type : "
+				},
+				"Text31": {
+					"type": "text",
+					"top": 183,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_Pieces_Principales : "
+				},
+				"Text32": {
+					"type": "text",
+					"top": 206,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_Salon : "
+				},
+				"Text33": {
+					"type": "text",
+					"top": 229,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_Salle_a_manger : "
+				},
+				"Text34": {
+					"type": "text",
+					"top": 252,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_WC : "
+				},
+				"Text35": {
+					"type": "text",
+					"top": 275,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_Electricite_No_Compteur : "
+				},
+				"Text36": {
+					"type": "text",
+					"top": 298,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_Gaz_Naturel_No_Compteur : "
+				},
+				"Text37": {
+					"type": "text",
+					"top": 321,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_PV_Cave : "
+				},
+				"Text38": {
+					"type": "text",
+					"top": 344,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_PV_Parking : "
+				},
+				"Text39": {
+					"type": "text",
+					"top": 367,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_PV_Jardin : "
+				},
+				"Text40": {
+					"type": "text",
+					"top": 390,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_PV_Balcon : "
+				},
+				"Text41": {
+					"type": "text",
+					"top": 413,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_PV_Terrasse : "
+				},
+				"Text42": {
+					"type": "text",
+					"top": 436,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_ID_Bien : "
+				},
+				"Text43": {
+					"type": "text",
+					"top": 459,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "Ref_Structure : "
+				},
+				"Text44": {
+					"type": "text",
+					"top": 482,
+					"left": 115,
+					"width": 171,
+					"height": 13,
+					"text": "INV_Origine_Table_No : "
+				},
+				"ID": {
+					"type": "input",
+					"top": 45,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]ID:1",
+					"dataSourceTypeHint": "integer",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "sunken",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_Chambres": {
+					"type": "input",
+					"top": 68,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_Chambres:2",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_Cuisine": {
+					"type": "input",
+					"top": 91,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_Cuisine:3",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_Salle_de_bain": {
+					"type": "input",
+					"top": 114,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_Salle_de_bain:4",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_Surface": {
+					"type": "input",
+					"top": 137,
+					"left": 291,
+					"width": 54,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_Surface:5",
+					"dataSourceTypeHint": "number",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_Type": {
+					"type": "input",
+					"top": 160,
+					"left": 291,
+					"width": 290,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_Type:6",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_Pieces_Principales": {
+					"type": "input",
+					"top": 183,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_Pieces_Principales:7",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_Salon": {
+					"type": "input",
+					"top": 206,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_Salon:8",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_Salle_a_manger": {
+					"type": "input",
+					"top": 229,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_Salle_a_manger:9",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_WC": {
+					"type": "input",
+					"top": 252,
+					"left": 291,
+					"width": 290,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_WC:10",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_Electricite_No_Compteur": {
+					"type": "input",
+					"top": 275,
+					"left": 291,
+					"width": 290,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_Electricite_No_Compteur:11",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_Gaz_Naturel_No_Compteur": {
+					"type": "input",
+					"top": 298,
+					"left": 291,
+					"width": 290,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_Gaz_Naturel_No_Compteur:12",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_PV_Cave": {
+					"type": "input",
+					"top": 321,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_PV_Cave:13",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_PV_Parking": {
+					"type": "input",
+					"top": 344,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_PV_Parking:14",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_PV_Jardin": {
+					"type": "input",
+					"top": 367,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_PV_Jardin:15",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_PV_Balcon": {
+					"type": "input",
+					"top": 390,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_PV_Balcon:16",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_PV_Terrasse": {
+					"type": "input",
+					"top": 413,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_PV_Terrasse:17",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_ID_Bien": {
+					"type": "input",
+					"top": 436,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_ID_Bien:18",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ref_Structure": {
+					"type": "input",
+					"top": 459,
+					"left": 291,
+					"width": 290,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]Ref_Structure:19",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"INV_Origine_Table_No": {
+					"type": "input",
+					"top": 482,
+					"left": 291,
+					"width": 48,
+					"height": 14,
+					"dataSource": "[Inventaire_Pieces:96]INV_Origine_Table_No:20",
+					"dataSourceTypeHint": "integer",
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {
+				"objects": [
+					"Text23",
+					"vRecNum",
+					"Line24"
+				]
+			},
+			"View 3": {
+				"objects": [
+					"bFirst",
+					"bPrevious",
+					"bNext",
+					"bLast",
+					"bDelete",
+					"bCancel",
+					"bValidate"
+				]
+			},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

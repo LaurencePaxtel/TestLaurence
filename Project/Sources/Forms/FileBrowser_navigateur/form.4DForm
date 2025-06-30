@@ -1,0 +1,228 @@
+{
+	"destination": "detailScreen",
+	"windowSizingY": "fixed",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onClick",
+		"onTimer",
+		"onBoundVariableChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"lb_navigateur": {
+					"type": "listbox",
+					"top": 30,
+					"left": 3,
+					"width": 715,
+					"height": 200,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"dataSource": "lb_navigateur",
+					"movableRows": false,
+					"hideExtraBlankRows": true,
+					"scrollbarHorizontal": "automatic",
+					"fill": "#82C0FF",
+					"alternateFill": "#FFFFFF",
+					"method": "ObjectMethods/lb_navigateur.4dm",
+					"events": [
+						"onClick",
+						"onDoubleClick"
+					],
+					"columns": [
+						{
+							"name": "col_file",
+							"dataSource": "col_file",
+							"width": 482,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#82C0FF",
+							"alternateFill": "#FFFFFF",
+							"rowHeightAuto": true,
+							"textAlign": "left",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "header_file",
+								"text": "Fichier",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "#82C0FF",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "col_type",
+							"dataSource": "col_type",
+							"width": 78,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "#82C0FF",
+							"alternateFill": "#FFFFFF",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "head_type",
+								"text": "Type",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied4",
+								"stroke": "automatic",
+								"fill": "#82C0FF",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "col_path",
+							"dataSource": "col_path",
+							"width": 29,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"visibility": "hidden",
+							"stroke": "automatic",
+							"fill": "#82C0FF",
+							"alternateFill": "#FFFFFF",
+							"rowHeightAuto": true,
+							"textAlign": "left",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "header_path",
+								"text": "Chemin",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Pied2",
+								"stroke": "automatic",
+								"fill": "#82C0FF",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "col_size",
+							"dataSource": "col_size",
+							"dataSourceTypeHint": "date",
+							"width": 138,
+							"minWidth": 10,
+							"maxWidth": 138,
+							"enterable": false,
+							"numberFormat": "###,##0.000",
+							"stroke": "automatic",
+							"fill": "#82C0FF",
+							"alternateFill": "#FFFFFF",
+							"rowHeightAuto": true,
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"header": {
+								"name": "header_size",
+								"text": "Date modification",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Pied3",
+								"stroke": "automatic",
+								"fill": "#82C0FF",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				},
+				"button_add": {
+					"type": "button",
+					"top": 235,
+					"left": 0,
+					"width": 28,
+					"height": 26,
+					"visibility": "hidden",
+					"sizingY": "move",
+					"text": "+",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"button_add1": {
+					"type": "button",
+					"top": 235,
+					"left": 29,
+					"width": 28,
+					"height": 26,
+					"visibility": "hidden",
+					"sizingY": "move",
+					"text": "-",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"button_parcourir": {
+					"type": "button",
+					"top": 235,
+					"left": 621,
+					"width": 98,
+					"height": 26,
+					"sizingX": "move",
+					"sizingY": "move",
+					"text": "Parcourir…",
+					"focusable": false,
+					"method": "ObjectMethods/button_parcourir.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Custom_titre": {
+					"type": "text",
+					"top": 9,
+					"left": 3,
+					"width": 482,
+					"height": 15,
+					"text": "message personnalisé"
+				},
+				"compte_files": {
+					"type": "text",
+					"top": 9,
+					"left": 586,
+					"width": 132,
+					"height": 15,
+					"textAlign": "right",
+					"text": "nombre de documents"
+				}
+			}
+		}
+	]
+}

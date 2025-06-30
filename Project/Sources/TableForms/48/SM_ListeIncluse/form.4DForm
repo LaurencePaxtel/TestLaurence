@@ -1,0 +1,186 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 19,
+	"markerBreak": 19,
+	"markerFooter": 19,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 460,
+					"height": 23,
+					"stroke": "#FFFFFF"
+				},
+				"Ligne24": {
+					"type": "line",
+					"top": 18,
+					"left": 0,
+					"width": 461,
+					"stroke": "#AAAAAA"
+				},
+				"Champ5": {
+					"type": "input",
+					"top": 3,
+					"left": 1,
+					"width": 283,
+					"height": 12,
+					"dataSource": "[Sommes:48]SM_libellé:5",
+					"stroke": "automatic",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"method": "ObjectMethods/Champ5.4dm"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 0,
+					"left": 285,
+					"height": 19,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 0,
+					"left": 345,
+					"height": 19,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 0,
+					"left": 405,
+					"height": 19,
+					"stroke": "#AAAAAA"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 3,
+					"left": 288,
+					"width": 55,
+					"height": 12,
+					"dataSource": "[Sommes:48]SM_Capacité:6",
+					"dataSourceTypeHint": "integer",
+					"stroke": "automatic",
+					"class": "TNR_11",
+					"textAlign": "center",
+					"fill": "#FFFFFF",
+					"borderStyle": "dotted",
+					"contextMenu": "none",
+					"numberFormat": "### ##0;-### ##0;",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Champ1.4dm",
+					"events": [
+						"onDoubleClick",
+						"onDataChange"
+					],
+					"fontFamily": "Arial"
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 3,
+					"left": 349,
+					"width": 53,
+					"height": 12,
+					"dataSource": "[Sommes:48]SM_Attribués:7",
+					"dataSourceTypeHint": "integer",
+					"stroke": "automatic",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "### ##0;-### ##0;",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 3,
+					"left": 409,
+					"width": 39,
+					"height": 12,
+					"dataSource": "[Sommes:48]SM_Reste:9",
+					"dataSourceTypeHint": "integer",
+					"stroke": "automatic",
+					"class": "TNR_11",
+					"textAlign": "right",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "### ##0;-### ##0;0",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				}
+			}
+		}
+	],
+	"geometryStamp": 2,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

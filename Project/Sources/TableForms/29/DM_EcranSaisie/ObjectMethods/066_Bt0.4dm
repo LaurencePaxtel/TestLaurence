@@ -1,0 +1,1 @@
+Tab_PopRub3(->[DossierMedical:29]DM_FicheNuméro:3; <>ta_RdsNomNew{<>vlSTR_DM-<>vlSTR}{43}; ->[DossierMedical:29]DM_MotifAdmi1_1:66; ->[DossierMedical:29]DM_MotifAdmi1_2:67; ->[DossierMedical:29]DM_MotifAdmi2_1:68; ->[DossierMedical:29]DM_MotifAdmi2_2:69; ->[DossierMedical:29]DM_MotifAdmi1_1:66; ->[DossierMedical:29]DM_MotifAdmi3_2:71)

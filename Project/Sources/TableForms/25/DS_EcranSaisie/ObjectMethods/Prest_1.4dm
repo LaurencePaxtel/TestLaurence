@@ -1,0 +1,1 @@
+P_HébergementPrestation([DossierSocial:25]DS_HB_ID:10; Uut_HébergéClé(->[DossierSocial:25]DS_Nom:12; ->[DossierSocial:25]DS_Prénom:16; ->[DossierSocial:25]DS_DateNéLe:18); "DS")

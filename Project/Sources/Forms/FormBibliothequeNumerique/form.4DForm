@@ -1,0 +1,81 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"imageDossier1": {
+					"type": "pictureButton",
+					"top": 70,
+					"left": 46,
+					"width": 120,
+					"height": 120,
+					"picture": "/RESOURCES/img/Buttons/connectIO/folder.png",
+					"switchContinuously": true,
+					"loopBackToFirstFrame": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"method": "ObjectMethods/imageDossier1.4dm",
+					"events": [
+						"onMouseMove"
+					]
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 123,
+					"left": 61,
+					"width": 90,
+					"height": 40,
+					"dataSource": "triUniqueDossier_at{1}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Variable1.4dm",
+					"events": [
+						"onClick",
+						"onDataChange",
+						"onMouseMove"
+					]
+				},
+				"Texte": {
+					"type": "text",
+					"top": 24,
+					"left": 35,
+					"width": 195,
+					"height": 22,
+					"fontFamily": "Arial",
+					"fontSize": 18,
+					"fontWeight": "bold",
+					"text": "Choix du répertoire :"
+				},
+				"Bouton invisible": {
+					"type": "button",
+					"top": 20,
+					"left": 242,
+					"width": 224,
+					"height": 30,
+					"display": false
+				}
+			}
+		}
+	]
+}

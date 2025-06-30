@@ -1,0 +1,21 @@
+If (Form event code:C388=Sur clic:K2:4)
+	SET AUTOMATIC RELATIONS:C310(True:C214; True:C214)
+	QUERY:C277([HeberGement:5])
+	MultiSoc_Filter(->[HeberGement:5])
+	SET AUTOMATIC RELATIONS:C310(False:C215; False:C215)
+	vr_TotalDistri:=Sum:C1([HeberGement:5]HG_FamDistri5M:122)
+	vL_NbFiches:=Records in selection:C76([HeberGement:5])
+	If (vL_NbFiches>0)
+		P_HébergementVeilleSort(2)
+		OBJECT SET ENABLED:C1123(b_VoirPrtL; True:C214)
+		OBJECT SET ENABLED:C1123(b_VoirPrt; True:C214)
+	Else 
+		OBJECT SET ENABLED:C1123(b_VoirPrtL; False:C215)
+		OBJECT SET ENABLED:C1123(b_VoirPrt; False:C215)
+	End if 
+	P_HébergementNotesBt(0)
+	OBJECT SET ENABLED:C1123(b_ModCléHG; False:C215)
+	OBJECT SET ENABLED:C1123(b_PrtAct; False:C215)
+	OBJECT SET ENABLED:C1123(b_PrtActF; False:C215)
+	OBJECT SET ENABLED:C1123(b_Excuse; False:C215)
+End if 

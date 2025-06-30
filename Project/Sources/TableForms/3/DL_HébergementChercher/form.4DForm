@@ -1,0 +1,745 @@
+{
+	"destination": "detailScreen",
+	"memorizeGeometry": true,
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 4,
+					"left": 4,
+					"width": 1217,
+					"height": 799,
+					"stroke": "#FFFFFF"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Zone de groupe2": {
+					"type": "groupBox",
+					"top": 6,
+					"left": 11,
+					"width": 394,
+					"height": 374,
+					"text": "Rechercher"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 40,
+					"left": 31,
+					"width": 36,
+					"height": 14,
+					"stroke": "#696969",
+					"textAlign": "right",
+					"text": "Nom :"
+				},
+				"Ligne16": {
+					"type": "line",
+					"top": 364,
+					"left": 6,
+					"height": 28,
+					"stroke": "#FFFFFF"
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 432,
+					"left": 10,
+					"width": 120,
+					"height": 14,
+					"stroke": "#696969",
+					"textAlign": "center",
+					"text": "Liste des situations\t"
+				},
+				"Variable9": {
+					"type": "input",
+					"top": 407,
+					"left": 216,
+					"width": 50,
+					"height": 16,
+					"dataSource": "vL_Nb_HG_F",
+					"stroke": "#1478BE",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Bouton 3D3": {
+					"type": "button",
+					"top": 394,
+					"left": 962,
+					"width": 120,
+					"height": 32,
+					"dataSource": "b_ValHBnew",
+					"text": "Sélectionner",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton 3D3.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 394,
+					"left": 1102,
+					"width": 80,
+					"height": 32,
+					"dataSource": "b_AnnHB",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Pointage_Bt": {
+					"type": "button",
+					"top": 394,
+					"left": 785,
+					"width": 120,
+					"height": 32,
+					"dataSource": "b_Pointage",
+					"text": "Pointage",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Pointage_Bt.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Pointage_Bt1": {
+					"type": "button",
+					"top": 394,
+					"left": 285,
+					"width": 120,
+					"height": 32,
+					"visibility": "hidden",
+					"dataSource": "b_Pointage",
+					"text": "Pointage",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Pointage_Bt1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Image1": {
+					"type": "picture",
+					"top": 394,
+					"left": 1102,
+					"width": 80,
+					"height": 32,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/img/icons/32/PAXTEL-boutons-17.png"
+				},
+				"Image2": {
+					"type": "picture",
+					"top": 394,
+					"left": 785,
+					"width": 120,
+					"height": 32,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/img/icons/32/PAXTEL-boutons-04.png"
+				},
+				"Pointage_Bt2": {
+					"type": "button",
+					"top": 394,
+					"left": 551,
+					"width": 214,
+					"height": 32,
+					"dataSource": "b_Pointage",
+					"text": "Pointage hébergement",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Pointage_Bt2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Image8": {
+					"type": "picture",
+					"top": 394,
+					"left": 551,
+					"width": 214,
+					"height": 32,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/img/icons/32/PAXTEL-boutons-04Bis.png"
+				},
+				"Variable13": {
+					"type": "input",
+					"top": 431,
+					"left": 133,
+					"width": 215,
+					"height": 16,
+					"dataSource": "va_NNN",
+					"stroke": "#1478BE",
+					"fontWeight": "bold",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Texte18": {
+					"type": "text",
+					"top": 146,
+					"left": 16,
+					"width": 56,
+					"height": 14,
+					"stroke": "#696969",
+					"textAlign": "right",
+					"text": "Né(e) le :"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 102,
+					"left": 16,
+					"width": 56,
+					"height": 14,
+					"stroke": "#696969",
+					"textAlign": "right",
+					"text": "Prénom :"
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 40,
+					"left": 76,
+					"width": 302,
+					"height": 20,
+					"dataSource": "va_HGRNom",
+					"stroke": "#000000",
+					"fontFamily": "Segoe UI",
+					"fontSize": 14,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"placeholder": "Nom",
+					"entryFilter": "&\"@a-z;A-Z;0-9; ;,;.;-\"",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable5.4dm",
+					"events": [
+						"onClick",
+						"onBeforeKeystroke",
+						"onDataChange",
+						"onAfterKeystroke"
+					]
+				},
+				"Variable6": {
+					"type": "input",
+					"top": 102,
+					"left": 76,
+					"width": 302,
+					"height": 20,
+					"dataSource": "va_HGRPré",
+					"stroke": "#000000",
+					"fontFamily": "Segoe UI",
+					"fontSize": 14,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"placeholder": "Prénom",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onBeforeKeystroke",
+						"onDataChange"
+					]
+				},
+				"Variable7": {
+					"type": "input",
+					"top": 146,
+					"left": 76,
+					"width": 302,
+					"height": 20,
+					"dataSource": "vd_HGRNé",
+					"dataSourceTypeHint": "date",
+					"stroke": "#000000",
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 14,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"placeholder": "Né(e) le",
+					"dateFormat": "short blankIfNull",
+					"entryFilter": "!0&9##/##/####",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onBeforeKeystroke",
+						"onDataChange"
+					]
+				},
+				"Bouton1": {
+					"type": "button",
+					"top": 234,
+					"left": 119,
+					"width": 38,
+					"height": 23,
+					"dataSource": "b_Rec",
+					"text": "Rechercher",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton2": {
+					"type": "button",
+					"top": 234,
+					"left": 251,
+					"width": 100,
+					"height": 23,
+					"dataSource": "b_StdRec",
+					"text": "Editeur",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 293,
+					"left": 213,
+					"width": 165,
+					"height": 20,
+					"dataSource": "va_IDT_CléFam",
+					"stroke": "#000000",
+					"fontFamily": "Segoe UI",
+					"fontSize": 14,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/Variable1.4dm",
+					"events": [
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 293,
+					"left": 111,
+					"width": 76,
+					"height": 14,
+					"stroke": "#696969",
+					"textAlign": "right",
+					"text": "Clé de lien :"
+				},
+				"sub_recherche_dossier": {
+					"type": "subform",
+					"top": 454,
+					"left": 6,
+					"width": 1162,
+					"height": 341,
+					"dataSourceTypeHint": "text",
+					"table": 5,
+					"listForm": "HG_ListeInclue",
+					"focusable": false,
+					"scrollbarVertical": "visible",
+					"enterableInList": false,
+					"deletableInList": false,
+					"selectionMode": "multiple",
+					"printFrame": "variable",
+					"borderStyle": "system"
+				},
+				"sub_recherche_demand": {
+					"type": "subform",
+					"top": 55,
+					"left": 411,
+					"width": 752,
+					"height": 322,
+					"dataSourceTypeHint": "text",
+					"table": 4,
+					"listForm": "HB_ListeInclueC2",
+					"focusable": false,
+					"scrollbarVertical": "visible",
+					"enterableInList": false,
+					"deletableInList": false,
+					"selectionMode": "single",
+					"printFrame": "variable",
+					"borderStyle": "system"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 24,
+					"left": 411,
+					"width": 120,
+					"height": 18,
+					"stroke": "#696969",
+					"textAlign": "left",
+					"text": "Liste des demandeurs\t"
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 25,
+					"left": 529,
+					"width": 110,
+					"height": 16,
+					"dataSource": "vL_Nb_HB_F",
+					"dataSourceTypeHint": "number",
+					"stroke": "#1478BE",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "# ### ### ##0",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"Variable2": {
+					"type": "button",
+					"top": 16,
+					"left": 954,
+					"width": 75,
+					"height": 23,
+					"dataSource": "b_VoirNotes",
+					"shortcutKey": "n",
+					"shortcutAccel": true,
+					"text": "Notes",
+					"fontWeight": "bold",
+					"method": "ObjectMethods/Variable2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable3": {
+					"type": "button",
+					"top": 15,
+					"left": 1040,
+					"width": 49,
+					"height": 23,
+					"dataSource": "b_VoirActs",
+					"text": "Actions",
+					"fontWeight": "bold",
+					"method": "ObjectMethods/Variable3.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable8": {
+					"type": "button",
+					"top": 15,
+					"left": 1105,
+					"width": 71,
+					"height": 23,
+					"dataSource": "b_VoirSP",
+					"text": "SP",
+					"fontWeight": "bold",
+					"method": "ObjectMethods/Variable8.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Case à cocher1": {
+					"type": "checkbox",
+					"top": 293,
+					"left": 27,
+					"width": 79,
+					"height": 15,
+					"dataSource": "wSansFiltre",
+					"text": ":31011,6",
+					"stroke": "#663300",
+					"events": [
+						"onClick"
+					]
+				},
+				"Texte22": {
+					"type": "text",
+					"top": 345,
+					"left": 11,
+					"width": 76,
+					"height": 14,
+					"stroke": "#696969",
+					"textAlign": "right",
+					"text": "Editions :"
+				},
+				"telephone": {
+					"type": "input",
+					"top": 190,
+					"left": 76,
+					"width": 302,
+					"height": 20,
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 14,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"placeholder": "Téléphone",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/telephone.4dm",
+					"events": [
+						"onClick",
+						"onBeforeKeystroke",
+						"onDataChange"
+					]
+				},
+				"Texte23": {
+					"type": "text",
+					"top": 190,
+					"left": 16,
+					"width": 56,
+					"height": 14,
+					"stroke": "#696969",
+					"textAlign": "right",
+					"text": "Tél. :"
+				},
+				"pop_attestation": {
+					"type": "dropdown",
+					"top": 343,
+					"left": 93,
+					"width": 300,
+					"height": 26,
+					"focusable": false,
+					"method": "ObjectMethods/pop_attestation.4dm",
+					"events": [
+						"onLoad",
+						"onClick"
+					]
+				},
+				"button_filebrowser": {
+					"type": "button",
+					"top": 17,
+					"left": 646,
+					"width": 26,
+					"height": 23,
+					"shortcutKey": "n",
+					"shortcutAccel": true,
+					"text": "Documents",
+					"fontWeight": "bold",
+					"method": "ObjectMethods/button_filebrowser.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Image3": {
+					"type": "picture",
+					"top": 224,
+					"left": 117,
+					"width": 45,
+					"height": 45,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/img/icons/32/PAXTEL-boutons-07.png"
+				},
+				"Image4": {
+					"type": "picture",
+					"top": 11,
+					"left": 642,
+					"width": 35,
+					"height": 35,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/img/icons/32/PAXTEL-boutons-10.png"
+				},
+				"Image5": {
+					"type": "picture",
+					"top": 10,
+					"left": 952,
+					"width": 80,
+					"height": 32,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/img/icons/32/PAXTEL-boutons-05.png"
+				},
+				"Image6": {
+					"type": "picture",
+					"top": 10,
+					"left": 1039,
+					"width": 54,
+					"height": 32,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/img/icons/32/PAXTEL-boutons-12.png"
+				},
+				"Image7": {
+					"type": "picture",
+					"top": 10,
+					"left": 1099,
+					"width": 80,
+					"height": 32,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/img/icons/32/PAXTEL-boutons-06.png"
+				},
+				"btn_dossiers_encours": {
+					"type": "button",
+					"top": 14,
+					"left": 723,
+					"width": 135,
+					"height": 28,
+					"dataSource": "btn_dossiers_encours",
+					"shortcutKey": "n",
+					"shortcutAccel": true,
+					"text": "Dossiers en cours",
+					"fontWeight": "bold",
+					"method": "ObjectMethods/btn_dossiers_encours.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Picture_dossiers_encours": {
+					"type": "picture",
+					"top": 10,
+					"left": 723,
+					"width": 136,
+					"height": 32,
+					"pictureFormat": "scaled",
+					"picture": "Images/Picture_dossiers_encours.png"
+				},
+				"btn_participations": {
+					"type": "button",
+					"top": 10,
+					"left": 684,
+					"width": 34,
+					"height": 31,
+					"dataSource": "btn_participations",
+					"text": "Participations",
+					"focusable": false,
+					"method": "ObjectMethods/btn_participations.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"pic_btn_P_bleu": {
+					"type": "picture",
+					"top": 10,
+					"left": 684,
+					"width": 33,
+					"height": 33,
+					"pictureFormat": "scaled",
+					"picture": "Images/pic_btn_P_bleu.png"
+				},
+				"pic_btn_P_noir": {
+					"type": "picture",
+					"top": 10,
+					"left": 684,
+					"width": 33,
+					"height": 33,
+					"pictureFormat": "scaled",
+					"picture": "Images/pic_btn_P_noir.png"
+				},
+				"Variable10": {
+					"type": "button",
+					"top": 16,
+					"left": 868,
+					"width": 75,
+					"height": 23,
+					"shortcutKey": "n",
+					"shortcutAccel": true,
+					"text": "Nouvelle note",
+					"fontWeight": "bold",
+					"method": "ObjectMethods/Variable10.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Image9": {
+					"type": "picture",
+					"top": 10,
+					"left": 866,
+					"width": 80,
+					"height": 32,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/img/icons/32/PAXTEL-boutons-05Bis.png"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

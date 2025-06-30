@@ -1,0 +1,262 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Var_Tables": {
+					"type": "dropdown",
+					"top": 12,
+					"left": 12,
+					"width": 239,
+					"height": 20,
+					"dataSource": "Var_Tables",
+					"focusable": false,
+					"display": false,
+					"method": "ObjectMethods/Var_Tables.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"Var_Forms": {
+					"type": "dropdown",
+					"top": 38,
+					"left": 12,
+					"width": 239,
+					"height": 20,
+					"dataSource": "Var_Forms",
+					"focusable": false,
+					"display": false,
+					"method": "ObjectMethods/Var_Forms.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDataChange"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Texte": {
+					"type": "text",
+					"top": 66,
+					"left": 53,
+					"width": 102,
+					"height": 15,
+					"textAlign": "right",
+					"text": "ID :"
+				},
+				"Champ": {
+					"type": "input",
+					"top": 67,
+					"left": 164,
+					"width": 240,
+					"height": 16,
+					"dataSource": "[NAV_Sous_Menus:78]ID:1",
+					"dataSourceTypeHint": "integer",
+					"textAlign": "left",
+					"focusable": false,
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 89,
+					"left": 41,
+					"width": 114,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Parent :"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 89,
+					"left": 164,
+					"width": 240,
+					"height": 16,
+					"dataSource": "[NAV_Menus:77]NP_Menu_Texte:3",
+					"focusable": false,
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 112,
+					"left": 53,
+					"width": 102,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Texte :"
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 111,
+					"left": 164,
+					"width": 240,
+					"height": 16,
+					"dataSource": "[NAV_Sous_Menus:78]NS_Menu_Texte:4",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 180,
+					"left": 53,
+					"width": 102,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Visible :"
+				},
+				"Champ3": {
+					"type": "checkbox",
+					"top": 181,
+					"left": 163,
+					"width": 160,
+					"height": 16,
+					"dataSource": "[NAV_Sous_Menus:78]NS_Visible:6",
+					"text": " ",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 14,
+					"left": 15,
+					"width": 391,
+					"height": 15,
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 14,
+					"fontWeight": "bold",
+					"text": "Sous-Menu - Ajout / Modification"
+				},
+				"Btn_Valider": {
+					"type": "button",
+					"top": 224,
+					"left": 326,
+					"width": 81,
+					"height": 23,
+					"text": "Valider",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Valider.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Btn_Annuler": {
+					"type": "button",
+					"top": 224,
+					"left": 239,
+					"width": 81,
+					"height": 23,
+					"text": "Annuler",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Annuler.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 156,
+					"left": 53,
+					"width": 102,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Numéro d'ordre :"
+				},
+				"Champ5": {
+					"type": "input",
+					"top": 159,
+					"left": 164,
+					"width": 240,
+					"height": 16,
+					"dataSource": "[NAV_Sous_Menus:78]NS_Ordre:7",
+					"dataSourceTypeHint": "integer",
+					"textAlign": "left",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 132,
+					"left": 53,
+					"width": 102,
+					"height": 15,
+					"textAlign": "right",
+					"text": "Méthode :"
+				},
+				"Champ4": {
+					"type": "input",
+					"top": 135,
+					"left": 164,
+					"width": 240,
+					"height": 16,
+					"dataSource": "[NAV_Sous_Menus:78]NS_Methode_Lancement:9",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Champ4.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				}
+			}
+		}
+	]
+}

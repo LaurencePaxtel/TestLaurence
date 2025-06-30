@@ -1,0 +1,415 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 28,
+	"markerBody": 48,
+	"markerBreak": 52,
+	"markerFooter": 84,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onGettingFocus",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 504,
+					"height": 95,
+					"fill": "#DDDDDD",
+					"stroke": "#DDDDDD",
+					"strokeWidth": 0.1
+				},
+				"Rectangle10": {
+					"type": "rectangle",
+					"top": 2,
+					"left": 2,
+					"width": 494,
+					"height": 50,
+					"fill": "transparent",
+					"stroke": "#c0c0c0"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 26,
+					"left": 5,
+					"width": 488,
+					"height": 23,
+					"stroke": "transparent"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 27,
+					"left": 332,
+					"height": 24,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 27,
+					"left": 212,
+					"height": 24,
+					"stroke": "#AAAAAA"
+				},
+				"IN_RAZBt": {
+					"type": "button",
+					"top": 58,
+					"left": 3,
+					"width": 177,
+					"height": 22,
+					"dataSource": "b_RAZ",
+					"shortcutKey": "n",
+					"shortcutAccel": true,
+					"text": "Effacer le mot de passe",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/IN_RAZBt.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton 3D1": {
+					"type": "button",
+					"top": 58,
+					"left": 393,
+					"width": 102,
+					"height": 22,
+					"dataSource": "b_QuitTab",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 26,
+					"left": 4,
+					"width": 490
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 4,
+					"left": 332,
+					"height": 22,
+					"stroke": "#c0c0c0"
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 4,
+					"left": 4,
+					"width": 328,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 7,
+					"left": 7,
+					"width": 321,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Nom et prénom",
+					"fontFamily": "Arial"
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 4,
+					"left": 333,
+					"width": 51,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 7,
+					"left": 336,
+					"width": 44,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Initiales",
+					"fontFamily": "Arial"
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 30,
+					"left": 5,
+					"width": 206,
+					"height": 16,
+					"dataSource": "[INtervenants:10]IN_Nom:4",
+					"stroke": "automatic",
+					"class": "TNR_12",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Ligne15": {
+					"type": "line",
+					"top": 52,
+					"left": 2,
+					"width": 493
+				},
+				"Ligne16": {
+					"type": "line",
+					"top": 53,
+					"left": 2,
+					"width": 493,
+					"stroke": "#FFFFFF"
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 30,
+					"left": 334,
+					"width": 49,
+					"height": 16,
+					"dataSource": "[INtervenants:10]IN_Initiales:7",
+					"stroke": "automatic",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 30,
+					"left": 214,
+					"width": 117,
+					"height": 16,
+					"dataSource": "[INtervenants:10]IN_Prénom:5",
+					"stroke": "automatic",
+					"class": "TNR_12",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 4,
+					"left": 384,
+					"height": 22,
+					"stroke": "#c0c0c0"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 4,
+					"left": 385,
+					"width": 109,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 7,
+					"left": 388,
+					"width": 102,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Type",
+					"fontFamily": "Arial"
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 27,
+					"left": 384,
+					"height": 24,
+					"stroke": "#AAAAAA"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 30,
+					"left": 386,
+					"width": 107,
+					"height": 16,
+					"dataSource": "va_Type",
+					"stroke": "#FFFFFF",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#1e90ff",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDataChange"
+					],
+					"fontFamily": "Arial",
+					"textAlign": "center"
+				},
+				"IN_SsSel": {
+					"type": "button",
+					"top": 58,
+					"left": 190,
+					"width": 97,
+					"height": 22,
+					"dataSource": "b_SousSel",
+					"shortcutKey": "-",
+					"shortcutAccel": true,
+					"shortcutShift": true,
+					"text": "Sous Sélection",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/IN_SsSel.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"IN_TsSel": {
+					"type": "button",
+					"top": 58,
+					"left": 297,
+					"width": 77,
+					"height": 22,
+					"dataSource": "b_ToutSel",
+					"shortcutKey": "+",
+					"shortcutAccel": true,
+					"shortcutShift": true,
+					"text": "Tous",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/IN_TsSel.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				}
+			}
+		}
+	],
+	"editor": {
+		"groups": {
+			"Groupe2": [
+				"Ligne15",
+				"Ligne16"
+			]
+		},
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 7
+}

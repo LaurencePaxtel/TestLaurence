@@ -1,0 +1,29 @@
+<div id="modalLienFamille" class="modal hide fade msmodal modal-xl" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title ng-binding" ng-show="!isWithinlist">Clé de lien familial</h4>
+    </div>
+
+    <div class="modal-body">
+        <div id="tabInsertAfter"></div>
+        
+        <div id="tabToDelete">
+            <table id="example" class="table table-striped table-bordered context-menu-one" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Clé du demandeur</th>
+                        <th>Clé de lien familial</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <button id="modalLienFamilleButtonValid" class="btn btn-primary">Valider</button>
+    </div>
+</div>

@@ -1,0 +1,324 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"width": 600,
+	"height": 480,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Texte1": {
+					"type": "text",
+					"top": 53,
+					"left": 42,
+					"width": 114,
+					"height": 14,
+					"textAlign": "right",
+					"text": "Nom :"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 77,
+					"left": 54,
+					"width": 102,
+					"height": 14,
+					"textAlign": "right",
+					"text": "Initiales :"
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 77,
+					"left": 165,
+					"width": 72,
+					"height": 16,
+					"dataSource": "[Structures:79]STRC_Initiales:2",
+					"entryFilter": "~A###",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Champ2.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"Btn_Valider": {
+					"type": "button",
+					"top": 450,
+					"left": 506,
+					"width": 81,
+					"height": 23,
+					"text": "Valider",
+					"focusable": false,
+					"method": "ObjectMethods/Btn_Valider.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Btn_Annuler": {
+					"type": "button",
+					"top": 450,
+					"left": 419,
+					"width": 81,
+					"height": 23,
+					"text": "Annuler",
+					"focusable": false,
+					"events": [
+						"onClick"
+					],
+					"action": "cancel"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 14,
+					"left": 15,
+					"width": 548,
+					"height": 19,
+					"textAlign": "center",
+					"fontFamily": "Segoe UI",
+					"fontSize": 14,
+					"fontWeight": "bold",
+					"text": "Structure - Ajout / Modification"
+				},
+				"LB_Collaborateurs": {
+					"type": "listbox",
+					"top": 216,
+					"left": 13,
+					"width": 571,
+					"height": 219,
+					"resizingMode": "legacy",
+					"listboxType": "currentSelection",
+					"dataSource": "LB_Collaborateurs",
+					"movableRows": false,
+					"table": 10,
+					"highlightSet": "$ListboxSet",
+					"scrollbarHorizontal": "automatic",
+					"method": "ObjectMethods/LB_Collaborateurs.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDoubleClick",
+						"onDataChange",
+						"onSelectionChange",
+						"onHeaderClick"
+					],
+					"columns": [
+						{
+							"name": "Colonne1",
+							"dataSource": "[INtervenants:10]IN_Nom:4",
+							"width": 152,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Nom",
+								"text": "Nom",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne4",
+							"dataSource": "[INtervenants:10]IN_Prénom:5",
+							"width": 158,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête4",
+								"text": "Prénom",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied4",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne3",
+							"dataSource": "[INtervenants:10]IN_Login:3",
+							"width": 245,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"textAlign": "center",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête3",
+								"text": "Login",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied3",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 195,
+					"left": 14,
+					"width": 90,
+					"height": 14,
+					"fontWeight": "bold",
+					"text": "Collaborateurs :"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 125,
+					"left": 54,
+					"width": 102,
+					"height": 14,
+					"textAlign": "right",
+					"text": "Logo :"
+				},
+				"Champ": {
+					"type": "input",
+					"top": 127,
+					"left": 165,
+					"width": 240,
+					"height": 64,
+					"dataSource": "[Structures:79]STRC_Logo:5",
+					"dataSourceTypeHint": "picture",
+					"pictureFormat": "proportionalCenter",
+					"dragging": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Chk_strc_Indexation": {
+					"type": "checkbox",
+					"top": 73,
+					"left": 320,
+					"width": 85,
+					"height": 20,
+					"dataSource": "Chk_strc_Indexation",
+					"text": "Indexation",
+					"class": "Style_Champ",
+					"focusable": false,
+					"method": "ObjectMethods/Chk_strc_Indexation.4dm",
+					"events": [
+						"onLoad",
+						"onClick"
+					]
+				},
+				"tb_strc_soc_nom": {
+					"type": "dropdown",
+					"top": 97,
+					"left": 163,
+					"width": 242,
+					"height": 23,
+					"dataSource": "tb_strc_soc_nom",
+					"class": "Champs",
+					"method": "ObjectMethods/tb_strc_soc_nom.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 102,
+					"left": 54,
+					"width": 102,
+					"height": 14,
+					"textAlign": "right",
+					"text": "Société :"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 53,
+					"left": 165,
+					"width": 240,
+					"height": 16,
+					"dataSource": "[Structures:79]STRC_Nom:4",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Champ1.4dm",
+					"events": [
+						"onLoad"
+					]
+				}
+			}
+		}
+	],
+	"method": "method.4dm",
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

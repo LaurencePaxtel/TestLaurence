@@ -1,0 +1,1 @@
+P_NotesDate(->[DePart:1]DP_Texte:7)

@@ -1,0 +1,1 @@
+ALERT:C41("Type d'algorithme retenu !")

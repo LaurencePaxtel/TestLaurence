@@ -1,0 +1,335 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 5,
+					"width": 456,
+					"height": 158,
+					"fill": "transparent"
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 172,
+					"left": 353,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_Ann",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Fermer",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 166,
+					"left": 5,
+					"width": 455
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 7,
+					"left": 7,
+					"width": 452,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 10,
+					"left": 10,
+					"width": 447,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Définition"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 29,
+					"left": 7,
+					"width": 452
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 51,
+					"left": 26,
+					"width": 413,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "<va_ColDefinition>"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Texte4": {
+					"type": "text",
+					"top": 81,
+					"left": 86,
+					"width": 23,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "I"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 81,
+					"left": 113,
+					"width": 23,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": ":"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 81,
+					"left": 141,
+					"width": 253,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"text": "Individuel"
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 101,
+					"left": 86,
+					"width": 23,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "F"
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 101,
+					"left": 113,
+					"width": 23,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": ":"
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 101,
+					"left": 141,
+					"width": 253,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"text": "Famille"
+				},
+				"Texte10": {
+					"type": "text",
+					"top": 121,
+					"left": 86,
+					"width": 23,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "G"
+				},
+				"Texte11": {
+					"type": "text",
+					"top": 121,
+					"left": 113,
+					"width": 23,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": ":"
+				},
+				"Texte12": {
+					"type": "text",
+					"top": 121,
+					"left": 141,
+					"width": 253,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"text": "Groupé"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Texte2": {
+					"type": "text",
+					"top": 81,
+					"left": 86,
+					"width": 23,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "A"
+				},
+				"Texte13": {
+					"type": "text",
+					"top": 81,
+					"left": 113,
+					"width": 23,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": ":"
+				},
+				"Texte14": {
+					"type": "text",
+					"top": 81,
+					"left": 141,
+					"width": 253,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"text": "Annulation du dossier / de la demande "
+				}
+			}
+		},
+		{
+			"objects": {
+				"Texte15": {
+					"type": "text",
+					"top": 81,
+					"left": 86,
+					"width": 23,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "I"
+				},
+				"Texte16": {
+					"type": "text",
+					"top": 81,
+					"left": 113,
+					"width": 23,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": ":"
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 81,
+					"left": 141,
+					"width": 253,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"text": "Insertion"
+				},
+				"Texte18": {
+					"type": "text",
+					"top": 101,
+					"left": 86,
+					"width": 23,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "U"
+				},
+				"Texte19": {
+					"type": "text",
+					"top": 101,
+					"left": 113,
+					"width": 23,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": ":"
+				},
+				"Texte20": {
+					"type": "text",
+					"top": 101,
+					"left": 141,
+					"width": 253,
+					"height": 16,
+					"stroke": "#663300",
+					"class": "TNR_12",
+					"text": "Urgence"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

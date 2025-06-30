@@ -1,0 +1,31 @@
+<div class="span8">
+    <div id="container">
+			<form action="" name="direction" id="direction" method="get" class="form-horizontal well" >
+				<fieldset>
+					<legend>Calculer l'itinéraire</legend>			
+					<div class="control-group">
+						<label class="control-label">Point de départ : </label>
+						<div class="controls">
+							<input type="text" id="origin" name="origin" class="span3 search"   />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">Destination : </label>
+						<div class="controls">
+							<input type="text" id="destination" name="destination" class="span3 search"   />
+						</div>
+					</div>
+					
+					<div class="form-actions">
+						<input id="calculate" value="Calculer l'itinéraire"  class="btn btn-primary"/>
+					</div>
+				</fieldset>
+			</form>
+        <div id="panel"></div>
+        <div id="map">
+            <p>Veuillez patienter pendant le chargement de la carte...</p>
+        </div>
+    </div>
+</div>
+
+

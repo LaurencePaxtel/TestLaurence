@@ -1,0 +1,1633 @@
+{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "Lettre US (215,9 x 279,4 mm)",
+		"paperWidth": "612pt",
+		"paperHeight": "792pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 1,
+					"width": 723,
+					"height": 562,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"stroke": "transparent"
+				},
+				"Tab Control": {
+					"type": "tab",
+					"top": 0,
+					"left": 0,
+					"width": 724,
+					"height": 562,
+					"dataSourceTypeHint": "arrayText",
+					"labels": [
+						"Dossiers en cours",
+						"Suite"
+					],
+					"action": "GotoPage",
+					"events": [
+						"onClick"
+					]
+				},
+				"b_Fermer_Rech_appel": {
+					"type": "button",
+					"top": 522,
+					"left": 449,
+					"width": 127,
+					"height": 28,
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSource": "b_Fermer_Rech_appel",
+					"text": "Fermer",
+					"class": "Par_défaut",
+					"method": "ObjectMethods/b_Fermer_Rech_appel.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"btn_valider": {
+					"type": "button",
+					"top": 522,
+					"left": 582,
+					"width": 127,
+					"height": 28,
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSource": "btn_valider",
+					"text": "Valider",
+					"class": "Par_défaut",
+					"method": "ObjectMethods/btn_valider.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Text": {
+					"type": "text",
+					"top": 3,
+					"left": 131,
+					"width": 578,
+					"height": 16,
+					"sizingX": "grow",
+					"class": "titre_fenetre",
+					"textAlign": "center",
+					"text": "Dossiers en cours"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Group Box4": {
+					"type": "groupBox",
+					"top": 357,
+					"left": 367,
+					"width": 342,
+					"height": 157,
+					"text": "Dossier 6"
+				},
+				"Group Box5": {
+					"type": "groupBox",
+					"top": 357,
+					"left": 14,
+					"width": 342,
+					"height": 157,
+					"text": "Dossier 5"
+				},
+				"Group Box2": {
+					"type": "groupBox",
+					"top": 194,
+					"left": 367,
+					"width": 342,
+					"height": 157,
+					"text": "Dossier 4"
+				},
+				"Group Box3": {
+					"type": "groupBox",
+					"top": 194,
+					"left": 14,
+					"width": 342,
+					"height": 157,
+					"text": "Dossier 3"
+				},
+				"Group Box1": {
+					"type": "groupBox",
+					"top": 31,
+					"left": 367,
+					"width": 342,
+					"height": 157,
+					"text": "Dossier 2"
+				},
+				"Group Box": {
+					"type": "groupBox",
+					"top": 31,
+					"left": 14,
+					"width": 342,
+					"height": 157,
+					"text": "Dossier 1",
+					"stroke": "#000000"
+				},
+				"tb_dos_noms_1": {
+					"type": "dropdown",
+					"top": 52,
+					"left": 131,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_dos_noms_1",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_dos_noms_1.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"DOS_Numero_1": {
+					"type": "input",
+					"top": 79,
+					"left": 132,
+					"width": 200,
+					"height": 14,
+					"dataSource": "DOS_Numero_1",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Du_1": {
+					"type": "input",
+					"top": 102,
+					"left": 132,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Du_1",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Au_1": {
+					"type": "input",
+					"top": 125,
+					"left": 132,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Au_1",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"tb_jours_rappel_1": {
+					"type": "dropdown",
+					"top": 148,
+					"left": 131,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_jours_rappel_1",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_jours_rappel_1.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"tb_dos_noms_2": {
+					"type": "dropdown",
+					"top": 52,
+					"left": 484,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_dos_noms_2",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_dos_noms_2.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"DOS_Numero_2": {
+					"type": "input",
+					"top": 79,
+					"left": 485,
+					"width": 200,
+					"height": 14,
+					"dataSource": "DOS_Numero_2",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Du_2": {
+					"type": "input",
+					"top": 102,
+					"left": 485,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Du_2",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Au_2": {
+					"type": "input",
+					"top": 125,
+					"left": 485,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Au_2",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"tb_jours_rappel_2": {
+					"type": "dropdown",
+					"top": 148,
+					"left": 484,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_jours_rappel_2",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_jours_rappel_2.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"tb_dos_noms_3": {
+					"type": "dropdown",
+					"top": 215,
+					"left": 131,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_dos_noms_3",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_dos_noms_3.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"DOS_Numero_3": {
+					"type": "input",
+					"top": 242,
+					"left": 132,
+					"width": 200,
+					"height": 14,
+					"dataSource": "DOS_Numero_3",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Du_3": {
+					"type": "input",
+					"top": 265,
+					"left": 132,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Du_3",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Au_3": {
+					"type": "input",
+					"top": 288,
+					"left": 132,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Au_3",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"tb_jours_rappel_3": {
+					"type": "dropdown",
+					"top": 311,
+					"left": 131,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_jours_rappel_3",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_jours_rappel_3.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"tb_dos_noms_4": {
+					"type": "dropdown",
+					"top": 215,
+					"left": 484,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_dos_noms_4",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_dos_noms_4.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"DOS_Numero_4": {
+					"type": "input",
+					"top": 242,
+					"left": 485,
+					"width": 200,
+					"height": 14,
+					"dataSource": "DOS_Numero_4",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Du_4": {
+					"type": "input",
+					"top": 265,
+					"left": 485,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Du_4",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Au_4": {
+					"type": "input",
+					"top": 288,
+					"left": 485,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Au_4",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"tb_jours_rappel_4": {
+					"type": "dropdown",
+					"top": 311,
+					"left": 484,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_jours_rappel_4",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_jours_rappel_4.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"tb_dos_noms_5": {
+					"type": "dropdown",
+					"top": 378,
+					"left": 131,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_dos_noms_5",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_dos_noms_5.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"DOS_Numero_5": {
+					"type": "input",
+					"top": 405,
+					"left": 132,
+					"width": 200,
+					"height": 14,
+					"dataSource": "DOS_Numero_5",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Du_5": {
+					"type": "input",
+					"top": 428,
+					"left": 132,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Du_5",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Au_5": {
+					"type": "input",
+					"top": 451,
+					"left": 132,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Au_5",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"tb_jours_rappel_5": {
+					"type": "dropdown",
+					"top": 474,
+					"left": 131,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_jours_rappel_5",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_jours_rappel_5.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"tb_dos_noms_6": {
+					"type": "dropdown",
+					"top": 378,
+					"left": 484,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_dos_noms_6",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_dos_noms_6.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"DOS_Numero_6": {
+					"type": "input",
+					"top": 405,
+					"left": 485,
+					"width": 200,
+					"height": 14,
+					"dataSource": "DOS_Numero_6",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Du_6": {
+					"type": "input",
+					"top": 428,
+					"left": 485,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Du_6",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Au_6": {
+					"type": "input",
+					"top": 451,
+					"left": 485,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Au_6",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"tb_jours_rappel_6": {
+					"type": "dropdown",
+					"top": 474,
+					"left": 484,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_jours_rappel_6",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_jours_rappel_6.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"Texte48": {
+					"type": "text",
+					"top": 55,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nom :"
+				},
+				"Texte49": {
+					"type": "text",
+					"top": 79,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "N° Dossier :"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 103,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date du :"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 127,
+					"left": 72,
+					"width": 50,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date au :"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 151,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nombre de jours :"
+				},
+				"Texte4": {
+					"type": "text",
+					"top": 55,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nom :"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 79,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "N° Dossier :"
+				},
+				"Texte6": {
+					"type": "text",
+					"top": 103,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date du :"
+				},
+				"Texte7": {
+					"type": "text",
+					"top": 127,
+					"left": 425,
+					"width": 50,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date au :"
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 151,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nombre de jours :"
+				},
+				"Texte9": {
+					"type": "text",
+					"top": 218,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nom :"
+				},
+				"Texte10": {
+					"type": "text",
+					"top": 242,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "N° Dossier :"
+				},
+				"Texte11": {
+					"type": "text",
+					"top": 266,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date du :"
+				},
+				"Texte12": {
+					"type": "text",
+					"top": 290,
+					"left": 72,
+					"width": 50,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date au :"
+				},
+				"Texte13": {
+					"type": "text",
+					"top": 314,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nombre de jours :"
+				},
+				"Texte14": {
+					"type": "text",
+					"top": 218,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nom :"
+				},
+				"Texte15": {
+					"type": "text",
+					"top": 242,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "N° Dossier :"
+				},
+				"Texte16": {
+					"type": "text",
+					"top": 266,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date du :"
+				},
+				"Texte17": {
+					"type": "text",
+					"top": 290,
+					"left": 425,
+					"width": 50,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date au :"
+				},
+				"Texte18": {
+					"type": "text",
+					"top": 314,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nombre de jours :"
+				},
+				"Texte19": {
+					"type": "text",
+					"top": 381,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nom :"
+				},
+				"Texte20": {
+					"type": "text",
+					"top": 405,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "N° Dossier :"
+				},
+				"Texte21": {
+					"type": "text",
+					"top": 429,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date du :"
+				},
+				"Texte22": {
+					"type": "text",
+					"top": 453,
+					"left": 72,
+					"width": 50,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date au :"
+				},
+				"Texte23": {
+					"type": "text",
+					"top": 477,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nombre de jours :"
+				},
+				"Texte24": {
+					"type": "text",
+					"top": 381,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nom :"
+				},
+				"Texte25": {
+					"type": "text",
+					"top": 405,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "N° Dossier :"
+				},
+				"Texte26": {
+					"type": "text",
+					"top": 429,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date du :"
+				},
+				"Texte27": {
+					"type": "text",
+					"top": 453,
+					"left": 425,
+					"width": 50,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date au :"
+				},
+				"Texte28": {
+					"type": "text",
+					"top": 477,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nombre de jours :"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Group Box6": {
+					"type": "groupBox",
+					"top": 194,
+					"left": 367,
+					"width": 342,
+					"height": 157,
+					"text": "Dossier 10"
+				},
+				"Group Box7": {
+					"type": "groupBox",
+					"top": 194,
+					"left": 14,
+					"width": 342,
+					"height": 157,
+					"text": "Dossier 9"
+				},
+				"Group Box8": {
+					"type": "groupBox",
+					"top": 31,
+					"left": 367,
+					"width": 342,
+					"height": 157,
+					"text": "Dossier 8"
+				},
+				"Group Box9": {
+					"type": "groupBox",
+					"top": 31,
+					"left": 14,
+					"width": 342,
+					"height": 157,
+					"text": "Dossier 7"
+				},
+				"tb_dos_noms_7": {
+					"type": "dropdown",
+					"top": 52,
+					"left": 131,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_dos_noms_7",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_dos_noms_7.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"DOS_Numero_7": {
+					"type": "input",
+					"top": 79,
+					"left": 132,
+					"width": 200,
+					"height": 14,
+					"dataSource": "DOS_Numero_7",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Du_7": {
+					"type": "input",
+					"top": 102,
+					"left": 132,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Du_7",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Au_7": {
+					"type": "input",
+					"top": 125,
+					"left": 132,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Au_7",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"tb_jours_rappel_7": {
+					"type": "dropdown",
+					"top": 148,
+					"left": 131,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_jours_rappel_7",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_jours_rappel_7.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"tb_dos_noms_8": {
+					"type": "dropdown",
+					"top": 52,
+					"left": 484,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_dos_noms_8",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_dos_noms_8.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"DOS_Numero_8": {
+					"type": "input",
+					"top": 79,
+					"left": 485,
+					"width": 200,
+					"height": 14,
+					"dataSource": "DOS_Numero_8",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Du_8": {
+					"type": "input",
+					"top": 102,
+					"left": 485,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Du_8",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Au_8": {
+					"type": "input",
+					"top": 125,
+					"left": 485,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Au_8",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"tb_jours_rappel_8": {
+					"type": "dropdown",
+					"top": 148,
+					"left": 484,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_jours_rappel_8",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_jours_rappel_8.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"tb_dos_noms_9": {
+					"type": "dropdown",
+					"top": 215,
+					"left": 131,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_dos_noms_9",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_dos_noms_9.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"DOS_Numero_9": {
+					"type": "input",
+					"top": 242,
+					"left": 132,
+					"width": 200,
+					"height": 14,
+					"dataSource": "DOS_Numero_9",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Du_9": {
+					"type": "input",
+					"top": 265,
+					"left": 132,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Du_9",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Au_9": {
+					"type": "input",
+					"top": 288,
+					"left": 132,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Au_9",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"tb_jours_rappel_9": {
+					"type": "dropdown",
+					"top": 311,
+					"left": 131,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_jours_rappel_9",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_jours_rappel_9.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"tb_dos_noms_10": {
+					"type": "dropdown",
+					"top": 215,
+					"left": 484,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_dos_noms_10",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_dos_noms_10.4dm",
+					"events": [
+						"onLoad",
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"DOS_Numero_10": {
+					"type": "input",
+					"top": 242,
+					"left": 485,
+					"width": 200,
+					"height": 14,
+					"dataSource": "DOS_Numero_10",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Du_10": {
+					"type": "input",
+					"top": 265,
+					"left": 485,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Du_10",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"DOS_Date_Au_10": {
+					"type": "input",
+					"top": 288,
+					"left": 485,
+					"width": 118,
+					"height": 14,
+					"dataSource": "DOS_Date_Au_10",
+					"dataSourceTypeHint": "date",
+					"class": "Style_Champ",
+					"textAlign": "left",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"tb_jours_rappel_10": {
+					"type": "dropdown",
+					"top": 311,
+					"left": 484,
+					"width": 200,
+					"height": 19,
+					"dataSource": "tb_jours_rappel_10",
+					"focusable": false,
+					"class": "Style_Champ",
+					"method": "ObjectMethods/tb_jours_rappel_10.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					]
+				},
+				"Texte29": {
+					"type": "text",
+					"top": 55,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nom :"
+				},
+				"Texte30": {
+					"type": "text",
+					"top": 79,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "N° Dossier :"
+				},
+				"Texte31": {
+					"type": "text",
+					"top": 103,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date du :"
+				},
+				"Texte32": {
+					"type": "text",
+					"top": 127,
+					"left": 72,
+					"width": 50,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date au :"
+				},
+				"Texte33": {
+					"type": "text",
+					"top": 151,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nombre de jours :"
+				},
+				"Texte34": {
+					"type": "text",
+					"top": 55,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nom :"
+				},
+				"Texte35": {
+					"type": "text",
+					"top": 79,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "N° Dossier :"
+				},
+				"Texte36": {
+					"type": "text",
+					"top": 103,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date du :"
+				},
+				"Texte37": {
+					"type": "text",
+					"top": 127,
+					"left": 425,
+					"width": 50,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date au :"
+				},
+				"Texte38": {
+					"type": "text",
+					"top": 151,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nombre de jours :"
+				},
+				"Texte39": {
+					"type": "text",
+					"top": 218,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nom :"
+				},
+				"Texte40": {
+					"type": "text",
+					"top": 242,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "N° Dossier :"
+				},
+				"Texte41": {
+					"type": "text",
+					"top": 266,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date du :"
+				},
+				"Texte42": {
+					"type": "text",
+					"top": 290,
+					"left": 72,
+					"width": 50,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date au :"
+				},
+				"Texte43": {
+					"type": "text",
+					"top": 314,
+					"left": 2,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nombre de jours :"
+				},
+				"Texte44": {
+					"type": "text",
+					"top": 218,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nom :"
+				},
+				"Texte45": {
+					"type": "text",
+					"top": 242,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "N° Dossier :"
+				},
+				"Texte46": {
+					"type": "text",
+					"top": 266,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date du :"
+				},
+				"Texte47": {
+					"type": "text",
+					"top": 290,
+					"left": 425,
+					"width": 50,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Date au :"
+				},
+				"Texte50": {
+					"type": "text",
+					"top": 314,
+					"left": 355,
+					"width": 120,
+					"height": 15,
+					"stroke": "#000000",
+					"textAlign": "right",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Nombre de jours :"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {
+				"objects": [
+					"Rectangle"
+				]
+			}
+		}
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 1
+}

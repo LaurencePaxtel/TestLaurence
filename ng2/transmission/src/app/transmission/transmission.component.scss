@@ -1,0 +1,68 @@
+.transmission-table {
+  .header {
+    th {
+      background-color: #0984e3;
+      color: white;
+    }
+  }
+
+  ::ng-deep .edit-button {
+    .p-button.p-button-secondary {
+      color: #0984e3;
+    }
+  }
+
+  ::ng-deep .remove-button {
+    .p-button.p-button-secondary {
+      color: #e74c3c;
+    }
+  }
+}
+
+.message-as-paragraph {
+  white-space: pre-wrap;
+}
+
+.transmission-form-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+
+  th {
+    background-color: #dcdde1;
+    font-weight: 600;
+  }
+  th, td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+  }
+}
+
+::ng-deep {
+  .p-dialog {
+    border: none;
+  }
+  .p-dialog-header {
+    border-bottom: 1px solid #dfe6e9;
+    color: #0984e3;
+  }
+}
+
+::ng-deep {
+  .p-autocomplete-input {
+    width: 100%;
+  }
+}
+
+::ng-deep .mention-menu {
+  margin-top: 20px !important;
+}
+
+.urgent-row {
+  background-color: #f5e0df;
+}
+
+.selectable-row {
+  td {
+    cursor: grab;
+  }
+}

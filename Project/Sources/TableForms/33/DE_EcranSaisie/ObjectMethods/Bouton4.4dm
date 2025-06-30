@@ -1,0 +1,10 @@
+If (Form event code:C388=Sur clic:K2:4)
+	va_Identité:=[DossierSante:33]DE_Nom:14+" "+[DossierSante:33]DE_Prénom:15+" "+String:C10([DossierSante:33]DE_DateNéLe:17; 7)
+	READ WRITE:C146([RenseiGnements:20])
+	FORM SET INPUT:C55([RenseiGnements:20]; "RG_EcranAnnuaire")
+	$vl_Fenetre:=i_FenêtreNo(632; 235; 4; va_Identité+" : "+"Annuaire"; 1; "")
+	ADD RECORD:C56([RenseiGnements:20]; *)
+	UNLOAD RECORD:C212([RenseiGnements:20])
+	CLOSE WINDOW:C154($vl_Fenetre)
+	READ ONLY:C145([RenseiGnements:20])
+End if 

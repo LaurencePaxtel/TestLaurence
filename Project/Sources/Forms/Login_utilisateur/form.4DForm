@@ -1,0 +1,352 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onTimer",
+		"onAfterKeystroke",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 18,
+					"width": 597,
+					"height": 427,
+					"stroke": "transparent"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Bouton": {
+					"type": "button",
+					"top": 382,
+					"left": 210,
+					"width": 143,
+					"height": 20,
+					"dataSource": "Bouton",
+					"shortcutKey": "[Enter]",
+					"text": "Connexion",
+					"class": "Par_défaut",
+					"defaultButton": true,
+					"method": "ObjectMethods/Bouton.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial",
+					"visibility": "visible",
+					"stroke": "automatic"
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 377,
+					"left": 207,
+					"width": 151,
+					"height": 30,
+					"borderRadius": 15,
+					"fill": "#2F3B6F",
+					"stroke": "transparent"
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 190,
+					"left": 29,
+					"width": 326,
+					"height": 30,
+					"borderRadius": 15,
+					"fill": "transparent",
+					"stroke": "#CCCCCC",
+					"strokeWidth": 3
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 242,
+					"left": 29,
+					"width": 326,
+					"height": 30,
+					"borderRadius": 15,
+					"fill": "#FFFFFF",
+					"stroke": "#CCCCCC",
+					"strokeWidth": 3
+				},
+				"Bouton1": {
+					"type": "button",
+					"top": 384,
+					"left": 40,
+					"width": 143,
+					"height": 20,
+					"dataSource": "Ann",
+					"shortcutKey": "[Esc]",
+					"text": "Annuler",
+					"class": "Par_défaut",
+					"method": "ObjectMethods/Bouton1.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"The_Login": {
+					"type": "input",
+					"top": 197,
+					"left": 75,
+					"width": 266,
+					"height": 15,
+					"dataSource": "The_Login",
+					"class": "Style_Champ",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"method": "ObjectMethods/The_Login.4dm",
+					"events": [
+						"onDataChange"
+					],
+					"fontFamily": "Calibri",
+					"fontSize": 14,
+					"borderStyle": "none",
+					"placeholder": "Identifiant"
+				},
+				"The_PW": {
+					"type": "input",
+					"top": 248,
+					"left": 75,
+					"width": 264,
+					"height": 17,
+					"dataSource": "The_PW",
+					"class": "Style_Champ",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"fontFamily": "Calibri",
+					"fontSize": 14,
+					"borderStyle": "none",
+					"placeholder": "Mot de passe"
+				},
+				"Zone de défilement": {
+					"type": "listbox",
+					"top": 184,
+					"left": 388,
+					"width": 200,
+					"height": 114,
+					"resizingMode": "legacy",
+					"focusable": false,
+					"movableRows": false,
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"horizontalLineStroke": "transparent",
+					"verticalLineStroke": "transparent",
+					"fill": "transparent",
+					"fontFamily": "Calibri",
+					"fontSize": 12,
+					"method": "ObjectMethods/Zone de défilement.4dm",
+					"events": [
+						"onClick",
+						"onDisplayDetail",
+						"onDoubleClick",
+						"onDataChange"
+					],
+					"columns": [
+						{
+							"name": "Zone de défilement_Column1",
+							"dataSource": "Liste_entreprise",
+							"width": 172,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"fontFamily": "Segoe UI",
+							"fontSize": 11,
+							"events": [
+								"onClick",
+								"onDoubleClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header1",
+								"text": "Header1",
+								"dataSource": "Header1",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Segoe UI",
+								"fontSize": 11
+							},
+							"footer": {
+								"name": "Footer1",
+								"stroke": "automatic",
+								"fill": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic",
+								"fontFamily": "Segoe UI",
+								"fontSize": 11
+							}
+						}
+					]
+				},
+				"Case à cocher": {
+					"type": "checkbox",
+					"top": 319,
+					"left": 31,
+					"width": 305,
+					"height": 26,
+					"dataSource": "Memo_login",
+					"text": "Mémoriser mon Identifiant",
+					"class": "Style_En_tete_champ",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Calibri",
+					"fontSize": 12,
+					"stroke": "#2F3B6F"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 123,
+					"left": 43,
+					"width": 314,
+					"height": 13,
+					"class": "Style_En_tete_champ",
+					"text": "Bienvenue dans le logiciel Paxtel",
+					"fontFamily": "Calibri",
+					"fontSize": 18,
+					"fontWeight": "bold",
+					"stroke": "#F15A23",
+					"textAlign": "center"
+				},
+				"Bouton image": {
+					"type": "pictureButton",
+					"left": 77,
+					"top": 10,
+					"width": 202,
+					"height": 88,
+					"events": [
+						"onClick"
+					],
+					"picture": "/RESOURCES/img/logo_paxtel.jpg"
+				},
+				"Texte4": {
+					"type": "text",
+					"text": "Connexion",
+					"top": 383,
+					"left": 217,
+					"width": 127,
+					"height": 21,
+					"fontSize": 14,
+					"fontWeight": "bold",
+					"fontFamily": "Calibri",
+					"stroke": "#FFFFFF",
+					"textAlign": "center"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 377,
+					"left": 35,
+					"width": 151,
+					"height": 30,
+					"borderRadius": 15,
+					"fill": "#FFFFFF",
+					"stroke": "#2F3B6F",
+					"strokeWidth": 3
+				},
+				"Texte5": {
+					"type": "text",
+					"text": "Annuler",
+					"top": 383,
+					"left": 44,
+					"width": 127,
+					"height": 21,
+					"fontSize": 14,
+					"fontWeight": "bold",
+					"fontFamily": "Calibri",
+					"stroke": "#2F3B6F",
+					"textAlign": "center"
+				},
+				"Texte6": {
+					"type": "text",
+					"text": "Lors de votre 1ère connexion, veuillez saisir uniquement votre identifiant sans indiquer de mot de passe",
+					"top": 275,
+					"left": 34,
+					"width": 340,
+					"height": 30,
+					"fontFamily": "Calibri",
+					"fontSize": 11,
+					"fontStyle": "italic",
+					"stroke": "#2F3B6F"
+				},
+				"Bouton image1": {
+					"type": "pictureButton",
+					"left": 31,
+					"top": 195,
+					"width": 34,
+					"height": 18,
+					"events": [
+						"onClick"
+					],
+					"picture": "/RESOURCES/Images/login/Icone Login .png"
+				},
+				"Bouton image2": {
+					"type": "pictureButton",
+					"left": 29,
+					"top": 249,
+					"width": 37,
+					"height": 18,
+					"events": [
+						"onClick"
+					],
+					"picture": "/RESOURCES/Images/login/icone mot de passe.png"
+				}
+			},
+			"entryOrder": [
+				"Bouton",
+				"Bouton1",
+				"The_Login",
+				"The_PW",
+				"Zone de défilement",
+				"Case à cocher"
+			]
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 1590,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

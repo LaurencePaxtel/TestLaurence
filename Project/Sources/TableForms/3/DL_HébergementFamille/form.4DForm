@@ -1,0 +1,377 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 1,
+					"left": 1,
+					"width": 520,
+					"height": 362,
+					"strokeWidth": 0
+				}
+			}
+		},
+		{
+			"objects": {
+				"Rectangle93": {
+					"type": "rectangle",
+					"top": 30,
+					"left": 7,
+					"width": 324,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte646": {
+					"type": "text",
+					"top": 33,
+					"left": 10,
+					"width": 319,
+					"height": 16,
+					"stroke": "#0071BC",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Clé du demandeur",
+					"fontFamily": "Arial"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 52,
+					"left": 7,
+					"width": 463,
+					"height": 1
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 30,
+					"left": 332,
+					"width": 138,
+					"height": 22,
+					"fill": "#D9EDF0",
+					"stroke": "transparent"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 33,
+					"left": 335,
+					"width": 133,
+					"height": 16,
+					"stroke": "#0071BC",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Clé de lien familial",
+					"fontFamily": "Arial"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 10,
+					"left": 7,
+					"width": 461,
+					"height": 16,
+					"dataSource": "va_CléFam",
+					"stroke": "#0071BC",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#D9EDF0",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Sous-formulaire2": {
+					"type": "subform",
+					"top": 53,
+					"left": 7,
+					"width": 446,
+					"height": 198,
+					"dataSourceTypeHint": "text",
+					"table": 4,
+					"listForm": "HB_ListeInclueFamilleLien",
+					"focusable": false,
+					"scrollbarVertical": "visible",
+					"enterableInList": false,
+					"deletableInList": false,
+					"selectionMode": "single",
+					"printFrame": "variable"
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 267,
+					"left": 226,
+					"width": 41,
+					"height": 16,
+					"dataSource": "va_LaFamille",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton1": {
+					"type": "button",
+					"top": 264,
+					"left": 135,
+					"width": 87,
+					"height": 22,
+					"dataSource": "b_LaFamille",
+					"text": "Clé de lien",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton1.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton2": {
+					"type": "button",
+					"top": 264,
+					"left": 5,
+					"width": 117,
+					"height": 22,
+					"dataSource": "b_LaFamPrevious",
+					"text": "Liens en cours",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton2.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton3": {
+					"type": "button",
+					"top": 296,
+					"left": 147,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_NewChef",
+					"text": "Nouveau lien",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton3.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton4": {
+					"type": "button",
+					"top": 296,
+					"left": 371,
+					"width": 99,
+					"height": 22,
+					"dataSource": "b_AnnET",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton5": {
+					"type": "button",
+					"top": 296,
+					"left": 259,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_ValET",
+					"shortcutKey": "[Enter]",
+					"text": "Sélectionner",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton5.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 290,
+					"left": 6,
+					"width": 463,
+					"height": 1
+				},
+				"Variable3": {
+					"type": "button",
+					"top": 30,
+					"left": 7,
+					"width": 324,
+					"height": 22,
+					"dataSource": "b_tri",
+					"display": false,
+					"method": "ObjectMethods/Variable3.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton inversé1": {
+					"type": "button",
+					"top": 30,
+					"left": 332,
+					"width": 136,
+					"height": 22,
+					"dataSource": "b_tri",
+					"display": false,
+					"method": "ObjectMethods/Bouton inversé1.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 267,
+					"left": 374,
+					"width": 94,
+					"height": 16,
+					"dataSource": "va_LaFamilleN",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Double-clic-edi"
+					},
+					"fill": "#FFFFFF",
+					"borderStyle": "sunken",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial"
+				},
+				"Bouton7": {
+					"type": "button",
+					"top": 264,
+					"left": 280,
+					"width": 87,
+					"height": 22,
+					"dataSource": "b_LaFamilleN",
+					"text": "Par nom",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton7.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 147
+}

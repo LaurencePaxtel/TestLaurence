@@ -1,0 +1,216 @@
+<div id="modalNouvelleNote" class="modal hide fade msmodal modal-xl" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">        
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <h4 class="modal-title ng-binding" ng-show="!isWithinlist">Note</h4>
+            </div>
+
+            <div id="modalBodyNouvelleNote" class="modal-body">
+                <div class="rowB g-mb-10">
+                    <div class="col-xl-4 col-md-4 col-12">
+                        <div class="rowB">
+                            <div class="col-6">
+                                <label class="g-align-center-vertically-and-horizontally">Type de note</label>
+                            </div>
+
+                            <div class="col-6">
+                                <select id="typeNote" class="g-width-100x">
+                                    <option>Sélection d'un élément</option>
+                                </select>
+                            </div>
+                        </div>             
+                    </div>
+
+                    <div class="col-xl-4 col-md-4 col-6">
+                        <div class="rowB">
+                            <div class="col-3 col-xl-6 col-sm-3">
+                                <label class="g-align-center-vertically-and-horizontally">Du</label>
+                            </div>
+
+                            <div class="col-9 col-xl-6 col-sm-9">
+                                <input id="noteDu" name="noteDu" type="date" class="g-width-100x" />
+                            </div>
+                        </div>             
+                    </div>
+
+                    <div class="col-xl-4 col-md-4 col-6">
+                        <div class="rowB">
+                            <div class="col-3 col-xl-6 col-sm-3">
+                                <label class="g-align-center-vertically-and-horizontally">Au</label>
+                            </div>
+
+                            <div class="col-9 col-xl-6 col-sm-9">
+                                <input id="noteAu" name="noteAu" type="date" class="g-width-100x" />
+                            </div>
+                        </div>             
+                    </div>
+                </div>
+
+                <div class="rowB">
+                    <div class="col-xl-2 col-md-2 col-12">
+                        <div class="rowB">
+                            <div class="col-12 g-mb-10">
+                                <button id="addNoteButton" type="button" class="fdp_Button fdp_btn_top fdp-btn-green g-width-100x">
+                                    <i class="fa fa-plus"></i>Ajouter
+                                </button>
+                            </div>
+
+                            <div class="col-12 g-mb-10">
+                                <button id="editNoteButton" type="button" class="fdp_Button fdp_btn_top fdp-btn-blue g-width-100x">
+                                    <i class="fa fa-edit"></i>Modifier
+                                </button>
+                            </div>
+
+                            <div class="col-12">
+                                <button id="dropNoteButton" type="button" class="fdp_Button fdp_btn_top fdp-btn-red g-width-100x">
+                                    <i class="fa fa-trash"></i>Supprimer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-10 col-md-10 col-12">
+                        <div class="table-responsive">
+                            <div id="tabInsertAfterModalNote"></div>
+            
+                            <div id="tabToDeleteModalNote">
+                                <table id="noteTable" class="table table-bordered context-menu-one" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>N° note</th>
+                                            <th>Type de note</th>
+                                            <th>Date</th>
+                                            <th>Note</th>
+                                            <th>Utilisateur</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="fdp_Button fdp_btn_top fdp-btn-red g-width-150" data-dismiss="modal">
+                    <i class="fa fa-close"></i>Fermer
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#addNoteButton").click(function(){
+        data4D.provenance = "ajouter"
+        $("#modalNouvelleNoteEdit").modal('show');
+    });
+
+    $("#editNoteButton").click(function(){
+
+        switch (true) {
+            case ($("#noteTable").find(".selected").find("td:eq(0)").find("input:eq(2)").val() != "Vrai"):
+                $.alert({
+                    title: '',
+                    content: 'Vous n\'avez pas le privilège nécessaire pour modifier la note sélectionnée',
+                    icon: 'fa fa-error',
+                    animation: 'scale',
+                    closeAnimation: 'scale',
+                    columnClass: 'iw_alert',
+                    buttons: {
+                        okay: {
+                        text: 'Ok',
+                        btnClass: 'btn-blue'
+                        }
+                    }
+                });
+
+                break;
+            case ($("#noteTable").find(".selected").length > 0):
+                data4D.provenance = "modifier"
+                $("#modalNouvelleNoteEdit").modal('show');
+                break
+            default:
+
+                $.alert({
+                    title: '',
+                    content: 'Veuilez sélectionner une note',
+                    icon: 'fa fa-error',
+                    animation: 'scale',
+                    closeAnimation: 'scale',
+                    columnClass: 'iw_alert',
+                    buttons: {
+                        okay: {
+                        text: 'Ok',
+                        btnClass: 'btn-blue'
+                        }
+                    }
+                });
+
+                break;
+        }
+
+    });
+
+    $("#dropNoteButton").click(function(){
+
+        if ($("#noteTable").find(".selected").length > 0) {
+            bootbox.confirm('Souhaitez-vous vraiment supprimer la note ' + $("#noteTable").find(".selected").find("td:eq(0)").text() + ' ?', "Non", "Oui", function(result) {
+
+                if (result == true) {
+                    $.LoadingOverlay("show");
+
+                    $.ajax({
+                        method: 'POST',
+                        url: "/4DACTION/outilsWebHebergeListeAjax",
+                        data: {
+                        "action": "dropNote",
+                        "hebergeID": $('#record_id').val(),
+                        "typeNoteEdit": $("#noteTable").find(".selected").find("td:eq(1)").text(),
+                        "noteEditUUID": $("#noteTable").find(".selected").find("td:eq(0)").find("input").eq(0).val()
+                        },
+                        success: function(response){
+                            var reponseParse = JSON.parse(response);
+
+                            updateDataTableNote({
+                                "hebergeID": $('#record_id').val(),
+                                "action": "chargeNote",
+                                "typeNote": $("#typeNote").val(),
+                                "keyword": $("#keyword").val(),
+                                "dateDu": dateToJJMMYYYY($("#noteDu").val()),
+                                "dateAu": dateToJJMMYYYY($("#noteAu").val())
+                            });
+                            
+                            $.LoadingOverlay("hide");
+                        }
+                    });
+
+                }
+
+            });
+
+        }else{
+
+            $.alert({
+                title: '',
+                content: 'Veuilez sélectionner une note',
+                icon: 'fa fa-error',
+                animation: 'scale',
+                closeAnimation: 'scale',
+                columnClass: 'iw_alert',
+                buttons: {
+                    okay: {
+                    text: 'Ok',
+                    btnClass: 'btn-blue'
+                    }
+                }
+            });
+
+        }
+
+    });
+</script>

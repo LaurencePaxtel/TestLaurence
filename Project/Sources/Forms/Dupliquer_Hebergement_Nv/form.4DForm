@@ -1,0 +1,201 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onDataChange"
+	],
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "841pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"LB": {
+					"type": "listbox",
+					"top": 20,
+					"left": 46,
+					"width": 515,
+					"height": 459,
+					"resizingMode": "legacy",
+					"scrollbarHorizontal": "hidden",
+					"fill": "#FFFACD",
+					"alternateFill": "#F5DEB3",
+					"verticalAlign": "middle",
+					"method": "ObjectMethods/LB.4dm",
+					"events": [
+						"onLoad",
+						"onDataChange"
+					],
+					"columns": [
+						{
+							"name": "col_check",
+							"dataSourceTypeHint": "boolean",
+							"width": 50,
+							"minWidth": 10,
+							"maxWidth": 50,
+							"controlType": "checkbox",
+							"stroke": "automatic",
+							"fill": "#FFFACD",
+							"alternateFill": "#F5DEB3",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"method": "ObjectMethods/col_check.4dm",
+							"header": {
+								"name": "head_check",
+								"text": "Dupliqué",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "#FFFACD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							}
+						},
+						{
+							"name": "col_name",
+							"width": 400,
+							"minWidth": 10,
+							"maxWidth": 400,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFACD",
+							"alternateFill": "#F5DEB3",
+							"textAlign": "left",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "head_name",
+								"text": "Champ",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Pied2",
+								"stroke": "automatic",
+								"fill": "#FFFACD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							}
+						},
+						{
+							"name": "col_num",
+							"dataSourceTypeHint": "number",
+							"width": 50,
+							"minWidth": 10,
+							"maxWidth": 50,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#FFFACD",
+							"alternateFill": "#F5DEB3",
+							"textAlign": "center",
+							"verticalAlign": "middle",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "head_num",
+								"text": "Numéro",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							},
+							"footer": {
+								"name": "Pied3",
+								"stroke": "automatic",
+								"fill": "#FFFACD",
+								"textAlign": "automatic",
+								"verticalAlign": "middle"
+							}
+						}
+					]
+				},
+				"button_reset": {
+					"type": "button",
+					"top": 489,
+					"left": 46,
+					"width": 100,
+					"height": 23,
+					"text": "Valeurs d'usine",
+					"focusable": false,
+					"method": "ObjectMethods/button_reset.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton2": {
+					"type": "button",
+					"top": 489,
+					"left": 481,
+					"width": 80,
+					"height": 23,
+					"text": "Enregistrer",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"button_coche": {
+					"type": "button",
+					"top": 18,
+					"left": 20,
+					"width": 23,
+					"height": 23,
+					"focusable": false,
+					"method": "ObjectMethods/button_coche.4dm",
+					"events": [
+						"onClick"
+					],
+					"text": "+"
+				},
+				"button_decoche": {
+					"type": "button",
+					"top": 41,
+					"left": 20,
+					"width": 23,
+					"height": 23,
+					"text": "-",
+					"focusable": false,
+					"method": "ObjectMethods/button_decoche.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	],
+	"method": "method.4dm",
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

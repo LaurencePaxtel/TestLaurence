@@ -1,0 +1,594 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onLoadRecord",
+		"onAfterEdit",
+		"onBeginDragOver",
+		"onBoundVariableChange",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "Lettre US (215,9 x 279,4 mm)",
+		"paperWidth": "612pt",
+		"paperHeight": "792pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Zone de groupe": {
+					"type": "groupBox",
+					"top": 30,
+					"left": 12,
+					"width": 578,
+					"height": 129,
+					"sizingX": "grow",
+					"class": "Par_défaut",
+					"text": "Recherche"
+				},
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 126,
+					"left": 26,
+					"width": 138,
+					"height": 25,
+					"stroke": "transparent"
+				},
+				"104_ico1": {
+					"type": "picture",
+					"top": 51,
+					"left": 331,
+					"width": 14,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/104_ico1.png"
+				},
+				"txt_centre_nom": {
+					"type": "input",
+					"top": 77,
+					"left": 26,
+					"width": 285,
+					"height": 14,
+					"dataSource": "txt_centre_nom",
+					"class": "Champs",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/txt_centre_nom.4dm",
+					"events": [
+						"onAfterKeystroke"
+					],
+					"fontFamily": "Arial"
+				},
+				"DateEntry": {
+					"type": "subform",
+					"top": 126,
+					"left": 26,
+					"width": 138,
+					"height": 25,
+					"dataSource": "dateCreationFiche_d",
+					"dataSourceTypeHint": "date",
+					"detailForm": "DateEntry",
+					"hideFocusRing": true,
+					"deletableInList": false,
+					"doubleClickInRowAction": "editSubrecord",
+					"doubleClickInEmptyAreaAction": "addSubrecord",
+					"selectionMode": "multiple",
+					"printFrame": "variable",
+					"method": "ObjectMethods/DateEntry.4dm",
+					"events": [
+						"onLoad"
+					]
+				},
+				"List Box": {
+					"type": "listbox",
+					"top": 198,
+					"left": 13,
+					"width": 573,
+					"height": 252,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"dataSource": "LB_Recherche_appel",
+					"rowHeight": "20px",
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"headerHeight": "24px",
+					"horizontalLineStroke": "#AAAAAA",
+					"verticalLineStroke": "#AAAAAA",
+					"stroke": "#000000",
+					"fill": "#FFFFFF",
+					"textAlign": "center",
+					"fontFamily": "Arial",
+					"fontSize": 11,
+					"textDecoration": "none",
+					"events": [
+						"onClick",
+						"onDoubleClick"
+					],
+					"columns": [
+						{
+							"name": "Colonne6",
+							"dataSource": "tb_centre_choix",
+							"dataSourceTypeHint": "boolean",
+							"width": 50,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"controlType": "checkbox",
+							"stroke": "#000000",
+							"fill": "#FFFFFF",
+							"textAlign": "center",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"fontStyle": "normal",
+							"events": [
+								"onDataChange"
+							],
+							"method": "ObjectMethods/Colonne6.4dm",
+							"header": {
+								"name": "Entête6",
+								"text": " ",
+								"dataSource": "Entête6",
+								"stroke": "#000000",
+								"textAlign": "center",
+								"verticalAlign": "automatic",
+								"fontFamily": "Times New Roman",
+								"fontSize": 18,
+								"fontStyle": "italic"
+							},
+							"footer": {
+								"name": "Pied5",
+								"stroke": "#000000",
+								"fill": "#FFFFFF",
+								"textAlign": "center",
+								"verticalAlign": "automatic",
+								"fontFamily": "MS Sans Serif",
+								"fontSize": 11,
+								"textDecoration": "underline"
+							},
+							"textDecoration": "none"
+						},
+						{
+							"name": "Colonne3",
+							"dataSource": "tb_centre_liste_quantite",
+							"dataSourceTypeHint": "number",
+							"width": 100,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "#000000",
+							"fill": "#FFFFFF",
+							"textAlign": "center",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"fontStyle": "normal",
+							"events": [
+								"onDataChange"
+							],
+							"method": "ObjectMethods/Colonne3.4dm",
+							"header": {
+								"name": "Entête3",
+								"text": "Quantité",
+								"dataSource": "Entête7",
+								"stroke": "#000000",
+								"textAlign": "center",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 11,
+								"fontStyle": "normal"
+							},
+							"footer": {
+								"name": "Pied3",
+								"stroke": "#000000",
+								"fill": "#FFFFFF",
+								"textAlign": "center",
+								"verticalAlign": "automatic",
+								"fontFamily": "MS Sans Serif",
+								"fontSize": 11,
+								"textDecoration": "underline"
+							},
+							"textDecoration": "none"
+						},
+						{
+							"name": "Colonne7",
+							"dataSource": "tb_centre_liste_montant",
+							"dataSourceTypeHint": "number",
+							"width": 100,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"stroke": "#000000",
+							"fill": "#FFFFFF",
+							"textAlign": "center",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"fontStyle": "normal",
+							"events": [
+								"onDataChange"
+							],
+							"method": "ObjectMethods/Colonne7.4dm",
+							"header": {
+								"name": "Entête7",
+								"text": "Montant",
+								"dataSource": "Entête7",
+								"stroke": "#000000",
+								"textAlign": "center",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 11,
+								"fontStyle": "normal"
+							},
+							"footer": {
+								"name": "Pied4",
+								"stroke": "#000000",
+								"fill": "#FFFFFF",
+								"textAlign": "center",
+								"verticalAlign": "automatic",
+								"fontFamily": "MS Sans Serif",
+								"fontSize": 11,
+								"textDecoration": "underline"
+							},
+							"textDecoration": "none"
+						},
+						{
+							"name": "Colonne1",
+							"dataSource": "tb_centre_liste_nom",
+							"width": 306,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "#000000",
+							"fill": "#FFFFFF",
+							"textAlign": "left",
+							"verticalAlign": "automatic",
+							"fontFamily": "Arial",
+							"fontSize": 12,
+							"fontStyle": "normal",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête1",
+								"text": "Centre",
+								"dataSource": "Entête7",
+								"stroke": "#000000",
+								"textAlign": "center",
+								"verticalAlign": "automatic",
+								"fontFamily": "Arial",
+								"fontSize": 11,
+								"fontStyle": "normal"
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "#000000",
+								"fill": "#FFFFFF",
+								"textAlign": "center",
+								"verticalAlign": "automatic",
+								"fontFamily": "MS Sans Serif",
+								"fontSize": 11,
+								"textDecoration": "underline"
+							},
+							"textDecoration": "none"
+						},
+						{
+							"name": "Colonne2",
+							"dataSource": "tb_centre_liste_id",
+							"dataSourceTypeHint": "number",
+							"width": 201,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"visibility": "hidden",
+							"stroke": "#000000",
+							"fill": "#FFFFFF",
+							"textAlign": "center",
+							"verticalAlign": "automatic",
+							"fontFamily": "Segoe UI",
+							"fontSize": 12,
+							"fontStyle": "italic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête2",
+								"text": "ID",
+								"dataSource": "Entête7",
+								"stroke": "#000000",
+								"textAlign": "center",
+								"verticalAlign": "automatic",
+								"fontFamily": "Segoe UI",
+								"fontSize": 11,
+								"fontStyle": "italic"
+							},
+							"footer": {
+								"name": "Pied2",
+								"stroke": "#000000",
+								"fill": "#FFFFFF",
+								"textAlign": "center",
+								"verticalAlign": "automatic",
+								"fontFamily": "MS Sans Serif",
+								"fontSize": 11,
+								"textDecoration": "underline"
+							},
+							"textDecoration": "none"
+						}
+					]
+				},
+				"b_Fermer_Rech_appel": {
+					"type": "button",
+					"top": 458,
+					"left": 330,
+					"width": 127,
+					"height": 28,
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSource": "b_Fermer_Rech_appel",
+					"text": "Fermer",
+					"class": "Par_défaut",
+					"method": "ObjectMethods/b_Fermer_Rech_appel.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"btn_valider": {
+					"type": "button",
+					"top": 458,
+					"left": 463,
+					"width": 127,
+					"height": 28,
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSource": "btn_valider",
+					"text": "Valider",
+					"class": "Par_défaut",
+					"method": "ObjectMethods/btn_valider.4dm",
+					"events": [
+						"onClick"
+					],
+					"fontFamily": "Arial"
+				},
+				"txt_groupe": {
+					"type": "input",
+					"top": 77,
+					"left": 324,
+					"width": 253,
+					"height": 14,
+					"dataSource": "txt_groupe",
+					"class": "Champs",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onAfterKeystroke"
+					],
+					"fontFamily": "Arial"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 53,
+					"left": 26,
+					"width": 285,
+					"height": 13,
+					"class": "Par_défaut",
+					"fontWeight": "bold",
+					"text": "Centre",
+					"fontFamily": "Arial"
+				},
+				"Text": {
+					"type": "text",
+					"top": 8,
+					"left": 12,
+					"width": 574,
+					"height": 19,
+					"sizingX": "grow",
+					"class": "titre_1",
+					"textAlign": "center",
+					"text": "Multi-Pointage",
+					"fontFamily": "Arial"
+				},
+				"102_Txt": {
+					"type": "text",
+					"top": 52,
+					"left": 324,
+					"width": 253,
+					"height": 14,
+					"stroke": "#000000",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": ":◊vlSTR_Std,62",
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"102_Bt": {
+					"type": "button",
+					"top": 49,
+					"left": 324,
+					"width": 253,
+					"height": 20,
+					"dataSource": "b_ta_FMGrp",
+					"text": "!",
+					"display": false,
+					"method": "ObjectMethods/102_Bt.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"060_ico2": {
+					"type": "picture",
+					"top": 50,
+					"left": 350,
+					"width": 15,
+					"height": 15,
+					"pictureFormat": "scaled",
+					"picture": "Images/060_ico2.png"
+				},
+				"Image10": {
+					"type": "picture",
+					"top": 171,
+					"left": 121,
+					"width": 20,
+					"height": 20,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image10.png"
+				},
+				"Bouton invisible2": {
+					"type": "button",
+					"top": 171,
+					"left": 121,
+					"width": 20,
+					"height": 20,
+					"display": false,
+					"method": "ObjectMethods/Bouton invisible2.4dm",
+					"events": [
+						"onClick",
+						"onMouseMove"
+					]
+				},
+				"Image1": {
+					"type": "picture",
+					"top": 171,
+					"left": 150,
+					"width": 20,
+					"height": 20,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image1.bmp"
+				},
+				"Bouton invisible3": {
+					"type": "button",
+					"top": 171,
+					"left": 150,
+					"width": 20,
+					"height": 20,
+					"display": false,
+					"method": "ObjectMethods/Bouton invisible3.4dm",
+					"events": [
+						"onClick",
+						"onMouseMove"
+					]
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 104,
+					"left": 26,
+					"width": 285,
+					"height": 13,
+					"class": "Par_défaut",
+					"fontWeight": "bold",
+					"text": "Date création des fiches",
+					"fontFamily": "Arial"
+				},
+				"montantSaisie": {
+					"type": "input",
+					"top": 175,
+					"left": 292,
+					"width": 108,
+					"height": 16,
+					"dataSource": "Form:C1466.montant",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					],
+					"dataSourceTypeHint": "number",
+					"numberFormat": "###,##0.00 €",
+					"entryFilter": "&\"0-9;.;-\"",
+					"right": 400,
+					"method": "ObjectMethods/montantSaisie.4dm"
+				},
+				"montantLigne": {
+					"type": "line",
+					"top": 191,
+					"left": 292,
+					"width": 108,
+					"stroke": "#CCCCCC",
+					"right": 400
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 176,
+					"left": 13,
+					"width": 105,
+					"height": 15,
+					"stroke": "#333333",
+					"textAlign": "left",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Modifier la quantité"
+				},
+				"montantTitre": {
+					"type": "text",
+					"top": 176,
+					"left": 178,
+					"width": 105,
+					"height": 15,
+					"stroke": "#333333",
+					"textAlign": "left",
+					"fontFamily": "Arial",
+					"fontSize": 12,
+					"text": "Modifier le montant"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {
+				"objects": [
+					"DateEntry"
+				]
+			},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"geometryStamp": 41
+}

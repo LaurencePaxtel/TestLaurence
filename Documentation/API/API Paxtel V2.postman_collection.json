@@ -1,0 +1,653 @@
+{
+	"info": {
+		"_postman_id": "c42a3055-50b4-49bc-8e12-8a5e96572f50",
+		"name": "API Paxtel V2",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28357126",
+		"_collection_link": "https://planetary-shadow-694819.postman.co/workspace/VEOS~8766848a-e9e6-47d6-9bb9-ae49a8d88967/collection/28357126-c42a3055-50b4-49bc-8e12-8a5e96572f50?action=share&source=collection_link&creator=28357126"
+	},
+	"item": [
+		{
+			"name": "Situation Budgetaire V2",
+			"item": [
+				{
+					"name": "Participation Web",
+					"item": [
+						{
+							"name": "Detail",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/4DACTION/outilsWebManageData?action=getRecordsParticipationWeb&hebergeID=171508&year=2024&month=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"4DACTION",
+										"outilsWebManageData"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "getRecordsParticipationWeb",
+											"description": "[Obligatoire]"
+										},
+										{
+											"key": "hebergeID",
+											"value": "171508",
+											"description": "[Obligatoire] Champ [Heberge]ID ou [Heberge]HB_ReferenceID"
+										},
+										{
+											"key": "year",
+											"value": "2024",
+											"description": "[Optionnel]"
+										},
+										{
+											"key": "month",
+											"value": "2",
+											"description": "[Optionnel]"
+										}
+									]
+								},
+								"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+							},
+							"response": []
+						},
+						{
+							"name": "Créer ou Modifier",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"packages": {},
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"action\": \"newOrModifyRecordParticipationWeb\",\n    \"hebergeID\" : \"171508\",\n    \"data\": [\n        {\n            \"mois\": \"2\",\n            \"annee\": 2024,\n            \"salaire\": 1000,\n            \"apl\": 100,\n            \"loyer\": 200,\n            \"ressource\": [\n                {\n                    \"lib\": \"Bourse\",\n                    \"value\": 299\n                },\n                {\n                    \"lib\": \"Pension alimentaire\",\n                    \"value\": 150\n                }\n            ],\n            \"charge\": [\n                {\n                    \"lib\": \"Forfait téléphonique\",\n                    \"value\": 30\n                },\n                {\n                    \"lib\": \"Electricité\",\n                    \"value\": 60\n                }\n            ],\n            \"forfaitParticipation\": 10,\n            \"totalParticipation\": 154.9\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/4DACTION/outilsWebManageData",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"4DACTION",
+										"outilsWebManageData"
+									]
+								},
+								"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Participation Dette",
+					"item": [
+						{
+							"name": "Detail",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/4DACTION/outilsWebManageData?action=getRecordsParticipationDette&hebergeID=171508",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"4DACTION",
+										"outilsWebManageData"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "getRecordsParticipationDette",
+											"description": "[Obligatoire]"
+										},
+										{
+											"key": "hebergeID",
+											"value": "171508",
+											"description": "[Obligatoire] Champ [Heberge]ID ou [Heberge]HB_ReferenceID"
+										}
+									]
+								},
+								"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+							},
+							"response": []
+						},
+						{
+							"name": "Créer ou Modifier",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"action\": \"newOrModifyRecordParticipationDette\",\n    \"hebergeID\": \"171508\",\n    \"data\": {\n        \"nbPersonneMenage\": 1,\n        \"dateSitBudget\": \"2024-07-13\",\n        \"commentaire\": \"NE PAS PRENDRE EN COMPTE LES MOIS DE JUILLET ET AOUT OU l HEBERGE FUT NON REGULARISE A CE MOMENT LA\",\n        \"dettes\": [\n            {\n                \"lib\": \"dette 1\",\n                \"montant\": 20,\n                \"planApurement\": \"Oui\",\n                \"duree\": 12,\n                \"dateDebut\": \"2024-07-05\",\n                \"dateFin\": \"2024-08-05\",\n                \"montantMensuel\": 1.67,\n                \"arretAvantTerme\": \"Non\",\n                \"dateDerniereMensualite\": \"2024-07-19\",\n                \"montantRestant\": 18.33\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/4DACTION/outilsWebManageData",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"4DACTION",
+										"outilsWebManageData"
+									]
+								},
+								"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Heberge",
+			"item": [
+				{
+					"name": "Detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/4DACTION/outilsWebManageData?action=getRecordHeberge&hebergeID=225916",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"4DACTION",
+								"outilsWebManageData"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "getRecordHeberge",
+									"description": "[Obligatoire]"
+								},
+								{
+									"key": "hebergeID",
+									"value": "225916",
+									"description": "[Obligatoire] Champ [Heberge]ID ou [Heberge]HB_ReferenceID"
+								}
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Enumération",
+			"item": [
+				{
+					"name": "Liste",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/4DACTION/outilsWebManageEnumeration?action=getEnumeration&enumerationLib=FM Distri5&refStructure=ALL&typeReturn=numeric",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"4DACTION",
+								"outilsWebManageEnumeration"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "getEnumeration",
+									"description": "[Obligatoire]"
+								},
+								{
+									"key": "enumerationLib",
+									"value": "FM Distri5",
+									"description": "[Obligatoire] Libellé de l'énumération"
+								},
+								{
+									"key": "refStructure",
+									"value": "ALL",
+									"description": "[Obligatoire] Référence de la structure"
+								},
+								{
+									"key": "typeReturn",
+									"value": "numeric",
+									"description": "[Optionnel], valeur possible \"text, numeric ou date\""
+								}
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Utilisateur",
+			"item": [
+				{
+					"name": "Detail utilasateur connecté",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/4DACTION/outilsWebManageData?action=getInfoUserConnected",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"4DACTION",
+								"outilsWebManageData"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "getInfoUserConnected"
+								}
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messagerie",
+			"item": [
+				{
+					"name": "Liste",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/4DACTION/outilsWebManageData?action=getRecordsMessagerie&refStructure=ALL&page=1&nbResultatParPage=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"4DACTION",
+								"outilsWebManageData"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "getRecordsMessagerie",
+									"description": "[Obligatoire]"
+								},
+								{
+									"key": "refStructure",
+									"value": "ALL",
+									"description": "[Obligatoire] Référence de la structure"
+								},
+								{
+									"key": "keyword",
+									"value": "Utilisateur CCAC",
+									"description": "[Optionnel] Champ [INtervenants]ID OU [Messagerie]MS_Texte OU [HeBerge]ID",
+									"disabled": true
+								},
+								{
+									"key": "service",
+									"value": "Y",
+									"description": "[Optionnel] Champ [Messagerie]MS_Groupe",
+									"disabled": true
+								},
+								{
+									"key": "priorite",
+									"value": "1",
+									"description": "[Optionnel] Champ [Messagerie]priorite",
+									"disabled": true
+								},
+								{
+									"key": "date",
+									"value": "24/07/2024",
+									"description": "[Optionnel], Champ [Messagerie]MS_Date",
+									"disabled": true
+								},
+								{
+									"key": "dateSigneComparaison",
+									"value": ">=",
+									"description": "[Optionnel] De paire avec le paramètre \"date\" indique si on veut une date égale, supérieure ou égale, supérieure, inférieure ou égale, inférieure, [Inutile] si paramètre \"date\" n'est pas renseignée et [Obligatoire] si paramètre \"date\" renseigné",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "[Optionnel] Numéro de la page souhaitée"
+								},
+								{
+									"key": "nbResultatParPage",
+									"value": "10",
+									"description": "[Optionnel] Nombre de résultat par page souhaitée (par défaut 10)"
+								}
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Créer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"action\": \"newRecordMessagerie\", // [Obligatoire]\n    \"hebergeID\": \"171508\", // [Obligatoire]\n    \"data\": {\n        \"date\": \"24/07/2024\", // [Obligatoire]\n        \"intervenantID\": \"551\", // [Obligatoire]\n        \"usagerID\": \"171508\", // [Optionnel]\n        \"groupe\": \"115\", // [Optionnel]\n        \"priorite\": \"1\", // [Obligatoire]\n        \"message\": \"Test\" // [Obligatoire]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/4DACTION/outilsWebManageData",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"4DACTION",
+								"outilsWebManageData"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Modifier",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"action\": \"modifyRecordMessagerie\", // [Obligatoire]\n    \"hebergeID\": \"171508\", // [Obligatoire]\n    \"data\": {\n        \"id\" : \"BC91A0F6CFAE5C479DB732CBE694A0A9\", // [Obligatoire] Format UUID\n        \"date\": \"24/07/2024\", // [Obligatoire]\n        \"intervenantID\": \"551\", // [Obligatoire]\n        \"usagerID\": \"171508\", // [Obligatoire]\n        \"groupe\": \"115\", // [Obligatoire]\n        \"priorite\": \"2\", // [Obligatoire]\n        \"message\": \"Test B\" // [Obligatoire]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/4DACTION/outilsWebManageData",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"4DACTION",
+								"outilsWebManageData"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Générique",
+			"item": [
+				{
+					"name": "Supprimer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"action\": \"deleteRecord\", // [Obligatoire]\n    \"data\": {\n        \"table\" : \"Messagerie\", // [Obligatoire]\n        \"id\" : \"C7ECEDCFD3DC484781885CA0D8D8C142\" // [Obligatoire]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/4DACTION/outilsWebManageData",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"4DACTION",
+								"outilsWebManageData"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "http://localhost:8085"
+		}
+	]
+}

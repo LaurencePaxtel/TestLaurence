@@ -1,0 +1,715 @@
+<div id="modalSituationBudgetaire" class="modal hide fade msmodal modal-xl" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">        
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="d-none-print" aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title ng-binding" ng-show="!isWithinlist">Situation budgetaire</h4>
+            </div>
+
+            <div id="modalBodySituationBudgetaire" class="modal-body">
+                <div class="rowB g-mb-20">
+                    <div class="col-8">
+                        <div class="rowB g-mb-10">
+                            <div class="col-8">
+                                <label class="g-align-center-vertically-and-horizontally">Date dernière situation budgétaire</label>
+                            </div>
+
+                            <div class="col-4">
+                                <input id="derniereSituationBudgetaire" class="g-width-100x" name="derniereSituationBudgetaire" type="date" />
+                            </div>
+                        </div>
+                        
+                        <div class="rowB">
+                            <div class="col-8">
+                                <label class="g-align-center-vertically-and-horizontally">Nombre de personne dans le ménage</label>
+                            </div>
+
+                            <div class="col-4">
+                                <input id="nombrePersonneMenage" class="g-width-100x" name="nombrePersonneMenage" type="number" min="1" />
+                            </div>
+                        </div>
+
+                        <div class="rowB">
+                            <div class="col-8">
+                                <label class="g-align-center-vertically-and-horizontally">Mode de facturation</label>
+                            </div>
+
+                            <div class="col-4">
+                                <input id="modeFacturation" class="g-width-100x" name="modeFacturation" type="text" />
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-4">
+                        <button id="resetBtn" class="fdp_Button fdp_btn_top fdp-btn-green g-width-150 iw_margin_left_5px">
+                            <i class="fa fa-refresh"></i>Réinitialiser
+                        </button>
+
+                        <button id="printBtn" class="fdp_Button fdp_btn_top fdp-btn-blue g-width-150">
+                            <i class="fa fa-print"></i>Imprimer
+                        </button>
+                    </div>
+                </div>
+
+                <div class="rowB">
+                    <div class="col-8">
+                        <div class="fdp_resp_table g-width-100x iw-alternance-only overflow-x">
+                            <table id="tableRecapBudgetaire" class="table rowfy">
+                                <thead>
+                                    <tr class="row header">
+                                        <td class="cell">Ressources</td>
+                                        <td class="cell">Montant</td>
+                                        <td class="cell">Charges</td>
+                                        <td class="cell">Montant</td>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr class="row body g-height-35">
+                                        <td class="cell">Salaire</td>
+                                        <td id="salaireCell" class="cell numericEdit" data-type="salaireValue"></td>
+                                        <td class="cell">Loyer résiduel</td>
+                                        <td id="loyerCell" class="cell numericEdit" data-type="loyerValue"></td>
+                                    </tr>
+
+                                    <tr class="row body g-height-35">
+                                        <td class="cell">APL</td>
+                                        <td id="aplCell" class="cell numericEdit" data-type="aplValue"></td>
+                                        <td class="cell textEdit" data-type="chargeLib">Nouvelle charge</td>
+                                        <td class="cell numericEdit chargeSupp" data-type="chargeValue"></td>
+                                    </tr>
+                                </tbody>
+
+                                <tfoot>
+                                    <tr class="row footer">
+                                        <td class="cell">Total ressources</td>
+                                        <td id="totalRessource" class="cell"></td>
+                                        <td class="cell">Total charges</td>
+                                        <td id="totalCharge" class="cell"></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <label>Commentaires</label>
+                        <textarea id="commentaire" class="g-width-100x g-height-100"></textarea>
+                    </div>
+                </div>
+
+                <div class="rowB g-mb-40">
+                    <div class="col-8">
+                        <div class="rowB">
+                            <div class="col-8 g-mb-10">
+                                <label class="g-align-center-vertically-and-horizontally">Reste à vivre</label>
+                            </div>
+                
+                            <div class="col-4 g-mb-10">
+                                <input id="resteAVivre" name="resteAVivre" type="text" disabled="disabled" />
+                            </div>
+                
+                            <div class="col-8 g-mb-10">
+                                <label class="g-align-center-vertically-and-horizontally">Taux d'effort sur le loyer</label>
+                            </div>
+                
+                            <div class="col-4 g-mb-10">
+                                <input id="tauxEffortLoyer" name="resteAVivre" type="text" disabled="disabled" />
+                            </div>
+                
+                            <div class="col-8 g-mb-10">
+                                <label class="g-align-center-vertically-and-horizontally">Taux d'endettement</label>
+                            </div>
+                
+                            <div class="col-4 g-mb-10">
+                                <input id="tauxEndettement" name="tauxEndettement" type="text" disabled="disabled" />
+                            </div>
+
+                            <div class="col-8 g-mb-10">
+                                <label class="g-align-center-vertically-and-horizontally">Loyer max</label>
+                            </div>
+    
+                            <div class="col-4 g-mb-10">
+                                <input id="loyermax" name="loyermax" type="text" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rowB">
+                    <div class="col-12">
+                        <div class="fdp_resp_table g-width-100x iw-alternance-only overflow-x print-table-container">
+                            <table id="tableDette" class="table rowfy print-table">
+                                <thead>
+                                    <tr class="row header">
+                                        <td class="cell table-header g-width-120">Dette libellé</td>
+                                        <td class="cell table-header">Montant</td>
+                                        <td class="cell table-header">Plan d'apurement</td>
+                                        <td class="cell table-header">Durée</td>
+                                        <td class="cell table-header g-width-90">Date début</td>
+                                        <td class="cell table-header g-width-90">Date fin prévue</td>
+                                        <td class="cell table-header">Montant mensualités</td>
+                                        <td class="cell table-header">Arrêt des paiements avant terme</td>
+                                        <td class="cell table-header g-width-90">Date de la dernière mensualité</td>
+                                        <td class="cell table-header">Montant dette restante</td>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr class="row body g-height-35">
+                                        <td class="cell textEdit" data-label="Dette libellé" data-type="detteLib">Nouvelle dette</td>
+                                        <td class="cell numericEdit detteSupp" data-label="Montant" data-type="detteMontant"></td>
+                                        <td class="cell selectEdit" data-label="Plan d'apurement" data-type="dettePlanApurement"></td>
+                                        <td class="cell" data-label="Durée" data-type="detteDuree"></td>
+                                        <td class="cell" data-label="Date début" data-type="detteDateDebut"></td>
+                                        <td class="cell" data-label="Date fin prévue" data-type="detteDateFin"></td>
+                                        <td class="cell" data-label="Montant mensualités" data-type="detteMontantMensuel"></td>
+                                        <td class="cell" data-label="Arrêt des paiements avant terme" data-type="detteArretAvantTerme"></td>
+                                        <td class="cell" data-label="Date de la dernière mensualité" data-type="detteDateDerniereMensualite"></td>
+                                        <td class="cell detteRestante" data-label="Montant dette restante" data-type="detteMontantRestant"></td>
+                                    </tr>
+                                </tbody>
+
+                                <tfoot>
+                                    <tr class="row footer">
+                                        <td class="cell">Total</td>
+                                        <td id="totalDette" class="cell"></td>
+                                        <td class="cell"></td>
+                                        <td class="cell"></td>
+                                        <td class="cell"></td>
+                                        <td class="cell"></td>
+                                        <td class="cell"></td>
+                                        <td class="cell"></td>
+                                        <td class="cell">Total</td>
+                                        <td id="totalDetteRestante" class="cell"></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="saveBtn" class="fdp_Button fdp_btn_top fdp-btn-green g-width-150 iw_margin_left_5px">
+                    <i class="fa fa-save"></i>Sauvegarder
+                </button>
+
+                <button type="button" class="fdp_Button fdp_btn_top fdp-btn-red g-width-150" data-dismiss="modal">
+                    <i class="fa fa-close"></i>Fermer
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){  
+        var advancedEditorRecapBudget = new SimpleTableCellEditor("tableRecapBudgetaire");
+        advancedEditorRecapBudget.SetEditableClass("numericEdit", { validation: $.isNumeric, formatter: (val) => { return parseFloat(val); } });
+        advancedEditorRecapBudget.SetEditableClass("textEdit");
+
+        var advancedEditorDette = new SimpleTableCellEditor("tableDette");
+
+        advancedEditorDette.SetEditableClass("textEdit");
+        advancedEditorDette.SetEditableClass("numericEdit", { validation: $.isNumeric, formatter: (val) => { return parseFloat(val); } });
+        advancedEditorDette.SetEditableClass("dateEdit", {
+            internals: {
+                renderEditor: (elem, oldVal) => {
+                    $(elem).html('<input type="date" value="' + dateToYYYYMMJJ(oldVal) + '" style="width:100%; max-width:none">');
+                }
+            }, formatter: (val) => { return dateToJJMMYYYY(val); }
+        });
+        advancedEditorDette.SetEditableClass("selectEdit", {
+            internals: {
+                renderEditor: (elem, oldVal) => {
+                    $(elem).html(`<select>
+                        <option value=''>Sélection d'un élément</option>
+                        <option value='Oui'>Oui</option>
+                        <option value='Non'>Non</option>
+                    </select>`);
+
+                    $(elem).find("option").filter(function () {
+                        return $(this).val() == oldVal;
+                    }).prop('selected', true);
+                
+                },
+                extractEditorValue: (elem) => { return $(elem).find('select').val(); },
+            }
+        });
+    });
+
+    $('#tableRecapBudgetaire').on("cell:onEditExited", function (event) {
+
+        if ($(event.element).hasClass("numericEdit")) {            
+            refreshDataRecapBudget($(event.element).attr("id"), event.newValue, $(event.element));
+        }
+
+        deleteClass("inEdit");
+    });
+
+    $('#tableDette').on("cell:onEditExited", function (event) {
+        var $rowIndex_el = $(event.element).closest("tbody").find("tr").index(this);
+
+        if ($(event.element).hasClass("numericEdit")) {            
+            refreshDataDette($(event.element), event.newValue);
+        }
+
+        switch (true) {
+            case $(event.element).attr("data-label") == "Montant":
+                var $montant_r = parseInt(event.newValue);
+                var $duree_r = parseInt($(event.element).closest("tr").find('td:eq(3)').text());
+
+                if ($montant_r > 0 && $duree_r > 0) {
+                    $(event.element).closest("tr").find('td:eq(6)').text(numberMaxDecimal($montant_r / $duree_r, 2));
+                }else{
+                    $(event.element).closest("tr").find('td:eq(6)').text("");
+                }
+                    
+                break;
+            case $(event.element).attr("data-label") == "Plan d'apurement":
+                
+                if (event.newValue == "Non" || event.newValue == "") {
+                    clearRowInTable("tableDette", $rowIndex_el, [0, 1, 2, 10])
+                    .then(function() {
+                        // Callback appelée avec succès
+                        console.log("Callback appelée avec succès !");
+                    })
+                    .catch(function(error) {
+                        // Erreur lors de l'appel de la callback
+                        console.error("Erreur lors de l'appel de la callback :", error);
+                    });
+
+                    $(event.element).closest("tr").find('td:eq(3)').removeClass('numericEdit');
+                    $(event.element).closest("tr").find('td:eq(4)').removeClass('dateEdit');
+                    $(event.element).closest("tr").find('td:eq(7)').removeClass('selectEdit');
+                    $(event.element).closest("tr").find('td:eq(8)').removeClass('dateEdit');
+                }else{
+                    $(event.element).closest("tr").find('td:eq(3)').addClass('numericEdit');
+                    $(event.element).closest("tr").find('td:eq(4)').addClass('dateEdit');
+                    $(event.element).closest("tr").find('td:eq(7)').addClass('selectEdit');
+                }
+
+                break;
+            case $(event.element).attr("data-label") == "Durée" || $(event.element).attr("data-label") == "Date début":
+                var $montant_r = parseInt($(event.element).closest("tr").find('td:eq(1)').text());
+                var $duree_r = parseInt($(event.element).closest("tr").find('td:eq(3)').text());
+                var $dateDebut_t = dateToYYYYMMJJ($(event.element).closest("tr").find('td:eq(4)').text());
+
+                    if ($(event.element).attr("data-label") == "Durée") {
+                        $duree_r = parseInt(event.newValue);
+                    }else{
+                        $dateDebut_t = dateToYYYYMMJJ(event.newValue);
+                    }
+
+                    if ($duree_r > 0 && isDateValid($dateDebut_t) == true) {
+                        $(event.element).closest("tr").find('td:eq(5)').text(dateJSToJJMMYYYY(addMonths(new Date($dateDebut_t), $duree_r)));
+                        
+                        $(event.element).closest("tr").find('td:eq(6)').text(numberMaxDecimal($montant_r / $duree_r, 2));
+                    }else{
+                        $(event.element).closest("tr").find('td:eq(5)').text("");
+                        $(event.element).closest("tr").find('td:eq(6)').text("");
+                    }
+
+                break;
+            case $(event.element).attr("data-label") == "Arrêt des paiements avant terme":
+                
+                if (event.newValue == "Non" || event.newValue == "") {
+                    clearRowInTable("tableDette", $rowIndex_el, [0, 1, 2, 3, 4, 5, 6, 7, 10])
+                    .then(function() {
+                        // Callback appelée avec succès
+                        console.log("Callback appelée avec succès !");
+                    })
+                    .catch(function(error) {
+                        // Erreur lors de l'appel de la callback
+                        console.error("Erreur lors de l'appel de la callback :", error);
+                    });
+
+                    $(event.element).closest("tr").find('td:eq(8)').removeClass('dateEdit');
+                }else{
+                    $(event.element).closest("tr").find('td:eq(8)').addClass('dateEdit');
+                }
+
+                break;
+            case $(event.element).attr("data-label") == "Date de la dernière mensualité":
+                var $montant_r = parseInt($(event.element).closest("tr").find('td:eq(1)').text());
+                var $montantMensuel_r = parseFloat($(event.element).closest("tr").find('td:eq(6)').text());
+                var $dateDebut_t = dateToYYYYMMJJ($(event.element).closest("tr").find('td:eq(4)').text());
+                var $dateDerniereMensualite_t = dateToYYYYMMJJ(event.newValue);
+
+                if (isDateValid($dateDebut_t) == true && isDateValid($dateDerniereMensualite_t) == true){
+                    //var $nbMois_el = monthDiff(new Date($dateDebut_t), new Date($dateDerniereMensualite_t));
+                    var $nbMois_el = monthDiffNew($dateDebut_t, $dateDerniereMensualite_t) + 1;
+                    var $montantRestant_r = ($montant_r) - ($nbMois_el * $montantMensuel_r);
+
+                    $(event.element).closest("tr").find('td:eq(9)').text(numberMaxDecimal($montantRestant_r, 2));
+                }else{
+                    $(event.element).closest("tr").find('td:eq(9)').text("");
+                }
+
+                refreshDataDette($(event.element), event.newValue);
+                break;
+            default:
+                break;
+        }
+
+        refreshColorLineDette($(event.element), event.newValue);
+    });
+
+    $("#resetBtn").click(function(){
+        deleteRowToTable("tableRecapBudgetaire", 2);
+        setContentToTable("tableRecapBudgetaire", ["Salaire", "0", "Loyer résiduel", "0", "", "APL", "0", "Nouvelle charge", "0", "<button type=\"button\" class=\"g-width-20 btn btn-sm rowfy-addrow d-none-print btn-success\">+</button>"]);
+
+        deleteClassAndIDOnJqueryElement($('#tableRecapBudgetaire > tbody').find("tr:eq(1)").find('td:eq(0)')).then(function() {
+            $('#tableRecapBudgetaire > tbody').find("tr:eq(1)").find('td:eq(0)').addClass("cell");
+            $('#tableRecapBudgetaire > tbody').find("tr:eq(1)").find('td:eq(0)').removeAttr("data-type");
+            $('#tableRecapBudgetaire > tbody').find("tr:eq(1)").find('td:eq(0)').text("APL");
+        });
+            
+
+        deleteClassAndIDOnJqueryElement($('#tableRecapBudgetaire > tbody').find("tr:eq(1)").find('td:eq(1)')).then(function() {
+            $('#tableRecapBudgetaire > tbody').find("tr:eq(1)").find('td:eq(1)').attr("id", "aplCell");
+            $('#tableRecapBudgetaire > tbody').find("tr:eq(1)").find('td:eq(1)').addClass("cell numericEdit");
+            $('#tableRecapBudgetaire > tbody').find("tr:eq(1)").find('td:eq(1)').attr("data-type", "aplValue");
+            $('#tableRecapBudgetaire > tbody').find("tr:eq(1)").find('td:eq(1)').text("0");
+        });
+
+        // On vide le contenu de la 5°colonne de la première ligne généré par le plugin rowfy
+        $('#tableRecapBudgetaire > tbody').find("tr:eq(0)").find('td:eq(4)').html("");
+
+        deleteRowToTable("tableDette", 1);
+        setContentToTable("tableDette", ["Nouvelle dette", "0", null, null, null, null, null, null, null, null, "<button type=\"button\" class=\"g-width-20 btn btn-sm rowfy-addrow d-none-print btn-success\">+</button>"]);
+
+        $("#derniereSituationBudgetaire").val(dateJSToYYYYMMJJ(new Date()));
+        $("#nombrePersonneMenage").val("1");
+        $("modeFacturation").val("")
+        $("#commentaire").val("");
+
+        setTimeout(() => {
+            refreshDataRecapBudget($("#salaireCell").attr("id"), $("#salaireCell").text(), $("#salaireCell"));
+            refreshDataDette($('#tableDette > tbody').find('tr:eq(0)').find('td:eq(1)'), $('#tableDette > tbody').find('tr:eq(0)').find('td:eq(1)').text());
+
+            refreshColorLineDette();
+        }, 1000);
+    });
+
+    $("#printBtn").click(function(){
+        printModal('modalSituationBudgetaire');
+    });
+
+    $("#saveBtn").click(function(){
+		$.LoadingOverlaySetup({
+			background: "rgba(0, 0, 0, 0.5)",
+			imageColor: "#fff"
+		});
+
+		$.LoadingOverlay("show");
+
+        var $data_c = [];
+        var $i_el = 0;
+
+        $(".rowfy").each(function(){
+            var $table_j = $(this);
+
+            $data_c.push(
+                {
+                    "table" : $table_j.attr("id"),
+                    "data" : []
+                }
+            )
+
+            $table_j.find("tbody td").each(function() {
+                var $cell_j = $(this);
+
+                if ($cell_j[0].hasAttribute("data-type")) {
+                    var $dataTypeValue_t = $cell_j.attr("data-type");
+
+                    $data_c[$i_el].data.push(
+                        {
+                            "lib" : $dataTypeValue_t,
+                            "value" : $cell_j.text()
+                        }
+                    )
+
+                }
+
+            });
+
+            $i_el += 1;
+        });
+
+		$.ajax({
+			method: 'POST',
+			url: "/4DACTION/outilsWebHebergeSitBjtAjax",
+			data: {
+				"date": dateToJJMMYYYY($("#derniereSituationBudgetaire").val()),
+                "nbPersonneMenage": $("#nombrePersonneMenage").val(),
+                "modeFacturation": $("modeFacturation"),
+                "commentaire": $("#commentaire").val(),
+				"hebergeID": $('#record_id').val(),
+				"data": JSON.stringify($data_c),
+				"action": "saveBudget"
+			},
+			success: function(response){
+				$.LoadingOverlay("hide");
+
+				$.alert({
+					title: 'Succès',
+					content: 'Enregistrement effectué avec succès.',
+					icon: 'fa fa-check',
+					animation: 'scale',
+					closeAnimation: 'scale',
+					columnClass: 'iw_alert',
+					buttons: {
+						okay: {
+							text: 'Ok',
+							btnClass: 'btn-blue'
+						}
+					}
+				});
+			}
+		});
+
+    });
+
+    $(document).on("afterClick", function(e){
+
+        switch (true) {
+            case e.action == "tableRecapBudgetaire_add":
+                $('#tableRecapBudgetaire > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(0)').text("Nouvelle ressource");
+                $('#tableRecapBudgetaire > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(0)').addClass("textEdit");
+                $('#tableRecapBudgetaire > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(0)').attr("data-type", "ressourceLib");
+
+                $('#tableRecapBudgetaire > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(1)').removeAttr('id');
+                $('#tableRecapBudgetaire > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(1)').text("0");
+                $('#tableRecapBudgetaire > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(1)').addClass("ressourceSupp");
+                $('#tableRecapBudgetaire > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(1)').attr("data-type", "ressourceValue");
+
+                $('#tableRecapBudgetaire > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(2)').text("Nouvelle charge");
+
+                $('#tableRecapBudgetaire > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(3)').text("0");
+                break;
+            case e.action == "tableDette_add":
+                // Autre appel possible et ensuite appel de la fonction idTableauCallBackafterClear()
+                //clearRowInTable("tableDette", e.rowIndex, [10]);
+
+                clearRowInTable("tableDette", e.rowIndex, [10])
+                .then(function() {
+                    // Callback appelée avec succès
+                    console.log("Callback appelée avec succès !");
+
+                    $('#tableDette > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(0)').text("Nouvelle dette");
+                    $('#tableDette > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(1)').text("0");
+
+                    $('#tableDette > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(3)').removeClass('numericEdit');
+                    $('#tableDette > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(4)').removeClass('dateEdit');
+                    $('#tableDette > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(7)').removeClass('selectEdit');
+                    $('#tableDette > tbody').find("tr:eq(" + e.rowIndex + ")").find('td:eq(8)').removeClass('dateEdit');
+
+                    $('#tableDette > tbody').find("tr:eq(" + e.rowIndex + ")").removeClass("g-color-red");
+                    $('#tableDette > tbody').find("tr:eq(" + e.rowIndex + ")").removeClass("g-color-orange");
+                    $('#tableDette > tbody').find("tr:eq(" + e.rowIndex + ")").removeClass("g-color-green");
+                })
+                .catch(function(error) {
+                    // Erreur lors de l'appel de la callback
+                    console.error("Erreur lors de l'appel de la callback :", error);
+                });
+                
+                break;
+            default:
+                break;
+        }
+
+    });
+
+    function refreshDataDette(jqueryElement, newValue){
+        var $detteSupp_r = 0;
+        var $detteSuppB_r = 0;
+
+        var $detteRestante_r = 0;
+        var $detteRestanteB_r = 0;
+
+        $('.detteSupp').each(function() {
+            $detteSuppB_r = parseFloat($(this).text());
+
+            if (isNaN(parseFloat($detteSuppB_r)) == true) {
+                $detteSuppB_r = 0;
+            }
+
+            if (jqueryElement.hasClass("detteSupp") == true && jqueryElement.closest("tr").index() == $(this).closest("tr").index()) {
+                $detteSuppB_r = parseFloat(newValue);
+            }
+
+            $detteSupp_r += $detteSuppB_r;            
+        });
+        
+        $("#totalDette").text($detteSupp_r);
+
+        $('.detteRestante').each(function() {
+            $detteRestanteB_r = parseFloat($(this).text());
+
+            if (isNaN(parseFloat($detteRestanteB_r)) == true) {
+                $detteRestanteB_r = 0;
+            }
+
+            if (jqueryElement.hasClass("detteRestante") == true && jqueryElement.closest("tr").index() == $(this).closest("tr").index()) {
+                $detteRestanteB_r = parseFloat(newValue);
+            }
+
+            $detteRestante_r += $detteRestanteB_r;            
+        });
+        
+        $("#totalDetteRestante").text($detteRestante_r);
+    }
+
+    function refreshDataRecapBudget(idElement, newValue, jqueryElement){
+        var $salaire_t = $("#salaireCell").text();
+        var $loyer_t = $("#loyerCell").text();
+        var $apl_t = $("#aplCell").text();
+
+        var $ressourceSupp_r = 0;
+        var $chargeSupp_r = 0;
+
+        switch (true) {
+            case idElement == "salaireCell":
+                $salaire_t = newValue;
+                break;
+            case idElement == "loyerCell":
+                $loyer_t = newValue;
+                break;
+            case idElement == "aplCell":
+                $apl_t = newValue;
+                break;
+            default:
+                break;
+        }
+
+        if (isNaN(parseFloat($salaire_t)) == true) {
+            $salaire_t = "0";
+        }
+
+        if (isNaN(parseFloat($loyer_t)) == true) {
+            $loyer_t = "0";
+        }
+
+        if (isNaN(parseFloat($apl_t)) == true) {
+            $apl_t = "0";
+        }
+
+        $('.ressourceSupp').each(function() {
+            var $ressourceSuppB_r = parseFloat($(this).text());
+
+            if (isNaN(parseFloat($ressourceSuppB_r)) == true) {
+                $ressourceSuppB_r = 0;
+            }
+
+            if (jqueryElement.hasClass("ressourceSupp") == true && jqueryElement.closest("tr").index() == $(this).closest("tr").index()) {
+                $ressourceSuppB_r = parseFloat(newValue);
+            }
+
+            $ressourceSupp_r += $ressourceSuppB_r;            
+        });
+
+        $('.chargeSupp').each(function() {
+            var $chargeSuppB_r = parseFloat($(this).text());
+
+            if (isNaN(parseFloat($chargeSuppB_r)) == true) {
+                $chargeSuppB_r = 0;
+            }
+
+            if (jqueryElement.hasClass("chargeSupp") == true && jqueryElement.closest("tr").index() == $(this).closest("tr").index()) {
+                $chargeSuppB_r = parseFloat(newValue);
+            }
+
+            $chargeSupp_r += $chargeSuppB_r;       
+        });
+
+        var $totalRessource_r = parseFloat($salaire_t) + $ressourceSupp_r + parseFloat($apl_t);
+        var $totalCharge_r = parseFloat($loyer_t) + $chargeSupp_r;
+
+        $("#totalRessource").text($totalRessource_r);
+        $("#totalCharge").text($totalCharge_r);
+
+        $("#resteAVivre").val(numberInFormatEuro(parseFloat(cleanNumber($totalRessource_r - $totalCharge_r))).replace("€", "").slice(0, -1));
+
+        $("#loyermax").val(numberInFormatEuro(parseFloat(cleanNumber(($totalRessource_r -$apl_t)*0.30))).replace("€", "").slice(0, -1));
+
+        if (isNaN((parseFloat($loyer_t)*100) / ($totalRessource_r - parseFloat($apl_t))) == true) {
+            $("#tauxEffortLoyer").val("");
+        }else{
+            $("#tauxEffortLoyer").val(setNombre((parseFloat($loyer_t)*100) / ($totalRessource_r - parseFloat($apl_t))).toString() + "%");
+        }
+        
+        if (isNaN(($totalCharge_r*100) / ($totalRessource_r)) == true) {
+            $("#tauxEndettement").val("");
+        }else{
+            $("#tauxEndettement").val(setNombre(($totalCharge_r*100) / ($totalRessource_r)).toString() + "%");
+        }
+        
+    }
+
+    function refreshColorLineDette(jqueryElement, newValue){
+
+        $('#tableDette > tbody').find('tr').each(function(){
+            var $dateDuJour_t = dateJSToYYYYMMJJ(new Date());
+
+            var $dateDebut_t = dateToYYYYMMJJ($(this).find('td:eq(4)').text());
+            var $dateFin_t = dateToYYYYMMJJ($(this).find('td:eq(5)').text());
+            var $dateDerniereMensualite_t = dateToYYYYMMJJ($(this).find('td:eq(8)').text());
+
+            var $arretPaiementAvantTerme_t = $(this).find('td:eq(7)').text();
+
+            // Un élément du tableau est en train d'être modifié
+            if (typeof jqueryElement != 'undefined') {
+
+                // L'élément qu'on est en train de modifié est sur le même <tr> que celui sur lequel on est en train de boucler
+                if (jqueryElement.closest("tr").index() == $(this).index()) {
+                    
+                    switch (true) {
+                        case jqueryElement.attr("data-label") == "Date début":
+                            $dateDebut_t = dateToYYYYMMJJ(newValue);
+                            break;
+                        case jqueryElement.attr("data-label") == "Date de la dernière mensualité":
+                            $dateDerniereMensualite_t = dateToYYYYMMJJ(newValue);
+                            break;
+                        case jqueryElement.attr("data-label") == "Arrêt des paiements avant terme":
+                            $arretPaiementAvantTerme_t = newValue;
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+            }
+
+            $(this).removeClass("g-color-red");
+            $(this).removeClass("g-color-orange");
+            $(this).removeClass("g-color-green");
+
+            switch (true) {
+                case $arretPaiementAvantTerme_t == "Oui":
+                    $(this).addClass("g-color-red");
+                    break;
+                case isGreaterDate($dateFin_t, $dateDuJour_t) == true:
+                    $(this).addClass("g-color-orange");
+                    break;
+                case isGreaterDate($dateDuJour_t, $dateFin_t) == true:
+                    $(this).addClass("g-color-green");
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
+    /*
+        function tableDetteCallBackafterClear (rowIndex){
+
+        }
+    */
+</script>
+
+<script type="text/javascript" src="<!--4Dhtmlvar HTML_LAYOUT_PATH -->js/cio/rowfy.js"></script>

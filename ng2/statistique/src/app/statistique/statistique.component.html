@@ -1,0 +1,632 @@
+<p-toast/>
+<div class="app-container">
+  <aside class="sidebar" style="margin-top: 4.5rem">
+    <div class="search-list">
+      <h3>Mes recherches</h3>
+      <div class="p-col-12 p-mb-2">
+    <span class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input type="text" pInputText [(ngModel)]="searchText"
+             (input)="filterItems()" placeholder="Rechercher..."/>
+    </span>
+      </div>
+      <p-listbox
+        [options]="filteredSearchList"
+        optionLabel="affichageNom"
+        [listStyle]="{'height':'80vh'}"
+        [(ngModel)]="selectedSearchItem"
+        (onChange)="onItemSelect($event)">
+        <ng-template let-item pTemplate="item">
+          <div class="flex align-items-center justify-content-between w-full"
+               (click)="onListboxRowClick(item, $event)">
+            <div>{{ item.affichageNom }}</div>
+            <div class="flex gap-1">
+              <button pButton
+                      pRipple
+                      [rounded]="true"
+                      [outlined]="true"
+                      icon="pi pi-pencil"
+                      (click)="editItem($event, item)"
+                      class="p-button-rounded p-button-text p-button-sm">
+              </button>
+              <button pButton
+                      pRipple
+                      [rounded]="true"
+                      [outlined]="true"
+                      icon="pi pi-trash"
+                      (click)="confirmDelete($event, item)"
+                      class="p-button-rounded p-button-text p-button-danger p-button-sm">
+              </button>
+            </div>
+          </div>
+        </ng-template>
+      </p-listbox>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="loader-container" *ngIf="loader">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+    <div class="grid" style="margin-top: 70px">
+      @if (searchError) {
+        <div class="col-12">
+          <p-message severity="error" icon="pi pi-times"
+                     text="Une erreur est survenue lors de la recherche, veuillez contacter votre support logiciel"
+                     styleClass="h-full"/>
+        </div>
+      }
+      <div class="col-12">
+        <p-card class="w-full" styleClass="shadow-2">
+          <form [formGroup]="searchForm" class="p-fluid">
+            @if (selectedSearchItem?.affichageNom) {
+              <h3>{{ selectedSearchItem?.affichageNom }}</h3>
+              <p-divider>
+              </p-divider>
+            }
+            <div class="flex align-items-center mt-4">
+              <!-- Date du-->
+              <div class="field col-2">
+                <p-floatLabel>
+                  <p-calendar
+                    id="dateDu"
+                    formControlName="dateDu"
+                    [showIcon]="true"
+                    dateFormat="dd/mm/yy">
+                  </p-calendar>
+                  <label for="dateDu">Date du</label>
+                </p-floatLabel>
+              </div>
+              <!-- Date au-->
+              <div class="field col-2">
+                <p-floatLabel>
+                  <p-calendar
+                    id="dateAu"
+                    formControlName="dateAu"
+                    [showIcon]="true"
+                    dateFormat="dd/mm/yy">
+                  </p-calendar>
+                  <label for="dateAu">Date au</label>
+                </p-floatLabel>
+              </div>
+              <!-- Chef de famille-->
+              <div class="field col-2">
+                <p-floatLabel>
+                  <p-dropdown
+                    id="famChef"
+                    formControlName="famChef"
+                    [options]="yesNoOptions"
+                    optionLabel="label"
+                    optionValue="value"
+                    [showClear]="false">
+                  </p-dropdown>
+                  <label for="famChef" class="focus">Chef de famille</label>
+                </p-floatLabel>
+              </div>
+              <!--  AGE MIN  -->
+              <div class="field col-1">
+                <p-floatLabel>
+                  <p-inputNumber
+                    id="ageMin"
+                    [min]="0"
+                    formControlName="ageMin">
+                  </p-inputNumber>
+                  <label for="ageMin">Age (De)</label>
+                </p-floatLabel>
+              </div>
+              <!--  AGE MAX  -->
+              <div class="field col-1">
+                <p-floatLabel>
+                  <p-inputNumber
+                    id="ageMax"
+                    formControlName="ageMax">
+                  </p-inputNumber>
+                  <label for="ageMax">Age (A)</label>
+                </p-floatLabel>
+              </div>
+              <!-- Approuvé-->
+              <div class="field col-1 gap-2 flex align-items-center">
+                <label for="approuve">Approuvé</label>
+                <p-inputSwitch
+                  id="approuve"
+                  formControlName="approuve">
+                </p-inputSwitch>
+              </div>
+              <!--  Fiches Entrées-->
+              <div class="field col-2 gap-1 flex align-items-center">
+                <label for="approuve">Fiches entrées</label>
+                <p-inputSwitch
+                  id="ficheEntree"
+                  formControlName="ficheEntree">
+                </p-inputSwitch>
+              </div>
+            </div>
+            <div class="flex flex-row justify-content-start gap-2">
+              <p-button type="button"
+                         [style.margin-left]="'6px'"
+                         icon="pi pi-search"
+                         label="Aujourd'hui"
+                         [raised]="true"
+                         [loading]="loaderComputeResult"
+                         (click)="patchTodayDate()"
+            />
+              <p-button type="button"
+                        icon="pi pi-save"
+                        label="Année en cours"
+                        (click)="patchCurrentYearDate()"
+                        [raised]="true"/>
+            </div>
+            <div class="flex align-items-center mt-4">
+              <!-- Date 1er contact du-->
+              <div class="field col-2">
+                <p-floatLabel>
+                  <p-calendar
+                    id="dateContactDu"
+                    formControlName="dateContactDu"
+                    [showIcon]="true"
+                    dateFormat="dd/mm/yy">
+                  </p-calendar>
+                  <label for="dateContactAu">Date 1er contact (du) </label>
+                </p-floatLabel>
+              </div>
+              <!-- Date 1er contact au-->
+              <div class="field col-2">
+                <p-floatLabel>
+                  <p-calendar
+                    id="dateContactAu"
+                    formControlName="dateContactAu"
+                    [showIcon]="true"
+                    dateFormat="dd/mm/yy">
+                  </p-calendar>
+                  <label for="dateContactAu">Date 1er contact (au)</label>
+                </p-floatLabel>
+              </div>
+              <!-- Date d'entree au-->
+              <div class="field col-2">
+                <p-floatLabel>
+                  <p-calendar
+                    id="dateEntreeDu"
+                    formControlName="dateEntreeDu"
+                    [showIcon]="true"
+                    dateFormat="dd/mm/yy">
+                  </p-calendar>
+                  <label for="dateEntreeDu">Date d'entrée (du)</label>
+                </p-floatLabel>
+
+              </div>
+              <!--  Date entrée du-->
+              <div class="field col-2">
+                <p-floatLabel>
+                  <p-calendar
+                    id="dateEntreeAu"
+                    formControlName="dateEntreeAu"
+                    [showIcon]="true"
+                    dateFormat="dd/mm/yy">
+                  </p-calendar>
+                  <label for="dateEntreeAu">Date d'entrée (au) </label>
+                </p-floatLabel>
+
+              </div>
+              <!-- Date sortie du-->
+              <div class="field col-2">
+                <p-floatLabel>
+                  <p-calendar
+                    id="dateSortieDu"
+                    formControlName="dateSortieDu"
+                    [showIcon]="true"
+                    dateFormat="dd/mm/yy">
+                  </p-calendar>
+                  <label for="dateSortieDu">Date de sortie (du)</label>
+                </p-floatLabel>
+
+              </div>
+              <!-- Date sortie Au-->
+              <div class="field col-2">
+                <p-floatLabel>
+                  <p-calendar
+                    id="dateSortieAu"
+                    formControlName="dateSortieAu"
+                    [showIcon]="true"
+                    dateFormat="dd/mm/yy">
+                  </p-calendar>
+                  <label for="dateSortieAu">Date de sortie (au) </label>
+                </p-floatLabel>
+              </div>
+            </div>
+            <div class="flex align-items-center">
+              <!-- Fiches-->
+              <div class="field col-2">
+                <p-floatLabel>
+                  <p-dropdown
+                    id="fiche"
+                    formControlName="fiche"
+                    placeholder="-"
+                    [options]="ficheOptions"
+                    optionLabel="label"
+                    optionValue="value">
+                  </p-dropdown>
+                  <label for="fiche">Fiche</label>
+                </p-floatLabel>
+              </div>
+              <!--Centres hebergements-->
+              <div class="field col-3" *ngIf="searchForm.get('fiche')?.value === false">
+                <p-floatLabel>
+                  <p-multiSelect
+                    id="centreHebergemements"
+                    formControlName="centreHebergemements"
+                    optionLabel="value"
+                    optionValue="value"
+                    [options]="centreHebergementOptions">
+                  </p-multiSelect>
+                  <label for="centreHebergemements">Centres hébergement</label>
+                </p-floatLabel>
+              </div>
+              <!--  Prestations-->
+              <div class="field col-3" *ngIf="searchForm.get('fiche')?.value === true">
+                <p-floatLabel>
+                  <p-multiSelect
+                    id="prestations"
+                    formControlName="prestations"
+                    optionLabel="value"
+                    optionValue="value"
+                    [options]="prestationOptions">
+                  </p-multiSelect>
+                  <label for="prestations">Prestations</label>
+                </p-floatLabel>
+              </div>
+            </div>
+            <p-divider>
+              <b>Autres critères</b>
+            </p-divider>
+            <div class="stepper-container">
+              <div class="steps" formArrayName="autreCriteres">
+                <!--  Autre critères -->
+                <div *ngFor="let criteria of criteriaControls; let i = index"
+                     class="step-item"
+                     [formGroupName]="i">
+                  <div class="step-circle"></div>
+                  <div class="step-content">
+                    <div class="form-group">
+                      <div class="grid">
+                        <div class="col-2">
+                          <p-dropdown
+                            [id]="'type' + i"
+                            formControlName="type"
+                            appendTo="body"
+                            [options]="otherCriteriaOptions"
+                            optionLabel="libelle"
+                            optionValue="champNom"
+                            [showClear]="false"
+                            placeholder="Selectionnez un critère">
+                          </p-dropdown>
+                        </div>
+                        <div class="col-4">
+                          <p-multiSelect
+                            [maxSelectedLabels]="10"
+                            selectedItemsLabel="{0} éléments sélectionnés"
+                            [id]="'criteria' + i"
+                            appendTo="body"
+                            formControlName="criteria"
+                            [options]="otherCriteriaMapOptionsByField?.get(criteria.value?.type)?.item"
+                            placeholder="Selectionnez une ou plusieurs valeurs"
+                            [disabled]="!criteria.value?.type">
+                          </p-multiSelect>
+                        </div>
+                        <div class="col-1">
+                          <button pButton
+                                  severity="danger"
+                                  [rounded]="true"
+                                  [outlined]="true"
+                                  type="button"
+                                  class="delete-btn"
+                                  icon="pi pi-trash"
+                                  (click)="removeCriteria(i)">
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button type="button"
+                        (click)="addCriteria()"
+                        class="add-btn">
+                  +
+                </button>
+              </div>
+            </div>
+            <p-divider>
+              <b>Résultats, Chiffres et Choix du graphique</b>
+            </p-divider>
+
+            <!--  START OF RESULTATS -->
+            <div class="flex align-items-center mt-2">
+              <div class="col-2">
+                <p-floatLabel>
+                  <p-dropdown
+                    id="resultatType"
+                    formControlName="resultatType"
+                    appendTo="body"
+                    optionValue="value"
+                    optionLabel="label"
+                    [options]="typeResultats"
+                    [showClear]="false"
+                    placeholder="Selectionnez un type de résultat">
+                  </p-dropdown>
+                  <label for="resultatType">Type de résultat</label>
+                </p-floatLabel>
+              </div>
+              <div class="col-2">
+                <p-floatLabel>
+                  <p-dropdown
+                    formControlName="resultatAutreCritereValeur"
+                    appendTo="body"
+                    [options]="otherCriteriaOptions"
+                    [showClear]="false"
+                    optionLabel="libelle"
+                    optionValue="champNom"
+                    [disabled]="searchForm.get('resultatType')?.value !== 'other-criteria'"
+                    placeholder="Selectionnez un critère">
+                  </p-dropdown>
+                  <label for="dateDu">Selectionnez un critere</label>
+                </p-floatLabel>
+              </div>
+              <div class="col-2 gap-8">
+                <p-floatLabel>
+                  <p-dropdown
+                    formControlName="chiffres"
+                    appendTo="body"
+                    optionValue="value"
+                    optionLabel="label"
+                    [options]="typeChiffres"
+                    [showClear]="false">
+                  </p-dropdown>
+                  <label for="dateDu">Chiffres</label>
+                </p-floatLabel>
+              </div>
+              <div class="col-2 gap-8">
+                <p-floatLabel>
+                  <p-dropdown
+                    formControlName="typeGraph"
+                    appendTo="body"
+                    optionValue="value"
+                    optionLabel="label"
+                    [options]="typeChart"
+                    [showClear]="false">
+                  </p-dropdown>
+                  <label for="dateDu">Graphique</label>
+                </p-floatLabel>
+              </div>
+              <div class="flex align-items-center gap-2">
+                <label for="approuve">Fiche unique</label>
+                <p-inputSwitch
+                  id="statistiqueFicheUnique"
+                  formControlName="statistiqueFicheUnique">
+                </p-inputSwitch>
+              </div>
+
+            </div>
+            <div class="flex col-12">
+              <p-message severity="info" icon="pi pi-info"
+                         text="Si vous choisissez « Autre critère » en type de résultats, sélectionnez un critère pour afficher le graphique"
+                         styleClass="h-full"/>
+            </div>
+            <!--   END OF RESULTATS  -->
+            <p-divider>
+              <b>Colonnes a afficher</b>
+            </p-divider>
+            <div class="col-6 gap-8">
+              <p-floatLabel>
+                <p-multiSelect
+                  id="tableColonnes"
+                  [maxSelectedLabels]="10"
+                  selectedItemsLabel="{0} colonnes sélectionnés"
+                  appendTo="body"
+                  formControlName="tableColonnes"
+                  [options]="columnOptions"
+                  optionLabel="libelle"
+                  optionValue="value">
+                </p-multiSelect>
+                <label for="tableColonnes">Colonnes à afficher</label>
+              </p-floatLabel>
+            </div>
+            <p-divider>
+            </p-divider>
+            <div class="flex flex-row justify-content-between gap-2">
+              <!-- Groupe de gauche -->
+              <div class="flex flex-row gap-2">
+                <p-button type="button"
+                          icon="pi pi-search"
+                          label="Calculer"
+                          [raised]="true"
+                          [loading]="loaderComputeResult"
+                          (click)="search()"
+                />
+                <p-button type="button"
+                          icon="pi pi-save"
+                          label="Enregistrer la recherche"
+                          (click)="saveSearch()"
+                          [disabled]="!selectedSearchItem"
+                          [raised]="true"/>
+                <p-button type="button"
+                          icon="pi pi-save"
+                          label="Création modèle"
+                          [raised]="true"
+                          (click)="createNewSearch()"/>
+              </div>
+
+              <!-- Groupe de droite -->
+              <div class="flex flex-row gap-2">
+                <p-button type="button"
+                          icon="pi pi-file"
+                          label="Exporter"
+                          [raised]="true"
+                          severity="success"
+                          [disabled]="!chart"
+                          (click)="exportXls()"/>
+                <p-button type="button"
+                          icon="pi pi-print"
+                          label="Imprimer"
+                          [raised]="true"
+                          severity="secondary"
+                          (click)="print()"/>
+                <p-button type="button"
+                          icon="pi pi-times"
+                          label="Reinitialiser les filtres"
+                          [raised]="true"
+                          severity="secondary"
+                          (click)="resetFilters()"/>
+              </div>
+            </div>
+          </form>
+        </p-card>
+      </div>
+    </div>
+    <!-- Graphs-->
+    @if (chart && result.statistique?.length) {
+      <p-card class="w-full" styleClass="shadow-2 mt-4" *ngIf="chart && result.statistique?.length">
+        <div class="flex w-full">
+          <p-chart [type]="chart.type"
+                   [data]="chart.data"
+                   [options]="chart.options"
+                   [plugins]="[ChartDataLabels]"
+                   class="w-full"
+                   height="500px"/>
+        </div>
+      </p-card>
+    }
+
+    <!-- Datatable-->
+    @if (result && result?.colonne?.length) {
+      <pre>{{selectedData|json}}</pre>
+      <p-card class="w-full" styleClass="shadow-2 mt-4 table-container">
+        <div class="flex mt-2 mb-2 justify-content-end">
+          <p-button type="button"
+                    icon="pi pi-file"
+                    label="Exporter"
+                    [raised]="true"
+                    severity="success"
+                    (click)="exportDataOnExcel()"/>
+        </div>
+        <div class="table-container">
+          <!-- Scrollbar du haut -->
+          <div class="top-scrollbar-container">
+            <div class="top-scrollbar-content"></div>
+          </div>
+
+          <!-- Votre p-table existant -->
+          <p-table
+            #dt
+            selectionMode="single"
+            [(selection)]="selectedData"
+            [value]="result.colonne"
+            styleClass="p-datatable-gridlines"
+            [paginator]="true"
+            [rows]="100"
+            [rowsPerPageOptions]="[50, 100, 200, 1000]"
+            [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="caption">
+              <div class="flex justify-content-between">
+                <span>Liste des situations: {{ counterResult.nbFiches }}</span>
+                <span>{{ counterResult.nbPersonnes }} personnes</span>
+                <span>{{ counterResult.nbFamChef }} ménages</span>
+              </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+              <tr>
+                <th *ngFor="let column of tableColumns" [pSortableColumn]="column">
+                  {{ columnLabels?.get(column) }}
+                  <p-sortIcon [field]="column"></p-sortIcon>
+
+                </th>
+              </tr>
+              <tr>
+                <th *ngFor="let column of tableColumns">
+                  <div class="flex justify-content-between align-items-center">
+                  <span>
+                            <input
+                              pInputText
+                              type="text"
+                              (input)="onFilterInput($event, column)"
+                              placeholder="Rechercher"
+                              class="p-column-filter"
+                            />
+                        </span>
+                  </div>
+                </th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-data>
+              <tr [pSelectableRow]="selectedData" (click)="redirectToFiche(data)">
+                <td *ngFor="let column of tableColumns">
+                  @if (data[column] === false) {
+                    <span>Non</span>
+                  } @else if (data[column] === true) {
+                    <span>Oui</span>
+                  } @else {
+                    @if (isValidDate(data[column])) {
+                      <span>{{ data[column] | date:'dd/MM/yyyy' }}</span>
+                    } @else {
+                      <span>{{ data[column] }}</span>
+                    }
+                  }
+                </td>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage" let-c>
+              <tr>
+                <td [attr.colspan]="tableColumns?.length" style="text-align: center">
+                  Pas de résultat trouvé en fonction des filtres appliqués
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+
+      </p-card>
+    }
+  </main>
+</div>
+
+
+<p-confirmDialog #cd>
+  <ng-template pTemplate="headless" let-message>
+    <div class="flex flex-column align-items-center p-5 surface-overlay border-round">
+      <div class="border-circle remove-container inline-flex justify-content-center align-items-center h-6rem w-6rem">
+        <i class="pi pi-times text-5xl"></i>
+      </div>
+      <span class="font-bold text-2xl block mb-2 mt-4">
+                {{ message.header }}
+            </span>
+      <p class="mb-0">{{ message.message }}</p>
+      <div class="flex align-items-center gap-2 mt-4">
+        <button
+          pButton
+          label="Supprimer"
+          (click)="cd.accept()"
+          severity="danger"
+          class="w-8rem">
+        </button>
+        <button
+          pButton
+          label="Annuler"
+          severity="secondary"
+          (click)="cd.reject()"
+          class="p-button-outlined w-8rem ">
+        </button>
+      </div>
+    </div>
+  </ng-template>
+</p-confirmDialog>
+
+<p-dialog header="Modifier le nom du modèle" [modal]="true" [(visible)]="editSearchItemVisible"
+          [style]="{ width: '50rem' }">
+  <div class="flex align-items-center gap-3 mb-3" [formGroup]="modifySearchItemForm" *ngIf="modifySearchItemForm">
+    <label for="affichageNom" class="font-semibold w-6rem">Nom du modèle</label>
+    <input pInputText id="affichageNom" class="flex-auto" autocomplete="off" formControlName="affichageNom"/>
+  </div>
+  <div class="flex justify-content-end gap-2">
+    <p-button label="Annuler" severity="secondary"
+              (onClick)="editSearchItemVisible = false; resetModifySearchItemForm()"/>
+    <p-button label="Sauvegarder" (onClick)="updateSearchItemName()"/>
+  </div>
+</p-dialog>

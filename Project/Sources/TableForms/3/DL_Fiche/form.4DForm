@@ -1,0 +1,836 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"pages": [
+		{
+			"objects": {
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 848,
+					"height": 582,
+					"fill": "#EEEEEE",
+					"stroke": "#EEEEEE"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 10,
+					"left": 346,
+					"width": 492,
+					"height": 558,
+					"fill": "#DFE4FF",
+					"stroke": "#DFE4FF"
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 15,
+					"left": 351,
+					"width": 482,
+					"height": 97,
+					"fill": "#C0CAFF",
+					"stroke": "#C0CAFF"
+				},
+				"Variable19": {
+					"type": "button",
+					"top": 546,
+					"left": 253,
+					"width": 80,
+					"height": 22,
+					"dataSource": "b_AnnHB",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Séparateur1": {
+					"type": "splitter",
+					"top": 55,
+					"left": 334,
+					"width": 4,
+					"height": 480,
+					"dataSource": "Séparateur1",
+					"borderStyle": "sunken",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton1": {
+					"type": "button",
+					"top": 546,
+					"left": 9,
+					"width": 100,
+					"height": 22,
+					"dataSource": "b_LISTE",
+					"text": "Répertoire 115",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 68,
+					"left": 441,
+					"width": 377,
+					"height": 13,
+					"dataSource": "<>va_Conso_FicheSite",
+					"stroke": "#0000FF",
+					"class": "ARIAL_09",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable6": {
+					"type": "input",
+					"top": 88,
+					"left": 441,
+					"width": 27,
+					"height": 13,
+					"dataSource": "<>va_ConsoB_FicheJour",
+					"stroke": "#0000FF",
+					"class": "ARIAL_09",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable7": {
+					"type": "input",
+					"top": 88,
+					"left": 481,
+					"width": 57,
+					"height": 13,
+					"dataSource": "<>va_ConsoB_FicheNo",
+					"stroke": "#0000FF",
+					"class": "ARIAL_09",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable8": {
+					"type": "input",
+					"top": 88,
+					"left": 551,
+					"width": 17,
+					"height": 13,
+					"dataSource": "<>va_ConsoB_FicheET",
+					"stroke": "#0000FF",
+					"class": "ARIAL_09",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable9": {
+					"type": "input",
+					"top": 88,
+					"left": 581,
+					"width": 107,
+					"height": 13,
+					"dataSource": "<>va_ConsoB_FicheGenre",
+					"stroke": "#0000FF",
+					"class": "ARIAL_09",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable10": {
+					"type": "input",
+					"top": 88,
+					"left": 701,
+					"width": 117,
+					"height": 13,
+					"dataSource": "<>va_ConsoB_FicheAge",
+					"stroke": "#0000FF",
+					"class": "ARIAL_09",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Bouton6": {
+					"type": "button",
+					"top": 546,
+					"left": 120,
+					"width": 60,
+					"height": 22,
+					"dataSource": "b_LISTEautre",
+					"text": "Autre",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton6.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton7": {
+					"type": "button",
+					"top": 546,
+					"left": 191,
+					"width": 50,
+					"height": 22,
+					"dataSource": "b_LISTEvide",
+					"text": "Vider",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton7.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 10,
+					"left": 11,
+					"width": 311,
+					"height": 30,
+					"dataSource": "<>vt_ConsoB_CheminDossier",
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable12": {
+					"type": "input",
+					"top": 24,
+					"left": 365,
+					"width": 452,
+					"height": 17,
+					"dataSource": "<>vt_ConsoB_Document",
+					"stroke": "#663300",
+					"class": "ARIAL_14",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable11": {
+					"type": "input",
+					"top": 46,
+					"left": 365,
+					"width": 452,
+					"height": 17,
+					"dataSource": "<>vt_ConsoB_Titre",
+					"stroke": "#663300",
+					"class": "ARIAL_14",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 68,
+					"left": 365,
+					"width": 67,
+					"height": 13,
+					"dataSource": "<>va_ConsoB_FicheSiteCode",
+					"stroke": "#0000FF",
+					"class": "ARIAL_09",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 88,
+					"left": 365,
+					"width": 67,
+					"height": 13,
+					"dataSource": "<>vd_ConsoB_FicheDate",
+					"dataSourceTypeHint": "date",
+					"stroke": "#0000FF",
+					"class": "ARIAL_09",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dateFormat": "short",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Bouton8": {
+					"type": "button",
+					"top": 609,
+					"left": 78,
+					"width": 50,
+					"height": 22,
+					"dataSource": "b_fHaut",
+					"shortcutKey": "[up arrow]",
+					"text": "Haut",
+					"class": "Bt_Page",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton8.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton9": {
+					"type": "button",
+					"top": 640,
+					"left": 77,
+					"width": 50,
+					"height": 22,
+					"dataSource": "b_fBas",
+					"shortcutKey": "[down arrow]",
+					"text": "Bas",
+					"class": "Bt_Page",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton9.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton10": {
+					"type": "button",
+					"top": 622,
+					"left": 133,
+					"width": 50,
+					"height": 22,
+					"dataSource": "b_fDroit",
+					"shortcutKey": "[right arrow]",
+					"text": "Droit",
+					"class": "Bt_Page",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton10.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton11": {
+					"type": "button",
+					"top": 624,
+					"left": 24,
+					"width": 50,
+					"height": 22,
+					"dataSource": "b_fGauche",
+					"shortcutKey": "[left arrow]",
+					"text": "Gauge",
+					"class": "Bt_Page",
+					"stroke": "#000000",
+					"focusable": false,
+					"method": "ObjectMethods/Bouton11.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 39,
+					"left": 11,
+					"width": 311,
+					"height": 15,
+					"dataSource": "<>vl_ConsoB_DocumentLignes",
+					"dataSourceTypeHint": "number",
+					"stroke": "#663300",
+					"class": "TNR_11",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "### ### ##0 fiche(s)",
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Bouton2": {
+					"type": "button",
+					"top": 566,
+					"left": 111,
+					"width": 7,
+					"height": 9,
+					"dataSource": "b_LISTEautre",
+					"text": "Autre",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton12": {
+					"type": "button",
+					"top": 566,
+					"left": 181,
+					"width": 7,
+					"height": 9,
+					"dataSource": "b_LISTElu",
+					"text": "Autre",
+					"class": "Bt_Page",
+					"fontWeight": "bold",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton12.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Image1": {
+					"type": "picture",
+					"top": 633,
+					"left": 469,
+					"width": 14,
+					"height": 12,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image1.pict"
+				},
+				"Image2": {
+					"type": "picture",
+					"top": 632,
+					"left": 507,
+					"width": 14,
+					"height": 12,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image2.pict"
+				},
+				"Image3": {
+					"type": "picture",
+					"top": 650,
+					"left": 490,
+					"width": 11,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image3.pict"
+				},
+				"Image4": {
+					"type": "picture",
+					"top": 613,
+					"left": 490,
+					"width": 11,
+					"height": 14,
+					"pictureFormat": "scaled",
+					"picture": "Images/Image4.pict"
+				},
+				"Bouton13": {
+					"type": "button",
+					"top": 611,
+					"left": 486,
+					"width": 18,
+					"height": 18,
+					"dataSource": "b_fHaut",
+					"display": false,
+					"method": "ObjectMethods/Bouton13.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton3": {
+					"type": "button",
+					"top": 648,
+					"left": 486,
+					"width": 18,
+					"height": 18,
+					"dataSource": "b_fBas",
+					"display": false,
+					"method": "ObjectMethods/Bouton3.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton4": {
+					"type": "button",
+					"top": 629,
+					"left": 505,
+					"width": 18,
+					"height": 18,
+					"dataSource": "b_fDroit",
+					"display": false,
+					"method": "ObjectMethods/Bouton4.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Bouton5": {
+					"type": "button",
+					"top": 630,
+					"left": 467,
+					"width": 18,
+					"height": 18,
+					"dataSource": "b_fGauche",
+					"display": false,
+					"method": "ObjectMethods/Bouton5.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"LB": {
+					"type": "listbox",
+					"top": 118,
+					"left": 352,
+					"width": 480,
+					"height": 436,
+					"resizingMode": "legacy",
+					"sortable": false,
+					"movableRows": false,
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "automatic",
+					"fill": "#EEEEEE",
+					"alternateFill": "automatic",
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Colonne1",
+							"dataSource": "<>te_ConsoB_Ligne",
+							"width": 20,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête3",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied3",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne2",
+							"dataSource": "<>ta_ConsoB_Titre",
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête4",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied4",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne3",
+							"dataSource": "<>tt_ConsoB_Valeur",
+							"width": 232,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête1",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied1",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne4",
+							"dataSource": "<>te_ConsoB_Table",
+							"width": 20,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête2",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied2",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne5",
+							"dataSource": "<>te_ConsoB_Champ",
+							"width": 19,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête5",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied5",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						},
+						{
+							"name": "Colonne7",
+							"dataSource": "<>ta_ConsoB_ChampType",
+							"width": 61,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête7",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied7",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				},
+				"LB1": {
+					"type": "listbox",
+					"top": 58,
+					"left": 11,
+					"width": 297,
+					"height": 474,
+					"resizingMode": "legacy",
+					"sortable": false,
+					"movableRows": false,
+					"rowHeightAutoMin": "20px",
+					"rowHeightAutoMax": "20px",
+					"showHeaders": false,
+					"scrollbarHorizontal": "hidden",
+					"scrollbarVertical": "automatic",
+					"fill": "#EEEEEE",
+					"alternateFill": "automatic",
+					"method": "ObjectMethods/LB1.4dm",
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Colonne8",
+							"dataSource": "<>ta_ConsoB_Document",
+							"width": 297,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"enterable": false,
+							"stroke": "automatic",
+							"fill": "#EEEEEE",
+							"alternateFill": "automatic",
+							"textAlign": "automatic",
+							"verticalAlign": "automatic",
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Entête8",
+								"text": "titi",
+								"stroke": "automatic",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							},
+							"footer": {
+								"name": "Pied8",
+								"stroke": "automatic",
+								"fill": "#EEEEEE",
+								"textAlign": "automatic",
+								"verticalAlign": "automatic"
+							}
+						}
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	}
+}

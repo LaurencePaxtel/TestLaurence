@@ -1,0 +1,5 @@
+QUERY:C277([HeberGement:5]; [HeberGement:5]HG_DateNéLe:24>=vd_item1; *)
+QUERY:C277([HeberGement:5];  & [HeberGement:5]HG_DateNéLe:24<=vd_item2; *)
+QUERY:C277([HeberGement:5];  & [HeberGement:5]HG_EtatCivil:20=va_IDT_Typ1)
+MultiSoc_Filter(->[HeberGement:5])
+vl_itemNb:=Records in selection:C76([HeberGement:5])

@@ -1,0 +1,181 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 20,
+	"markerBreak": 20,
+	"markerFooter": 20,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 333,
+					"height": 25,
+					"fill": "#DDDDDD",
+					"stroke": "#DDDDDD"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 18,
+					"left": 0,
+					"width": 333,
+					"stroke": "#FFFFFF"
+				},
+				"Groupe_Membre": {
+					"type": "input",
+					"top": 1,
+					"left": 203,
+					"width": 29,
+					"height": 15,
+					"dataSource": "ve_NbGPGH",
+					"dataSourceTypeHint": "number",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#DDDDDD",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "# ##0;;",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail"
+					]
+				},
+				"Groupe_Intitulé": {
+					"type": "input",
+					"top": 1,
+					"left": -1,
+					"width": 199,
+					"height": 15,
+					"dataSource": "[GrouPe:36]GP_Intitulé:4",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "#DDDDDD",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 0,
+					"left": 199,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 0,
+					"left": 236,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 0,
+					"left": 273,
+					"height": 20,
+					"stroke": "#AAAAAA"
+				},
+				"Groupe_Pro": {
+					"type": "input",
+					"top": 1,
+					"left": 241,
+					"width": 25,
+					"height": 15,
+					"dataSource": "ve_NbGPPR",
+					"dataSourceTypeHint": "number",
+					"stroke": "#0000FF",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#DDDDDD",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "# ##0;;",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail"
+					]
+				},
+				"Groupe_ProDate": {
+					"type": "input",
+					"top": 1,
+					"left": 276,
+					"width": 55,
+					"height": 15,
+					"dataSource": "va_DateGPPR",
+					"stroke": "#0000FF",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#DDDDDD",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"min": 0,
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onDisplayDetail"
+					]
+				}
+			}
+		}
+	]
+}

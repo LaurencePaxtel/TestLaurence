@@ -1,0 +1,125 @@
+<!-- ---------------------------------------------------------------------------
+  editeur4DWriteModal.html
+
+  Modal editeur 4D Write
+
+  Historique
+  08/07/21 - Grégory Fromain <gregory@connect-io.fr> - Création
+---------------------------------------------------------------------------- -->
+
+<!--#cwBlock editeur4DWriteModal-->
+  <div class="modal fade" id="editeur4DWriteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xxl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+
+        <div class="modal-body">
+          <table width="100%">
+            <tr style="vertical-align:top">
+              <!-- Choix du modèle-->
+              <td width="20%">
+                <div class="u-heading-v4-1 g-brd-primary g-mb-10">
+                  <h3 class="h5 g-color-gray-dark-v2 g-my-10">Import <span class="g-color-primary">de courrier</span></h3>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-12 col-form-label" for="4DWriteModele">
+                    <b>Modèle</b>
+                  </label>
+                  <div class="col-sm-12">
+                    <select id="4DWriteModele" name="4DWriteModele" class="form-control rounded-0 form-control rechercheFiltreInput" placeholder="Choix du modèle 4D Write">
+                      <option value="" selected="">Choix du modèle 4D Write</option>
+                    </select>
+                  </div>
+                </div>
+              </td>
+              <!-- Fin - Choix du modèle-->
+
+              <!-- editeur HTML -->
+              <td class="g-px-10">
+                <div style="width: 100%; text-align: center">
+                  <iframe id="4DWriteIframe" height="700" src="" style="width: 21cm; margin: 0 auto;"></iframe>
+                </div>
+              </td>
+              <!-- Fin - editeur HTML -->
+
+              <!-- Export & GED -->
+              <td width="20%">
+                <div class="u-heading-v4-1 g-brd-primary g-mb-10">
+                  <h3 class="h5 g-color-gray-dark-v2 g-my-10">Export <span class="g-color-primary">de courrier</span></h3>
+                </div>
+                <!-- GED -->
+                <div class="row">
+                  <div class="col-6">
+                    <button id="4DWriteBoutonResponsable" class="btn rounded-0 u-btn-outline-darkgray g-width-100x--lg">
+                      <i class="fas fa-user"></i> &nbsp;Responsable
+                    </button>
+                  </div>
+
+                  <div class="col-6">
+                    <select id="4DWriteResponsable" name="4DWriteResponsable" class="form-control rounded-0 form-control rechercheFiltreInput" placeholder=""></select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    Mise à dispo
+                  </div>
+
+                  <div class="col-6">
+                    <select id="4DWriteMiseADispo" name="4DWriteMiseADispo" class="form-control rounded-0 form-control rechercheFiltreInput" placeholder=""></select>
+                  </div>
+                </div>
+
+                <button id="4DWriteBoutonGED" class="btn btn-block rounded-0 u-btn-outline-blue g-mb-10 g-my-10" tabindex="0" aria-controls="example" type="button"><span><i class="fas fa-save"></i> GED</span></button>
+
+                <hr class="u-divider-linear-gradient u-divider-linear-gradient--gray-light-v2 g-my-10">
+                <!-- GED & email -->
+                <div class="row">
+                  <div class="col-5">
+                    <button id="4DWriteBoutonMailA" class="btn rounded-0 u-btn-outline-darkgray g-width-100x--lg">
+                      <i class="fas fa-mail-bulk"></i> &nbsp;Mail à
+                    </button>
+                  </div>
+
+                  <div class="col-7">
+                    <input type="text" id="4DWriteMailA" name="4DWriteMailA" class="form-control rounded-0 " placeholder="" value="">
+                    <span id="4DWriteContact" class="help-block"></span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-5">
+                    <button id="4DWriteBoutonMailCC" class="btn rounded-0 u-btn-outline-darkgray g-width-100x--lg">
+                      <i class="fas fa-mail-bulk"></i> &nbsp;Mail cc
+                    </button>
+                  </div>
+
+                  <div class="col-7">
+                    <input type="text" id="4DWriteMailCC" name="4DWriteMailCC" class="form-control rounded-0 " placeholder="" value="">
+                  </div>
+                </div>
+
+                <button id="4DWriteBoutonGEDMail" class="btn btn-block rounded-0 u-btn-outline-blue g-mb-10 g-my-10" tabindex="0" aria-controls="example" type="button"><span><i class="fas fa-mail-bulk"></i> GED+Mail</span></button>
+
+                <hr class="u-divider-linear-gradient u-divider-linear-gradient--gray-light-v2 g-my-10">
+                <!-- Imprimante -->
+                <button id="4DWriteBoutonPrint" class="btn btn-block rounded-0 u-btn-outline-blue g-mb-10 g-my-10" tabindex="0" aria-controls="example" type="button"><span><i class="fa fa-print"></i> Imprimer</span></button>
+              </td>
+              <!-- Fin - Export & GED -->
+            </tr>
+          </table>
+
+          <div class="dtSynchroEnCours">
+            <div id="loading">
+                <h1 class="text-center"><i class="fas fa-sync fa-spin"></i></h1>
+                <p class="text-center"><i>Synchro en cours...</i></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--#cwBlockFin-->

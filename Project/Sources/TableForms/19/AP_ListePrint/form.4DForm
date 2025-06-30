@@ -1,0 +1,394 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 100,
+	"markerBody": 118,
+	"markerBreak": 122,
+	"markerFooter": 136,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 81,
+					"left": 2,
+					"width": 559,
+					"height": 40,
+					"fill": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 83,
+					"left": 4,
+					"width": 69,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "Date"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 83,
+					"left": 77,
+					"width": 56,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "Heure"
+				},
+				"Texte5": {
+					"type": "text",
+					"top": 83,
+					"left": 135,
+					"width": 37,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "J/N"
+				},
+				"Texte8": {
+					"type": "text",
+					"top": 83,
+					"left": 176,
+					"width": 383,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "TNR_11g",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "Libellé"
+				},
+				"Ligne40": {
+					"type": "line",
+					"top": 98,
+					"left": 174,
+					"height": 23
+				},
+				"Ligne55": {
+					"type": "line",
+					"top": 98,
+					"left": 75,
+					"height": 22
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 98,
+					"left": 2,
+					"width": 559
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 81,
+					"left": 75,
+					"height": 17
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 81,
+					"left": 174,
+					"height": 17
+				},
+				"Ligne10": {
+					"type": "line",
+					"top": 81,
+					"left": 133,
+					"height": 17
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 58,
+					"left": 2,
+					"width": 559,
+					"height": 20,
+					"fill": "transparent"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 60,
+					"left": 4,
+					"width": 407,
+					"height": 14,
+					"dataSource": "va_Lutilisa",
+					"stroke": "#000000",
+					"class": "TNR_12g",
+					"fontWeight": "bold",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 60,
+					"left": 462,
+					"width": 97,
+					"height": 16,
+					"dataSource": "vl_HNbAA",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"textFormat": "Appels : ####",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 102,
+					"left": 4,
+					"width": 70,
+					"height": 16,
+					"dataSource": "[APpels:19]AP_Date:2",
+					"dataSourceTypeHint": "date",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 102,
+					"left": 77,
+					"width": 55,
+					"height": 16,
+					"dataSource": "[APpels:19]AP_Heure:3",
+					"dataSourceTypeHint": "time",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 102,
+					"left": 135,
+					"width": 38,
+					"height": 16,
+					"dataSource": "ve_JouN",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"textFormat": "N;;J",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"method": "ObjectMethods/Variable3.4dm"
+				},
+				"Champ3": {
+					"type": "input",
+					"top": 102,
+					"left": 176,
+					"width": 383,
+					"height": 16,
+					"dataSource": "[APpels:19]AP_Libellé:5",
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 124,
+					"left": 235,
+					"width": 92,
+					"height": 14,
+					"dataSource": "vl_Page",
+					"stroke": "#000000",
+					"class": "TNR_10",
+					"textAlign": "center",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"textFormat": "Page : ####",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 98,
+					"left": 133,
+					"height": 22
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 2,
+					"left": 2,
+					"width": 559,
+					"height": 53,
+					"fill": "transparent"
+				},
+				"Texte11": {
+					"type": "text",
+					"top": 5,
+					"left": 5,
+					"width": 553,
+					"height": 29,
+					"stroke": "#000000",
+					"class": "Stat_Titre",
+					"textAlign": "center",
+					"fontWeight": "bold",
+					"text": "APPELS"
+				},
+				"Texte12": {
+					"type": "text",
+					"top": 38,
+					"left": 5,
+					"width": 553,
+					"height": 14,
+					"stroke": "#000000",
+					"class": "Stat_Titre1",
+					"textAlign": "center",
+					"text": "<◊va_T_01>"
+				}
+			}
+		}
+	],
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View 2": {},
+			"View 3": {},
+			"View 4": {},
+			"View 5": {},
+			"View 6": {},
+			"View 7": {},
+			"View 8": {},
+			"View 9": {}
+		}
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

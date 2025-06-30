@@ -1,0 +1,294 @@
+<link rel="stylesheet" href="/layouts/paxtel/css/jquery.mCustomScrollbar.css?050920131" type="text/css">
+<script src="/layouts/paxtel/js/jquery.mCustomScrollbar.min.js" type="text/javascript" charset="utf-8"></script>	
+<style>
+
+.WFLPTACH{
+height:300px;
+overflow: auto;
+}
+
+.WFLPCNN{
+height:150px;
+overflow: auto;
+}
+
+.spans{
+float: left;
+margin-left: 8px;
+}
+
+
+
+.btn-in,.btn-out{
+width: 154px;
+margin-left: 3px;
+margin-right: 5px;
+}
+
+.Checkin_Block{
+margin-left: 31px;
+width: 325px;
+}
+.FullTime{
+width: 314px;
+margin-left: 3px;
+margin-right: 5px;
+
+}
+
+.btn-start,.btn-pause,.btn-stop{
+margin-left: 0px;
+margin-bottom: 3px;
+}
+.btn-Detail{
+margin-left: -69px;
+margin-top: 84px;
+height:23px;
+}
+WF_Actions_span2{
+float: left;
+margin-left: 12px;
+margin-right: 5px;
+}
+
+.ACBK ,.WFP_Form {
+margin-left: 0px;
+}
+.Tach_Content{
+margin-left: 105px;
+}
+.Btnhide{
+display:none;
+}
+</style>
+ <script>
+    var start;
+	var LastTime;
+    var centi=0;
+	var secon=0;
+	var minu=0;
+	var heure=0;
+	var compte ;
+	var timer_element;
+ $(function(){
+ 
+	function applyTasksScroll(){
+	$(".WFLPTACH").mCustomScrollbar("destroy");
+	$(".WFLPTACH").mCustomScrollbar({mouseWheel : true});
+	$(".WFLPCNN").mCustomScrollbar("destroy");
+	$(".WFLPCNN").mCustomScrollbar({mouseWheel : true});
+	
+	}
+	applyTasksScroll();
+	 $('.btn-start').live('click',function(){
+	 
+	 
+	 var btn='#Pause_'+$(this).attr('id').split('_')[1];
+	 if($(btn).hasClass('hide')|$(btn).hasClass('Btnhide'))
+	 {
+	 $(btn).removeClass('Btnhide');
+	  $(btn).removeClass('hide');
+	 }
+	 $(this).addClass('Btnhide');
+	start=new Date();
+	clearTimeout(compte);	
+	timer_element=$(this).parents('div:first').find('button:first');
+	LastTime=timer_element.text();
+	var pieces = timer_element.text().split(':');
+	heure = parseInt(pieces[0], 10);
+    minu = parseInt(pieces[1], 10);
+	secon = parseInt(pieces[2], 10);
+	centi=0;
+	
+	
+	chrono();
+	
+	});
+	
+	 $('.btn-stop').live('click',function(){
+	 var dateStop=new Date();
+	 var hr,min,sec;
+	clearTimeout(compte);
+	 var hr= dateStop.getHours()-start.getHours();
+	 
+	 if (dateStop.getMinutes()<start.getMinutes())
+		{
+			hr--;
+			min=(dateStop.getMinutes()-start.getMinutes())+60;
+		}
+	 else
+		{
+			min=(dateStop.getMinutes()-start.getMinutes());
+		}
+	 if(dateStop.getSeconds()<start.getSeconds())
+		{
+	      min--;
+		  sec=(dateStop.getSeconds()-start.getSeconds())+60;
+		}
+	 else
+		{
+			sec=(dateStop.getSeconds()-start.getSeconds());
+		}
+	 
+	setTime(hr,min,sec);
+	});
+	
+	 $('.btn-pause').live('click',function(){
+	 
+	  
+	  var btn='#Start_'+$(this).attr('id').split('_')[1];
+	 if($(btn).hasClass('hide')|$(btn).hasClass('Btnhide'))
+	 {
+	 $(btn).removeClass('Btnhide');
+	  $(btn).removeClass('hide');
+	 }
+	  $(this).addClass('Btnhide');
+	 var dateStop=new Date();
+	 var hr,min,sec;
+	clearTimeout(compte);
+	 var hr= dateStop.getHours()-start.getHours();
+	 
+	 if (dateStop.getMinutes()<start.getMinutes())
+		{
+			hr--;
+			min=(dateStop.getMinutes()-start.getMinutes())+60;
+		}
+	 else
+		{
+			min=(dateStop.getMinutes()-start.getMinutes());
+		}
+	 if(dateStop.getSeconds()<start.getSeconds())
+		{
+	      min--;
+		  sec=(dateStop.getSeconds()-start.getSeconds())+60;
+		}
+	 else
+		{
+			sec=(dateStop.getSeconds()-start.getSeconds());
+		}
+	 
+	setTime(hr,min,sec);
+		//clearInterval(compte);
+	});
+	
+});	
+
+function setTime(hr,min,sec){
+		var Strminu=0
+		var Strheure=0	
+		var Strsecon=0		
+		//var Strcenti=0
+		var timeDecoup=LastTime.split(':');
+		
+		hr=hr+parseInt(timeDecoup[0]);
+		min=min+parseInt(timeDecoup[1]);
+		sec=sec+parseInt(timeDecoup[2]);
+		if(sec>59)
+		{
+			sec=sec-60;
+			min++;
+		}
+		if(min>59)
+		{
+		  min=min-60;
+		  hr++;
+		}
+		
+		
+		if (min   < 10) {Strminu   = "0"+min;}else {Strminu   = min;}
+		if (hr < 10) {Strheure = "0"+hr;}else {Strheure = hr;}
+		if (sec < 10) {Strsecon = "0"+sec;}else  {Strsecon =sec;}
+		//if (centi < 10) {Strcenti = "0"+centi;}
+		
+		var TimeString;
+		TimeString=Strheure+':'+Strminu+':'+Strsecon;
+		timer_element.text(TimeString);
+   
+}
+ function chrono(){
+		
+		centi++;
+		if (centi>9){centi=0;secon++}
+		if (secon>59){secon=0;minu++}
+		if (minu>59){minu=0;heure++}
+		
+		var Strminu=0
+		var Strheure=0	
+		var Strsecon=0		
+		//var Strcenti=0
+
+
+		if (minu   < 10) {Strminu   = "0"+minu;}else {Strminu   = minu;}
+		if (heure < 10) {Strheure = "0"+heure;}else {Strheure = heure;}
+		if (secon < 10) {Strsecon = "0"+secon;}else  {Strsecon =secon;}
+		//if (centi < 10) {Strcenti = "0"+centi;}
+		
+		var TimeString;
+		TimeString=Strheure+':'+Strminu+':'+Strsecon;
+		timer_element.text(TimeString);
+		compte=setTimeout('chrono()',100);
+		//compte=setInterval('chrono()',100);
+	}
+	
+	/*function rasee(){
+		clearTimeout(compte)
+		centi=0;
+		secon=0;
+		minu=0;
+		heure=0
+		document.forsec.secc.value="  "+centi
+		document.forsec.seca.value="  "+secon
+		document.forsec.secb.value="  "+minu
+		document.forsec.secd.value="  "+heure
+	}*/
+</script>
+<div class=" span5 pull-left" >
+	<div class=" Nav_Block  span5 pull-left" style="margin-bottom:10px">
+		<a target="_blank" href="/DOSP?action=liste&tous=non" class=" btn Dos_Mini">
+			      
+		</a>
+		<a target="_blank" href="/TACH?action=liste&tous=non" class=" btn Tach_Mini">
+			        	
+		</a>
+		<a target="_blank" href="/PLAN_STRUCT" class="btn Plan_Mini">
+			       
+		</a> 	
+		<a target="_blank" href="/HACT?action=liste&tous=non" class="btn Hiso_Mini">
+			  	
+		</a>
+	</div>
+	
+	<div class=" Checkin_Block well  pull-left">
+		 <form  action="" id="form_logaccess" method="POST" class="">
+		
+			 <fieldset>
+				<div class="controls">
+					<button id="btn-in" type="button" class="btn-in btn-success pull-left methode[wflp_access_log({in});click;refresh_object]">J'arrive</button>
+				
+					<button id="btn-out" type="button" class="btn-out btn-danger methode[wflp_access_log({out});click;refresh_object]">Je parts</button>
+				</div>
+													
+			</fieldset>
+				 
+		 </form>
+		 <div class="controls">
+			<button class=" FullTime  btn-success  pull-left">Temps du jour : 1h30</button>
+		</div>
+		
+	</div>
+	<div class="Dashbord_Block span4 pull-left">
+		<div class="WFLPCNN" style="margin-bottom:10px">
+			<!--4Dhtmlvar CONX_HTML_VIEW -->
+		</div>
+		
+		<div class="WFLPTACH mCustomScrollbar _mCS_2" style="margin-bottom:10px">
+			<!--4Dhtmlvar TACH_HTML_VIEW -->
+		</div>
+		
+	</div>
+</div>
+
+<!--4Dhtmlvar ACT_TACH_HTML_VIEW --> 
+
+<div class="modal modal_externe hide" data-temp="212433503" data-actionm="DOSP" data-uidm="2013051610265100001paxSERZD" data-action="deverse_tache" data-methode="" data-prefex="DOSP" id="modal_DOSP_212433503"><div class="modal-header"><button type="button" class="close hide" data-dismiss="modal">x</button><h4 style="float:left;">Deversement Taches</h4><div class="btns"><a href="#" class="btn-annuler-modal"><span class="link">Annuler</span></a></div><div class="btns"><a href="" class="btn-valider-modal"><span class="link">Valider</span></a></div></div><div class="modal-body"><div class="span8"><div class="progress progress-striped active"><div class="bar" style="width: 100%;"></div></div></div></div><div class="modal-footer"></div></div>
+

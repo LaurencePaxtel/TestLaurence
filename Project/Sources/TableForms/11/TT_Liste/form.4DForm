@@ -1,0 +1,406 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 28,
+	"markerBody": 49,
+	"markerBreak": 52,
+	"markerFooter": 86,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 28,
+					"left": 5,
+					"width": 607,
+					"height": 21,
+					"stroke": "#FFFFFF"
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 3,
+					"left": 3,
+					"width": 611,
+					"height": 49,
+					"fill": "transparent",
+					"stroke": "#696969"
+				},
+				"Ligne4": {
+					"type": "line",
+					"top": 48,
+					"left": 5,
+					"width": 607,
+					"stroke": "#c0c0c0"
+				},
+				"Ligne9": {
+					"type": "line",
+					"top": 27,
+					"left": 550,
+					"height": 22,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 27,
+					"left": 5,
+					"width": 607
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 65,
+					"width": 485,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte2": {
+					"type": "text",
+					"top": 8,
+					"left": 68,
+					"width": 478,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Libellé",
+					"fontFamily": "Arial"
+				},
+				"Ligne2": {
+					"type": "line",
+					"top": 5,
+					"left": 550,
+					"height": 22
+				},
+				"Rectangle7": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 551,
+					"width": 61,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte1": {
+					"type": "text",
+					"top": 8,
+					"left": 554,
+					"width": 54,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Niveau",
+					"fontFamily": "Arial"
+				},
+				"Ligne1": {
+					"type": "line",
+					"top": 5,
+					"left": 64,
+					"height": 22
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 5,
+					"left": 2,
+					"width": 62,
+					"height": 22,
+					"fill": "#DDDDDD",
+					"stroke": "transparent"
+				},
+				"Texte3": {
+					"type": "text",
+					"top": 8,
+					"left": 5,
+					"width": 57,
+					"height": 16,
+					"stroke": "#000000",
+					"class": "TNR_12",
+					"textAlign": "center",
+					"text": "Réf",
+					"fontFamily": "Arial"
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 27,
+					"left": 64,
+					"height": 22,
+					"stroke": "#AAAAAA"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Bt_TTadd": {
+					"type": "button",
+					"top": 61,
+					"left": 4,
+					"width": 97,
+					"height": 22,
+					"dataSource": "b_AddTT",
+					"shortcutKey": "n",
+					"shortcutAccel": true,
+					"text": "Ajouter",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bt_TTadd.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton 3D1": {
+					"type": "button",
+					"top": 61,
+					"left": 507,
+					"width": 107,
+					"height": 22,
+					"dataSource": "b_QuitTab",
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Quitter",
+					"stroke": "#000000",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Champ2": {
+					"type": "input",
+					"top": 30,
+					"left": 66,
+					"width": 483,
+					"height": 16,
+					"dataSource": "[TypesTables:11]TT_Libellé:4",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 30,
+					"left": 552,
+					"width": 59,
+					"height": 16,
+					"dataSource": "va_LibNivea",
+					"focusable": false,
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 30,
+					"left": 6,
+					"width": 57,
+					"height": 16,
+					"dataSource": "[TypesTables:11]TT_RéférenceID:1",
+					"dataSourceTypeHint": "integer",
+					"textAlign": "right",
+					"fill": "#FFFFFF",
+					"borderStyle": "none",
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					],
+					"fontFamily": "Arial",
+					"fontSize": 12
+				},
+				"Bt_TTTri": {
+					"type": "button",
+					"top": 61,
+					"left": 109,
+					"width": 57,
+					"height": 22,
+					"dataSource": "b_TriTT",
+					"text": "Trier",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bt_TTTri.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton2": {
+					"type": "button",
+					"top": 61,
+					"left": 239,
+					"width": 77,
+					"height": 22,
+					"dataSource": "b_DupTT",
+					"text": "Dupliquer",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton2.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton3": {
+					"type": "button",
+					"top": 61,
+					"left": 324,
+					"width": 77,
+					"height": 22,
+					"dataSource": "b_ExpTT",
+					"text": "Exporter",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton3.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton4": {
+					"type": "button",
+					"top": 61,
+					"left": 409,
+					"width": 77,
+					"height": 22,
+					"dataSource": "b_ImpTT",
+					"text": "Importer",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton4.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				},
+				"Bouton5": {
+					"type": "button",
+					"top": 61,
+					"left": 174,
+					"width": 57,
+					"height": 22,
+					"dataSource": "b_ToutTT",
+					"text": "Tous",
+					"stroke": "#000000",
+					"method": "ObjectMethods/Bouton5.4dm",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onPrintingDetail"
+					]
+				}
+			},
+			"entryOrder": [
+				"Bt_TTadd",
+				"Bouton 3D1",
+				"Champ2",
+				"Variable3",
+				"Champ1",
+				"Bt_TTTri",
+				"Bouton2",
+				"Bouton3",
+				"Bouton4",
+				"Bouton5"
+			]
+		}
+	],
+	"geometryStamp": 43,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

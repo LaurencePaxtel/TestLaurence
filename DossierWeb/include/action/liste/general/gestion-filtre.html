@@ -1,0 +1,133 @@
+<script>
+    
+    function managePreviousDataFilter($action_t, $formName_t, $buttonFiltreID_t, $url_t, $elementToSave_c){
+
+        if ($action_t !== undefined && $formName_t !== undefined) {
+            console.log(visiteur);
+
+            switch (true) {
+                case ($action_t == "supprimer"):
+
+                    if (visiteur.getPreviousList != null) {
+                
+                        if (visiteur.User_Preferences.filtre != null && visiteur.User_Preferences.filtre.liste[$formName_t] != null) {
+                            var $property_c = JSON.parse(visiteur.User_Preferences.filtre.liste[$formName_t]);
+                            console.log($property_c);
+                            console.log($buttonFiltreID_t);
+
+                            $property_c.forEach($property_o => {
+                                console.log($property_o);
+
+                                switch (true) {
+                                    case $property_o.name == "filtre":
+                                        filtre_choisie = $property_o.value;
+                                        break;
+                                    case $property_o.name == "rowSelected":
+                                        rowSelect_el = parseInt($property_o.value);
+                                        break
+                                    default:
+
+                                        if ($("input[name='" + $property_o.name + "']").length) {
+                                            console.log($("input[name='" + $property_o.name + "']").getType());
+
+                                            switch ($("input[name='" + $property_o.name + "']").getType()) {
+                                                case "radio":
+                                                case "checkbox":
+                                                    $("input[name='" + $property_o.name + "'][value='" + $property_o.value + "']").prop("checked", true);
+                                                    break;                                            
+                                                default:
+                                                    $("input[name='" + $property_o.name + "']").val($property_o.value);
+                                                    break;
+                                            }
+                                            
+                                        }
+
+                                        break;
+                                }
+
+                            });
+                            
+                            $.LoadingOverlay("show");
+
+                            $.ajax({
+                                type: "GET",
+                                url: "/4DACTION/Web_Manage_User_Preferences",
+                                data: {
+                                "intervenantID": intervenantID,
+                                "action": $action_t,
+                                "propriete": "filtre.liste." + $formName_t
+                                },
+                                success: function (response) {
+                                    $.LoadingOverlay("hide");
+
+                                    if ($url_t !== undefined) {
+                                        $("#" + $buttonFiltreID_t).change();
+                                    }else{
+                                        $("#" + $buttonFiltreID_t).click();
+                                    }
+                                    
+                                }
+                            });
+
+                        }
+                        
+                    }
+
+                    break;
+                case ($action_t == "sauvegarder"):
+                    var $valueToSave_c = [];
+                    var $formData_c = $('#' + $formName_t + ' :input').serializeArray();
+
+                    if ($elementToSave_c !== undefined) {
+                        console.log($elementToSave_c);
+
+                        $elementToSave_c.forEach(element => {
+                            console.log(element + ", type : " + typeof element);
+
+                            switch (true) {
+                                case (typeof element === 'string'):
+                                    var $object_o = searchInArrayObject($formData_c, "name", element);
+
+                                    if ($object_o != null) {
+                                        delete $object_o.indice;
+                                        $valueToSave_c.push($object_o);
+                                    }
+
+                                    break;
+                                case (typeof element === 'object'):
+                                    $valueToSave_c.push(element);
+                                    break;
+                                default:
+                                    break;
+                            }
+                            
+                        });
+                        
+                    }else{
+                        $valueToSave_c = JSON.parse(JSON.stringify($formData_c));
+                    }
+
+                    $.ajax({
+                        type: "GET",
+                        url: "/4DACTION/Web_Manage_User_Preferences",
+                        data: {
+                        "intervenantID": intervenantID,
+                        "action": $action_t,
+                        "propriete": "filtre.liste." + $formName_t,
+                        "valeur": JSON.stringify($valueToSave_c)
+                        },
+                        success: function (response) {
+                            $.LoadingOverlay("hide");
+                            window.location.href = $url_t;
+                            
+                        }
+                    });
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    }
+</script>

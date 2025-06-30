@@ -1,0 +1,162 @@
+<div id="modalNouvelleNoteEdit" class="modal hide fade msmodal modal-xl" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form id="formulaireNoteEdit" enctype="multipart/form-data" action="#" method="post">
+            <div class="modal-content">        
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+    
+                    <h4 class="modal-title ng-binding" ng-show="!isWithinlist">Nouvelle note</h4>
+                </div>
+    
+                <div id="modalBodyNouvelleNoteEdit" class="modal-body">
+                    <div class="rowB g-mb-10">
+                        <div class="col-xl-4 col-md-4 col-12">
+                            <div class="rowB">
+                                <div class="col-6">
+                                    <label class="g-align-center-vertically-and-horizontally">Type de note</label>
+                                </div>
+    
+                                <div class="col-6">
+                                    <select id="typeNoteEdit" name="typeNoteEdit" class="g-width-100x" required>
+                                        <option>Sélection d'un élément</option>
+                                    </select>
+                                </div>
+                            </div>             
+                        </div>
+    
+                        <div class="col-xl-4 col-md-4 col-6"">
+                            <div class="rowB">
+                                <div class="col-6">
+                                    <label class="g-align-center-vertically-and-horizontally">Date</label>
+                                </div>
+    
+                                <div class="col-6">
+                                    <input id="dateNoteEdit" name="dateNoteEdit" type="date" class="g-width-100x" required />
+                                </div>
+                            </div>             
+                        </div>
+
+                        <div class="col-xl-4 col-md-4 col-6"">
+                            <div class="rowB">
+                                <div class="col-6">
+                                    <label class="g-align-center-vertically-and-horizontally">Heure</label>
+                                </div>
+    
+                                <div class="col-6">
+                                    <input id="heureNoteEdit" name="heureNoteEdit" type="time" class="g-width-100x" required />
+                                </div>
+                            </div>             
+                        </div>
+                    </div>
+    
+                    <div class="rowB">
+                        <div class="col-12">
+                            <label>Note</label>
+                            <textarea id="contenuNoteEdit" name="contenuNoteEdit" class="g-width-100x g-height-100" required></textarea> 
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="modal-footer">
+                    <button id="sauvegarderNoteEdit" type="submit" class="fdp_Button fdp_btn_top fdp-btn-green g-width-150 iw_margin_left_5px">
+                        <i class="fa fa-save"></i> Sauvegarder
+                    </button>
+    
+                    <button type="button" class="fdp_Button fdp_btn_top fdp-btn-red g-width-150" data-dismiss="modal">
+                        <i class="fa fa-close"></i> Fermer
+                    </button>
+                </div>
+            </div>
+
+            <input id="noteEditUUID" name="noteEditUUID" type="hidden" value="" />
+        </form>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        // A la fin du chargement complet du modal
+        $('#modalNouvelleNoteEdit').on('shown', function (e) {
+            $(".modal").css("margin-left", "");
+
+            if (window.innerWidth > 991) {
+                $(".modal").css({"margin-left": "-505px"});
+            }
+            
+            $.LoadingOverlay("show");
+
+            document.getElementById("sauvegarderNoteEdit").innerHTML = "<i class=\"fa fa-save\"></i> Sauvegarder";
+            document.getElementById("sauvegarderNoteEdit").disabled = false;
+
+            resetFieldInForm("formulaireNoteEdit");
+            chargeValueInSelect("typeNoteEdit", "/4DACTION/outilsWebHebergeListeAjax", {"hebergeID": $('#record_id').val(),"action": "chargeTypeNote"});
+
+            setTimeout(() => {
+                $("#typeNoteEdit").attr("disabled", false);
+                $("#noteEditUUID").val("");
+
+                if (data4D.provenance == "ajouter") {
+                    $("#modalNouvelleNoteEdit").find(".modal-title").text("Ajout d'une note pour l'hébergé « " + $(".row-selected").find(".cle").text() + " »");
+                    $("#dateNoteEdit").val(dateJSToYYYYMMJJ(new Date()));
+                    $("#heureNoteEdit").val(dateJSToHHMM(new Date()));
+                }else{
+                    $("#modalNouvelleNoteEdit").find(".modal-title").text("Modification de la note du " + $("#noteTable").find(".selected").find("td:eq(2)").text() + " de l'hébergé « " + $(".row-selected").find(".cle").text() + " »");
+
+                    $("#typeNoteEdit").val($("#noteTable").find(".selected").find("td:eq(1)").text());
+                    $("#dateNoteEdit").val(dateToYYYYMMJJ($("#noteTable").find(".selected").find("td:eq(2)").text()));
+
+                    $("#heureNoteEdit").val(timeToHHMM($("#noteTable").find(".selected").find("td:eq(0)").find("input:eq(1)").val()));
+                    $("#contenuNoteEdit").val(convertBrToNewLine($("#noteTable").find(".selected").find("td:eq(3)").html()));
+                    $("#noteEditUUID").val($("#noteTable").find(".selected").find("td:eq(0)").find("input").val());
+
+                    $("#typeNoteEdit").attr("disabled", true);
+                }
+
+                $.LoadingOverlay("hide");
+            }, 1000);
+        });
+
+        $("#sauvegarderNoteEdit").click(function(event) {
+            event.preventDefault();
+            var reportValidity = $( "#formulaireNoteEdit")[0].reportValidity();
+            
+            if (reportValidity) {
+                let ajoutModifier_t = "createNote";
+    
+                if (data4D.provenance == "modifier") {
+                    ajoutModifier_t = "editNote"
+                }
+    
+                document.getElementById("sauvegarderNoteEdit").innerHTML = "<i class=\"fas fa-sync fa-spin\"></i> Sauvegarde en cours...";
+                document.getElementById("sauvegarderNoteEdit").disabled = true;
+    
+                $.ajax({
+                    method: 'POST',
+                    url: "/4DACTION/outilsWebHebergeListeAjax",
+                    data: $("#formulaireNoteEdit").serializeIncludeDisabled() + "&action="+ ajoutModifier_t + "&hebergeID=" + $('#record_id').val(),
+                    success: function(response){
+                        var reponseParse = JSON.parse(response);
+    
+                        updateDataTableNote({
+                            "hebergeID": $('#record_id').val(),
+                            "action": "chargeNote",
+                            "typeNote": $("#typeNote").val(),
+                            "keyword": $("#keyword").val(),
+                            "dateDu": dateToJJMMYYYY($("#noteDu").val()),
+                            "dateAu": dateToJJMMYYYY($("#noteAu").val())
+                        });
+
+                        
+                        // Réactiver le bouton après la sauvegarde
+                        document.getElementById("sauvegarderNoteEdit").innerHTML = "<i class=\"fa fa-save\"></i> Sauvegarder";
+                        document.getElementById("sauvegarderNoteEdit").disabled = false;
+                    }
+                });
+    
+            }
+            
+        });
+    })
+</script>

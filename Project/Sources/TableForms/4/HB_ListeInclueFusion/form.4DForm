@@ -1,0 +1,221 @@
+{
+	"destination": "detailScreen",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerBody": 20,
+	"markerBreak": 20,
+	"markerFooter": 20,
+	"events": [
+		"onLoad",
+		"onValidate",
+		"onClick",
+		"onHeader",
+		"onPrintingBreak",
+		"onPrintingFooter",
+		"onDisplayDetail",
+		"onOutsideCall",
+		"onDoubleClick",
+		"onDrop",
+		"onMenuSelect",
+		"onPluginArea",
+		"onDataChange",
+		"onDragOver",
+		"onPrintingDetail",
+		"onOpenDetail",
+		"onCloseDetail",
+		"onTimer",
+		"onAfterKeystroke",
+		"onSelectionChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "595pt",
+		"paperHeight": "842pt"
+	},
+	"pages": [
+		null,
+		{
+			"objects": {
+				"Rectangle10": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 773,
+					"height": 31,
+					"fill": "#666666",
+					"stroke": "#666666"
+				},
+				"Ligne3": {
+					"type": "line",
+					"top": 0,
+					"left": 381,
+					"height": 27,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne5": {
+					"type": "line",
+					"top": 0,
+					"left": 561,
+					"height": 27,
+					"stroke": "#AAAAAA"
+				},
+				"Champ1": {
+					"type": "input",
+					"top": 1,
+					"left": 1,
+					"width": 379,
+					"height": 15,
+					"dataSource": "[HeBerge:4]HB_Clé:2",
+					"stroke": "#FFFFFF",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Champ4": {
+					"type": "input",
+					"top": 1,
+					"left": 383,
+					"width": 177,
+					"height": 15,
+					"dataSource": "[HeBerge:4]HB_Nom:3",
+					"stroke": "#FFFFFF",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Champ5": {
+					"type": "input",
+					"top": 1,
+					"left": 563,
+					"width": 85,
+					"height": 15,
+					"dataSource": "[HeBerge:4]HB_Prénom:4",
+					"stroke": "#FFFFFF",
+					"class": "TNR_12",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Ligne6": {
+					"type": "line",
+					"top": 0,
+					"left": 714,
+					"height": 30,
+					"stroke": "#AAAAAA"
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 1,
+					"left": 717,
+					"width": 41,
+					"height": 15,
+					"dataSource": "ve_NbHG",
+					"dataSourceTypeHint": "number",
+					"stroke": "#FFFF00",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"focusable": false,
+					"fill": "#666666",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"numberFormat": "### ### ##0;;",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onClick",
+						"onHeader",
+						"onPrintingBreak",
+						"onPrintingFooter",
+						"onDisplayDetail",
+						"onDataChange",
+						"onPrintingDetail"
+					]
+				},
+				"Champ10": {
+					"type": "input",
+					"top": 1,
+					"left": 651,
+					"width": 62,
+					"height": 15,
+					"dataSource": "[HeBerge:4]HB_DateNéLe:5",
+					"dataSourceTypeHint": "date",
+					"stroke": "#FFFFFF",
+					"class": "TNR_12",
+					"textAlign": "right",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"entryFilter": "!0&9##/##/####",
+					"dragging": "none",
+					"dropping": "none",
+					"events": [
+						"onLoad",
+						"onValidate",
+						"onClick",
+						"onDisplayDetail",
+						"onDataChange"
+					]
+				},
+				"Ligne7": {
+					"type": "line",
+					"top": 0,
+					"left": 649,
+					"height": 27,
+					"stroke": "#AAAAAA"
+				},
+				"Ligne10": {
+					"type": "line",
+					"top": 18,
+					"left": 0,
+					"width": 773
+				},
+				"Ligne11": {
+					"type": "line",
+					"top": 19,
+					"left": 0,
+					"width": 773,
+					"stroke": "#AAAAAA"
+				}
+			}
+		}
+	]
+}
