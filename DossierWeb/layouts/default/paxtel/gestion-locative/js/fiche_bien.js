@@ -62,9 +62,10 @@ $(document).ready(function(){
 			"lc_actif": $("#lc_actif").is(":checked"),
 			"lc_gl_type_gestion": $('#lc_gl_type_gestion option:selected').val(),
 			"lc_chauffagetype": $('#lc_chauffagetype option:selected').val(),
-			"lc_chauffageenergie": $('#lc_chauffageenergie option:selected').val(),
-			"lc_climatisation": $('#lc_climatisation').val(),
-			"lc_eauchaudetype": $('#lc_eauchaudetype option:selected').val(),
+                       "lc_chauffageenergie": $('#lc_chauffageenergie option:selected').val(),
+                       "lc_climatisation": $('#lc_climatisation').val(),
+                       "lc_gl_nombre_places": $('#lc_gl_nombre_places').val(),
+                       "lc_eauchaudetype": $('#lc_eauchaudetype option:selected').val(),
 			"lc_eauchaudeenergie": $('#lc_eauchaudeenergie option:selected').val(),
 			"lc_radiateurnb": $('#lc_radiateurnb').val(),
 			"lc_parking": $('#lc_parking').val(),
@@ -1257,11 +1258,15 @@ $(document).ready(function(){
 		text: 'Hébergement'
 	}));
 
-	$('#lc_gl_type_gestion').val(visiteur.entity.LC_GL_Type_Gestion);
+        $('#lc_gl_type_gestion').val(visiteur.entity.LC_GL_Type_Gestion);
 
-	if (visiteur.entity.LC_Actif == true) {
-		$('#lc_actif').prop('checked', true);
-	}
+        if (visiteur.entity.LC_Actif == true) {
+                $('#lc_actif').prop('checked', true);
+        }
+
+        if (visiteur.entity.LC_GL_Nombre_Places !== undefined) {
+                $('#lc_gl_nombre_places').val(visiteur.entity.LC_GL_Nombre_Places);
+        }
 
 	$("#kitList").css("cssText", "width: 150px!important;");
 
