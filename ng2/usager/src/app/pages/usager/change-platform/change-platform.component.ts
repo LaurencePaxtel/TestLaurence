@@ -20,15 +20,7 @@ export class ChangePlatformComponent implements OnInit {
     saveLoading = false;
     user?: UserConnected | null
 
-    plateforms = [
-        {numero: '@'},
-        {numero: '00'},
-        {numero: '02'},
-        {numero: '08'},
-        {numero: '15'},
-        {numero: '24'},
-        {numero: '50'}
-    ];
+    plateforms: {numero: string}[] = [];
 
     selectedPlateform?: any;
 
@@ -43,6 +35,10 @@ export class ChangePlatformComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        if (this.user && this.user.plateformes) {
+            this.plateforms = this.user.plateformes.map(p => ({numero: p}));
+        }
+
         for (const platform of this.plateforms) {
             if (platform.numero && platform.numero === this.user?.plateforme) {
                 this.selectedPlateform = platform;

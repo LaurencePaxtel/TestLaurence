@@ -5,6 +5,7 @@ interface UserJSON {
     Ref_Structure: string;
     Nom_Structure: string;
     Plateforme: string;
+    Plateformes: string[];
     Privileges: Privilege[];
     cookie: string;
 }
@@ -21,6 +22,7 @@ export class UserConnected {
         readonly refStructure: string | undefined,
         readonly nomStructure: string | undefined,
         readonly plateforme: string | undefined,
+        readonly plateformes: string[] | undefined,
         readonly privileges: Privilege[] | undefined,
         readonly cookie: string | undefined
     ) {}
@@ -33,6 +35,7 @@ export class UserConnected {
             values.Ref_Structure,
             values.Nom_Structure,
             values.Plateforme,
+            values.Plateformes,
             values.Privileges,
             values.cookie
         );
