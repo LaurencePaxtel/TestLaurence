@@ -48,7 +48,8 @@ If ($intervenant_e#Null:C1517)
        userPlateForme_c:=userPlateForme_c.distinct()
        // expose the list of available platforms
        w_visiteur.Plateformes:=userPlateForme_c
-       Session:C1714.storage.intervenant.Plateformes:=userPlateForme_c
+       Session:C1714.storage.intervenant.Plateformes:=New shared collection:C1527()
+       userPlateForme_c.copy(ck shared:K85:29; Session:C1714.storage.intervenant.Plateformes)
 	
 	// Modifié par : Scanu Rémy (22/09/2023)
 	If (String:C10(w_visiteur.login)="true")  // L'utilisateur vient de la page de connexion

@@ -22,6 +22,7 @@ var $intervenant_e : cs:C1710.INtervenantsEntity
 var $intervenant_es : cs:C1710.INtervenantsSelection
 
 var $societe_e : cs:C1710.SOcieteEntity
+var $plateforms_c : Collection
 
 $go:=True:C214
 
@@ -75,9 +76,11 @@ If (w_post)
                                         Session:C1714.storage.intervenant.Plateforme:=$intervenant_e.IN_Plateforme
                                         Session:C1714.storage.intervenant.Privileges:=New shared collection:C1527()
                                         // Liste des plateformes disponibles pour l'utilisateur
-                                        Session:C1714.storage.intervenant.Plateformes:=Split string:C1554($intervenant_e.IN_Notes; ";"; sk ignorer chaîne vide:K86:1)
-                                        Session:C1714.storage.intervenant.Plateformes.push($intervenant_e.IN_Plateforme)
-                                        Session:C1714.storage.intervenant.Plateformes:=Session:C1714.storage.intervenant.Plateformes.distinct()
+                                        $plateforms_c:=Split string:C1554($intervenant_e.IN_Notes; ";"; sk ignorer chaîne vide:K86:1)
+                                        $plateforms_c.push($intervenant_e.IN_Plateforme)
+                                        $plateforms_c:=$plateforms_c.distinct()
+                                        Session:C1714.storage.intervenant.Plateformes:=New shared collection:C1527()
+                                        $plateforms_c.copy(ck shared:K85:29; Session:C1714.storage.intervenant.Plateformes)
                                 End use
 				Use (Session:C1714.storage.intervenant.Privileges)
 					Session:C1714.storage.intervenant.Privileges:=$intervenant_e.AllIntervenantPrivilege.OnePrivilege.toCollection("nom").copy(ck shared:K85:29; Session:C1714.storage.intervenant.Privileges)
