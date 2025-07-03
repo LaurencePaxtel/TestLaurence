@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+@use './custom-theme.scss';
+@use './tailwind.css';
+@use './assets/layout/layout.scss';
+@use 'primeicons/primeicons.css';
+
+.p-menubar {
+    border: none !important;
+    background: none !important;
+
+    .p-menubar-item-link {
+        color: white !important;
+        font-weight: bold !important;
+        font-size: 12px !important;
+        .p-menubar-item-label {
+            font-family: sans-serif;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .p-menubar-item-icon {
+            color: white !important;
+            font-weight: bold !important;
+        }
+    }
+
+    .p-menubar-item-content:hover {
+        background: none !important;
+    }
+
+    .p-menubar-submenu {
+        .p-menubar-item-content {
+            a {
+                color: black !important;
+            }
+            .p-menubar-item-icon {
+                color: black !important;
+            }
+        }
+    }
+
+    .p-menubar-item-active > .p-menubar-item-content {
+        background: none !important;
+    }
+
+    .p-menubar-item.p-focus > .p-menubar-item-content {
+        background: none !important;
+    }
+
+    .p-menubar-root-list {
+        gap: 0 !important;
+    }
+
+}
+
+.p-menubar-button {
+    display: none !important;
+}
+@media screen and (max-width: 960px) {
+    .p-menubar .p-menubar-item-link .p-menubar-item-icon {
+        color: black !important;
+        font-weight: bold !important;
+    }
+
+    .p-menubar .p-menubar-item-link {
+        color: black !important;
+        font-weight: bold !important;
+    }
+
+    .p-menubar-item-icon {
+        color: black !important;
+    }
+
+    .p-menubar-root-list {
+        display: flex !important;
+        position: static !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+
+        .p-menubar-item {
+            color: black !important;
+        }
+    }
+}
+
+//todo voir avec laurence si ca convient
+html {
+    font-size: 15px !important;
+}

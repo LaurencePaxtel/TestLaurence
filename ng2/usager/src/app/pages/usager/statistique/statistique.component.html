@@ -1,0 +1,580 @@
+<div class="app-container">
+    <aside class="sidebar">
+        <div class="search-list">
+            <h3>Mes recherches</h3>
+            <div class="p-col-12 p-mb-2">
+                <p-iconfield>
+                    <p-inputicon styleClass="pi pi-search"/>
+                    <input type="text" pInputText placeholder="Rechercher..." [(ngModel)]="searchText"
+                           (input)="filterItems()" class="w-full"/>
+                </p-iconfield>
+            </div>
+            <p-listbox
+                [options]="filteredSearchList"
+                optionLabel="affichageNom"
+                [listStyle]="{'height':'80vh'}"
+                [(ngModel)]="selectedSearchItem"
+                (onChange)="onItemSelect($event)">
+                <ng-template let-item pTemplate="item">
+                    <div class="flex items-center justify-between w-full"
+                         (click)="onListboxRowClick(item, $event)">
+                        <div>{{ item.affichageNom }}</div>
+                        <div class="flex">
+                            <button pButton
+                                    pRipple
+                                    [rounded]="true"
+                                    [outlined]="true"
+                                    icon="pi pi-pencil"
+                                    (click)="editItem($event, item)"
+                                    class="p-button-rounded p-button-text p-button-sm">
+                            </button>
+                            <button pButton
+                                    pRipple
+                                    [rounded]="true"
+                                    [outlined]="true"
+                                    icon="pi pi-trash"
+                                    (click)="confirmDelete($event, item)"
+                                    class="p-button-rounded p-button-text p-button-danger p-button-sm">
+                            </button>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-listbox>
+        </div>
+    </aside>
+    <div class="main-content">
+        <p-card class="w-full ml-4 mb-5">
+            <p-fluid>
+                @if (selectedSearchItem?.affichageNom) {
+                    <h3>{{ selectedSearchItem?.affichageNom }}</h3>
+                    <p-divider>
+                    </p-divider>
+                }
+                <div class="flex flex-col gap-4" [formGroup]="searchForm">
+                    <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+                        <div class="flex flex-col gap-2">
+                            <label for="dateDu">Date du</label>
+                            <p-datePicker
+                                styleClass="w-full"
+                                id="dateDu"
+                                formControlName="dateDu"
+                                [showIcon]="true"
+                                dateFormat="dd/mm/yy">
+                            </p-datePicker>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="dateAu">Date au</label>
+                            <p-datePicker
+                                styleClass="w-full"
+                                id="dateAu"
+                                formControlName="dateAu"
+                                [showIcon]="true"
+                                dateFormat="dd/mm/yy">
+                            </p-datePicker>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="famChef" class="focus">Chef de famille</label>
+                            <p-dropdown
+                                class="w-full"
+                                id="famChef"
+                                formControlName="famChef"
+                                [options]="yesNoOptions"
+                                optionLabel="label"
+                                optionValue="value"
+                                [showClear]="false">
+                            </p-dropdown>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="ageMin">Age (De)</label>
+                            <p-inputNumber
+                                styleClass="w-full"
+                                id="ageMin"
+                                [min]="0"
+                                formControlName="ageMin">
+                            </p-inputNumber>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="ageMax">Age (A)</label>
+                            <p-inputNumber
+                                id="ageMax"
+                                formControlName="ageMax">
+                            </p-inputNumber>
+                        </div>
+                        <div class="flex flex-row gap-2 items-center">
+                            <p-checkbox [binary]="true" id="approuve"
+                                        formControlName="approuve">
+                            </p-checkbox>
+                            <label for="approuve">Approuvé</label>
+                            <p-checkbox [binary]="true" id="ficheEntree"
+                                        formControlName="ficheEntree">
+                            </p-checkbox>
+                            <label for="approuve">Fiches entrées</label>
+                        </div>
+                    </div>
+                    <div class="flex justify-start gap-4">
+                        <p-button type="button"
+                                  icon="pi pi-search"
+                                  label="Les hébergés du jour"
+                                  [raised]="true"
+                                  (click)="patchTodayDate();patchFiche(false)"
+                        />
+                        <p-button type="button"
+                                  icon="pi pi-save"
+                                  label="Les accompagnés du jour"
+                                  (click)="patchTodayDate();patchFiche(true)"
+                                  [raised]="true"/>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+                        <div class="flex flex-col gap-2">
+                            <label for="dateContactAu">Date 1er contact (du) </label>
+                            <p-datePicker
+                                id="dateContactDu"
+                                formControlName="dateContactDu"
+                                [showIcon]="true"
+                                dateFormat="dd/mm/yy">
+                            </p-datePicker>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="dateContactAu">Date 1er contact (au)</label>
+                            <p-datePicker
+                                id="dateContactAu"
+                                formControlName="dateContactAu"
+                                [showIcon]="true"
+                                dateFormat="dd/mm/yy">
+                            </p-datePicker>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="dateEntreeDu">Date d'entrée (du)</label>
+                            <p-datePicker
+                                id="dateEntreeDu"
+                                formControlName="dateEntreeDu"
+                                [showIcon]="true"
+                                dateFormat="dd/mm/yy">
+                            </p-datePicker>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="dateEntreeAu">Date d'entrée (au) </label>
+                            <p-datePicker
+                                id="dateEntreeAu"
+                                formControlName="dateEntreeAu"
+                                [showIcon]="true"
+                                dateFormat="dd/mm/yy">
+                            </p-datePicker>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="dateSortieDu">Date de sortie (du)</label>
+                            <p-datePicker
+                                id="dateSortieDu"
+                                formControlName="dateSortieDu"
+                                [showIcon]="true"
+                                dateFormat="dd/mm/yy">
+                            </p-datePicker>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="dateSortieAu">Date de sortie (au) </label>
+                            <p-datePicker
+                                id="dateSortieAu"
+                                formControlName="dateSortieAu"
+                                [showIcon]="true"
+                                dateFormat="dd/mm/yy">
+                            </p-datePicker>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+                        <div class="flex flex-col gap-2">
+                            <label for="fiche">Fiche</label>
+                            <p-dropdown
+                                id="fiche"
+                                formControlName="fiche"
+                                placeholder="-"
+                                [options]="ficheOptions"
+                                optionLabel="label"
+                                optionValue="value">
+                            </p-dropdown>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="centreHebergemements">Centres hébergement</label>
+                            <p-multiSelect
+                                class="w-full"
+                                styleClass="w-full"
+                                id="centreHebergemements"
+                                formControlName="centreHebergemements"
+                                optionLabel="value"
+                                optionValue="value"
+                                [options]="centreHebergementOptions">
+                            </p-multiSelect>
+                        </div>
+                    </div>
+                    <p-divider align="left">
+                        <b>Autres critères</b>
+                    </p-divider>
+                    <div class="stepper-container">
+                        <div class="steps" formArrayName="autreCriteres">
+                            <!--  Autre critères -->
+                            <div *ngFor="let criteria of criteriaControls; let i = index"
+                                 class="step-item"
+                                 [formGroupName]="i">
+                                <div class="step-circle"></div>
+                                <div class="step-content">
+                                    <div class="flex flex-row gap-4 align-content-center mb-2">
+                                        <p-dropdown
+                                            [id]="'type' + i"
+                                            formControlName="type"
+                                            appendTo="body"
+                                            [options]="otherCriteriaOptions"
+                                            optionLabel="libelle"
+                                            optionValue="champNom"
+                                            [showClear]="false"
+                                            placeholder="Selectionnez un critère">
+                                        </p-dropdown>
+                                        <p-multiSelect
+                                            [maxSelectedLabels]="10"
+                                            selectedItemsLabel="{0} éléments sélectionnés"
+                                            [id]="'criteria' + i"
+                                            appendTo="body"
+                                            formControlName="criteria"
+                                            [options]="otherCriteriaMapOptionsByField?.get(criteria.value?.type)?.item"
+                                            placeholder="Selectionnez une ou plusieurs valeurs"
+                                            [disabled]="!criteria.value?.type">
+                                        </p-multiSelect>
+                                        <button pButton
+                                                severity="danger"
+                                                [rounded]="true"
+                                                [outlined]="true"
+                                                type="button"
+                                                class="delete-btn"
+                                                icon="pi pi-trash"
+                                                (click)="removeCriteria(i)">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button"
+                                    (click)="addCriteria()"
+                                    class="add-btn">
+                                +
+                            </button>
+                        </div>
+                    </div>
+                    <p-divider>
+                    </p-divider>
+                    <div class="flex justify-end gap-4">
+                        <p-button type="button"
+                                  icon="pi pi-search"
+                                  label="Rechercher"
+                                  [raised]="true"
+                                  [loading]="loaderComputeResult"
+                                  (click)="search()"
+                        />
+                        <p-button type="button"
+                                  icon="pi pi-save"
+                                  label="Enregistrer la recherche"
+                                  (click)="saveSearch()"
+                                  [disabled]="!selectedSearchItem"
+                                  [raised]="true"/>
+                        <p-button type="button"
+                                  icon="pi pi-save"
+                                  label="Création modèle"
+                                  [raised]="true"
+                                  (click)="createNewSearch()"/>
+                        <p-button type="button"
+                                  icon="pi pi-print"
+                                  label="Imprimer"
+                                  [raised]="true"
+                                  severity="secondary"
+                                  (click)="print()"/>
+                        <p-button type="button"
+                                  icon="pi pi-times"
+                                  label="Reinitialiser les filtres"
+                                  [raised]="true"
+                                  severity="secondary"
+                                  (click)="resetFilters()"/>
+                    </div>
+                </div>
+            </p-fluid>
+
+        </p-card>
+        <!-- Datatable-->
+        @if (data?.length) {
+            <p-card class="w-full" styleClass="shadow-2 mt-4 table-container">
+                <div class="flex mt-2 mb-2 justify-end gap-3">
+                    @if (user?.hasPrivilege('Editeur')) {
+                        <p-button label="Imprimer" icon="pi pi-download" raised
+                                  class="flex-1 md:flex-none"
+                                  [disabled]="selectedUsagers.length !== 1"
+                                  [loading]="printLoading"
+                                  (click)="loadDocumentTypeAndPrintAction()"></p-button>
+                    }
+                    <p-button label="Coordonnées" severity="warn" icon="pi pi-address-book" raised
+                              class="flex-1 md:flex-none"
+                              [disabled]="selectedUsagers.length !== 1"
+                              [loading]="contactDetailsLoading"
+                              (click)="loadHebergeAndShowCoordonnesModal()"></p-button>
+                    <p-button label="Situation Budgétaire" icon="pi pi-euro" raised
+                              class="flex-1 md:flex-none"
+                              [disabled]="selectedUsagers.length !== 1"
+                              severity="warn"
+                              (click)="redirectOnSituationBudgetaire()"></p-button>
+                    <p-button label="Email" icon="pi pi-send" raised
+                              class="flex-1 md:flex-none"
+                              [disabled]="true"></p-button>
+                    <p-button type="button"
+                              icon="pi pi-file"
+                              label="Exporter"
+                              [raised]="true"
+                              severity="success"
+                              (click)="exportDataOnExcel()"/>
+                </div>
+                <div class="table-container">
+                    <!-- Scrollbar du haut -->
+                    <div class="top-scrollbar-container">
+                        <div class="top-scrollbar-content"></div>
+                    </div>
+
+                    <!-- Votre p-table existant -->
+                    <p-table
+                        #dt
+                        selectionMode="multiple"
+                        [showGridlines]="true"
+                        [(selection)]="selectedUsagers"
+                        [value]="data"
+                        styleClass="p-datatable-gridlines"
+                        [paginator]="true"
+                        [rows]="100"
+                        [rowsPerPageOptions]="[50, 100, 200, 1000]"
+                        [tableStyle]="{ 'min-width': '50rem' }">
+                        <ng-template pTemplate="caption">
+                            <div class="flex justify-content-between">
+                                <span>{{ filteredDataCount }} Usager(s) distinct(s)</span>
+                            </div>
+                        </ng-template>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th ></th>
+                                <th pSortableColumn="nom" >
+                                    Nom
+                                    <p-sortIcon field="nom"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="prenom" >
+                                    Prénom
+                                    <p-sortIcon field="prenom"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="dateNaissance" >
+                                    Date de naissance
+                                    <p-sortIcon field="dateNaissance"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="age" >
+                                    Age
+                                    <p-sortIcon field="age"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="famChef" >
+                                    Chef de famille
+                                    <p-sortIcon field="famChef"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="genre" >
+                                    Sexe
+                                    <p-sortIcon field="genre"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="email" >
+                                    Email
+                                    <p-sortIcon field="email"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="adresse1" [style.width]="'200px'">
+                                    Adresse
+                                    <p-sortIcon field="adresse1"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="codePostal">
+                                    CP
+                                    <p-sortIcon field="codePostal"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="ville">
+                                    Ville
+                                    <p-sortIcon field="ville"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="modeFacturation">
+                                    Mode de facturation
+                                    <p-sortIcon field="modeFacturation"></p-sortIcon>
+                                </th>
+                            </tr>
+                            <tr class="subheader">
+                                <th></th>
+                                <th>
+                                    <p-columnFilter type="text" field="nom" placeholder="Nom"
+                                                    [showMenu]="false"
+                                                    [style]="{'width': '100%'}">
+                                    </p-columnFilter>
+                                </th>
+                                <th>
+                                    <p-columnFilter type="text" field="prenom" placeholder="Prénom"
+                                                    [showMenu]="false"
+                                                    [style]="{'width': '100%'}">
+                                    </p-columnFilter>
+                                </th>
+                                <th>
+                                    <p-columnFilter field="dateNaissance" matchMode="dateIs" [showMenu]="false">
+                                        <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                            <p-datePicker
+                                                [ngModel]="value"
+                                                appendTo="body"
+                                                (onSelect)="filter($event)"
+                                                (onClearClick)="filter(null)"
+                                                dateFormat="dd/mm/yy"
+                                                [showIcon]="true"
+                                                [showClear]="true"
+                                                placeholder="Filtrer par date"
+                                                [style]="{'width': '100%'}">
+                                            </p-datePicker>
+                                        </ng-template>
+                                    </p-columnFilter>
+                                </th>
+                                <th>
+                                    <p-columnFilter type="text" field="age" placeholder="Age"
+                                                    [showMenu]="false"
+                                                    [style]="{'width': '100%'}">
+                                    </p-columnFilter>
+                                </th>
+                                <th>
+                                    <p-columnFilter field="famChef" matchMode="equals" [showMenu]="false">
+                                        <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                            <p-dropdown
+                                                [ngModel]="value"
+                                                [options]="chefFamilleOptions"
+                                                (onChange)="filter($event.value)"
+                                                placeholder="Tous"
+                                                [showClear]="true"
+                                                optionLabel="label"
+                                                optionValue="value"
+                                                [style]="{'width': '100%'}">
+                                            </p-dropdown>
+                                        </ng-template>
+                                    </p-columnFilter>
+                                </th>
+                                <th>
+                                    <p-columnFilter type="text" field="genre" placeholder="Sexe"
+                                                    [showMenu]="false"
+                                                    [style]="{'width': '100%'}">
+                                    </p-columnFilter>
+                                </th>
+                                <th>
+                                    <p-columnFilter type="text" field="email" placeholder="Email"
+                                                    [showMenu]="false"
+                                                    [style]="{'width': '100%'}">
+                                    </p-columnFilter>
+                                </th>
+                                <th>
+                                    <p-columnFilter type="text" field="adresse1" placeholder="Adresse"
+                                                    [showMenu]="false"
+                                                    [style]="{'width': '100%'}">
+                                    </p-columnFilter>
+                                </th>
+                                <th>
+                                    <p-columnFilter type="text" field="codePostal" placeholder="Code Postal"
+                                                    [showMenu]="false"
+                                                    [style]="{'width': '100%'}">
+                                    </p-columnFilter>
+                                </th>
+                                <th>
+                                    <p-columnFilter type="text" field="ville" placeholder="Ville"
+                                                    [showMenu]="false"
+                                                    [style]="{'width': '100%'}">
+                                    </p-columnFilter>
+                                </th>
+                                <th>
+                                    <p-columnFilter type="text" field="modeFacturation" placeholder="Mode de facturation"
+                                                    [showMenu]="false"
+                                                    [style]="{'width': '100%'}">
+                                    </p-columnFilter>
+                                </th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-data>
+                            <tr [pSelectableRow]="data">
+                                <td>
+                                    <p-tableCheckbox [value]="data"/>
+                                </td>
+                                <td>{{ data.nom }}</td>
+                                <td>{{ data.prenom }}</td>
+                                <td>
+                                    @if (data.dateNaissance) {
+                                        <span>{{ data.dateNaissance | date:'dd/MM/yyyy' }}</span>
+                                    }
+                                </td>
+                                <td>{{ data.age }}</td>
+                                <td>
+                                    @if (data.famChef) {
+                                        <span>Oui</span>
+                                    } @else {
+                                        <span>Non</span>
+                                    }
+                                </td>
+                                <td>{{ data.genre }}</td>
+                                <td>{{ data.email }}</td>
+                                <td>
+                                    <div class="flex flex-col  justify-start">
+                                        @if (data.adresse1) {
+                                            <span>{{ data.adresse1 }}</span>
+                                        }
+                                        @if (data.adresse2) {
+                                            <span>{{ data.adresse2 }}</span>
+                                        }
+                                        @if (data.adresse3) {
+                                            <span>{{ data.adresse3 }}</span>
+                                        }
+                                    </div>
+                                </td>
+                                <td>{{ data.codePostal }}</td>
+                                <td>{{ data.ville }}</td>
+                                <td>{{ data.modeFacturation }}</td>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="emptymessage" let-c>
+                            <tr>
+                                <td [attr.colspan]="12" style="text-align: center">
+                                    Pas de résultat trouvé en fonction des filtres appliqués
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+
+            </p-card>
+        }
+    </div>
+
+</div>
+
+
+<p-toast/>
+
+
+<p-confirmdialog #cd>
+    <ng-template #headless let-message let-onAccept="onAccept" let-onReject="onReject">
+        <div class="flex flex-col items-center p-8 bg-surface-0 dark:bg-surface-900 rounded">
+            <div
+                class="rounded-full bg-red-500 text-primary-contrast inline-flex justify-center items-center h-24 w-24 -mt-20"
+            >
+                <i class="pi pi-question !text-5xl"></i>
+            </div>
+            <span class="font-bold text-2xl block mb-2 mt-6">{{ message.header }}</span>
+            <p class="mb-0">{{ message.message }}</p>
+            <div class="flex items-center gap-2 mt-6">
+                <p-button label="Oui" (onClick)="onAccept()" styleClass="w-32" severity="danger"></p-button>
+                <p-button label="Non" [outlined]="true" (onClick)="onReject()" styleClass="w-32"
+                          severity="secondary"></p-button>
+            </div>
+        </div>
+    </ng-template>
+</p-confirmdialog>
+
+<p-dialog header="Modifier le nom du modèle" [modal]="true" [(visible)]="editSearchItemVisible"
+          [style]="{ width: '50rem' }">
+    <div class="flex items-center gap-3 mb-3" [formGroup]="modifySearchItemForm" *ngIf="modifySearchItemForm">
+        <label for="affichageNom" class="font-semibold w-6rem">Nom du modèle</label>
+        <input pInputText id="affichageNom" class="flex-auto" autocomplete="off" formControlName="affichageNom"/>
+    </div>
+    <div class="flex justify-end gap-2">
+        <p-button label="Annuler" severity="secondary"
+                  (onClick)="editSearchItemVisible = false; resetModifySearchItemForm()"/>
+        <p-button label="Sauvegarder" (onClick)="updateSearchItemName()"/>
+    </div>
+</p-dialog>

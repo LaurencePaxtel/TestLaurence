@@ -26,6 +26,8 @@ var w_userIp; w_message; w_userNom; w_structure; w_titre; w_userPreferences; Tit
 var w_userUID; error : Integer
 var w_post; w_get; user_collaborateur; user_interlocuteur; w_connected; w_FirstAccess : Boolean
 
+var $state_o; $return_o : Object
+
 ARRAY TEXT:C222(w_variables; 0)
 ARRAY TEXT:C222(w_valeurs; 0)
 
@@ -119,7 +121,8 @@ If ($1#"@.js") & ($1#"@jpg") & ($1#"@.png") & ($1#"@.css") & ($1#"@.map") & ($1#
 				$action_t:=WEB_UTL_GET_PARAMS("action")
 				
 				If ($action_t="") && ($1="/")
-					WEB SEND HTTP REDIRECT:C659("/INT?action=usager-list")
+					//WEB ENVOYER REDIRECTION HTTP("/INT?action=usager-list")
+					WEB SEND HTTP REDIRECT:C659("/home")
 					return 
 				End if 
 				
@@ -128,10 +131,19 @@ If ($1#"@.js") & ($1#"@jpg") & ($1#"@.png") & ($1#"@.css") & ($1#"@.map") & ($1#
 				End if 
 				
 				Case of 
-					: (w_action="/session/enumeration")
-						WEB SEND TEXT:C677(JSON Stringify:C1217(Session:C1714.storage.enumeration; *))
 					: (w_action="/session/centre")
 						Web_JSON_Get_Centres_List("checkbox"; {titrePopup: "Prestations"; prestation: False:C215; plateforme: Session:C1714.storage.intervenant.Plateforme})
+						
+					: (w_action="/session/enumeration")
+						WEB SEND TEXT:C677(JSON Stringify:C1217(Session:C1714.storage.enumeration; *))
+						
+					: (w_action="/session/intervenant")
+						WEB SEND TEXT:C677(JSON Stringify:C1217(Session:C1714.storage.intervenant; *))
+						
+						
+					: (w_action="/home")
+						WEB SEND FILE:C619(Folder:C1567(fk dossier racine web:K87:15).file("usager/browser/index.html").platformPath)
+						// Pointe vers le même fichier que http://localhost:8045/usager/page
 						
 					: (w_action="/statistiques/@")
 						Case of 
@@ -140,31 +152,62 @@ If ($1#"@.js") & ($1#"@jpg") & ($1#"@.png") & ($1#"@.css") & ($1#"@.map") & ($1#
 								// Affichage de la page des statistiques.
 								WEB SEND FILE:C619(Folder:C1567(fk dossier racine web:K87:15).file("statistique/browser/index.html").platformPath)
 							: (w_action="@generer@")
-								TRACE:C157
 								// Exemple de requete : http://localhost:8045/statistiques/generer?query={"filtreRecherche":{"HG_DateMin":"2024-01-01","HG_DateMax":"2024-12-31","HG_Nuit":false,"HG_Cloturée":true},"dataRetour":["HG_Date","HG_Nom","HG_Prénom","HG_DateNéLe","HG_FamClé","HG_FamChef","HG_Age","HG_EtatCivil"],"typeGraph":"Bar","statistiqueComptage":"personne","statistiqueFicheUnique":false,"statistiqueType":"tranches d’âges"}
 								$return_o:=ds:C1482.HeberGement.statistiqueGenerer(JSON Parse:C1218(WEB_UTL_GET_PARAMS("query")))
 								WEB SEND TEXT:C677(JSON Stringify:C1217($return_o))
 								
 							: (w_action="@delete@")
 								// Exemple de requete : http://localhost:8045/statistiques/delete?ID=4
-								$state_o:=ds:C1482.HebergementStatistiqueModele.delete(Num:C11(WEB_UTL_GET_PARAMS("ID")))
+								$state_o:=ds:C1482.HebergementRechercheModele.delete(Num:C11(WEB_UTL_GET_PARAMS("ID")))
 								WEB SEND TEXT:C677(JSON Stringify:C1217($state_o; *))
 							: (w_action="@list@")
 								// Exemple de requete : http://localhost:8045/statistiques/list
-								$state_o:=ds:C1482.HebergementStatistiqueModele.list()
+								$state_o:=ds:C1482.HebergementRechercheModele.list("statistique")
 								WEB SEND TEXT:C677(JSON Stringify:C1217($state_o; *))
 							: (w_action="@read@")
 								// Exemple de requete : http://localhost:8045/statistiques/read?ID=4
-								$state_o:=ds:C1482.HebergementStatistiqueModele.read(Num:C11(WEB_UTL_GET_PARAMS("ID")))
+								$state_o:=ds:C1482.HebergementRechercheModele.read(Num:C11(WEB_UTL_GET_PARAMS("ID")))
 								WEB SEND TEXT:C677(JSON Stringify:C1217($state_o; *))
 							: (w_action="@update@")
 								// Exemple de requete : http://localhost:8045/statistiques/update?ID=4&statParam={"affichageNom":"état civil","filtreRecherche":{"HG_DateMin":"2024-06-01","HG_DateMax":"2024-11-26","HG_Cloturée":true,"HG_Nuit":true, "HG_CentreNom":["13LGV-HUDA-Accompagnement extérieur", "13LGV-HUDA-Concertation Partenaire"],"HG_EtatCivil":["Femme seule (FS)" , "Femme avec 1 enfant (FE)"]},"dataRetour":["HG_Date","HG_Nom","HG_Prénom","HG_DateNéLe","HG_FamClé","HG_EtatCivil","HG_FamGroupe"],"typeGraph":"Bar","statistiqueComptage":"personne","statistiqueType":"HG_FamGroupe","statistiqueFicheUnique":true}
-								$state_o:=ds:C1482.HebergementStatistiqueModele.update(Num:C11(WEB_UTL_GET_PARAMS("ID")); JSON Parse:C1218(WEB_UTL_GET_PARAMS("statParam")))
+								$state_o:=ds:C1482.HebergementRechercheModele.update(Num:C11(WEB_UTL_GET_PARAMS("ID")); JSON Parse:C1218(WEB_UTL_GET_PARAMS("statParam")))
 								WEB SEND TEXT:C677(JSON Stringify:C1217($state_o; *))
 						End case 
 						
+					: (w_action="/usager/@")
+						Case of 
+							: (w_action="@page@")
+								// Exemple de requete : http://localhost:8045/usager/page
+								// Affichage de la page des statistiques.
+								WEB SEND FILE:C619(Folder:C1567(fk dossier racine web:K87:15).file("usager/browser/index.html").platformPath)
+							: (w_action="@generer@")
+								// Exemple de requete : http://localhost:8045/usager/generer?query={"filtreRecherche":{"HG_DateMin":"2024-01-01","HG_DateMax":"2024-12-31","HG_Nuit":false,"HG_Cloturée":true},"dataRetour":["HG_Date","HG_Nom","HG_Prénom","HG_DateNéLe","HG_FamClé","HG_FamChef","HG_Age","HG_EtatCivil"],"typeGraph":"Bar","statistiqueComptage":"personne","statistiqueFicheUnique":false,"statistiqueType":"tranches d’âges"}
+								$return_o:=ds:C1482.HeberGement.listeUsager(JSON Parse:C1218(WEB_UTL_GET_PARAMS("query")))
+								WEB SEND TEXT:C677(JSON Stringify:C1217($return_o))
+								
+							: (w_action="@delete@")
+								// Exemple de requete : http://localhost:8045/usager/delete?ID=4
+								$state_o:=ds:C1482.HebergementRechercheModele.delete(Num:C11(WEB_UTL_GET_PARAMS("ID")))
+								WEB SEND TEXT:C677(JSON Stringify:C1217($state_o; *))
+							: (w_action="@list@")
+								// Exemple de requete : http://localhost:8045/usager/list
+								$state_o:=ds:C1482.HebergementRechercheModele.list("usager")
+								WEB SEND TEXT:C677(JSON Stringify:C1217($state_o; *))
+							: (w_action="@read@")
+								// Exemple de requete : http://localhost:8045/usager/read?ID=4
+								$state_o:=ds:C1482.HebergementRechercheModele.read(Num:C11(WEB_UTL_GET_PARAMS("ID")))
+								WEB SEND TEXT:C677(JSON Stringify:C1217($state_o; *))
+							: (w_action="@update@")
+								// Exemple de requete : http://localhost:8045/usager/update?ID=4&statParam={"affichageNom":"état civil","filtreRecherche":{"HG_DateMin":"2024-06-01","HG_DateMax":"2024-11-26","HG_Cloturée":true,"HG_Nuit":true, "HG_CentreNom":["13LGV-HUDA-Accompagnement extérieur", "13LGV-HUDA-Concertation Partenaire"],"HG_EtatCivil":["Femme seule (FS)" , "Femme avec 1 enfant (FE)"]},"dataRetour":["HG_Date","HG_Nom","HG_Prénom","HG_DateNéLe","HG_FamClé","HG_EtatCivil","HG_FamGroupe"],"typeGraph":"Bar","statistiqueComptage":"personne","statistiqueType":"HG_FamGroupe","statistiqueFicheUnique":true}
+								$state_o:=ds:C1482.HebergementRechercheModele.update(Num:C11(WEB_UTL_GET_PARAMS("ID")); JSON Parse:C1218(WEB_UTL_GET_PARAMS("statParam")))
+								WEB SEND TEXT:C677(JSON Stringify:C1217($state_o; *))
+								
+						End case 
+						
+						
 					: (w_action="/login@")
-						WEB SEND HTTP REDIRECT:C659("/INT?action=usager-list&login=true")
+						//WEB ENVOYER REDIRECTION HTTP("/INT?action=usager-list&login=true")
+						WEB SEND HTTP REDIRECT:C659("/home&login=true")
 					: (w_structure="")
 						WebAGL_ChoixStructure
 					: (w_action="/USR@")
@@ -201,7 +244,8 @@ If ($1#"@.js") & ($1#"@jpg") & ($1#"@.png") & ($1#"@.css") & ($1#"@.map") & ($1#
 								WEB SEND HTTP REDIRECT:C659("/home")
 							End if 
 							
-							WEB SEND HTTP REDIRECT:C659("/INT?action=usager-list")
+							//WEB ENVOYER REDIRECTION HTTP("/INT?action=usager-list")
+							WEB SEND HTTP REDIRECT:C659("/home")
 						Else 
 							WEB SEND HTTP REDIRECT:C659("/login")
 						End if 
@@ -209,7 +253,7 @@ If ($1#"@.js") & ($1#"@jpg") & ($1#"@.png") & ($1#"@.css") & ($1#"@.map") & ($1#
 					: (w_action="/NAV")  // navigateur principal 
 						// NAV_WEB_Controller
 					: (w_action="/home@")
-						TRACE:C157
+						
 						If (w_connected)
 							WEB_logout
 						Else 

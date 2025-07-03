@@ -11,7 +11,7 @@
 	    $(location).attr('href', '/GL?action=reglements');        
 	}); 
 	$("#btn_dashboard_locataires").click(function(ev){ 
-	    $(location).attr('href', '/GL?action=usager-list');        
+	    $(location).attr('href', '/GL?home');        
 	}); 
 	$("#btn_dashboard_proprietaires").click(function(ev){ 
 	    $(location).attr('href', '/GL?action=proprietaires');        

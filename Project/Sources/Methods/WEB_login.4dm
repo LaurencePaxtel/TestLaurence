@@ -71,6 +71,7 @@ If (w_post)
 					Session:C1714.storage.intervenant.Login:=$intervenant_e.IN_Login
 					Session:C1714.storage.intervenant.Email:=$intervenant_e.IN_Email
 					Session:C1714.storage.intervenant.Ref_Structure:=$intervenant_e.Ref_Structure
+					Session:C1714.storage.intervenant.Nom_Structure:=ds:C1482.SOciete.query("Ref_Structure = :1"; $intervenant_e.Ref_Structure).first().SO_Libel00
 					Session:C1714.storage.intervenant.Plateforme:=$intervenant_e.IN_Plateforme
 					Session:C1714.storage.intervenant.Privileges:=New shared collection:C1527()
 				End use 
@@ -160,9 +161,11 @@ If (w_post)
 				: ($http_redirect#"")
 					WEB SEND HTTP REDIRECT:C659($http_redirect)
 				: ($resetPassword_b=True:C214)
-					WEB SEND HTTP REDIRECT:C659("/INT?action=usager-list&login=true&resetPassword=Vrai"+Choose:C955($cguDisplay_b=True:C214; "&cgu=Vrai"; ""))
+					// WEB ENVOYER REDIRECTION HTTP("/INT?action=usager-list&login=true&resetPassword=Vrai"+Choisir($cguDisplay_b=Vrai; "&cgu=Vrai"; ""))
+					WEB SEND HTTP REDIRECT:C659("/home?login=true&resetPassword=Vrai"+Choose:C955($cguDisplay_b=True:C214; "&cgu=Vrai"; ""))
 				Else 
-					WEB SEND HTTP REDIRECT:C659("/INT?action=usager-list&login=true")
+					// WEB ENVOYER REDIRECTION HTTP("/INT?action=usager-list&login=true")
+					WEB SEND HTTP REDIRECT:C659("/home?login=true")
 			End case 
 			
 		End if 

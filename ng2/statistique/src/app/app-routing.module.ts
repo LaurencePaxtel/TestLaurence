@@ -3,8 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import {StatistiqueComponent} from "./statistique/statistique.component";
 
 const routes: Routes = [
-  { path: 'INT', component: StatistiqueComponent },
-  { path: '',   redirectTo: '/INT', pathMatch: 'prefix'}
+  // { path: 'INT', component: StatistiqueComponent },
+  { path: '',   redirectTo: 'statistiques/page', pathMatch: 'full'},
+  { path: 'statistiques/page', component: StatistiqueComponent },
 ];
 
 @NgModule({

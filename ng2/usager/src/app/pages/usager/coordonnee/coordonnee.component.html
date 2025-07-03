@@ -1,0 +1,106 @@
+<form [formGroup]="form">
+    <p-tabs value="0">
+        <p-tablist>
+            <p-tab value="0">Coordonnées</p-tab>
+            <p-tab value="1">Autre</p-tab>
+        </p-tablist>
+        <p-tabpanels>
+            <p-tabpanel value="0">
+                <p-fluid>
+                    <div class="flex">
+                        <div class="flex flex-col gap-6 w-full">
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label for="nom">Nom</label>
+                                    <input pInputText id="nom" type="text" formControlName="nom" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label for="prenom">Prénom</label>
+                                    <input pInputText id="prenom" type="text" formControlName="prenom" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label for="dateNaissance">Date de naissance</label>
+                                <p-datepicker appendTo="body"
+                                              id="dateNaissance"
+                                              dateFormat="dd/mm/yy"
+                                              [showIcon]="true" [showButtonBar]="true"
+                                              formControlName="dateNaissance">
+                                </p-datepicker>
+
+                            </div>
+                            @if(user?.hasPrivilege('Modification_Heberge')) {
+                                <div class="flex flex-col w-full gap-2">
+                                    <div class="flex items-center">
+                                        <p-checkbox id="editUser"
+                                                    [binary]="true"
+                                                    formControlName="editUser" (onChange)="onEditCheckboxChange($event)"/>
+                                        <label for="editUser" class="ml-2">Modifier le demandeur</label>
+                                    </div>
+                                </div>
+                            }
+                            <div class="flex flex-col w-full gap-2">
+
+                                <label for="adresse1">Addresse</label>
+                                <input pInputText id="adresse1" type="text" formControlName="adresse1" />
+                            </div>
+                            <div class="flex flex-col w-full gap-2">
+                                <input pInputText id="adresse2" type="text" formControlName="adresse2" />
+                            </div>
+                            <div class="flex flex-col w-full gap-2">
+                                <input pInputText id="adresse3" type="text" formControlName="adresse3" />
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label for="codePostal">Code postal</label>
+                                    <input pInputText id="codePostal" type="text" formControlName="codePostal" />
+                                </div>
+                                <div class="flex flex-wrap gap-2 w-full">
+                                    <label for="ville">Ville</label>
+                                    <input pInputText id="ville" type="text" formControlName="ville" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col w-full gap-2">
+                                <label for="email">Adresse E-mail</label>
+                                <input pInputText id="email" type="text" formControlName="email" />
+                            </div>
+                            <div class="flex flex-col w-full gap-2">
+                                <label for="telephone">Téléphone</label>
+                                <input pInputText id="telephone" type="text" formControlName="telephone" />
+                            </div>
+                        </div>
+                    </div>
+                </p-fluid>
+            </p-tabpanel>
+            <p-tabpanel value="1">
+                <p-fluid>
+                    <div class="flex">
+                        <div class="flex flex-col gap-6 w-full">
+                            <div class="flex flex-col w-full gap-2">
+                                <label for="cni">CNI</label>
+                                <input pInputText id="cni" type="text" formControlName="cni" />
+                            </div>
+                            <div class="flex flex-col w-full gap-2">
+                                <label for="numeroSecu">N° de sécurité sociale</label>
+                                <input pInputText id="numeroSecu" type="text" formControlName="numeroSecu" />
+                            </div>
+                            <div class="flex flex-col w-full gap-2">
+                                <label for="personneConfiance">Personne de confiance</label>
+                                <input pInputText id="personneConfiance" type="text" formControlName="personneConfiance" />
+                            </div>
+                            <div class="flex flex-col w-full gap-2">
+                                <label for="piecePasseport">Partenaire</label>
+                                <input pInputText id="piecePasseport" type="text" formControlName="piecePasseport" />
+                            </div>
+                        </div>
+                    </div>
+                </p-fluid>
+            </p-tabpanel>
+        </p-tabpanels>
+    </p-tabs>
+    <div class="flex justify-end gap-2">
+        <p-button label="Annuler" severity="secondary"  (click)="cancel()" />
+        <p-button label="Sauvegarder" severity="primary" (click)="save()" [loading]="saveLoading" />
+    </div>
+</form>
+

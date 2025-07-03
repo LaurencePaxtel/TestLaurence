@@ -268,7 +268,7 @@ Début_LoadTables("Locations: Charges"; ->$notUseInWeb_at)
 // Locations: Sinistres
 Début_LoadTables("Locations: Sinistres"; ->$notUseInWeb_at)
 
-//# Modes de règlements
+//# Modes des règlements
 Début_LoadTables("Modes de règlements"; ->$notUseInWeb_at)
 
 //# Banques

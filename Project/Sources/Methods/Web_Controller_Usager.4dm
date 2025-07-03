@@ -106,6 +106,8 @@ End if
 Case of 
 	: ($action="situation-budgetaire")
 		WEB SEND FILE:C619(Folder:C1567(fk dossier racine web:K87:15).file("situation-budgetaire/browser/index.html").platformPath)
+	: ($action="usager")
+		WEB SEND FILE:C619(Folder:C1567(fk dossier racine web:K87:15).file("usager/browser/index.html").platformPath)
 	: ($action="transmission")
 		WEB SEND FILE:C619(Folder:C1567(fk dossier racine web:K87:15).file("transmission/browser/index.html").platformPath)
 	: ($action="usager-list")

@@ -1,0 +1,173 @@
+<p-card>
+    <div class="flex justify-end mb-5">
+        <p-button label="Quitter la page" icon="pi pi-eject" (click)="closePage()" severity="primary"></p-button>
+    </div>
+    <app-breadcrumb></app-breadcrumb>
+    <p-divider></p-divider>
+    <p-table
+        #tableNote
+        [value]="notes"
+        dataKey="id"
+        [rows]="10"
+        [autoLayout]="true"
+        [showGridlines]="true"
+        [paginator]="true"
+        [rowsPerPageOptions]="[10, 25, 50, 100, 500]"
+        [globalFilterFields]="['noteNumber', 'content', 'userName', 'type']"
+        responsiveLayout="scroll"
+    >
+        <ng-template #caption>
+            <div class="flex justify-start items-center flex-col gap-3 lg:justify-between lg:flex-row lg:gap-0">
+                <p-button label="Nouvelle Note" icon="pi pi-plus" (click)="onNewNote()" severity="primary"></p-button>
+
+                <div class="flex items-center gap-6 flex-col sm:flex-row">
+                    <div class="flex items-center gap-3">
+                        <label class="text-sm font-medium">Date du</label>
+                        <p-datePicker
+                            [(ngModel)]="minDate"
+                            (ngModelChange)="onMinDateChange($event)"
+                            dateFormat="dd/mm/yy"
+                            placeholder="Date min"
+                            [showIcon]="true"
+                            [showClear]="true"
+                            [maxDate]="maxDate"
+                            appendTo="body"
+                            [style]="{'width': '150px'}">
+                        </p-datePicker>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <label class="text-sm font-medium">Date au</label>
+                        <p-datePicker
+                            [(ngModel)]="maxDate"
+                            (ngModelChange)="onMaxDateChange($event)"
+                            dateFormat="dd/mm/yy"
+                            placeholder="Date max"
+                            [showIcon]="true"
+                            [showClear]="true"
+                            [minDate]="minDate"
+                            appendTo="body"
+                            [style]="{'width': '150px'}">
+                        </p-datePicker>
+                    </div>
+                </div>
+
+                <p-iconfield iconPosition="left">
+                    <p-inputicon>
+                        <i class="pi pi-search"></i>
+                    </p-inputicon>
+                    <input pInputText type="text" (input)="onGlobalFilter(tableNote, $event)"
+                           placeholder="Recherchez..." />
+                </p-iconfield>
+            </div>
+        </ng-template>
+        <ng-template #header>
+            <tr>
+                <th style="min-width: 2rem" pSortableColumn="noteNumber">
+                    N° note
+                    <p-sortIcon field="noteNumber"></p-sortIcon>
+                </th>
+                <th style="min-width: 8rem" pSortableColumn="type">
+                    Type de note
+                    <p-sortIcon field="type"></p-sortIcon>
+                </th>
+                <th style="min-width: 12rem" pSortableColumn="date">
+                    Date
+                    <p-sortIcon field="date"></p-sortIcon>
+                </th>
+                <th style="min-width: 20rem" pSortableColumn="content">
+                    Note
+                    <p-sortIcon field="content"></p-sortIcon>
+                </th>
+                <th style="min-width: 12rem" pSortableColumn="userName">
+                    Utilisateur
+                    <p-sortIcon field="userName"></p-sortIcon>
+                </th>
+                <th>
+                </th>
+            </tr>
+            <tr class="subheader">
+                <th>
+                </th>
+                <th>
+                    <p-columnFilter field="type" matchMode="contains" [showMenu]="false">
+                        <ng-template #filter let-value let-filter="filterCallback">
+                            <p-select [options]="noteTypes"
+                                      class="w-full"
+                                      appendTo="body"
+                                      (onChange)="filter($event.value)"
+                                      optionLabel="label"
+                                      optionValue="value"
+                                      placeholder="Filtre par type">
+                            </p-select>
+                        </ng-template>
+                    </p-columnFilter>
+                </th>
+                <th></th>
+                <th>
+                    <p-columnFilter matchMode="contains" type="text" field="content" placeholder="Filtre par contenu"
+                                    ariaLabel="Filtre par contenu"
+                                    [showMenu]="false"
+                                    [style]="{'width': '100%'}">
+                    </p-columnFilter>
+                </th>
+                <th>
+                    <p-columnFilter matchMode="contains" type="text" field="userName" placeholder="Filtre utilisateur"
+                                    ariaLabel="Filtre utilisateur"
+                                    [showMenu]="false"
+                                    [style]="{'width': '100%'}">
+                    </p-columnFilter>
+                </th>
+                <th>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template #body let-note>
+            <tr>
+                <td class="text-center">
+                    <div class="text-center">
+                        {{ note.noteNumber }}
+                    </div>
+                </td>
+                <td>
+                    {{ note.type }}
+                </td>
+                <td>
+                    @if (note.date) {
+                        {{ note.date | date:'dd/MM/yyyy' }}
+                    }
+                </td>
+                <td>
+                    <div [innerHTML]="sanitizeHtml(note.content)"></div>
+                </td>
+                <td>
+                    {{ note.userName }}
+                </td>
+                <td>
+                    <div class="flex flex-row justify-center gap-2">
+                        <p-button
+                            (click)="editNote(note)"
+                            [disabled]="!note.editable || !user?.hasPrivilege('Notes modife')"
+                            [pTooltip]="note.editable ? 'Modifier' : 'Vous n\'avez pas le privilège nécessaire pour modifier la note sélectionnée'"
+                            tooltipPosition="bottom"
+                            icon="pi pi-pencil" severity="primary" outlined size="small" />
+                        <p-button
+                            (click)="onConfirmDeleteNote(note, $event)"
+                            [pTooltip]="note.editable ? 'Supprimer' : 'Vous n\'avez pas le privilège nécessaire pour supprimer la note sélectionnée'"
+                            [disabled]="!note.editable"
+                            tooltipPosition="bottom"
+                            icon="pi pi-trash" severity="danger" outlined size="small" />
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template #emptymessage>
+            <tr>
+                <td colspan="8">Aucune note trouvée pour cet usager.</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-card>
+
+<p-toast />
+<p-confirmdialog />

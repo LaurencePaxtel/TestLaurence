@@ -1,0 +1,144 @@
+<form [formGroup]="form">
+    <p-fluid>
+        <div class="flex flex-col gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-2">
+                    <label for="date">Date création des fiches</label>
+                    <p-datepicker appendTo="body"
+                                  id="date"
+                                  dateFormat="dd/mm/yy"
+                                  class="w-full"
+                                  formControlName="date"
+                                  [showIcon]="true" [showButtonBar]="true">
+                    </p-datepicker>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="dispositif">Dispositif</label>
+                    <p-select [options]="groupes"
+                              formControlName="dispositif" optionLabel="value"
+                              appendTo="body"
+                              class="w-full"
+                              (onChange)="onGroupeChange($event.value)"
+                              placeholder="Selectionnez un dispositif"/>
+                </div>
+            </div>
+            <p-divider></p-divider>
+            <!-- NOUVEAU : Champ de recherche -->
+            <div class="flex flex-col gap-2 mb-4">
+                <label for="search">Rechercher une prestation</label>
+                <input
+                    pInputText
+                    id="search"
+                    class="w-full"
+                    placeholder="Tapez pour rechercher..."
+                    [(ngModel)]="searchTerm"
+                    [ngModelOptions]="{standalone: true}"
+                    (input)="onSearch($event)"
+                    autocomplete="off"/>
+            </div>
+
+            <p-tabs [value]="activeTabValue" (valueChange)="onTabChange($event)">
+                <p-tablist>
+                    @for (tab of prestationCategoriesTabs; track tab.value) {
+                        <p-tab [value]="tab.value" [disabled]="tab.disabled">{{ tab.label }}</p-tab>
+                    }
+                </p-tablist>
+                <p-tabpanels>
+                    <!-- UN SEUL PANEL qui change de contenu = Performance maximale -->
+                    <p-tabpanel [value]="activeTabValue">
+                        <div class="p-4">
+                            @if (getCurrentTab(); as currentTab) {
+                                <!-- Container scrollable avec hauteur dynamique -->
+                                <div
+                                    class="overflow-y-auto border border-gray-200 rounded-lg p-2"
+                                    [style.min-height]="'350px'" [style.max-height]="'350px'">
+                                    @for (prestation of getCurrentTabPrestations(); track prestation.id) {
+                                        <div class="flex items-center gap-2 mb-2 p-2 hover:bg-gray-50 rounded">
+                                            <p-checkbox
+                                                [inputId]="'active_' + prestation.id"
+                                                binary="true"
+                                                [(ngModel)]="prestation.selected"
+                                                [ngModelOptions]="{standalone: true}"
+                                                (onChange)="onPrestationSelected($event, prestation)"/>
+                                            <label [for]="'active_' + prestation.id" class="cursor-pointer flex-1">
+                                                @if (activeTabValue === 0) {
+                                                    {{ prestation.label }} <span
+                                                        class="font-bold uppercase text-gray-800">({{ prestation.categorie }}
+                                                        )</span>
+                                                } @else {
+                                                    {{ prestation.label }}
+                                                }
+                                            </label>
+                                        </div>
+                                    } @empty {
+                                        <div class="text-center p-4 text-gray-500">
+                                            Aucune prestation dans cette catégorie
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </p-tabpanel>
+                </p-tabpanels>
+            </p-tabs>
+        </div>
+        <p-divider></p-divider>
+        <h5 class="font-semibold mb-3">Prestations sélectionnées ({{ array.length }})</h5>
+        @if (array.length > 0) {
+            <div formArrayName="array" class="space-y-2">
+                @for (item of array.controls; track $index) {
+                    <div [formGroupName]="$index"
+                         class="flex items-center gap-3 p-2 border border-gray-200 rounded bg-gray-50">
+
+                        <!-- Nom prestation -->
+                        <div class="flex-1 min-w-0">
+                    <span class="text-sm font-medium truncate block">
+                        {{ item?.value?.prestation.value }}
+                    </span>
+                        </div>
+
+                        <!-- Qté -->
+                        <div class="flex items-center gap-1">
+                            <span class="text-xs text-gray-600">Quantité:</span>
+                            <input pInputText
+                                   type="number"
+                                   min="1"
+                                   class="w-14 h-8 text-sm"
+                                   formControlName="quantite"/>
+                        </div>
+
+                        <!-- Montant -->
+                        <div class="flex items-center gap-1">
+                            <span class="text-xs text-gray-600">Montant:</span>
+                            <input pInputText
+                                   type="number"
+                                   min="0"
+                                   step="0.01"
+                                   class="w-16 h-8 text-sm"
+                                   formControlName="montant"/>
+                        </div>
+
+                        <!-- Suppression -->
+                        <p-button
+                            icon="pi pi-times"
+                            severity="danger"
+                            size="small"
+                            [text]="true"
+                            class="!p-1"
+                            (click)="removeFromArrayByIndex($index)"/>
+                    </div>
+                }
+            </div>
+        }
+
+    </p-fluid>
+    <div class="flex justify-end gap-2 mt-5">
+        <p-button label="Annuler" severity="secondary" (click)="cancel()"/>
+        <p-button label="Sauvegarder" severity="primary" (click)="onConfirmSaving($event)"
+                  [loading]="saveLoading"
+                  [disabled]="!form.valid"
+        />
+    </div>
+</form>
+
+<p-confirmdialog/>

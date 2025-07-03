@@ -538,7 +538,7 @@ $(document).ready(function(){
                                     action: function(){
 
                                         setTimeout(() => {
-                                            window.location.href = 'INT?action=usager-list&getPreviousList=vrai';
+                                            window.location.href = 'home';
                                         }, 1500);
 
                                     }
@@ -573,7 +573,7 @@ $(document).ready(function(){
     });
 
     $('#fdp_usager_quitter').click(function() {
-        window.location.href = 'INT?action=usager-list&getPreviousList=vrai';
+        window.close();
         return false;
     });
 
@@ -885,7 +885,7 @@ $(document).ready(function(){
 
         var data_json = '&json='+JSON.stringify(data);
 
-        $.getJSON("/INT?action=usager_coordonnees_valider",data_json, function(data){  
+        $.getJSON("/home_coordonnees_valider",data_json, function(data){  
         }).done(function() {//success
         })
         .fail(function() { //error
@@ -949,7 +949,7 @@ $(document).ready(function(){
 
         var data_json = '&json='+JSON.stringify(data);
 
-        $.getJSON("/INT?action=usager_sp_valider",data_json, function(data){  
+        $.getJSON("/home_sp_valider",data_json, function(data){  
             
 
         }).done(function() {//success
@@ -990,7 +990,7 @@ $(document).ready(function(){
 
         var data_json = '&json='+JSON.stringify(data);
 
-        $.getJSON("/INT?action=usager_note_actions_valider",data_json, function(data){  
+        $.getJSON("/home_note_actions_valider",data_json, function(data){  
         }).done(function() {//success
         })
         .fail(function() { //error
@@ -1025,7 +1025,7 @@ $(document).ready(function(){
 
         var data_json = '&json='+JSON.stringify(data);
 
-        $.getJSON("/INT?action=usager_note_af_valider",data_json, function(data){  
+        $.getJSON("/home_note_af_valider",data_json, function(data){  
         }).done(function() {//success
         })
         .fail(function() { //error

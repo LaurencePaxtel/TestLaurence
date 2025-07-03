@@ -169,7 +169,7 @@ Début_LienTablePlus(->$va_GL_LibelleSinistres_L; -><>va_GL_LibelleSinistres_R; 
 <>va_GL_LibelleCharges_L:="Locations: Charges"
 Début_LienTablePlus(-><>va_GL_LibelleCharges_L; -><>va_GL_LibelleCharges_R; 1)
 
-//# Modes de règlements
+//# Modes des règlements
 <>va_GL_ModesReglements_L:="Modes de règlements"
 Début_LienTablePlus(-><>va_GL_ModesReglements_L; -><>va_GL_ModesReglements_R; 1)
 

@@ -1,8 +1,21 @@
 //%attributes = {}
 
-
-Web_Location_Calcul_MT_Revise
-
+var $statParam_o : Object
+var $return_o : Object
+$statParam_o:={}
+$start:=Milliseconds:C459
+$statParam_o.affichageNom:="état civil"  // Nom personnalisé statistique
+$statParam_o.filtreRecherche:={}
+$statParam_o.filtreRecherche.HG_DateMin:=!2025-01-01!
+$statParam_o.filtreRecherche.HG_DateMax:=!2025-05-31!
+$statParam_o.filtreRecherche.HG_Cloturée:=True:C214
+$statParam_o.filtreRecherche.HG_Nuit:=True:C214
+//$statParam_o.filtreRecherche.HG_CentreNom:=["13LGV-HUDA-Accompagnement extérieur"; "13LGV-HUDA-Concertation Partenaire"]
+$statParam_o.filtreRecherche.HG_EtatCivil:=["Femme seule (FS)"; "Femme avec 1 enfant (FE)"]  // Item de l'énumération en propriété
+$statParam_o.typeGraph:="Bar"  // "Bar" ou "Pie"
+$statParam_o.statistiqueFicheUnique:=True:C214
+$return_o:=ds:C1482.HeberGement.listeUsager($statParam_o)
+$end:=Milliseconds:C459-$start
 
 /*
 //[HeberGement]HG_HB_ID

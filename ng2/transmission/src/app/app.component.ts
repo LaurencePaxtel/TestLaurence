@@ -27,7 +27,7 @@ export class AppComponent implements OnInit{
                 tap(params => {
                   const login: boolean = params['login'];
                   if (login) {
-                    window.open('/INT?action=usager-list', '_blank');
+                    window.open('/home', '_blank');
                   }
                 })
             )

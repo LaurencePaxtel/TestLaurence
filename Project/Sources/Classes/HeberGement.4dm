@@ -269,6 +269,166 @@ Function reportMotifSortie($id_el : Integer; $autreSol_t : Text; $dateSortie_d :
 		
 	End if 
 	
+Function listeUsager($statParam_o : Object) : Object
+/*
+var $statParam_o : Object
+var $return_o : Object
+$statParam_o:={}
+	
+$statParam_o.affichageNom:="état civil"  // Nom personnalisé statistique
+$statParam_o.filtreRecherche:={}
+$statParam_o.filtreRecherche.HG_DateMin:=!01/06/2024!
+$statParam_o.filtreRecherche.HG_DateMax:=!26/11/2024!
+$statParam_o.filtreRecherche.HG_Cloturée:=Vrai
+$statParam_o.filtreRecherche.HG_Nuit:=Vrai
+$statParam_o.filtreRecherche.HG_CentreNom:=["13LGV-HUDA-Accompagnement extérieur"; "13LGV-HUDA-Concertation Partenaire"]
+$statParam_o.filtreRecherche.HG_EtatCivil:=["Femme seule (FS)"; "Femme avec 1 enfant (FE)"]  // Item de l'énumération en propriété
+$return_o:=ds.HeberGement.statistiqueGenerer($statParam_o)
+	
+*/
+	
+	$statParam_o.dataRetour:=["HG_HB_ID"; "HG_Prénom"; "HG_Nom"; "HG_DateNéLe"; "HG_Age"; "HG_FamChef"]
+	
+	var $querySettings_o : Object
+	var $query : Text
+	var $HeberGement_es : cs:C1710.HeberGementSelection
+	var $HeberGement_e : cs:C1710.HeberGementEntity
+	var $Heberge_e : cs:C1710.HeBergeEntity
+	var $Adresses_es : cs:C1710.AdressesSelection
+	var $Adresses_e : cs:C1710.AdressesEntity
+	
+	var $HeberGementEnumeration_es : cs:C1710.HeberGementSelection
+	var $statExport_c : Collection
+	var $quantite_i : Integer
+	
+	var $Ref_Structure_t : Text
+	If (Session:C1714.storage.intervenant.Ref_Structure#Null:C1517)
+		$Ref_Structure_t:=Session:C1714.storage.intervenant.Ref_Structure
+	Else 
+		$Ref_Structure_t:=Storage:C1525.societeDetail.Ref_Structure
+	End if 
+	
+	$field_c:=OB Entries:C1720(ds:C1482.HeberGement)
+	$field_c:=$field_c.extract("key"; "champsNom")
+	
+	// On vérifie que les champs en filtre existe bien dans la table.
+	For each ($filtreNom_t; $statParam_o.filtreRecherche)
+		If (($filtreNom_t="@Min") | ($filtreNom_t="@Max"))
+			$filtreNom_t:=Substring:C12($filtreNom_t; 1; Length:C16($filtreNom_t)-3)
+		End if 
+		
+		
+		If ($field_c.query("champsNom = :1"; $filtreNom_t).length=0)
+			return {cstatus: False:C215; MESSAGE: "Le champs filtre "+$filtreNom_t+" n'existe pas dans la table HeberGement."; colonne: New collection:C1472()}
+		End if 
+	End for each 
+	
+	// On vérifie que les champs en retour existent bien dans la table.
+	For each ($filtreNom_t; $statParam_o.dataRetour)
+		If ($field_c.query("champsNom = :1"; $filtreNom_t).length=0)
+			
+			// Si ce n'est pas dans la table Hebergement, on regarde la table Heberge
+			return {cstatus: False:C215; MESSAGE: "Le champs retour "+$filtreNom_t+" n'existe pas dans la table HeberGement."; colonne: New collection:C1472()}
+			
+		End if 
+	End for each 
+	
+	$querySettings_o:=New object:C1471("parameters"; New object:C1471(); "context"; "liste")
+	//$query:="Ref_Structure = :RefStructure AND HG_Plateforme = :HG_Plateforme AND "
+	$query:="Ref_Structure = :RefStructure AND HG_Plateforme = '@' AND "
+	$querySettings_o.parameters["RefStructure"]:=$Ref_Structure_t
+	$querySettings_o.parameters["HG_Plateforme"]:=Session:C1714.storage.intervenant.Plateforme
+	
+	For each ($filtreNom_t; $statParam_o.filtreRecherche)
+		$champsNom_t:=$filtreNom_t
+		
+		$querySettings_o.parameters[$filtreNom_t]:=$statParam_o.filtreRecherche[$filtreNom_t]
+		
+		Case of 
+			: ($filtreNom_t="@Min")
+				$champsNom_t:=Substring:C12($filtreNom_t; 1; Length:C16($filtreNom_t)-3)
+				$query+=$champsNom_t+" >= :"+$filtreNom_t+" AND "
+				
+			: ($filtreNom_t="@Max")
+				$champsNom_t:=Substring:C12($filtreNom_t; 1; Length:C16($filtreNom_t)-3)
+				$query+=$champsNom_t+" <= :"+$filtreNom_t+" AND "
+				
+			: (Value type:C1509($statParam_o.filtreRecherche[$filtreNom_t])=Est une collection:K8:32)
+				$query+=$champsNom_t+" IN :"+$filtreNom_t+" AND "
+			Else 
+				$query+=$champsNom_t+" = :"+$filtreNom_t+" AND "
+		End case 
+		
+	End for each 
+	
+	$query:=Substring:C12($query; 1; Length:C16($query)-5)
+	
+	//Mark: Génération des colonnes.
+	
+	$HeberGement_es:=ds:C1482.HeberGement.query($query; $querySettings_o)
+	
+	// On force l'ajout des champs HG_FamChef et HG_HB_ID dans les data de retour (utile pour des calculs)
+	If ($statParam_o.dataRetour.indexOf("HG_FamChef")=-1)
+		$statParam_o.dataRetour.unshift("HG_FamChef")
+	End if 
+	
+	If ($statParam_o.dataRetour.indexOf("HG_HB_ID")=-1)
+		$statParam_o.dataRetour.unshift("HG_HB_ID")
+	End if 
+	
+	If ($statParam_o.dataRetour.indexOf("ID")=-1)
+		$statParam_o.dataRetour.unshift("ID")
+	End if 
+	
+	
+	// En cas de personne, On conserve uniquement la plus recente.
+	$HeberGement_es:=$HeberGement_es.orderBy("HG_HB_ID, HG_Date desc")
+	
+	$HeberGementPrecedentID:=0
+	For each ($HeberGement_e; $HeberGement_es)
+		If ($HeberGement_e.HG_HB_ID=$HeberGementPrecedentID)
+			$HeberGement_es:=$HeberGement_es.minus($HeberGement_e)
+			continue
+		End if 
+		$HeberGementPrecedentID:=$HeberGement_e.HG_HB_ID
+	End for each 
+	
+	
+	$colonne_c:=$HeberGement_es.toCollection($statParam_o.dataRetour)
+	
+	
+	For each ($colonne_o; $colonne_c)
+		$Heberge_e:=ds:C1482.HeBerge.query("HB_ReferenceID = :1"; $colonne_o.HG_HB_ID).first()
+		
+		$colonne_o.genre:=($HeberGement_e.HG_Genre) ? "Féminin" : "Masculin"
+		$colonne_o.email:=$Heberge_e.HB_Email
+		$colonne_o.modeFacturation:=$Heberge_e.HB_FAC_Mode_Facturation
+		
+		$Adresses_es:=ds:C1482.Adresses.query("AD_ID_Origine = :1"; $Heberge_e.ID)
+		If ($Adresses_es.length#0)
+			$Adresses_e:=$Adresses_es.first()
+			$colonne_o.adresse1:=$Adresses_e.AD_Adresse1
+			$colonne_o.adresse2:=$Adresses_e.AD_Adresse2
+			$colonne_o.adresse3:=$Adresses_e.AD_Adresse3
+			$colonne_o.codePostal:=$Adresses_e.AD_Code_postal
+			$colonne_o.ville:=$Adresses_e.AD_Ville
+		Else 
+			$colonne_o.adresse1:=""
+			$colonne_o.adresse2:=""
+			$colonne_o.adresse3:=""
+			$colonne_o.codePostal:=""
+			$colonne_o.ville:=""
+			
+		End if 
+		
+		
+		var $Adresses_e : cs:C1710.AdressesEntity
+	End for each 
+	
+	
+	return {status: True:C214; message: "ok"; typeGraph: $statParam_o.typeGraph; colonne: $colonne_c}
+	
+	
 	
 Function statistiqueGenerer($statParam_o : Object) : Object
 /*
@@ -284,7 +444,7 @@ $statParam_o.filtreRecherche.HG_Cloturée:=Vrai
 $statParam_o.filtreRecherche.HG_Nuit:=Vrai
 $statParam_o.filtreRecherche.HG_CentreNom:=["13LGV-HUDA-Accompagnement extérieur"; "13LGV-HUDA-Concertation Partenaire"]
 $statParam_o.filtreRecherche.HG_EtatCivil:=["Femme seule (FS)"; "Femme avec 1 enfant (FE)"]  // Item de l'énumération en propriété
-$statParam_o.dataRetour:=["HG_Date"; "HG_Nom"; "HG_Prénom"; "HG_DateNéLe"; "HG_FamClé"; "HG_EtatCivil"; "HG_FamGroupe"]  // (nom du champ 4D)
+$statParam_o.dataRetour:=["HG_Date"; "HG_Nom"; "HG_Prénom"; "HG_DateNéLe"; "HG_FamClé"; "HG_EtatCivil"; "HG_FamGroupe";"HG_HB_ID_1_HB_ReferenceID.HG_Genre"]  // (nom du champ 4D)
 $statParam_o.typeGraph:="Bar" // "Bar" ou "Pie"
 $statParam_o.statistiqueComptage:="personne"  // Obligatoire : fiche ou personne
 $statParam_o.statistiqueType:="HG_FamGroupe"  // Obligatoire (nom du champ 4D)
@@ -292,6 +452,7 @@ $statParam_o.statistiqueFicheUnique:=Vrai
 $return_o:=ds.HeberGement.statistiqueGenerer($statParam_o)
 	
 */
+	
 	var $querySettings_o : Object
 	var $query : Text
 	var $HeberGement_es : cs:C1710.HeberGementSelection
@@ -308,6 +469,9 @@ $return_o:=ds.HeberGement.statistiqueGenerer($statParam_o)
 	
 	$field_c:=OB Entries:C1720(ds:C1482.HeberGement)
 	$field_c:=$field_c.extract("key"; "champsNom")
+	
+	$fieldHeberge_c:=OB Entries:C1720(ds:C1482.HeBerge)
+	$fieldHeberge_c:=$fieldHeberge_c.extract("key"; "champsNom")
 	
 	If ($statParam_o.statistiqueComptage#"fiche") & ($statParam_o.statistiqueComptage#"personne")
 		return {cstatus: False:C215; MESSAGE: "Le comptage des statistiques n'est pas renseigné. (fiche ou personne)"; colonne: New collection:C1472()}
@@ -328,7 +492,12 @@ $return_o:=ds.HeberGement.statistiqueGenerer($statParam_o)
 	// On vérifie que les champs en retour existent bien dans la table.
 	For each ($filtreNom_t; $statParam_o.dataRetour)
 		If ($field_c.query("champsNom = :1"; $filtreNom_t).length=0)
-			return {cstatus: False:C215; MESSAGE: "Le champs retour "+$filtreNom_t+" n'existe pas dans la table HeberGement."; colonne: New collection:C1472()}
+			
+			// Si ce n'est pas dans la table Hebergement, on regarde la table Heberge
+			If ($fieldHeberge_c.query("champsNom = :1"; Replace string:C233($filtreNom_t; "HG_HB_ID_1_HB_ReferenceID."; "")).length=0)
+				return {cstatus: False:C215; MESSAGE: "Le champs retour "+$filtreNom_t+" n'existe pas dans la table HeberGement."; colonne: New collection:C1472()}
+			End if 
+			
 		End if 
 	End for each 
 	
@@ -459,10 +628,6 @@ $return_o:=ds.HeberGement.statistiqueGenerer($statParam_o)
 				$quantite_i:=($statParam_o.statistiqueComptage="fiche") ? $HeberGementEnumeration_es.length : $HeberGementEnumeration_es.distinct("HG_HB_ID").length
 				$statExport_c.push({enumeration: $mois_t; quantite: $quantite_i})
 			End for each 
-			
-			
-			
-			
 			
 		Else 
 			$infoEnumeration_o:=Session:C1714.storage.enumeration.query("champNom = :1"; $statParam_o.statistiqueType)[0]

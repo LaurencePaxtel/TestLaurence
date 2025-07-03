@@ -1,0 +1,295 @@
+<p-card>
+    <app-breadcrumb></app-breadcrumb>
+    <p-divider></p-divider>
+    <p-fluid>
+        <div class="flex flex-col gap-4" [formGroup]="searchForm">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <div class="flex flex-col gap-2">
+                    <label for="nom_label">Nom</label>
+                    <input pInputText id="nom_label" formControlName="nom" autocomplete="off" class="w-full"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="prenom">Prénom</label>
+                    <input pInputText id="prenom" autocomplete="off" class="w-full" formControlName="prenom"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="dateNaissance">Date de naissance</label>
+
+                    <p-datePicker formControlName="dateNaissance" id="dateNaissance" appendTo="body"
+                                  dateFormat="dd/mm/yy"></p-datePicker>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="lienFamille">Lien de famille</label>
+                    <input pInputText id="lienFamille" autocomplete="off" class="w-full"
+                           formControlName="lienFamille"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="telephone">N° de téléphone</label>
+                    <input pInputText id="telephone" autocomplete="off" class="w-full" formControlName="telephone"/>
+                </div>
+            </div>
+            @if (user?.hasPrivilege('Segur sante')) {
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <div class="flex flex-col gap-2">
+                        <label for="nom_naissance">Nom de naissance</label>
+                        <input pInputText id="nom_naissance" autocomplete="off" class="w-full"/>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="first_prenom_naissance">1 er Prénom de naissance</label>
+                        <input pInputText id="first_prenom_naissance" autocomplete="off" class="w-full"/>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label for="prenoms_naissance">Prénoms de naissance</label>
+                        <input pInputText id="prenoms_naissance" autocomplete="off" class="w-full"/>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="code_lieu_naissance">Code lieu de naissance (INSEE)</label>
+                        <input pInputText id="code_lieu_naissance" autocomplete="off" class="w-full"/>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label for="matricule_ins">Matricule INS</label>
+                        <input pInputText id="matricule_ins" autocomplete="off" class="w-full"/>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <div class="flex flex-col gap-2">
+                        <label for="cle_controle">Clé de contrôle</label>
+                        <input pInputText id="cle_controle" autocomplete="off" class="w-full"/>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="oid">OID</label>
+                        <input pInputText id="oid" autocomplete="off" class="w-full"/>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="sexe">Sexe</label>
+                        <p-select [options]="sexeTypes"
+                                  class="w-full"
+                                  appendTo="body"
+                                  placeholder="Sexe">
+                        </p-select>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="status_identite">Statut Idéntité</label>
+                        <p-select [options]="identityStatusTypes"
+                                  id="status_identite"
+                                  class="w-full"
+                                  appendTo="body"
+                                  placeholder="Statut Idéntité">
+                        </p-select>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="pieces_verifiees">Pièces vérifiées</label>
+                        <p-select [options]="pieceVerifieesTypes"
+                                  id="pieces_verifiees"
+                                  class="w-full"
+                                  appendTo="body"
+                                  placeholder="Pièces vérifiées">
+                        </p-select>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div class="flex justify-end mt-10 gap-2 table-container">
+            @if (user?.hasPrivilege('Segur sante')) {
+                <p-button label="Vérification INSI" icon="pi pi-check" raised [disabled]="true"></p-button>
+            }
+            @if (user?.hasPrivilege('RECHERCHE')) {
+                <p-button label="Recherche" icon="pi pi-search" raised [disabled]="!searchForm.valid"
+                          (click)="searchUsagers()" [loading]="searchButtonLoader"></p-button>
+            }
+            <p-button label="Nouvelle Clé" icon="pi pi-plus" outlined (click)="openCreateUsagerModal()"></p-button>
+        </div>
+    </p-fluid>
+    @if (usagerList.length) {
+        <p-divider></p-divider>
+        <div class="flex flex-column md:flex-row flex-wrap justify-start gap-3 w-full mt-3">
+            @if (user?.hasPrivilege('JOUR')) {
+                <p-button label="Hebergement" icon="pi pi-plus" raised
+                          class="flex-1 md:flex-none"
+                          (click)="redirectOnNewHebergement()">
+                </p-button>
+            }
+            @if (user?.hasPrivilege('NUIT')) {
+                <p-button label="Prestation" icon="pi pi-plus" raised
+                          class="flex-1 md:flex-none"
+                          (click)="redirectOnNewPrestation()">
+                </p-button>
+            }
+            <p-button label="Multi-Pointage" icon="pi pi-check" raised
+                      class="flex-1 md:flex-none"
+                      (click)="openMultiPointageModal()"></p-button>
+            <p-button label="Coordonnées" severity="warn" icon="pi pi-address-book" raised
+                      class="flex-1 md:flex-none"
+                      [loading]="contactDetailsLoading"
+                      (click)="loadHebergeAndShowCoordonnesModal()"></p-button>
+            @if (user?.hasPrivilege('NotesNote')) {
+                <p-button label="Notes" severity="warn" icon="pi pi-book" raised
+                          class="flex-1 md:flex-none"
+                          (click)="navigateToNotes()"></p-button>
+            }
+            @if (user?.hasPrivilege('NotesSP')) {
+                <p-button label="Notes SP" severity="danger" icon="pi pi-plus" raised
+                          class="flex-1 md:flex-none"
+                          [loading]="notesSpLoading"
+                          (click)="loadHebergeAndShowSpModal()"></p-button>
+            }
+            @if (user?.hasPrivilege('Documents serveur')) {
+                <p-button label="Documents" icon="pi pi-file" raised
+                          class="flex-1 md:flex-none"
+                          severity="success"
+                          (click)="navigateToDocuments()"></p-button>
+            }
+
+            <p-button label="Situation Budgétaire" icon="pi pi-euro" raised
+                      class="flex-1 md:flex-none"
+                      severity="warn"
+                      (click)="redirectOnSituationBudgetaire()"></p-button>
+
+            @if (user?.hasPrivilege('Editeur')) {
+                <p-button label="Imprimer" icon="pi pi-download" raised
+                          class="flex-1 md:flex-none"
+                          [loading]="printLoading"
+                          (click)="loadDocumentTypeAndPrintAction()"></p-button>
+            }
+
+            <p-button label="Email" icon="pi pi-send" raised
+                      class="flex-1 md:flex-none"
+                      [disabled]="true"></p-button>
+        </div>
+        <div class="responsive-container">
+            <div class="usager-container ">
+                <p-table
+                    #usagerTable
+                    [showGridlines]="true"
+                    [value]="usagerList"
+                    selectionMode="single"
+                    [(selection)]="selectedUsager"
+                    [loading]="searchButtonLoader"
+                    (onRowSelect)="onUsagerSelect($event)"
+                    dataKey="id"
+                    responsiveLayout="scroll">
+                    <ng-template #caption>
+                        <div class="flex justify-start flex-row gap-5 h-10 items-center">
+                            <span>Liste des demandeurs:</span>
+                            <span class="font-bold">{{ usagerList.length }}</span>
+                        </div>
+                    </ng-template>
+                    <ng-template #header>
+                        <tr>
+                            <th>Clé</th>
+                            <th>Lien de famille</th>
+                            <th>Sexe</th>
+                            <th>Nombre de fiches</th>
+                            <th></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template #body let-usager>
+                        <tr [pSelectableRow]="usager"
+                            [ngClass]="{ 'red-content': usager.noteSP, 'bold-content': usager.isFamChief}">
+                            <td>{{ usager.hb_cle }}</td>
+                            <td>{{ usager.clefamille }}</td>
+                            <td></td>
+                            <td>{{ usager.count_fiches }}</td>
+                            <td>
+                                <p-button
+                                    (click)="showUsagerFiches(usager)"
+                                    icon="pi pi-eye" severity="primary" outlined size="small"/>
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template #emptymessage>
+                        <tr>
+                            <td colspan="5">Aucun usager n'a été trouvé.</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+            <div class="fiche-container">
+                <p-table
+                    #ficheTable
+                    [showGridlines]="true"
+                    [value]="ficheList"
+                    [loading]="ficheTableLoading"
+                    [(selection)]="selectedFiches"
+                    selectionMode="multiple"
+                    dataKey="id"
+                    responsiveLayout="scroll">
+                    <ng-template #caption>
+                        <div class="flex justify-between items-center h-10">
+                            <div class="flex flex-row gap-5 items-center">
+                                <span>Liste des situations:</span>
+                                <span class="font-bold">{{ ficheList.length }}</span>
+                                <span class="ml-auto">(Limité à 400 lignes)</span>
+                            </div>
+                            @if (user?.hasPrivilege('suppression_fiches_usager')) {
+                                <p-button label="Supprimer" icon="pi pi-trash" severity="danger" outlined
+                                          [disabled]="!selectedFiches.length"
+                                          (onClick)="onConfirmDeleteSelectedFiches($event)"/>
+                            }
+
+                        </div>
+                    </ng-template>
+                    <ng-template #header let-fiche>
+                        <tr>
+                            <th></th>
+                            <th>Date</th>
+                            <th>Plateforme</th>
+                            <th>Action</th>
+                            <th>Sortie</th>
+                            <th>Réservation</th>
+                            <th>Approuvée</th>
+                            <th></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template #body let-fiche>
+                        <tr [pSelectableRow]="fiche" [pSelectableRowDisabled]="!fiche.checkbox">
+                            <td>
+                                @if (fiche.checkbox && user?.hasPrivilege('suppression_fiches_usager')) {
+                                    <p-tableCheckbox [value]="fiche"/>
+                                }
+
+                            </td>
+                            <td>
+                                @if (fiche.date) {
+                                    <span>{{ fiche.date | date:'dd/MM/yyyy' }}</span>
+                                }
+                            </td>
+                            <td>
+                                <div class="text-center">{{ fiche.plateforme }}</div>
+                            </td>
+                            <td>{{ fiche.prestation }}</td>
+                            <td>{{ fiche.Sortie }}</td>
+                            <td>{{ fiche.reservation }}</td>
+                            <td>
+                                <div class="text-center">
+                                    @if (fiche.c === 'Vrai') {
+                                        <span class="pi pi-check-circle" style="color: green"></span>
+                                    }
+                                </div>
+                            </td>
+                            <td>
+                                <p-button
+                                    icon="pi pi-eye" severity="primary" outlined size="small"
+                                    [disabled]="!fiche.edit"
+                                    [pTooltip]="fiche.edit ? 'Voir la fiche' : 'Vous ne disposez pas des privilèges d\'accès à cette fonction'"
+                                    [tooltipPosition]="'left'"
+                                    (click)="redirectOnFiche(fiche)"/>
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template #emptymessage>
+                        <tr>
+                            <td colspan="8">Aucune fiche pour cet usager n'a été trouvé.</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    }
+</p-card>
+
+<p-toast/>
+<p-confirmdialog/>

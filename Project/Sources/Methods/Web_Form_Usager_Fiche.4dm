@@ -46,7 +46,8 @@ End if
 
 Web_UTL_Add_CSS("fiche_usager")
 
-$HTML_CONTENT:=$HTML_CONTENT+"<form action=\"INT?action=usager_fiche_valider\" name=\"usager_form\" id=\"usager_form\" method=\"POST\" class=\"collectable form-horizontal well user_fiche\" enctype=\"multipart/form-data\" >"
+//$HTML_CONTENT:=$HTML_CONTENT+"<form action=\"INT?action=usager_fiche_valider\" name=\"usager_form\" id=\"usager_form\" method=\"POST\" class=\"collectable form-horizontal well user_fiche\" enctype=\"multipart/form-data\" >"
+$HTML_CONTENT:=$HTML_CONTENT+"<form action=\"home_fiche_valider\" name=\"usager_form\" id=\"usager_form\" method=\"POST\" class=\"collectable form-horizontal well user_fiche\" enctype=\"multipart/form-data\" >"
 $HTML_CONTENT:=$HTML_CONTENT+Web_Form_Usager_Fiche_Boutons("top")
 
 //=========================================================================//

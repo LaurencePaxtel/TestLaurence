@@ -23,7 +23,8 @@ If (Not:C34(w_connected))
 Else 
 	$o:=$o+1
 	$MENU_TOP{$o}{1}:="Usager"
-	$MENU_TOP{$o}{2}:="/INT?action=usager-list"
+	//$MENU_TOP{$o}{2}:="/INT?action=usager-list"
+	$MENU_TOP{$o}{2}:="/home"
 	$MENU_TOP{$o}{3}:="btn.png"
 	
 	// Modified by: Scanu Rémy - remy@connect-io.fr (23/12/2020)
@@ -156,7 +157,8 @@ Else
 	
 	$o:=$o+1
 	$MENU_TOP{$o}{1}:=Session:C1714.storage.intervenant.Login
-	$MENU_TOP{$o}{2}:="/INT?action=usager-list"
+	//$MENU_TOP{$o}{2}:="/INT?action=usager-list"
+	$MENU_TOP{$o}{2}:="/home"
 	$MENU_TOP{$o}{3}:="buttonChangerPlateforme fa fa-user"
 	
 	$s:=$s+1
@@ -173,7 +175,8 @@ Else
 	
 	$s:=$s+1
 	$SOUS_MENU_TOP{$s}{1}:="Réintialiser le mot de passe"
-	$SOUS_MENU_TOP{$s}{2}:="/INT?action=usager-list&login=true&resetPassword=Vrai"
+	//$SOUS_MENU_TOP{$s}{2}:="/INT?action=usager-list&login=true&resetPassword=Vrai"
+	$SOUS_MENU_TOP{$s}{2}:="/home?login=true&resetPassword=Vrai"
 	$SOUS_MENU_TOP{$s}{3}:=String:C10($o)
 	$SOUS_MENU_TOP{$s}{4}:="icon-refresh"
 End if 

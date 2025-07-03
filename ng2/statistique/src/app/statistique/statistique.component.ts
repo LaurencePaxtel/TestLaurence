@@ -24,6 +24,8 @@ import {ExcelService} from "./service/excel.service";
 import {Table} from "primeng/table";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
+//stat component
+
 @Component({
   selector: 'statistique',
   templateUrl: './statistique.component.html',

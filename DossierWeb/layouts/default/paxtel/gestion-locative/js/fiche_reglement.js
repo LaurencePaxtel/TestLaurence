@@ -722,41 +722,48 @@ $(document).ready(function(){
 			var html = "";
 			
 			html = '\
-			<div id="reglement" style="padding: 40px 40px 20px 40px; width: 100%; font-family: sans-serif; font-size: 14px; box-sizing: border-box;">\
-   				<div style="display: flex; justify-content: space-between;">\
-       				<div style="text-align: left;">\
-            			<img src="/'+invoice["variables"]["strc_logo"]+'" style="height: 70px; max-width: 180px; margin-bottom: 10px;"><br/>\
-            			<div>\
-                			<b style="font-size: 1.2em;">'+invoice["variables"]["txt_strc_nom"]+'</b><br/>\
-                			'+invoice["variables"]["txt_strc_nom_suite"]+'<br/>\
-                			'+invoice["variables"]["txt_strc_adresse"]+'<br/>\
-                			Tel : '+invoice["variables"]["txt_strc_telephone"]+'<br/>\
-                			Email : '+invoice["variables"]["txt_strc_email"]+'\
-            			</div>\
-        			</div>\
-        			<div style="text-align: right;">\
-            			<span style="font-size: 1em;">Locataire</span><br/>\
-            			<b style="font-size: 1.2em;">'+invoice["variables"]["txt_locataire_nom"]+'</b>\
-        			</div>\
-    			</div>\
-    			<div style="text-align: center; font-size: 1.5em; font-weight: bold; margin: 40px 0 30px 0;">Reçu de règlement</div>\
-    			<div style="padding: 25px; background-color: #f9f9f9; border-radius: 6px;min-height: 400px">\
-        			<p>Reçu la somme de : <b>'+invoice["variables"]["txt_reg_montant"]+'</b></p>\
-        			<p>le : '+invoice["variables"]["txt_reg_date"]+'</p>\
-        			<p>pour loyer et accessoires des locaux sis à :</p>\
-        			<p>'+invoice["variables"]["txt_centre_adresse1"]+'<br/>'+invoice["variables"]["txt_centre_adresse2"]+'<br/>'+invoice["variables"]["txt_centre_adresse3"]+'<br/>'+invoice["variables"]["txt_centre_cp_ville"]+'</p>\
-        			<p>Fait à '+invoice["variables"]["strc_ville"]+' le '+invoice["variables"]["txt_date_jour"]+'</p>\
-        			<p style="margin-top: 80px;"><b>Signature du bailleur</b></div>\
-    			</div>\
-			</div>\
-			<div style="text-align: center; font-size: 12px; color: #555; padding: 20px 40px 0px 40px;">\
-				'+invoice["variables"]["txt_titre_ligne_8"]+'<br/>\
-    			'+invoice["variables"]["txt_titre_ligne_9"]+'<br/>\
-    			'+invoice["variables"]["txt_titre_ligne_10"]+'\
-			</div>\
+				<div id="reglement" style="padding: 150px 25px 25px 25px;width:100%;box-sizing: border-box;position: relative; font-size: 14px;float: left;font-family: sans-serif;">\
+					<img src="/'+invoice["variables"]["strc_logo"]+'" style="position: absolute;top: 20px;left: 20px; heigth: 150px;">\
+					<div style="width: 55%;float: left;">\
+						<b style="font-size: 1.3em;">'+invoice["variables"]["txt_strc_nom"]+'</b><br/>\
+						'+invoice["variables"]["txt_strc_nom_suite"]+'<br/>\
+						'+invoice["variables"]["txt_strc_adresse"]+'<br/>\
+						Tel : '+invoice["variables"]["txt_strc_telephone"]+'<br/>\
+						Email : '+invoice["variables"]["txt_strc_email"]+'\
+					</div>\
+					<div style="width: 40%;float: right;text-align: left;">\
+						<span style="font-size: 1.3em; 100%;">Locataire</span><br/>\
+						<b style="font-size: 1.3em;">'+invoice["variables"]["txt_locataire_nom"]+'</b>\
+					</div>\
+					<div style="width: 100%;float: left;font-size: 1.3em;text-align:center;font-weight:bold; margin-top: 20px; margin-bottom: 50px;">Reçu de règlement<br/></div>\
+					<div style="width: 100%;float: center;">\
+						<table style="width: 100%;border: solid 1px black;border-collapse: collapse;font-size: 14px;">\
+							<tbody>\
+								<tr>\
+									<td style="padding: 10px;width: 100%;">\
+										Reçu la somme de : '+invoice["variables"]["txt_reg_montant"]+'<br/><br/>\
+										le : '+invoice["variables"]["txt_reg_date"]+'<br/><br/><br/><br/>\
+										pour loyer et accessoires des locaux sis à :<br/>\
+										'+invoice["variables"]["txt_centre_adresse1"]+'<br/>\
+										'+invoice["variables"]["txt_centre_adresse2"]+'<br/>\
+										'+invoice["variables"]["txt_centre_adresse3"]+'<br/>\
+										'+invoice["variables"]["txt_centre_cp_ville"]+'<br/><br/>\
+										Fait à '+invoice["variables"]["strc_ville"]+' le '+invoice["variables"]["txt_date_jour"]+'<br/><br/>\
+										<b><u>Signature du bailleur</u></b><br/><br/><br/><br/><br/><br/><br/><br/>\
+									</td>\
+								</tr>\
+							</tbody>\
+						</table>\
+					</div>\
+				</div>\
+				<div style="box-sizing: border-box;padding: 0px 25px;width: 100%;float: left;text-align: center;position: absolute; bottom: 0px; left: 0;font-size: 12px;font-family: sans-serif;">\
+					<hr>\
+					'+invoice["variables"]["txt_titre_ligne_8"]+'<br/>\
+					'+invoice["variables"]["txt_titre_ligne_9"]+'<br/>\
+					'+invoice["variables"]["txt_titre_ligne_10"]+'\
+				</div>\
 			';
 
-			
 			printDiv(html, invoice["variables"]["txt_piece_titre"] + " " + invoice["variables"]["txt_locataire_nom"]);
 		});
 

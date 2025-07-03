@@ -1,0 +1,58 @@
+<form [formGroup]="form">
+    <p-fluid>
+        <div class="flex">
+            <div class="flex flex-col gap-2 w-full">
+                <div class="flex flex-col gap-2 md:flex-row md:gap-6">
+                    <div class="flex flex-col gap-2 w-full md:w-auto">
+                        <label for="date">Date création des fiches</label>
+                        <p-datepicker appendTo="body"
+                                      id="date"
+                                      dateFormat="dd/mm/yy"
+                                      formControlName="date"
+                                      [showIcon]="true"
+                                      [showButtonBar]="true"
+                                      [style]="{'width': '200px'}">
+                        </p-datepicker>
+                    </div>
+
+                    <div class="flex flex-col gap-2 w-full md:w-auto">
+                        <label for="hour">Heure</label>
+                        <p-datepicker formControlName="hour" [timeOnly]="true">
+                        </p-datepicker>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2 w-full">
+                    <label for="dispositif">Type de note</label>
+                    <div class="w-full md:w-auto">
+                        <p-select [options]="noteTypes"
+                                  id="dispositif"
+                                  formControlName="type"
+                                  optionLabel="label"
+                                  optionValue="value"
+                                  appendTo="body"
+                                  class="w-full"
+                                  placeholder="Selectionnez un type de note" />
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2 w-full">
+                    <label for="content">Note</label>
+                    <div class="w-full md:w-auto">
+                        <textarea id="content" rows="15"
+                                  style="resize: none"
+                                  [autoResize]="true"
+                                  pTextarea formControlName="content" class="w-full"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </p-fluid>
+    <div class="flex justify-end gap-2 mt-5">
+        <p-button label="Annuler" severity="secondary"  (click)="cancel()" />
+        <p-button label="Sauvegarder" severity="primary" (click)="save()"
+                  [loading]="saveLoading"
+                  [disabled]="!form.valid"
+        />
+    </div>
+</form>

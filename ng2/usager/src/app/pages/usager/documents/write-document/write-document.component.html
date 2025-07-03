@@ -1,0 +1,110 @@
+<form [formGroup]="form">
+    <p-fluid>
+        <div class="flex flex-col gap-4">
+            <!-- Première ligne - 3 champs -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="flex flex-col gap-2">
+                    <label for="title">Titre <span class="text-red-500">*</span></label>
+                    <input type="text"
+                           id="title"
+                           formControlName="title"
+                           pInputText
+                           class="w-full"
+                           placeholder="Titre" />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="name">Nom du document <span class="text-red-500">*</span></label>
+                    <input type="text"
+                           id="name"
+                           formControlName="name"
+                           pInputText
+                           class="w-full"
+                           placeholder="Nom du document" />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="types">Type de note <span class="text-red-500">*</span></label>
+                    <p-select [options]="documentTypes"
+                              id="types"
+                              formControlName="type"
+                              appendTo="body"
+                              class="w-full"
+                              placeholder="Type de document" />
+                </div>
+            </div>
+
+            <!-- Deuxième ligne - 3 champs -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="flex flex-col gap-2">
+                    <label for="date">Crée le</label>
+                    <p-datepicker appendTo="body"
+                                  id="date"
+                                  dateFormat="dd/mm/yy"
+                                  formControlName="date"
+                                  [showIcon]="true"
+                                  [showButtonBar]="true">
+                    </p-datepicker>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="extension">Format</label>
+                    <input type="text"
+                           id="format"
+                           formControlName="extension"
+                           pInputText
+                           class="w-full"
+                           placeholder="Format" />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="version">Version</label>
+                    <input type="number"
+                           id="format"
+                           formControlName="version"
+                           pInputText
+                           class="w-full"
+                           placeholder="Version" />
+                </div>
+            </div>
+
+            <!-- Champ note - pleine largeur -->
+            <div class="flex flex-col gap-2">
+                <label for="notes">Notes</label>
+                <textarea id="notes"
+                          rows="15"
+                          style="resize: none"
+                          [autoResize]="true"
+                          pTextarea
+                          formControlName="notes"
+                          class="w-full">
+                </textarea>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label for="file">Document <span class="text-red-500">*</span></label>
+                <p-fileupload id="file" #file
+                              [customUpload]="true"
+                              [files]="uploadedFiles"
+                              mode="basic"
+                              chooseLabel="Choisir un fichier"
+                              chooseIcon="pi pi-upload"
+                              [showCancelButton]="true"
+                              cancelLabel="Supprimer"
+                              (onSelect)="onFileSelect($event)"
+                              [invalidFileSizeMessageSummary]="'Fichier trop volumineux'"
+                              [invalidFileSizeMessageDetail]="'Taille maximale autorisée: 20 Mo'"
+                              maxFileSize="20971520" />
+            </div>
+        </div>
+    </p-fluid>
+
+    <div class="flex justify-end gap-2 mt-5">
+        <p-button label="Annuler" severity="secondary" (click)="cancel()" />
+        <p-button label="Sauvegarder"
+                  severity="primary"
+                  (click)="save()"
+                  [loading]="saveLoading"
+                  [disabled]="!form.valid || !selectedFile" />
+    </div>
+</form>

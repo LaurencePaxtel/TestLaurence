@@ -1,0 +1,66 @@
+<form [formGroup]="form">
+    <p-fluid>
+        <div class="flex flex-col-2 gap-4 mb-5">
+            <p-button label="INCONNU"
+                      severity="primary"
+                      (click)="generateUnknowUsager()"
+                        [loading]="unknownUsagerLoading"
+            />
+        </div>
+        <div class="flex flex-col gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="flex flex-col gap-2">
+                    <label for="name">Nom <span class="text-red-500">*</span></label>
+                    <input type="text"
+                           id="name"
+                           formControlName="name"
+                           pInputText
+                           class="w-full"
+                           placeholder="Nom" />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="firstname">Prénom <span class="text-red-500">*</span></label>
+                    <input type="text"
+                           id="firstname"
+                           formControlName="firstname"
+                           pInputText
+                           class="w-full"
+                           placeholder="Prénom" />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="birthDate">Date de naissance <span class="text-red-500">*</span></label>
+                    <p-datepicker appendTo="body"
+                                  id="birthDate"
+                                  dateFormat="dd/mm/yy"
+                                  formControlName="birthDate"
+                                  [showIcon]="true"
+                                  [showButtonBar]="true">
+                    </p-datepicker>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="flex flex-col gap-2">
+                    <label for="phone">N° de téléphone</label>
+                    <input type="text"
+                           id="phone"
+                           formControlName="phone"
+                           pInputText
+                           class="w-full"
+                           placeholder="N° de téléphone" />
+                </div>
+            </div>
+        </div>
+    </p-fluid>
+
+    <div class="flex justify-end gap-2 mt-5">
+        <p-button label="Annuler" severity="secondary" (click)="cancel()" />
+        <p-button label="Sauvegarder"
+                  severity="primary"
+                  (click)="save()"
+                  [loading]="saveLoading"
+                  [disabled]="!form.valid" />
+    </div>
+</form>

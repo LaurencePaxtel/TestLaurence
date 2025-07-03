@@ -1,0 +1,11 @@
+.category-multiselect {
+    display: flex;
+    align-items: center;
+    padding: var(--p-multiselect-list-header-padding);
+}
+
+//reactivate if laurence do not like scroll tabs
+::ng-deep .p-tablist-tab-list{
+    flex-wrap: wrap !important;
+    overflow: visible !important;
+}

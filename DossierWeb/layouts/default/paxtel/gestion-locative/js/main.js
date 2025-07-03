@@ -52,13 +52,13 @@ $(document).ready(function(){
    $('#btn_sb_gi_locataire_a').click(function (e) {
       e.preventDefault();
       
-      $(location).attr('href', '/GL?action=usager-list&sbaction=new');
+      $(location).attr('href', '/GL?home&sbaction=new');
    });
 
    $('#btn_sb_gi_locataire_l').click(function (e) {
       e.preventDefault();
 
-      $(location).attr('href', '/GL?action=usager-list');
+      $(location).attr('href', '/GL?home');
    });
 
    $('#btn_sb_gi_equipement_a').click(function (e) {

@@ -180,7 +180,13 @@
 			<field_extra position="39"/>
 		</field>
 		<field name="HG_Genre" uuid="9002AA5FC005F243A44219B011740870" type="1" never_null="true" id="39">
-			<field_extra position="40"/>
+			<field_extra position="40">
+				<comment format="rtf"><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}{\f1\fnil Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\tx720\cf1\protect\f0\fs17 Sexe de la personne\f1}]]></comment>
+				<comment format="text">Sexe de la personne</comment>
+			</field_extra>
 		</field>
 		<field name="HG_Actions" uuid="2A247C53B49DFB4299DD6E27FB9D1F71" type="10" never_null="true" id="40">
 			<field_extra position="41"/>
@@ -2840,7 +2846,15 @@
 			</field_extra>
 		</field>
 		<field name="Ref_Structure" uuid="DB06399993E69846935E33C080A587A1" type="10" limiting_length="3" not_null="true" never_null="true" id="33" hide_in_REST="true"/>
-		<field name="AD_ID_Origine" uuid="5E1018355A43FC4CAAC9A67823B4C1FF" type="4" never_null="true" id="34"/>
+		<field name="AD_ID_Origine" uuid="5E1018355A43FC4CAAC9A67823B4C1FF" type="4" never_null="true" id="34">
+			<field_extra>
+				<comment format="rtf"><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}{\f1\fnil Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\tx720\cf1\protect\f0\fs17 ID de heberg\f1\'e9}]]></comment>
+				<comment format="text">ID de hebergé</comment>
+			</field_extra>
+		</field>
 		<field name="AD_ID_Table_Origine" uuid="B31545491928C242AD7E3488D316F68D" type="4" never_null="true" id="35"/>
 		<field name="AD_Type_Adresse" uuid="3D0E3B2C501ADB4395DD47C08F1775DA" type="10" limiting_length="255" never_null="true" id="36"/>
 		<primary_key field_name="ID" field_uuid="F31AB21224B044468DD33B1F26A2F5FA"/>
@@ -5191,22 +5205,39 @@ Si c'est "bloqué" ne pas notifier l'entreprise]]></comment>
 			</editor_table_info>
 		</table_extra>
 	</table>
-	<table name="HebergementStatistiqueModele" uuid="EBBA79F008F79142BF1CEBED83B3F97E" id="141">
+	<table name="HebergementRechercheModele" uuid="EBBA79F008F79142BF1CEBED83B3F97E" id="141">
 		<field name="ID" uuid="276E81BC48421E49A96081DDEACFA1E1" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
 		<field name="Ref_Structure" uuid="8B28D069C30B2A429EB7490A25A0AD16" type="10" limiting_length="255" never_null="true" id="2"/>
 		<field name="affichageNom" uuid="558E5D877FD9564886174A35610616B4" type="10" limiting_length="255" never_null="true" id="3"/>
 		<field name="filtreRecherche" uuid="D3B810C8351A114E8B389379B7B99467" type="21" blob_switch_size="2147483647" never_null="true" id="4"/>
-		<field name="dataRetour" uuid="415D33CD0323744B8F694D9E4D21D24D" type="10" never_null="true" id="5"/>
+		<field name="dataRetour" uuid="415D33CD0323744B8F694D9E4D21D24D" type="10" never_null="true" id="5">
+			<field_extra>
+				<comment format="rtf"><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}{\f1\fnil Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1
+\pard\tx720\cf1\protect\f0\fs17 Les colonnes que l'on souhaite retourner\f1}]]></comment>
+				<comment format="text"><![CDATA[Les colonnes que l'on souhaite retourner]]></comment>
+			</field_extra>
+		</field>
 		<field name="typeGraph" uuid="7BA0AF2C2A06D04FA84E9B58929B96AF" type="10" limiting_length="255" never_null="true" id="6"/>
 		<field name="statistiqueComptage" uuid="BE88CACC037EA843B9F7060F81E216D3" type="10" limiting_length="255" never_null="true" id="7"/>
 		<field name="statistiqueType" uuid="FC11653A9637FE4D8204820EE2E2DC89" type="10" limiting_length="255" never_null="true" id="8"/>
 		<field name="statistiqueFicheUnique" uuid="09D87734EFBCAE4AB35397B8F571DB6C" type="1" never_null="true" id="9"/>
 		<field name="statistiqueFicheEntree" uuid="C3E00F4A2B3B704C9144C6D1B5C92930" type="1" never_null="true" id="10"/>
+		<field name="typeRecherche" uuid="0C7132A2665E2940A4F9A2069EB1BC04" type="10" limiting_length="255" never_null="true" id="11">
+			<field_extra>
+				<comment format="rtf"><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}{\f1\fnil Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1
+\pard\tx720\cf1\protect\f0\fs17 Permet de savoir si la recherche est destin\f1\'e9\f0  au stat ou autre chose.\f1}]]></comment>
+				<comment format="text">Permet de savoir si la recherche est destiné au stat ou autre chose.</comment>
+			</field_extra>
+		</field>
 		<primary_key field_name="ID" field_uuid="276E81BC48421E49A96081DDEACFA1E1"/>
 		<table_extra>
-			<editor_table_info displayable_fields_count="10">
+			<editor_table_info displayable_fields_count="11">
 				<color red="255" green="255" blue="255" alpha="0"/>
-				<coordinates left="3832" top="342" width="204" height="251.33203125"/>
+				<coordinates left="3830" top="357" width="204" height="275.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -7251,7 +7282,7 @@ Si c'est "bloqué" ne pas notifier l'entreprise]]></comment>
 	</index>
 	<index kind="regular" unique_keys="true" uuid="271D6761C3A04A4F9C4273BDC86D9DA2" type="7">
 		<field_ref uuid="276E81BC48421E49A96081DDEACFA1E1" name="ID">
-			<table_ref uuid="EBBA79F008F79142BF1CEBED83B3F97E" name="HebergementStatistiqueModele"/>
+			<table_ref uuid="EBBA79F008F79142BF1CEBED83B3F97E" name="HebergementRechercheModele"/>
 		</field_ref>
 	</index>
 	<index kind="regular" unique_keys="true" uuid="27730832AF7A944CBB1BD11221ED0E3E" type="7">
@@ -8771,7 +8802,7 @@ Si c'est "bloqué" ne pas notifier l'entreprise]]></comment>
 	</index>
 	<index kind="regular" uuid="A66EB6A156731349AACC56B329929C02" type="1">
 		<field_ref uuid="558E5D877FD9564886174A35610616B4" name="affichageNom">
-			<table_ref uuid="EBBA79F008F79142BF1CEBED83B3F97E" name="HebergementStatistiqueModele"/>
+			<table_ref uuid="EBBA79F008F79142BF1CEBED83B3F97E" name="HebergementRechercheModele"/>
 		</field_ref>
 	</index>
 	<index kind="regular" uuid="A6A45A0545702A4A85BD29F6826CEBF8" type="3">
@@ -9371,7 +9402,7 @@ Si c'est "bloqué" ne pas notifier l'entreprise]]></comment>
 	</index>
 	<index kind="regular" uuid="DD38F42C3896F243B78B9E81BA71D7AE" type="3">
 		<field_ref uuid="8B28D069C30B2A429EB7490A25A0AD16" name="Ref_Structure">
-			<table_ref uuid="EBBA79F008F79142BF1CEBED83B3F97E" name="HebergementStatistiqueModele"/>
+			<table_ref uuid="EBBA79F008F79142BF1CEBED83B3F97E" name="HebergementRechercheModele"/>
 		</field_ref>
 	</index>
 	<index kind="regular" uuid="DD8A46C68141994482C2F88AB1B23F2E" type="7">
