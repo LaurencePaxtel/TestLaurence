@@ -42,10 +42,13 @@ If ($intervenant_e#Null:C1517)
 	
 	// Modifié par : Scanu Rémy (17/07/2023)
 	// Variable qui liste toutes les plateformes auxquelles à droit l'utilisateur
-	userPlateForme_c:=Split string:C1554($intervenant_e.IN_Notes; ";"; sk ignorer chaîne vide:K86:1)
-	
-	userPlateForme_c.push(va_UserPlateforme)
-	userPlateForme_c:=userPlateForme_c.distinct()
+       userPlateForme_c:=Split string:C1554($intervenant_e.IN_Notes; ";"; sk ignorer chaîne vide:K86:1)
+
+       userPlateForme_c.push(va_UserPlateforme)
+       userPlateForme_c:=userPlateForme_c.distinct()
+       // expose the list of available platforms
+       w_visiteur.Plateformes:=userPlateForme_c
+       Session:C1714.storage.intervenant.Plateformes:=userPlateForme_c
 	
 	// Modifié par : Scanu Rémy (22/09/2023)
 	If (String:C10(w_visiteur.login)="true")  // L'utilisateur vient de la page de connexion
