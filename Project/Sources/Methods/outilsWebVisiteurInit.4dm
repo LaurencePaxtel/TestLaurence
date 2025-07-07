@@ -47,6 +47,12 @@ If ($intervenant_e#Null:C1517)
 	userPlateForme_c.push(va_UserPlateforme)
 	userPlateForme_c:=userPlateForme_c.distinct()
 	
+	
+	// Conserve la liste des plateformes dans la session pour l'API
+	Use (Session:C1714.storage.intervenant)
+		Session:C1714.storage.intervenant.Plateformes:=userPlateForme_c
+	End use 
+	
 	// Modifié par : Scanu Rémy (22/09/2023)
 	If (String:C10(w_visiteur.login)="true")  // L'utilisateur vient de la page de connexion
 		$userPreferences_t:=Document to text:C1236(w_visiteur.customPath; "UTF-8"; Document inchangé:K24:18)
