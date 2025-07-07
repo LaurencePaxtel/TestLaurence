@@ -59,7 +59,7 @@ MultiSoc_Filter(->[LesCentres:9])
 
 ORDER BY:C49([LesCentres:9]; [LesCentres:9]LC_Nom:4; >)
 
-$vl_Fenetre:=i_FenêtreNo(1000; 700; 4; "Liste des centres"; 1; "Quit_Simple")
+$vl_Fenetre:=i_FenêtreNo(1000; 700; 8; "Liste des centres"; 1; "Quit_Simple")
 
 If (User in group:C338(Current user:C182; <>Groupe_DEVELOP) | User in group:C338(Current user:C182; <>Groupe_ADMIN) | User in group:C338(Current user:C182; <>Groupe_CentreSaisie))
 	READ WRITE:C146([LesCentres:9])
