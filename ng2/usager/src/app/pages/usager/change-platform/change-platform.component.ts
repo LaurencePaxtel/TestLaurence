@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {DynamicDialogConfig, DynamicDialogRef} from 'primeng/dynamicdialog';
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
@@ -7,7 +7,7 @@ import {UsagerGateway} from '../../../gateway/usager.gateway';
 import {UserService} from "../../../service/user.service";
 import {UserConnected} from "../../../model/user-connected.model";
 import {TableModule} from "primeng/table";
-import {tap} from "rxjs";
+import {tap, Subscription} from "rxjs";
 
 @Component({
     selector: 'app-change-platform',
@@ -16,13 +16,15 @@ import {tap} from "rxjs";
     templateUrl: './change-platform.component.html',
     styleUrl: './change-platform.component.scss'
 })
-export class ChangePlatformComponent implements OnInit {
+export class ChangePlatformComponent implements OnInit, OnDestroy {
     saveLoading = false;
     user?: UserConnected | null
 
     plateforms : any[] = [];
 
     selectedPlateform?: any;
+
+    private userSub?: Subscription;
 
     constructor(
         public ref: DynamicDialogRef,
@@ -41,6 +43,15 @@ export class ChangePlatformComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.userSub = this.userService.currentUser$.subscribe((user) => {
+            this.user = user;
+            this.plateforms = this.buildPlatforms();
+            this.selectedPlateform = this.plateforms.find(p => p.numero === this.user?.plateforme);
+        });
+    }
+
+    ngOnDestroy(): void {
+        this.userSub?.unsubscribe();
     }
 
     cancel() {
