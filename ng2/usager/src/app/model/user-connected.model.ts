@@ -7,6 +7,11 @@ interface UserJSON {
     Plateforme: string;
     Privileges: Privilege[];
     cookie: string;
+    Nom_PieceChamp1: string;
+    Nom_PieceChamp2: string;
+    Nom_PieceChamp3: string;
+    Nom_PieceChamp4: string;
+    Plateformes: string[];
 }
 
 interface Privilege {
@@ -22,7 +27,12 @@ export class UserConnected {
         readonly nomStructure: string | undefined,
         readonly plateforme: string | undefined,
         readonly privileges: Privilege[] | undefined,
-        readonly cookie: string | undefined
+        readonly cookie: string | undefined,
+        readonly pieceChamps1: string | undefined,
+        readonly pieceChamps2: string | undefined,
+        readonly pieceChamps3: string | undefined,
+        readonly pieceChamps4: string | undefined,
+        readonly plateformes: string[] | undefined,
     ) {}
 
     static from(values: Partial<UserJSON>): UserConnected {
@@ -34,7 +44,12 @@ export class UserConnected {
             values.Nom_Structure,
             values.Plateforme,
             values.Privileges,
-            values.cookie
+            values.cookie,
+            values.Nom_PieceChamp1,
+            values.Nom_PieceChamp2,
+            values.Nom_PieceChamp3,
+            values.Nom_PieceChamp4,
+            values.Plateformes
         );
     }
 

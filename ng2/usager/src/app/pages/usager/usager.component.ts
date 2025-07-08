@@ -98,8 +98,8 @@ export class UsagerComponent implements OnInit {
     ) {
         this.user = this.userService.currentUser;
         this.breadcrumbService.setBreadcrumb([
-            { route: '/usager', icon: 'pi pi-home' },
-            { label: 'Liste des usagers', route: '/usager' }
+            { route: '/home', icon: 'pi pi-home' },
+            { label: 'Liste des usagers', route: '/home' }
         ]);
 
         this.initForm();

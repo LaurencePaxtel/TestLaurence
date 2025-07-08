@@ -8,9 +8,6 @@ import {LayoutService} from '../service/layout.service';
 import {MenubarModule} from "primeng/menubar";
 import {UserConnected} from "../../model/user-connected.model";
 import {UserService} from "../../service/user.service";
-import {Usager} from "../../model/usager.model";
-import {PrintDocumentType} from "../../model/document-type.model";
-import {PrintDocumentComponent} from "../../pages/usager/print-document/print-document.component";
 import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
 import {ToastService} from "../../service/toast.service";
 import {ChangePlatformComponent} from "../../pages/usager/change-platform/change-platform.component";
@@ -188,18 +185,21 @@ export class AppTopbar {
                     {
                         label: 'Modifier la plateforme',
                         command: () => this.onUserMenuClick(),
+                        icon: 'pi pi-fw pi-pencil'
+                    },
+                    {
+                        label: 'Réintialiser le mot de passe',
+                        target: '_self',
+                        url: '/INT?action=usager-list&login=true&resetPassword=Vrai',
+                        icon: 'pi pi-fw pi-sync'
                     },
                     {
                         label: 'Deconnexion',
                         target: '_self',
                         url: '/deconnexion',
-                        icon: 'pi pi-fw pi-sign-out'
+                        icon: 'pi pi-fw pi-sign-out',
+                        styleClass: 'logout-menu-item'
                     },
-                    {
-                        label: 'Réintialiser le mot de passe',
-                        target: '_self',
-                        url: '/INT?action=usager-list&login=true&resetPassword=Vrai'
-                    }
                 ]
             },
         ]

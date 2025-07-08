@@ -78,23 +78,23 @@ If (w_post)
 					Session:C1714.storage.intervenant.Nom_PieceChamp2:=ds:C1482.SOciete.query("Ref_Structure = :1"; $intervenant_e.Ref_Structure).first().SO_PieceChamp2
 					Session:C1714.storage.intervenant.Nom_PieceChamp3:=ds:C1482.SOciete.query("Ref_Structure = :1"; $intervenant_e.Ref_Structure).first().SO_PieceChamp3
 					Session:C1714.storage.intervenant.Nom_PieceChamp4:=ds:C1482.SOciete.query("Ref_Structure = :1"; $intervenant_e.Ref_Structure).first().SO_PieceChamp4
-					Session:C1714.storage.societe.SO_PieceChamp1:=$societe_e.SO_PieceChamp1
 					Session:C1714.storage.intervenant.Plateforme:=$intervenant_e.IN_Plateforme
 					Session:C1714.storage.intervenant.Privileges:=New shared collection:C1527()
-					Session:C1714.storage.intervenant.Plateformes:=New shared collection:C1527()
+					
 					// Liste des plateformes disponibles pour l'utilisateur
-					Session:C1714.storage.intervenant.Plateformes:=Split string:C1554($intervenant_e.IN_Notes; ";"; sk ignorer chaîne vide:K86:1)
-					//Session.storage.intervenant.Plateformes.push($intervenant_e.IN_Plateforme)
-					//Session.storage.intervenant.Plateformes:=Session.storage.intervenant.Plateformes.distinct()
+					// Conserve la liste des plateformes dans la session pour l'API 
+					$plateformes_c:=Split string:C1554($intervenant_e.IN_Notes; ";"; sk ignorer chaîne vide:K86:1)
+					$plateformes_c.push($intervenant_e.IN_Plateforme)
+					$plateformes_c:=$plateformes_c.distinct()
+					Session:C1714.storage.intervenant.Plateformes:=New shared collection:C1527()
+					Session:C1714.storage.intervenant.Plateformes:=$plateformes_c.copy(ck shared:K85:29; Session:C1714.storage.intervenant.Plateformes)
 					
 				End use 
+				
 				Use (Session:C1714.storage.intervenant.Privileges)
 					Session:C1714.storage.intervenant.Privileges:=$intervenant_e.AllIntervenantPrivilege.OnePrivilege.toCollection("nom").copy(ck shared:K85:29; Session:C1714.storage.intervenant.Privileges)
 				End use 
 				
-				Use (Session:C1714.storage.intervenant.Plateformes)
-					Session:C1714.storage.intervenant.Plateformes:=Split string:C1554($intervenant_e.IN_Notes; ";"; sk ignorer chaîne vide:K86:1)
-				End use 
 				
 				Use (Session:C1714.storage)
 					Session:C1714.storage.enumeration:=Null:C1517

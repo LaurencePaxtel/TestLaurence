@@ -4,6 +4,19 @@
 @use './assets/layout/layout.scss';
 @use 'primeicons/primeicons.css';
 
+::ng-deep .logout-menu-item {
+
+    .p-menubar-item-content {
+        .p-menubar-item-link {
+            color: red !important;
+        }
+    }
+
+    a, span, .p-menubar-item-link {
+        color: red !important;
+    }
+}
+
 .p-menubar {
     border: none !important;
     background: none !important;
@@ -11,7 +24,8 @@
     .p-menubar-item-link {
         color: white !important;
         font-weight: bold !important;
-        font-size: 12px !important;
+        font-size: 11px !important;
+
         .p-menubar-item-label {
             font-family: sans-serif;
             letter-spacing: 0.3px;
@@ -21,6 +35,7 @@
         .p-menubar-item-icon {
             color: white !important;
             font-weight: bold !important;
+            font-size: 11px !important;
         }
     }
 
@@ -29,10 +44,21 @@
     }
 
     .p-menubar-submenu {
+        .logout-menu-item {
+            .p-menubar-item-link
+            {
+                .p-menubar-item-icon {
+                    color: red !important;
+                }
+                color: red !important;
+            }
+        }
+
         .p-menubar-item-content {
             a {
                 color: black !important;
             }
+
             .p-menubar-item-icon {
                 color: black !important;
             }
@@ -56,6 +82,7 @@
 .p-menubar-button {
     display: none !important;
 }
+
 @media screen and (max-width: 960px) {
     .p-menubar .p-menubar-item-link .p-menubar-item-icon {
         color: black !important;

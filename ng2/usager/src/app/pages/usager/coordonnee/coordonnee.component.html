@@ -77,19 +77,19 @@
                     <div class="flex">
                         <div class="flex flex-col gap-6 w-full">
                             <div class="flex flex-col w-full gap-2">
-                                <label for="cni">CNI</label>
+                                <label for="cni">{{ user?.pieceChamps1 }}</label>
                                 <input pInputText id="cni" type="text" formControlName="cni" />
                             </div>
                             <div class="flex flex-col w-full gap-2">
-                                <label for="numeroSecu">N° de sécurité sociale</label>
+                                <label for="numeroSecu">{{ user?.pieceChamps2 }}</label>
                                 <input pInputText id="numeroSecu" type="text" formControlName="numeroSecu" />
                             </div>
                             <div class="flex flex-col w-full gap-2">
-                                <label for="personneConfiance">Personne de confiance</label>
+                                <label for="personneConfiance">{{ user?.pieceChamps3 }}</label>
                                 <input pInputText id="personneConfiance" type="text" formControlName="personneConfiance" />
                             </div>
                             <div class="flex flex-col w-full gap-2">
-                                <label for="piecePasseport">Partenaire</label>
+                                <label for="piecePasseport">{{ user?.pieceChamps4 }}</label>
                                 <input pInputText id="piecePasseport" type="text" formControlName="piecePasseport" />
                             </div>
                         </div>

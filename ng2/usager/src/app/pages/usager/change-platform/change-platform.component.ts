@@ -20,15 +20,7 @@ export class ChangePlatformComponent implements OnInit {
     saveLoading = false;
     user?: UserConnected | null
 
-    plateforms = [
-        {numero: '@'},
-        {numero: '00'},
-        {numero: '02'},
-        {numero: '08'},
-        {numero: '15'},
-        {numero: '24'},
-        {numero: '50'}
-    ];
+    plateforms : any[] = [];
 
     selectedPlateform?: any;
 
@@ -40,14 +32,15 @@ export class ChangePlatformComponent implements OnInit {
         private readonly userService: UserService
     ) {
         this.user = this.userService.currentUser;
-    }
-
-    ngOnInit(): void {
+        this.plateforms = this.buildPlatforms();
         for (const platform of this.plateforms) {
             if (platform.numero && platform.numero === this.user?.plateforme) {
                 this.selectedPlateform = platform;
             }
         }
+    }
+
+    ngOnInit(): void {
     }
 
     cancel() {
@@ -80,5 +73,18 @@ export class ChangePlatformComponent implements OnInit {
             )
             .subscribe();
 
+    }
+
+    private buildPlatforms(): any[] {
+        if (!this.user?.plateformes) {
+            return [];
+        }
+        const result = [];
+        for (const platform of this.user?.plateformes) {
+            result.push({
+                numero: platform
+            })
+        }
+        return result;
     }
 }

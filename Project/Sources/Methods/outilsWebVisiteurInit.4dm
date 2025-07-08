@@ -49,8 +49,10 @@ If ($intervenant_e#Null:C1517)
 	
 	
 	// Conserve la liste des plateformes dans la session pour l'API
+	
 	Use (Session:C1714.storage.intervenant)
-		Session:C1714.storage.intervenant.Plateformes:=userPlateForme_c
+		Session:C1714.storage.intervenant.Plateformes:=New shared collection:C1527()
+		Session:C1714.storage.intervenant.Plateformes:=userPlateForme_c.copy(ck shared:K85:29; Session:C1714.storage.intervenant.Plateformes)
 	End use 
 	
 	// Modifié par : Scanu Rémy (22/09/2023)

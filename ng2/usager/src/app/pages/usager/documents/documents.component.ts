@@ -72,7 +72,7 @@ export class DocumentsComponent {
                     this.breadcrumbService.setBreadcrumb([
                         {
                             label: 'Usagers',
-                            route: '/usager'
+                            route: '/home'
                         },
                         { label: this.usager.hb_cle },
                         {

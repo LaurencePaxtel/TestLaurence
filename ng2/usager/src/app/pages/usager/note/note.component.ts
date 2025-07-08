@@ -98,7 +98,7 @@ export class NoteComponent implements OnInit {
                     this.breadcrumbService.setBreadcrumb([
                         {
                             label: 'Usagers',
-                            route: '/usager'
+                            route: '/home'
                         },
                         { label: this.usagerDetails.hb_cle },
                         {

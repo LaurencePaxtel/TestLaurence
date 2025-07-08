@@ -17,7 +17,7 @@
                     <p-select [options]="groupes"
                               formControlName="dispositif" optionLabel="value"
                               appendTo="body"
-                              class="w-full"
+                              class="w-full select-danger"
                               (onChange)="onGroupeChange($event.value)"
                               placeholder="Selectionnez un dispositif"/>
                 </div>
@@ -51,7 +51,7 @@
                                 <!-- Container scrollable avec hauteur dynamique -->
                                 <div
                                     class="overflow-y-auto border border-gray-200 rounded-lg p-2"
-                                    [style.min-height]="'350px'" [style.max-height]="'350px'">
+                                    [style.min-height]="'200px'" [style.max-height]="'200px'">
                                     @for (prestation of getCurrentTabPrestations(); track prestation.id) {
                                         <div class="flex items-center gap-2 mb-2 p-2 hover:bg-gray-50 rounded">
                                             <p-checkbox
