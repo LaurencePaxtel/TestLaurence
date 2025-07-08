@@ -209,7 +209,8 @@ export class AppTopbar {
         this.layoutService.layoutConfig.update((state) => ({...state, darkTheme: !state.darkTheme}));
     }
 
-    onUserMenuClick() {
+    async onUserMenuClick() {
+        await this.userService.loadUser();
         this.ref = this.dialogService.open(ChangePlatformComponent, {
             focusOnShow: false,
             header: 'Gestion des plateformes',
