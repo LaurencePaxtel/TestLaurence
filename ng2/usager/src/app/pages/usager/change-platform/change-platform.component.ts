@@ -68,13 +68,15 @@ export class ChangePlatformComponent implements OnInit, OnDestroy {
         this.usagerGateway.savePlatform(this.user.id, this.selectedPlateform.numero)
             .pipe(
                 tap({
-                    next: (response) => {
-                        this.ref.close({
-                            success: true,
-                            message: 'La plateforme a été changée avec succès'
+                    next: () => {
+                        this.userService.loadUser().then(() => {
+                            this.ref.close({
+                                success: true,
+                                message: 'La plateforme a été changée avec succès'
+                            });
                         });
                     },
-                    error: (error) => {
+                    error: () => {
                         this.ref.close({
                             success: false,
                             message: 'Une erreur est survenue lors de la mise à jour de la plateforme.'
