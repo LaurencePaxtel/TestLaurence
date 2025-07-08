@@ -222,11 +222,12 @@ export class AppTopbar {
         });
     }
 
-    private handleMessageOnCloseDynamicDialog(result: any) {
+    private async handleMessageOnCloseDynamicDialog(result: any) {
         if (result) {
             if (result.success) {
                 this.toastService.success(result.message);
-                window.location.reload();
+                await this.userService.loadUser();
+                this.user = this.userService.currentUser;
             } else {
                 this.toastService.warn(result.message);
             }
