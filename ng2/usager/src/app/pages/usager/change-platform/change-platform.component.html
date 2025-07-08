@@ -13,7 +13,10 @@
     </ng-template>
 
     <ng-template pTemplate="body" let-plateforme let-rowIndex="rowIndex">
-        <tr [pSelectableRow]="plateforme" [pSelectableRowIndex]="rowIndex">
+        <tr
+            [pSelectableRow]="plateforme"
+            [pSelectableRowIndex]="rowIndex"
+            [ngClass]="rowClass(plateforme)">
             <td>{{ plateforme.numero }}</td>
         </tr>
     </ng-template>

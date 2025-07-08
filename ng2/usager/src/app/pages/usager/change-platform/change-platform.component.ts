@@ -100,4 +100,10 @@ export class ChangePlatformComponent implements OnInit, OnDestroy {
         }
         return result;
     }
+
+    rowClass(plateforme: any): string {
+        return plateforme.numero === this.user?.plateforme
+            ? 'background-green g-color-white'
+            : 'background-none';
+    }
 }
