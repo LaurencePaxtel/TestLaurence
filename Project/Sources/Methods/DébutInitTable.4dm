@@ -854,7 +854,7 @@ Début_LoadTables("Locations: Charges"; -><>ta_GL_LibelleCharges)
 // Locations: Sinistres
 Début_LoadTables("Locations: Sinistres"; -><>ta_GL_LibelleSinistres)
 
-//# Modes des règlements
+//# Modes de règlements
 Début_LoadTables("Modes de règlements"; -><>ta_GL_ModesReglements)
 
 //# Banques

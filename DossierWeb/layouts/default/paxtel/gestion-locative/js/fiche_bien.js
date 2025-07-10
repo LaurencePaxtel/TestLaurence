@@ -64,6 +64,7 @@ $(document).ready(function(){
 			"lc_chauffagetype": $('#lc_chauffagetype option:selected').val(),
 			"lc_chauffageenergie": $('#lc_chauffageenergie option:selected').val(),
 			"lc_climatisation": $('#lc_climatisation').val(),
+			"lc_gl_nombre_places": $('#lc_gl_nombre_places').val(),
 			"lc_eauchaudetype": $('#lc_eauchaudetype option:selected').val(),
 			"lc_eauchaudeenergie": $('#lc_eauchaudeenergie option:selected').val(),
 			"lc_radiateurnb": $('#lc_radiateurnb').val(),
@@ -1261,6 +1262,10 @@ $(document).ready(function(){
 
 	if (visiteur.entity.LC_Actif == true) {
 		$('#lc_actif').prop('checked', true);
+	}
+
+	if (visiteur.entity.LC_GL_Nombre_Places == true) {
+		$('#lc_gl_nombre_places').val(visiteur.entity.LC_GL_Nombre_Places);
 	}
 
 	$("#kitList").css("cssText", "width: 150px!important;");

@@ -102,13 +102,13 @@
         console.log('PARAMETER:cgu', cgu);
 
         if (resetPassword === 'Vrai' && cgu === 'Vrai') {
-            const newUrl = 'home?login=true&resetPassword=Vrai&cgu=Vrai';
+            const newUrl = '/INT?action=usager-list&login=true&resetPassword=Vrai&cgu=Vrai';
             window.location.href = newUrl;
             return;
         }
 
         if (resetPassword === 'Vrai') {
-            const newUrl = 'home?login=true&resetPassword=Vrai';
+            const newUrl = '/INT?action=usager-list&login=true&resetPassword=Vrai';
             window.location.href = newUrl;
             return;
         }

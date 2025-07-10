@@ -107,7 +107,7 @@ End if
 
 ORDER BY:C49([HeBerge:4]; [HeBerge:4]HB_Clé:2; >)
 
-SET DATABASE PARAMETER:C642(Dates inside objects:K37:73; String type without time zone:K37:86)
+SET DATABASE PARAMETER:C642(Dates dans les objets:K37:73; Type chaine sans fuseau horaire:K37:86)
 
 If ($type="all")
 	$JSON:=Selection to JSON:C1234([HeBerge:4]; SelectionJson_template(->[HeBerge:4]))
@@ -151,7 +151,8 @@ Else
 			"hb_referenceid"; $tb_hb_referenceID{$i}; \
 			"count_fiches"; $count_fiches; \
 			"noteSP"; $noteSP_b; \
-			"isFamChief"; False:C215)
+			"isFamChief"; False:C215; \
+			"hg_genre"; $heberge_e.HG_Genre)
 		
 		CLEAR VARIABLE:C89($noteSP_b)
 	End for 

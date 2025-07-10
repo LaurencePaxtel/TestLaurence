@@ -16,7 +16,7 @@
                     <label for="dateNaissance">Date de naissance</label>
 
                     <p-datePicker formControlName="dateNaissance" id="dateNaissance" appendTo="body"
-                                  dateFormat="dd/mm/yy"></p-datePicker>
+                                  dateFormat="dd/mm/yy" dataType="string" ></p-datePicker>
                 </div>
                 <div class="flex flex-col gap-2">
                     <label for="lienFamille">Lien de famille</label>
@@ -109,22 +109,26 @@
             @if (user?.hasPrivilege('JOUR')) {
                 <p-button label="Hebergement" icon="pi pi-plus" raised
                           class="flex-1 md:flex-none"
+                          [disabled]="!selectedUsager"
                           (click)="redirectOnNewHebergement()">
                 </p-button>
             }
             @if (user?.hasPrivilege('NUIT')) {
                 <p-button label="Prestation" icon="pi pi-plus" raised
                           class="flex-1 md:flex-none"
+                          [disabled]="!selectedUsager"
                           (click)="redirectOnNewPrestation()">
                 </p-button>
             }
             <p-button label="Multi-Pointage" icon="pi pi-check" raised
                       class="flex-1 md:flex-none"
-                      (click)="openMultiPointageModal()"></p-button>
+                      (click)="openMultiPointageModal()"
+                      [disabled]="!selectedUsager"></p-button>
             <p-button label="Coordonnées" severity="warn" icon="pi pi-address-book" raised
                       class="flex-1 md:flex-none"
                       [loading]="contactDetailsLoading"
-                      (click)="loadHebergeAndShowCoordonnesModal()"></p-button>
+                      (click)="loadHebergeAndShowCoordonnesModal()"
+                      [disabled]="!selectedUsager"></p-button>
             @if (user?.hasPrivilege('NotesNote')) {
                 <p-button label="Notes" severity="warn" icon="pi pi-book" raised
                           class="flex-1 md:flex-none"
@@ -133,6 +137,7 @@
             @if (user?.hasPrivilege('NotesSP')) {
                 <p-button label="Notes SP" severity="danger" icon="pi pi-plus" raised
                           class="flex-1 md:flex-none"
+                          [disabled]="!selectedUsager"
                           [loading]="notesSpLoading"
                           (click)="loadHebergeAndShowSpModal()"></p-button>
             }
@@ -140,18 +145,21 @@
                 <p-button label="Documents" icon="pi pi-file" raised
                           class="flex-1 md:flex-none"
                           severity="success"
+                          [disabled]="!selectedUsager"
                           (click)="navigateToDocuments()"></p-button>
             }
 
             <p-button label="Situation Budgétaire" icon="pi pi-euro" raised
                       class="flex-1 md:flex-none"
                       severity="warn"
+                      [disabled]="!selectedUsager"
                       (click)="redirectOnSituationBudgetaire()"></p-button>
 
             @if (user?.hasPrivilege('Editeur')) {
                 <p-button label="Imprimer" icon="pi pi-download" raised
                           class="flex-1 md:flex-none"
                           [loading]="printLoading"
+                          [disabled]="!selectedUsager"
                           (click)="loadDocumentTypeAndPrintAction()"></p-button>
             }
 
@@ -191,7 +199,13 @@
                             [ngClass]="{ 'red-content': usager.noteSP, 'bold-content': usager.isFamChief}">
                             <td>{{ usager.hb_cle }}</td>
                             <td>{{ usager.clefamille }}</td>
-                            <td></td>
+                            <td>
+                                @if (usager.hg_genre === false) {
+                                    <span>Masculin</span>
+                                } @else {
+                                    <span>Féminin</span>
+                                }
+                            </td>
                             <td>{{ usager.count_fiches }}</td>
                             <td>
                                 <p-button

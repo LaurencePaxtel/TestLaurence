@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DynamicDialogConfig, DynamicDialogRef} from 'primeng/dynamicdialog';
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
@@ -7,7 +7,7 @@ import {UsagerGateway} from '../../../gateway/usager.gateway';
 import {UserService} from "../../../service/user.service";
 import {UserConnected} from "../../../model/user-connected.model";
 import {TableModule} from "primeng/table";
-import {tap, Subscription} from "rxjs";
+import {tap} from "rxjs";
 
 @Component({
     selector: 'app-change-platform',
@@ -16,15 +16,13 @@ import {tap, Subscription} from "rxjs";
     templateUrl: './change-platform.component.html',
     styleUrl: './change-platform.component.scss'
 })
-export class ChangePlatformComponent implements OnInit, OnDestroy {
+export class ChangePlatformComponent implements OnInit {
     saveLoading = false;
     user?: UserConnected | null
 
     plateforms : any[] = [];
 
     selectedPlateform?: any;
-
-    private userSub?: Subscription;
 
     constructor(
         public ref: DynamicDialogRef,
@@ -43,15 +41,6 @@ export class ChangePlatformComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this.userSub = this.userService.currentUser$.subscribe((user) => {
-            this.user = user;
-            this.plateforms = this.buildPlatforms();
-            this.selectedPlateform = this.plateforms.find(p => p.numero === this.user?.plateforme);
-        });
-    }
-
-    ngOnDestroy(): void {
-        this.userSub?.unsubscribe();
     }
 
     cancel() {
@@ -68,15 +57,13 @@ export class ChangePlatformComponent implements OnInit, OnDestroy {
         this.usagerGateway.savePlatform(this.user.id, this.selectedPlateform.numero)
             .pipe(
                 tap({
-                    next: () => {
-                        this.userService.loadUser().then(() => {
-                            this.ref.close({
-                                success: true,
-                                message: 'La plateforme a été changée avec succès'
-                            });
+                    next: (response) => {
+                        this.ref.close({
+                            success: true,
+                            message: 'La plateforme a été changée avec succès'
                         });
                     },
-                    error: () => {
+                    error: (error) => {
                         this.ref.close({
                             success: false,
                             message: 'Une erreur est survenue lors de la mise à jour de la plateforme.'
@@ -99,11 +86,5 @@ export class ChangePlatformComponent implements OnInit, OnDestroy {
             })
         }
         return result;
-    }
-
-    rowClass(plateforme: any): string {
-        return plateforme.numero === this.user?.plateforme
-            ? 'background-green g-color-white'
-            : 'background-none';
     }
 }

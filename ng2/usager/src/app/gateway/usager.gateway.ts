@@ -17,13 +17,15 @@ export class UsagerGateway {
     private httpClient = inject(HttpClient);
     constructor() {}
 
-    searchUsagers(searchParams: Partial<SearchUsagerCommand>): Observable<Usager[]> {
+    searchUsagers(searchCommand: SearchUsagerCommand): Observable<Usager[]> {
         let params = new HttpParams();
-        Object.entries(searchParams).forEach(([key, value]) => {
+        Object.entries(searchCommand.toHttpParams()).forEach(([key, value]) => {
             if (value !== undefined && value !== null && value !== '') {
                 params = params.append(key, value.toString());
             }
         });
+
+        console.log('PARAMS', params);
         return this.httpClient.get<Usager[]>(environment.apiUrl +'/INT', { params }).pipe(
             map((data) => {
                 if (!data || data.length === 0) {
@@ -39,7 +41,8 @@ export class UsagerGateway {
                             hb_referenceid: value.hb_referenceid,
                             count_fiches: value.count_fiches,
                             noteSP: value.noteSP,
-                            isFamChief: value.isFamChief
+                            isFamChief: value.isFamChief,
+                            hg_genre: value.hg_genre,
                         })
                     );
                 }
@@ -213,8 +216,8 @@ export class UsagerGateway {
                         nationalite: form.numeroSecu,
                         numCNI: form.personneConfiance,
                         numPassport: form.piecePasseport,
-                        email: form.telephone,
-                        telephone: form.email
+                        email: form.email,
+                        telephone: form.telephone
                     }
                 }
             })

@@ -6,12 +6,13 @@ export class Usager {
         readonly hb_referenceid: number,
         readonly count_fiches: number | undefined,
         readonly noteSP: boolean | undefined,
-        readonly isFamChief: boolean | undefined
+        readonly isFamChief: boolean | undefined,
+        readonly hg_genre: boolean | undefined,
     ) {}
 
     static from(values: Partial<Usager>): Usager {
         const v = values as Usager;
-        return new Usager(v.id, v.hb_cle, v.clefamille, v.hb_referenceid, v.count_fiches, v.noteSP, v.isFamChief);
+        return new Usager(v.id, v.hb_cle, v.clefamille, v.hb_referenceid, v.count_fiches, v.noteSP, v.isFamChief, v.hg_genre);
     }
 }
 

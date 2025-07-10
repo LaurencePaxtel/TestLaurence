@@ -88,7 +88,7 @@ export class AppTopbar {
                         target: '_blank',
                         url: '/INT?action=situation-financiere-usagers'
                     },
-                    ...(this.user?.hasPrivilege('Statistiques Web') ? [{
+                    ...(this.user?.hasPrivilege('Statistiques web') ? [{
                         label: 'Données et Statistiques',
                         target: '_blank',
                         url: '/INT?action=HeberGement_statistiqueGenerer'
@@ -209,8 +209,7 @@ export class AppTopbar {
         this.layoutService.layoutConfig.update((state) => ({...state, darkTheme: !state.darkTheme}));
     }
 
-    async onUserMenuClick() {
-        await this.userService.loadUser();
+    onUserMenuClick() {
         this.ref = this.dialogService.open(ChangePlatformComponent, {
             focusOnShow: false,
             header: 'Gestion des plateformes',
@@ -223,12 +222,11 @@ export class AppTopbar {
         });
     }
 
-    private async handleMessageOnCloseDynamicDialog(result: any) {
+    private handleMessageOnCloseDynamicDialog(result: any) {
         if (result) {
             if (result.success) {
                 this.toastService.success(result.message);
-                await this.userService.loadUser();
-                this.user = this.userService.currentUser;
+                window.location.reload();
             } else {
                 this.toastService.warn(result.message);
             }
