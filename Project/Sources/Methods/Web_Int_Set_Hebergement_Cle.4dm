@@ -116,14 +116,6 @@ If ($continue_b)
        // Modifié par : Scanu Rémy (06/02/2024)
        // Ajout du genre
        [HeberGement:5]HG_Genre:96:=F_EtatCivilGenre([HeberGement:5]HG_EtatCivil:20)
-
-       // Synchronise la fiche HeBerge liée si elle existe
-       var $heberge_e : cs:C1710.HeBergeEntity
-       $heberge_e:=ds:C1482.HeBerge.get([HeberGement:5]HG_HB_ID:19)
-       If ($heberge_e#Null:C1517)
-               $heberge_e.HG_Genre:=[HeberGement:5]HG_Genre:96
-               $heberge_e.save()
-       End if
 	
 	If (w_visiteur.notificationError=Null:C1517)
 		SAVE RECORD:C53([HeberGement:5])

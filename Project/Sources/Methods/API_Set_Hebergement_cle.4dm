@@ -39,24 +39,6 @@ $P_PK:=->[HeberGement:5]ID:168
 ARRAY OBJECT:C1221($rO_Record; 0)
 OB GET ARRAY:C1229($O_Data; "hebergement_cle"; $rO_Record)  // A ce jour on n'a qu'un energistrement dans le tableau
 
-// Mise à jour automatique du genre si l'état civil est fourni
-C_TEXT:C284($etatCivil_t)
-$etatCivil_t:=$rO_Record{1}.hg_etatcivil
-If ($etatCivil_t#"")
-       $rO_Record{1}.hg_genre:=F_EtatCivilGenre($etatCivil_t)
-
-       // Propagation du genre vers l'entité HeBerge liée
-       C_LONGINT:C283($hb_id)
-       $hb_id:=Num:C11($rO_Record{1}.hg_hb_id)
-       If ($hb_id>0)
-               var $heberge_e : cs:C1710.HeBergeEntity
-               $heberge_e:=ds:C1482.HeBerge.get($hb_id)
-               If ($heberge_e#Null:C1517)
-                       $heberge_e.HG_Genre:=$rO_Record{1}.hg_genre
-                       $heberge_e.save()
-               End if
-       End if
-End if
 
 // je vais lire cette valeur pour prévenir un doublon
 C_TEXT:C284($T_Property)
