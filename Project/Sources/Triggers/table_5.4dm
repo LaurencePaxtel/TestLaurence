@@ -1,5 +1,23 @@
 
 var $updateEtatCivilFusion_b : Boolean
+var $position_i : Integer
+var $heberge_e : cs:C1710.HeBergeEntity
+
+// Mise à jour automatique du genre depuis l'état civil
+$position_i:=Position("("; [HeberGement:5]HG_EtatCivil:36)
+[HeberGement:5]HG_Genre:96:=False
+
+If ($position_i>0)
+       If (Substring([HeberGement:5]HG_EtatCivil:36; $position_i+1; 1)="F")
+               [HeberGement:5]HG_Genre:96:=True
+       End if
+End if
+
+$heberge_e:=ds:C1482.HeBerge.get([HeberGement:5]HG_HB_ID:19)
+If ($heberge_e#Null)
+       $heberge_e.HG_Genre:=[HeberGement:5]HG_Genre:96
+       $heberge_e.save()
+End if
 
 
 Case of 
