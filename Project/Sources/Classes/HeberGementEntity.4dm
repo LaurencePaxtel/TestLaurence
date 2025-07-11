@@ -57,11 +57,32 @@ Function getTsModif()
 	End if 
 	
 Function saveEntity($entree_el : Integer)
-	
-	Case of 
-		: ($1=1)  // Import données application mobile depuis la fonction synchroAppMobileImportData()
-			This:C1470.importApplicationMobile:=True:C214
-	End case 
+
+       // Mise à jour automatique du genre en fonction de l'état civil
+       C_LONGINT:C283($vl_Position)
+
+       This:C1470.HG_Genre:=False:C215
+       $vl_Position:=Position:C15("("; This:C1470.HG_EtatCivil)
+
+       If ($vl_Position>0)
+               If (Substring:C12(This:C1470.HG_EtatCivil; $vl_Position+1; 1)="F")
+                       This:C1470.HG_Genre:=True:C214
+               End if
+       End if
+
+       // Synchronise la fiche HeBerge liée si elle existe
+       var $heberge_e : cs:C1710.HeBergeEntity
+       $heberge_e:=This:C1470.HG_HB_ID_1_HB_ReferenceID
+
+       If ($heberge_e#Null:C1517)
+               $heberge_e.HG_Genre:=This:C1470.HG_Genre
+               $heberge_e.save()
+       End if
+
+       Case of
+               : ($1=1)  // Import données application mobile depuis la fonction synchroAppMobileImportData()
+                       This:C1470.importApplicationMobile:=True:C214
+       End case
 	
 	
 Function FixBugNumeroFiche()
