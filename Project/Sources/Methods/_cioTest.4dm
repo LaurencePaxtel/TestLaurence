@@ -17,6 +17,8 @@ $statParam_o.statistiqueFicheUnique:=True:C214
 $return_o:=ds:C1482.HeberGement.listeUsager($statParam_o)
 $end:=Milliseconds:C459-$start
 
+//test
+
 /*
 //[HeberGement]HG_HB_ID
 $hebergementB_es:=ds.HeberGement.query("HG_Date >= :1 AND HG_Cloturée = :2 AND Ref_Structure = 'ALL'"; !01/09/2024!; Vrai)
