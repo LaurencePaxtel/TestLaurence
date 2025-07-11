@@ -35,7 +35,16 @@ Historique
 	
 	$query_t:="HG_Date >= :1 and HG_Date <= :2"
 	
-	$result:=New object:C1471("query"; $query_t; "parameters"; $parameters_c)
+        $result:=New object:C1471("query"; $query_t; "parameters"; $parameters_c)
+
+
+Function get HG_Genre_cal() : Boolean
+/*-----------------------------------------------------------------------------
+Champ calculé : Hebergement.HG_Genre_cal
+
+Retourne le genre à partir de l'état civil
+----------------------------------------------------------------------------*/
+       return F_EtatCivilGenre(This:C1470.HG_EtatCivil)
 	
 	
 	
@@ -57,11 +66,11 @@ Function getTsModif()
 	End if 
 	
 Function saveEntity($entree_el : Integer)
-	
-	Case of 
-		: ($1=1)  // Import données application mobile depuis la fonction synchroAppMobileImportData()
-			This:C1470.importApplicationMobile:=True:C214
-	End case 
+
+       Case of
+               : ($1=1)  // Import données application mobile depuis la fonction synchroAppMobileImportData()
+                       This:C1470.importApplicationMobile:=True:C214
+       End case
 	
 	
 Function FixBugNumeroFiche()

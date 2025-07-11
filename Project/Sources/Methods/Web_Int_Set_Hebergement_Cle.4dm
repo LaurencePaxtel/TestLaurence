@@ -113,9 +113,9 @@ If ($continue_b)
 	Web_HG_StatutClôture
 	P_Transfert_HBAlors("Libelle")
 	
-	// Modifié par : Scanu Rémy (06/02/2024)
-	// Ajout du genre
-	[HeberGement:5]HG_Genre:96:=F_EtatCivilGenre([HeberGement:5]HG_EtatCivil:20)
+       // Modifié par : Scanu Rémy (06/02/2024)
+       // Ajout du genre
+       [HeberGement:5]HG_Genre:96:=F_EtatCivilGenre([HeberGement:5]HG_EtatCivil:20)
 	
 	If (w_visiteur.notificationError=Null:C1517)
 		SAVE RECORD:C53([HeberGement:5])
