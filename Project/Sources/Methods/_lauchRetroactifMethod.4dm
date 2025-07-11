@@ -10,3 +10,4 @@
 // Paramètres
 // ----------------------------------------------------
 outilsPaxtelRetroactif(7)
+MAINT_HG_Genre_Retro
