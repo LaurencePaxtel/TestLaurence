@@ -39,3 +39,13 @@ Case of
 	: (Trigger event:C369=Sur sauvegarde enregistrement:K3:2)
 		MultiSoc_Init_Structure(->[HeBerge:4])
 End case 
+If (UTL_Segur_Actif)
+  Case of
+    : (Trigger event=Sur sauvegarde nouvel enreg)
+      UTL_Audit_Log("HeBerge";[HeBerge]ID;"CREATE";"";"";"")
+    : (Trigger event=Sur sauvegarde enregistrement)
+      UTL_Audit_Log("HeBerge";[HeBerge]ID;"UPDATE";"";"";"")
+    : (Trigger event=Sur suppression enregistrement)
+      UTL_Audit_Log("HeBerge";Old([HeBerge]ID);"DELETE";"";"";"")
+  End case
+End if
