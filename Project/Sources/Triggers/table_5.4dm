@@ -53,3 +53,13 @@ outilsPaxtelRetroactif(10; $heberge_e; Faux)
 Fin de si 
 */
 End if 
+If (UTL_Segur_Actif)
+  Case of
+    : (Trigger event=Sur sauvegarde nouvel enreg)
+      UTL_Audit_Log("HeberGement";[HeberGement]ID;"CREATE";"";"";"")
+    : (Trigger event=Sur sauvegarde enregistrement)
+      UTL_Audit_Log("HeberGement";[HeberGement]ID;"UPDATE";"";"";"")
+    : (Trigger event=Sur suppression enregistrement)
+      UTL_Audit_Log("HeberGement";Old([HeberGement]ID);"DELETE";"";"";"")
+  End case
+End if
